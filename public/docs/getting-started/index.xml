@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting Started on Oakestra</title>
+    <link>http://localhost:1313/docs/getting-started/</link>
+    <description>Recent content in Getting Started on Oakestra</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Copyright (c) 2020-2024 Hyas</copyright>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy your first Oakestra Cluster</title>
+      <link>http://localhost:1313/docs/getting-started/deploy-your-first-oakestra-cluster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/getting-started/deploy-your-first-oakestra-cluster/</guid>
+      <description>Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS.</description>
+    </item>
+    <item>
+      <title>Deploy your first Application</title>
+      <link>http://localhost:1313/docs/getting-started/deploy-your-first-application/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/getting-started/deploy-your-first-application/</guid>
+      <description>Requirements&#xA;You have a running Oakestra deployment. You have at least one Worker Node registered (Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.</description>
+    </item>
+  </channel>
+</rss>

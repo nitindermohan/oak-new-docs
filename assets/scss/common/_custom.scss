@@ -1,0 +1,14 @@
+// Put your custom SCSS code here
+@import "bootstrap-icons/font/bootstrap-icons.scss";
+
+div.docs-sidebar ul li {
+  border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0;
+  border: 1px solid transparent;
+  border-left: none;
+}
+div.docs-sidebar ul li.active {
+  border-color: var(--bs-border-color) var(--bs-success-rgb);
+}
+div.docs-sidebar summary {
+  margin-bottom: 0.25rem !important;
+}
