@@ -10,6 +10,10 @@
   src="/js/color-mode.f14b3e296de1d0b69e75af684b62a4a912a2cadab04e36123407cd8388204f1d.js"
   integrity="sha256-8Us&#43;KW3h0Laeda9oS2KkqRKiytqwTjYSNAfNg4ggTx0=">
 </script>
+<script 
+  src="/js/dismissable-alert.f79a34cc26a97c892c86579f12a7b364868652fb40860b0a4586b868206dc20d.js"
+  integrity="sha256-95o0zCapfIkshlefEqezZIaGUvtAhgsKRYa4aCBtwg0=">
+</script>
 
 
 <link rel="stylesheet" href="/main.f4a87f7e46ac3d1d1d6bb2b662bd4d018f368bbfe8d13a99a20ecad092600d3514b096d1226b511203b203d7756ebbf5e3ac7afdbf3d017a0ba5c678dce6b76a.css" integrity="sha512-9Kh/fkasPR0da7K2Yr1NAY82i7/o0TqZog7K0JJgDTUUsJbRImtREgOyA9d1brv146x6/b89AXoLpcZ43Oa3ag==" crossorigin="anonymous">
@@ -51,7 +55,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://localhost:1313/cover.png"><meta name="twitter:title" content="Docs">
 <meta name="twitter:description" content="Orchestrate your Edge!">
-<meta name="twitter:site" content="@getdoks">
 
     <script type="application/ld+json">
   {
@@ -81,9 +84,15 @@
 
   
   <body class="list section docs" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
-    <div class="sticky-top">
+    <div id="announcement" data-id="global-alert-0129574e82ccd46d8c319383870a1222" class="alert alert-primary alert-dismissible fade show text-center" role="alert">
+    <span class="alert-text"><a class="alert-link stretched-link fw-normal" href="">Oakestra first stable release Accordion (v 0.4.301) is out! </a></span>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<div class="sticky-top">
+<div class="header-bar"></div>
 <header class="navbar navbar-expand-lg">
-  <div class="container-lg">
+  <div class="container-xxl">
   
     <a class="navbar-brand me-auto me-lg-3" href="/">Oakestra</a>
 
@@ -106,6 +115,7 @@
       </svg>
     </button>
     <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasNavSection" aria-labelledby="offcanvasNavSectionLabel">
+      <div class="header-bar"></div>
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavSectionLabel">Docs</h5>
         <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -184,6 +194,7 @@
 
     
     <div class="offcanvas offcanvas-end h-auto" tabindex="-1" id="offcanvasNavMain" aria-labelledby="offcanvasNavMainLabel">
+      <div class="header-bar d-lg-none"></div>
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavMainLabel">Oakestra</h5>
         <button type="button" class="btn btn-link nav-link p-0 ms-auto" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -229,16 +240,16 @@
         
         <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
           <li class="nav-item">
-              <a class="nav-link social-link" href="https://github.com/gethyas/doks"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
+              <a class="nav-link social-link" href="https://github.com/oakestra"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg><small class="ms-2 visually-hidden">GitHub</small></a>
             </li>
           </ul>
         
-        <a class="btn btn-primary rounded-pill mt-2 btn-block d-lg-none" href="http://localhost:1313/docs/getting-started/" role="button">Get started</a>
+        <a class="btn btn-primary rounded-pill mt-2 btn-block d-lg-none" href="http://localhost:1313/docs/getting-started/deploy-your-first-oakestra-cluster/" role="button">Get started</a>
         </div>
     </div>
 
     
-    <a class="btn btn-primary rounded-pill ms-3 me-2 px-4 order-lg-3 d-none d-lg-block" href="http://localhost:1313/docs/getting-started/" role="button">Get started</a>
+    <a class="btn btn-primary rounded-pill ms-3 me-2 px-4 order-lg-3 d-none d-lg-block" href="http://localhost:1313/docs/getting-started/deploy-your-first-oakestra-cluster/" role="button">Get started</a>
     </div>
 </header>
 </div>
@@ -291,7 +302,7 @@
 </div>
 
 
-    <div class="wrap container-lg" role="document">
+    <div class="wrap container-xxl" role="document">
       <div class="content">
       
         
@@ -346,7 +357,7 @@
     
     
     <footer class="footer text-muted">
-  <div class="container-lg">
+  <div class="container-xxl">
     <div class="row">
       <div class="col-lg-8 text-center text-lg-start">
         <ul class="list-inline">
@@ -355,7 +366,7 @@
       </div>
       <div class="col-lg-8 text-center text-lg-end">
         <ul class="list-inline">
-          <li class="list-inline-item">Brought to you by <a class="text-muted" href="https://gethyas.com/">Hyas</a></li>
+          <li class="list-inline-item">Brought to you by Oakestra</li>
         </ul>
       </div>
     </div>
@@ -369,8 +380,8 @@
 
 
 <script async
-  src="/js/app.118d1eb36e198d37396da6271a160a1fdf02b89aee1d7f510fef8392e190287a.js"
-  integrity="sha256-EY0es24ZjTc5baYnGhYKH98CuJruHX9RD&#43;&#43;DkuGQKHo=">
+  src="/js/app.f18cbea922bb1bbb300847f222f50380400f52c809e6b00e34a52dafcaf60c15.js"
+  integrity="sha256-8Yy&#43;qSK7G7swCEfyIvUDgEAPUsgJ5rAONKUtr8r2DBU=">
 </script>
 
 

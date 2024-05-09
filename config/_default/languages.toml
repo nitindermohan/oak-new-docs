@@ -5,8 +5,8 @@
   [en.params]
     languageISO = "EN"
     languageTag = "en-US"
-    footer = 'Brought to you by <a class="text-muted" href="https://gethyas.com/">Hyas</a>'
-    alertText = '<a class="alert-link stretched-link fw-normal" href="/blog/example-post/">Doks version 1.0 just shipped!</a>'
+    footer = 'Brought to you by Oakestra'
+    alertText = '<a class="alert-link stretched-link fw-normal" href="">Oakestra first stable release Accordion (v 0.4.301) is out! </a>'
 
 # [de]
 #   languageName = "German"

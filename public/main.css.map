@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/Users/nitindermohan/Documents/GitTUM/oakestra-code/documentation-new/oakestra-documentation",
+	"sourceRoot": "/Users/nitindermohan/Documents/GitTUM/oak-new-docs",
 	"sources": [
 		"node_modules/@hyas/core/assets/scss/app.scss",
 		"node_modules/bootstrap/scss/_functions.scss",
