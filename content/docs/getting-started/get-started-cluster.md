@@ -44,7 +44,18 @@ In this example, we will use a single device to deploy all the components. This 
 export CLUSTER_NAME=My_Awesome_Cluster
 ## Come up with a name for the current location
 export CLUSTER_LOCATION=My_Awesome_Apartment
+## Tell the NetManager where to find the system manager
+export SYSTEM_MANAGER_URL=<IP of device>
 ```
+
+{{< callout context="note" title="Note" icon="info-circle" >}}
+You can obtain the public IPv4 address of your device with
+
+```bash
+dig whoami.akamai.net. @ns1-1.akamaitech.net. +short
+```
+
+{{< /callout >}}
 
 **1)** Clone the repository and move into it using:
 
@@ -59,13 +70,17 @@ sudo -E docker-compose -f run-a-cluster/1-DOC.yaml up
 ```
 
 
-**3)** download, untar and install the node engine package
+**3)** In another terminal download, untar and install the node engine package
 
 ```bash
 wget -c https://github.com/oakestra/oakestra/releases/download/v0.4.202/NodeEngine_$(dpkg --print-architecture).tar.gz && tar -xzf NodeEngine_$(dpkg --print-architecture).tar.gz && chmod +x install.sh && mv NodeEngine NodeEngine_$(dpkg --print-architecture) && ./install.sh $(dpkg --print-architecture)
 ```
 
-**4)** (optional) download and unzip and install the network manager; this enables an overlay network across your services
+<<<<<<< HEAD
+**4)** Download, unzip and install the network manager; this enables an overlay network across your services
+=======
+**4)** download, unzip and install the network manager; this enables an overlay network across your services
+>>>>>>> 3b0afc6c (1-DOC requires NetManager)
 
 ```bash
 wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.202/NetManager_$(dpkg --print-architecture).tar.gz && tar -xzf NetManager_$(dpkg --print-architecture).tar.gz && chmod +x install.sh && ./install.sh $(dpkg --print-architecture)
@@ -78,17 +93,17 @@ wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.202/NetM
 {
   "NodePublicAddress": "<IP ADDRESS OF THIS DEVICE>",
   "NodePublicPort": "<PORT REACHABLE FROM OUTSIDE, use 50103 as default>",
-  "ClusterUrl": "localhost",
+  "ClusterUrl": "0.0.0.0",
   "ClusterMqttPort": "10003"
 }
 ```
-4.2) start the NetManager on port 6000
+4.2) Start the NetManager on port 6000
 
 ```bash
 sudo NetManager -p 6000 &
 ```
 
-**5)** start the NodeEngine. Please only use the `-n 6000` parameter if you started the network component in step 4. This parameter, in fact, is used to specify the internal port of the network component, if any.
+**5)** Start the NodeEngine. Please only use the `-n 6000` parameter if you started the network component in step 4. This parameter, in fact, is used to specify the internal port of the network component, if any.
 
 ```bash
 sudo NodeEngine -n 6000 -p 10100
@@ -110,7 +125,7 @@ The deployment of this kind of cluster is similar to 1-DOC. We first need to sta
 
 **2)** Now, we need to prepare all the worker nodes. On each worker node, execute the following:
 
-2.1) Downlaod and unpack both the NodeEngine
+2.1) Download and unpack both the NodeEngine
 
 ```bash
 wget -c https://github.com/oakestra/oakestra/releases/download/v0.4.202/NodeEngine_$(dpkg --print-architecture).tar.gz && tar -xzf NodeEngine_$(dpkg --print-architecture).tar.gz && chmod +x install.sh && mv NodeEngine NodeEngine_$(dpkg --print-architecture) && ./install.sh $(dpkg --print-architecture)
@@ -128,7 +143,7 @@ wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.202/NetM
 {
   "NodePublicAddress": "<IP ADDRESS OF THIS DEVICE>",
   "NodePublicPort": "<PORT REACHABLE FROM OUTSIDE, internal port is always 50103>",
-  "ClusterUrl": "<IP ADDRESS OF THE CLSUTER ORCHESTRATOR>",
+  "ClusterUrl": "<IP ADDRESS OF THE CLUSTER ORCHESTRATOR>",
   "ClusterMqttPort": "10003"
 }
 ```
@@ -136,15 +151,15 @@ wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.202/NetM
 
 ```bash
 sudo NetManager -p 6000 &
-sudo NodeEngine -n 6000 -p 10100 -a <IP ADDRESS OF THE CLSUTER ORCHESTRATOR>
+sudo NodeEngine -n 6000 -p 10100 -a <IP ADDRESS OF THE CLUSTER ORCHESTRATOR>
 ```
 
 ### MDNC (M Devices, N Clusters)
 
-This represents the most versatile deployment. You can split your resources into multiple clusters within different locations and with different resources. In this deployment, we need to deploy the Root and the Cluster orchestrator on different nodes. Each independent clsuter orchestrator represents a cluster of resources. The worker nodes attached to each cluster are aggregated and seen as a unique big resource from the point of view of the Root. This deployment isolates the resources from the root perspective and delegates the responsibility to the cluster orchestrator.
+This represents the most versatile deployment. You can split your resources into multiple clusters within different locations and with different resources. In this deployment, we need to deploy the root and the cluster orchestrator on different nodes. Each independent cluster orchestrator represents a cluster of resources. The worker nodes attached to each cluster are aggregated and seen as a unique big resource from the point of view of the Root. This deployment isolates the resources from the root perspective and delegates the responsibility to the cluster orchestrator.
 ![two-cluster](2ClusterExample.png)
 
-**1)** In this first step, we need to deploy the RootOrchestrator component on a Node. To do this, you need to clone the repository on the desired node, move to the root orchestrator folder, and execute the startup command.
+**1)** In this first step, we need to deploy the root orchestrator component on a node. To do this, you need to clone the repository on the desired node, move to the root orchestrator folder, and execute the startup command.
 
 ```bash
 git clone https://github.com/oakestra/oakestra.git && cd oakestra
@@ -154,6 +169,7 @@ sudo -E docker-compose -f root_orchestrator/docker-compose-<arch>.yml up
 ( please replace < arch > with your device architecture: **arm** or **amd64** )
 
 **2)** For each node that needs to host a cluster orchestrator, you need to:
+
 2.1) Export the ENV variables needed to connect to the cluster orchestrator:
 
 ```bash
