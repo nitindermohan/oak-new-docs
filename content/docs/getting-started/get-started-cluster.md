@@ -48,7 +48,7 @@ export CLUSTER_LOCATION=My_Awesome_Apartment
 export SYSTEM_MANAGER_URL=<IP of device>
 ```
 
-{{< callout context="note" title="Note" icon="info-circle" >}}
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
 You can obtain the public IPv4 address of your device with
 
 ```bash
@@ -76,11 +76,7 @@ sudo -E docker-compose -f run-a-cluster/1-DOC.yaml up
 wget -c https://github.com/oakestra/oakestra/releases/download/v0.4.202/NodeEngine_$(dpkg --print-architecture).tar.gz && tar -xzf NodeEngine_$(dpkg --print-architecture).tar.gz && chmod +x install.sh && mv NodeEngine NodeEngine_$(dpkg --print-architecture) && ./install.sh $(dpkg --print-architecture)
 ```
 
-<<<<<<< HEAD
 **4)** Download, unzip and install the network manager; this enables an overlay network across your services
-=======
-**4)** download, unzip and install the network manager; this enables an overlay network across your services
->>>>>>> 3b0afc6c (1-DOC requires NetManager)
 
 ```bash
 wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.202/NetManager_$(dpkg --print-architecture).tar.gz && tar -xzf NetManager_$(dpkg --print-architecture).tar.gz && chmod +x install.sh && ./install.sh $(dpkg --print-architecture)
@@ -103,7 +99,7 @@ wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.202/NetM
 sudo NetManager -p 6000 &
 ```
 
-**5)** Start the NodeEngine. Please only use the `-n 6000` parameter if you started the network component in step 4. This parameter, in fact, is used to specify the internal port of the network component, if any.
+**5)** Start the NodeEngine
 
 ```bash
 sudo NodeEngine -n 6000 -p 10100
