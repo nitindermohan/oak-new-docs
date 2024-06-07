@@ -19,7 +19,7 @@ seo:
 {{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
 - You have a running Oakestra deployment.
 - You have at least one Worker Node registered
-- (Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.
+- You have installed and properly configured the NetManager.
 - You can access the APIs at `<root-orch-ip>:10000/api/docs`
 {{< /callout >}}
 
@@ -109,11 +109,14 @@ Authenticate using the following procedure:
 ![try-login](login-try.png)
 
 2. Use the **default Admin credentials** to login
-```
-  username: "Admin"
-  password: "Admin"
-```
 ![execute-login](login-execute.png)
+    ```json
+    {
+      "username": "Admin",
+      "password": "Admin",
+      "organization": ""
+    }
+    ```
 
 3. Copy the result login token
 ![token-login](login-token-copy.png)
@@ -123,9 +126,9 @@ Authenticate using the following procedure:
 ![auth2-login](authorize-2.png)
 
 ### Register an application and the services
-After you authenticate with the login function, you can try out to deploy the first application.
+After you authenticate with the login function, you can deploy your first application.
 
-1. Upload the deployment description to the system. You can try using the deployment descriptor above.
+1. Upload the deployment descriptor to the system. You can try the one above.
 ![post app](post-app.png)
 
 The response contains the Application id and the id for all the application's services. Now the application and the services are registered to the platform. It's time to deploy the service instances!
@@ -140,7 +143,7 @@ Each call to this endpoint generates a new instance of the service
 
 ### Monitor the service status
 
-1. With `GET /api/aplications/<userid>` (or simply /api/aplications/ if you're admin) you can check the list of the deployed application.
+1. With `GET /api/applications/<userid>` (or simply /api/applications/ if you're admin) you can check the list of the deployed application.
 2. With `GET /api/services/<appid>` you can check the services attached to an application
 3. With `GET /api/service/<serviceid>` you can check the status for all the instances of `<serviceid>`
 
