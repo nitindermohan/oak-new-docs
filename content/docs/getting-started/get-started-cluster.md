@@ -135,7 +135,7 @@ wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.202/NetM
 
 2.2) Edit `/etc/netmanager/netcfg.json` accordingly:
 
-```bash
+```json
 {
   "NodePublicAddress": "<IP ADDRESS OF THIS DEVICE>",
   "NodePublicPort": "<PORT REACHABLE FROM OUTSIDE, internal port is always 50103>",
