@@ -155,7 +155,7 @@ Each call to this endpoint generates a new instance of the service
 - Use `DELETE /api/service/<serviceid>/instance/<instance number>` to delete a specific instance of a service
 - Use `DELETE /api/application/<appid>` to delete all together an application with all the services and instances
 
-### Check if the service (un)deployment succeded
+### Check if the service (un)deployment succeeded
 
 Familiarize yourself with the API and discover for each one of the service the status and the public address.
 
