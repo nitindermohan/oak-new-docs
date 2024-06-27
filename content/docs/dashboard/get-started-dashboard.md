@@ -62,7 +62,7 @@ If these components were not started or improperly configured, the login screen 
 
 Now that the dashboard is up and running, let's log in and explore its functionality.
 Upon launching the system for the first time, an administrative user is automatically created.
-This user can create and manage other users and organizations within the system, more on [User Management](../explore-its-features/#user-management) later.
+This user can create and manage other users and organizations within the system, more on [User Management](../organizations/#user-management) later.
 
 > **Admin Credentials**\
 > Username: `Admin`\
@@ -74,14 +74,13 @@ After setting up the cluster manager immediately change the password of the admi
 
 ## Organization Login
 
-<!-- Todo: What is an organization? -->
 To log in to an organization check the *Organization login* box and enter the organization name. If the box is not checked or the organization
-name is left empty, then you will logged in to the default ROOT organization.
+name is left empty, then you will logged in to the default root organization.
 
 {{< link-card
   title="Organizations"
   description="More on organizations"
-  href="../explore-its-features/#organizations"
+  href="../organizations/#organizations"
   target="_blank"
 >}}
 

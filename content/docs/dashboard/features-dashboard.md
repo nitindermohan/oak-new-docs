@@ -39,6 +39,7 @@ Once you have created an application you can create services. Once again you wil
 However this is far from it; system requirements, environmental variables, connection details and much more can be specified here.
 
 You will have to choose a virtualization method (Container or Unikernel) and tell Oakestra where it can find your code.
+Hit save and your service is ready for deployment!
 
 ![](create-service.gif)
 
@@ -46,14 +47,3 @@ You will have to choose a virtualization method (Container or Unikernel) and tel
 
 Once a service has been created and deployed, you can check on it's status and other details. Choose a service from the *Service List* and from the drop-down
 menu, choose an instance and click on *View Instance Details*. 
-
-
-## User Management
-
-The admin user can create new users and grant them the appropriate roles.
-
-![](create-user.gif)
-
-
-
-## Organizations
