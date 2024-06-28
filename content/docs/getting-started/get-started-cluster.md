@@ -2,7 +2,7 @@
 title: "Deploy your first Oakestra Cluster"
 summary: ""
 draft: false
-weight: 690
+weight: 101
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -79,7 +79,7 @@ wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.202/NetM
   "NodePublicAddress": "<IP ADDRESS OF THIS DEVICE>",
   "NodePublicPort": "<PORT REACHABLE FROM OUTSIDE, use 50103 as default>",
   "ClusterUrl": "localhost",
-  "ClusterMqttPort": "10003"
+  "ClusterMqttPort": "10003"  
 }
 ```
 4.2) start the NetManager on port 6000
