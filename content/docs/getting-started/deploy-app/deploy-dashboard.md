@@ -66,7 +66,7 @@ If these components were not started or improperly configured, the login screen 
 
 Now that the dashboard is up and running, let's log in and explore its functionality.
 Upon launching the system for the first time, an administrative user is automatically created.
-This user can create and manage other users and organizations within the system, more on [User Management](../organizations/#user-management) later.
+This user can create and manage other users and organizations within the system, more on [User Management](../../../manuals/dashboard-features/organizations/#user-management) later.
 
 > **Admin Credentials**\
 > Username: `Admin`\
@@ -84,7 +84,7 @@ name is left empty, then you will logged in to the default root organization.
 {{< link-card
   title="Organizations"
   description="More on organizations"
-  href="../organizations/#organizations"
+  href="../../../manuals/dashboard-features/organizations/"
   target="_blank"
 >}}
 
@@ -107,7 +107,7 @@ First you will have to create an application. Choose a concise name, the namespa
 
 ### Creating a Service
 
-In the section [Deploy your first Application](../../getting-started/deploy-your-first-application/) we discussed registering
+In the [previous section](../with-the-api) we discussed registering
 deployment descriptors via the API. This is great for automated deployments, but the SLAs were not designed with human readability in mind.
 While the dashboard still allows you to upload SLAs as a JSON file, it also provides you with an interactive form.
 

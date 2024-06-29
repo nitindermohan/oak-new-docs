@@ -1,8 +1,8 @@
 ---
-title: "Organizations"
+title: "Commit Hooks"
 summary: ""
 draft: false
-weight: 321
+weight: 402
 toc: true
 seo:
   title: "" # custom title (optional)
