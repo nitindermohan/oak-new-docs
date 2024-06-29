@@ -7,7 +7,7 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Copyright (c) 2020-2024 Hyas</copyright>
-    <lastBuildDate>Thu, 07 Sep 2023 17:19:07 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 07 Sep 2023 16:27:22 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Example Post</title>
@@ -24,31 +24,59 @@
       <description>Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS.</description>
     </item>
     <item>
-      <title>Deploy your first Application</title>
-      <link>http://localhost:1313/docs/getting-started/deploy-your-first-application/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/getting-started/deploy-your-first-application/</guid>
+      <title>With the API</title>
+      <link>http://localhost:1313/docs/getting-started/deploy-app/with-the-api/</link>
+      <pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate>
+      <guid>http://localhost:1313/docs/getting-started/deploy-app/with-the-api/</guid>
       <description>Requirements&#xA;You have a running Oakestra deployment. You have at least one Worker Node registered (Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.</description>
     </item>
     <item>
-      <title>Example Guide</title>
-      <link>http://localhost:1313/docs/guides/example-guide/</link>
-      <pubDate>Thu, 07 Sep 2023 16:04:48 +0200</pubDate>
-      <guid>http://localhost:1313/docs/guides/example-guide/</guid>
-      <description>Guides lead a user through a specific task they want to accomplish, often with a sequence of steps. Writing a good guide requires thinking about what your users are trying to do.</description>
+      <title>With the Dashboard</title>
+      <link>http://localhost:1313/docs/getting-started/deploy-app/with-the-dashboard/</link>
+      <pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate>
+      <guid>http://localhost:1313/docs/getting-started/deploy-app/with-the-dashboard/</guid>
+      <description>The Dashboard Now that you have familiarized yourself with the API, you can try out the dashboard. The dashboard is the front-end component to cluster management.</description>
     </item>
     <item>
-      <title>Application SLA Description</title>
-      <link>http://localhost:1313/docs/reference/application-sla-description/</link>
-      <pubDate>Thu, 07 Sep 2023 16:13:18 +0200</pubDate>
-      <guid>http://localhost:1313/docs/reference/application-sla-description/</guid>
-      <description>Application Deployment SLA The SLA deplyment descriptor is a JSON file that describes the deployment of an application in the Oakestra platform.</description>
+      <title>With the CLI</title>
+      <link>http://localhost:1313/docs/getting-started/deploy-app/with-the-cli/</link>
+      <pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate>
+      <guid>http://localhost:1313/docs/getting-started/deploy-app/with-the-cli/</guid>
+      <description></description>
     </item>
     <item>
-      <title>Privacy Policy</title>
-      <link>http://localhost:1313/privacy/</link>
-      <pubDate>Thu, 07 Sep 2023 17:19:07 +0200</pubDate>
-      <guid>http://localhost:1313/privacy/</guid>
+      <title>High Level Architecture</title>
+      <link>http://localhost:1313/docs/concepts/high-level-architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/concepts/high-level-architecture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Orchestration</title>
+      <link>http://localhost:1313/docs/concepts/orchestration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/concepts/orchestration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Scheduling</title>
+      <link>http://localhost:1313/docs/concepts/scheduling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/concepts/scheduling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>http://localhost:1313/docs/concepts/networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/concepts/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Performance</title>
+      <link>http://localhost:1313/docs/concepts/features/performance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/concepts/features/performance/</guid>
       <description></description>
     </item>
   </channel>

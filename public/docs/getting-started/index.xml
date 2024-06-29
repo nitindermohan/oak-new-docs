@@ -16,12 +16,5 @@
       <guid>http://localhost:1313/docs/getting-started/deploy-your-first-oakestra-cluster/</guid>
       <description>Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS.</description>
     </item>
-    <item>
-      <title>Deploy your first Application</title>
-      <link>http://localhost:1313/docs/getting-started/deploy-your-first-application/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/getting-started/deploy-your-first-application/</guid>
-      <description>Requirements&#xA;You have a running Oakestra deployment. You have at least one Worker Node registered (Optional) If you want the microservices to communicate, you need to have the NetManager installed and properly configured.</description>
-    </item>
   </channel>
 </rss>
