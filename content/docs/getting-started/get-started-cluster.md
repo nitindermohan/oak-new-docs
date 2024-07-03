@@ -52,7 +52,7 @@ export SYSTEM_MANAGER_URL=<IP of device>
 You can obtain the public IPv4 address of your device with
 
 ```bash
-dig whoami.akamai.net. @ns1-1.akamaitech.net. +short
+curl -4 https://ifconfig.co
 ```
 
 {{< /callout >}}
