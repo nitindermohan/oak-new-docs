@@ -49,7 +49,7 @@
       <link>http://localhost:1313/docs/concepts/high-level-architecture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/concepts/high-level-architecture/</guid>
-      <description></description>
+      <description>Oakestra Architecture As shown in our getting started guide, Oakestra requires 4 key building blocks to operate:&#xA;The Root Orchestrator The Cluster Orchestrator The Node Engine, and The Net Manager Root Orchestrator The root orchestrator is the centralized control plane that coordinates the participating clusters.</description>
     </item>
     <item>
       <title>Orchestration</title>

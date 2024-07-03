@@ -295,6 +295,7 @@
       "applications-services-namespaces",
       "buttonColorMode",
       "check-if-the-service-undeployment-succeeded",
+      "cluster-orchestrator",
       "create-your-first-oakestra-cluster",
       "creating-a-service",
       "creating-an-application",
@@ -302,6 +303,7 @@
       "deployment",
       "deployment-descriptor",
       "doks-docs-nav",
+      "failure-and-scalability",
       "format",
       "further-reading",
       "h-rh-i-0",
@@ -316,6 +318,7 @@
       "manual-deployment",
       "mdnc-m-devices-n-clusters",
       "monitor-the-service-status",
+      "oakestra-architecture",
       "offcanvasNavMain",
       "offcanvasNavMainLabel",
       "offcanvasNavSection",
@@ -325,7 +328,9 @@
       "query",
       "register-an-application-and-the-services",
       "roles",
+      "root-orchestrator",
       "running-the-oakestra-framework",
+      "scheduling",
       "search-form",
       "searchModal",
       "searchModalLabel",
@@ -338,7 +343,8 @@
       "the-root-organization",
       "toc",
       "undeploy-the-service",
-      "user-management"
+      "user-management",
+      "worker-node"
     ]
   }
 }
