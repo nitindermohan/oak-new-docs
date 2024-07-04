@@ -1,22 +1,20 @@
 ---
-title: "Deploy your first Application"
-description: "Deploy your first App on Oakestra"
+title: "With the API"
+description: "Deploy your app using the Oakestra API"
 summary: ""
+date: 2023-09-07T16:06:50+02:00
+lastmod: 2023-09-07T16:06:50+02:00
 draft: false
-weight: 700
-toc: true
+weight: 111
+toc: false
+sidebar:
+  collapsed: false
 seo:
   title: "" # custom title (optional)
   description: "" # custom description (recommended)
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
-<!--
-**Table of content:**
-
-- [Requirements](#requirements)
-- [Deploy your first application](#deploy-your-first-application)
-  - [Deployment descriptor](#deployment-descriptor) -->
 
 {{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
 - You have a running Oakestra deployment.
@@ -152,7 +150,7 @@ Each call to this endpoint generates a new instance of the service
 - Use `DELETE /api/service/<serviceid>/instance/<instance number>` to delete a specific instance of a service
 - Use `DELETE /api/application/<appid>` to delete all together an application with all the services and instances
 
-### Check if the service (un)deployment succeded
+### Check if the service (un)deployment succeeded
 
 Familiarize yourself with the API and discover for each one of the service the status and the public address.
 
