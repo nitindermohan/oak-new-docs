@@ -71,7 +71,7 @@ On Net Manager v0.4.203 and above configure the `debug` flag accordingly in `/et
 }
 ```
 
-On Net Manager v0.4.203
+On Net Manager v0.4.202 and belor just run it using the `-D` flag
 
 ## How to access Root Orchestrator DB?
 
