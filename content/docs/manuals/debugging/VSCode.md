@@ -128,7 +128,7 @@ Similarly as the NodeEngine, here a sample [launch.json](https://code.visualstud
             "program": "${workspaceRoot}/node-net-manager/NetManager.go",
             "console": "integratedTerminal",
             "asRoot": true,
-            "args": ["-D", "true"],
+            "args": [],
             "env": {
                 "PATH": "${env:PATH}:/usr/local/go/bin" 
             }
