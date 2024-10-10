@@ -11,27 +11,6 @@ seo:
   noindex: false # false (default) or true
 ---
 
-## How do I activate Debug Mode in NetManager? 
-
-In NetManager v0.4.302 or above add the debug `true` flag in your `netcfg.json` file as follows:
-
-`/etc/netmanager/netcfg.json`
-```json
-{
-  "NodePublicAddress": "0.0.0.0",
-  "NodePublicPort": "50103",
-  "ClusterUrl": "0.0.0.0",
-  "ClusterMqttPort": "10003",
-  "Debug": true
-}
-```
-
-> For NetManager **v0.4.301 and previous releases**, just start the NetManager using the `-D` flag.
-> E.g., `NetManager -p 6000 -D`
-
-## Where do I find Worker NetManager logs? 
-
-From `v0.4.302` NetManager logs are available in `/var/log/oakestra/netmanager.log`
 
 ## How do I access the network namespace of a container in my worker node?
 

@@ -57,21 +57,27 @@ On Net Manager v0.4.203 and above you can access the logs at
 /var/log/oakestra/netmanager.log
 ```
 
-## How to run the Worker Network manager in Debug mode?
+## How do I activate Debug Mode in NetManager? 
 
-On Net Manager v0.4.203 and above configure the `debug` flag accordingly in `/etc/netmanager/netcfg.json`. E.g.:
+In NetManager v0.4.302 or above add the debug `true` flag in your `netcfg.json` file as follows:
 
-```
+`/etc/netmanager/netcfg.json`
+```json
 {
-  "NodePublicAddress": "131.159.24.51",
+  "NodePublicAddress": "0.0.0.0",
   "NodePublicPort": "50103",
-  "ClusterUrl": "131.159.24.51",
+  "ClusterUrl": "0.0.0.0",
   "ClusterMqttPort": "10003",
   "Debug": true
 }
 ```
 
-On Net Manager v0.4.202 and belor just run it using the `-D` flag
+> For NetManager **v0.4.301 and previous releases**, just start the NetManager using the `-D` flag.
+> E.g., `NetManager -p 6000 -D`
+
+## Where do I find Worker NetManager logs? 
+
+From `v0.4.302` NetManager logs are available in `/var/log/oakestra/netmanager.log`
 
 ## How to access Root Orchestrator DB?
 
