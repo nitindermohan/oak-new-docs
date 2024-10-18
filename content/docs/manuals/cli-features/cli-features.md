@@ -10,3 +10,5 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
+
+{{< include-html "/static/alex_cli_docs_test/index.html" >}}

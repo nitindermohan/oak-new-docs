@@ -4,7 +4,7 @@
     <title>Blog on Oakestra</title>
     <link>http://localhost:1313/blog/</link>
     <description>Recent content in Blog on Oakestra</description>
-    <generator>Hugo</generator>
+    <generator>Hugo 0.125.1</generator>
     <language>en</language>
     <copyright>Copyright (c) 2020-2024 Hyas</copyright>
     <lastBuildDate>Thu, 07 Sep 2023 16:27:22 +0200</lastBuildDate>

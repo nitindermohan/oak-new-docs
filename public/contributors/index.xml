@@ -4,7 +4,7 @@
     <title>Contributors on Oakestra</title>
     <link>http://localhost:1313/contributors/</link>
     <description>Recent content in Contributors on Oakestra</description>
-    <generator>Hugo</generator>
+    <generator>Hugo 0.125.1</generator>
     <language>en</language>
     <copyright>Copyright (c) 2020-2024 Hyas</copyright>
     <atom:link href="http://localhost:1313/contributors/index.xml" rel="self" type="application/rss+xml" />
