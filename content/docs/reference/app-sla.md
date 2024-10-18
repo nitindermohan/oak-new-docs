@@ -16,7 +16,7 @@ seo:
 
 ## Application Deployment SLA
 
-The SLA deplyment descriptor is a JSON file that describes the deployment of an application in the Oakestra platform.
+The SLA deployment descriptor is a JSON file that describes the deployment of an application in the Oakestra platform.
 
 An example SLA of application `X` with two microservices `X1` and `X3` can be as follows.
 

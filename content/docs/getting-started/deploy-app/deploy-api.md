@@ -31,9 +31,9 @@ All we need to do to deploy an application is to create a deployment descriptor 
 
 In order to deploy a container a deployment descriptor must be passed to the deployment command.
 The deployment descriptor contains all the information that Oakestra needs in order to achieve a complete
-deploy in the system.
+deployment in the system.
 
-Oakestra uses the following deployment descriptor format.
+The following is an example of an Oakestra deployment descriptor:
 
 ```yaml {title="deploy_curl_application.yaml"}
 {
@@ -130,7 +130,7 @@ After you authenticate with the login function, you can try out to deploy the fi
 
 The response contains the Application id and the id for all the application's services. Now the application and the services are registered to the platform. It's time to deploy the service instances!
 
-You can always remove or create a new service for the application using the `/api/services` endpoints
+You can always remove or create a new service for the application using the `/api/services` endpoints.
 
 ### Deploy an instance of a registered service
 
