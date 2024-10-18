@@ -1,0 +1,22 @@
+<!-- Reference: https://docs.asciinema.org/manual/player/options/ -->
+
+<div id='{{ with .Get "key" }}{{ . }}{{ else }}default-key{{ end }}'></div>
+<script src="{{ .Site.BaseURL }}/js/asciinema-player.min.js"></script>
+<script>
+AsciinemaPlayer.create('/casts/{{ with .Get "key" }}{{ . }}{{ else }}default-key{{ end }}.cast', document.getElementById('{{ with .Get "key" }}{{ . }}{{ else }}default-key{{ end }}'), {
+  {{ if .Get "cols" }}cols: "{{ .Get "cols" }}",{{ end }}
+  {{ if .Get "rows" }}rows: "{{ .Get "rows" }}",{{ end }}
+  {{ if .Get "autoPlay" }}autoPlay: "{{ .Get "autoPlay" }}",{{ end }}
+  preload: {{ .Get "preload" | default "false" }},
+  loop: {{ if .Get "loop" }}true{{ else }}false{{ end }},
+  startAt: {{ .Get "startAt" | default "0" }},
+  {{ if .Get "speed" }}speed: "{{ .Get "speed" }}",{{ end }}
+  idleTimeLimit: {{ .Get "idleTimeLimit" | default "2" }},
+  {{ if .Get "theme" }}theme: "{{ .Get "theme" }}",{{ end }}
+  {{ if .Get "fit" }}fit: "{{ .Get "fit" }}",{{ end }}
+  {{ if .Get "terminalFontSize" }}terminalFontSize: "{{ .Get "terminalFontSize" }}",{{ end }}
+  {{ if .Get "terminalFontFamily" }}terminalFontFamily: "{{ .Get "terminalFontFamily" }}",{{ end }}
+  {{ if .Get "terminalLineHeight" }}terminalLineHeight: "{{ .Get "terminalLineHeight" }}",{{ end }}
+  {{ if .Get "poster" }}poster: "npt:{{ .Get "poster" }}",{{ end }}
+});
+</script>
