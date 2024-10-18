@@ -9,7 +9,8 @@
     "dev": "hugo server --disableFastRender --noHTTPCache",
     "format": "prettier **/** -w -c",
     "build": "hugo --minify --gc",
-    "preview": "vite preview --outDir public"
+    "preview": "vite preview --outDir public",
+    "update-oak-cli-docs": "bash ./auxiliary/oak_cli/update-oak-cli-docs.sh"
   },
   "dependencies": {
     "@tabler/icons": "^3.12.0",
