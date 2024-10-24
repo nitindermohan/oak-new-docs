@@ -1,4 +1,0 @@
-.. typer:: oak_cli.main:app:explain
-      :prog: oak explain
-      :width: 70
-      :show-nested:

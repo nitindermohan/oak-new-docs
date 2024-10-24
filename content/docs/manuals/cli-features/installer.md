@@ -11,4 +11,4 @@ seo:
   noindex: false # false (default) or true
 ---
 
-{{< include-html "/static/alex_cli_docs_test/installer.html" >}}
+{{< include-html "/static/automatically_generated_oak_cli_docs/installer.html" >}}
