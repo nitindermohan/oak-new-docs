@@ -269,7 +269,10 @@
       "wrap"
     ],
     "ids": [
+      "-head",
       "1-doc-1-device-one-cluster",
+      "4-download-unzip-and-install-the-network-manager-this-enables-an-overlay-network-across-your-services",
+      "5-start-the-nodeengine",
       "TableOfContents",
       "accessing-the-dashboard",
       "application-deployment-sla",
