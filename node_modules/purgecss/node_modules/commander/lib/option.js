@@ -93,7 +93,7 @@ class Option {
    *   .addOption(new Option('--log', 'write logging information to file'))
    *   .addOption(new Option('--trace', 'log extra details').implies({ log: 'trace.txt' }));
    *
-   * @param {Object} impliedOptionValues
+   * @param {object} impliedOptionValues
    * @return {Option}
    */
   implies(impliedOptionValues) {
@@ -158,7 +158,7 @@ class Option {
   }
 
   /**
-   * @package internal use only
+   * @package
    */
 
   _concatValue(value, previous) {
@@ -180,7 +180,9 @@ class Option {
     this.argChoices = values.slice();
     this.parseArg = (arg, previous) => {
       if (!this.argChoices.includes(arg)) {
-        throw new InvalidArgumentError(`Allowed choices are ${this.argChoices.join(', ')}.`);
+        throw new InvalidArgumentError(
+          `Allowed choices are ${this.argChoices.join(', ')}.`,
+        );
       }
       if (this.variadic) {
         return this._concatValue(arg, previous);
@@ -219,7 +221,7 @@ class Option {
    *
    * @param {string} arg
    * @return {boolean}
-   * @package internal use only
+   * @package
    */
 
   is(arg) {
@@ -232,7 +234,7 @@ class Option {
    * Options are one of boolean, negated, required argument, or optional argument.
    *
    * @return {boolean}
-   * @package internal use only
+   * @package
    */
 
   isBoolean() {
@@ -255,7 +257,7 @@ class DualOptions {
     this.positiveOptions = new Map();
     this.negativeOptions = new Map();
     this.dualOptions = new Set();
-    options.forEach(option => {
+    options.forEach((option) => {
       if (option.negate) {
         this.negativeOptions.set(option.attributeName(), option);
       } else {
@@ -282,7 +284,7 @@ class DualOptions {
 
     // Use the value to deduce if (probably) came from the option.
     const preset = this.negativeOptions.get(optionKey).presetArg;
-    const negativeValue = (preset !== undefined) ? preset : false;
+    const negativeValue = preset !== undefined ? preset : false;
     return option.negate === (negativeValue === value);
   }
 }
@@ -313,7 +315,8 @@ function splitOptionFlags(flags) {
   // Use original very loose parsing to maintain backwards compatibility for now,
   // which allowed for example unintended `-sw, --short-word` [sic].
   const flagParts = flags.split(/[ |,]+/);
-  if (flagParts.length > 1 && !/^[[<]/.test(flagParts[1])) shortFlag = flagParts.shift();
+  if (flagParts.length > 1 && !/^[[<]/.test(flagParts[1]))
+    shortFlag = flagParts.shift();
   longFlag = flagParts.shift();
   // Add support for lone short flag without significantly changing parsing!
   if (!shortFlag && /^-[^-]$/.test(longFlag)) {

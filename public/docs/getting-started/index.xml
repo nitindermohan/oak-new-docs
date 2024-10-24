@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Getting Started on Oakestra</title>
+    <title>Getting Started on My Docs</title>
     <link>http://localhost:1313/docs/getting-started/</link>
-    <description>Recent content in Getting Started on Oakestra</description>
+    <description>Recent content in Getting Started on My Docs</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <copyright>Copyright (c) 2020-2024 Hyas</copyright>
+    <copyright>Copyright (c) 2020-2024 Thulite</copyright>
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/docs/getting-started/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,7 +14,7 @@
       <link>http://localhost:1313/docs/getting-started/deploy-your-first-oakestra-cluster/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/docs/getting-started/deploy-your-first-oakestra-cluster/</guid>
-      <description>Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS.</description>
+      <description>&lt;p&gt;&#xD;&#xA;&#xD;&#xA;&lt;img&#xD;&#xA;  src=&#34;http://localhost:1313/docs/getting-started/highLevelArch_hu13515324087746045157.webp&#34;&#xD;&#xA;  width=&#34;1362&#34;&#xD;&#xA;  height=&#34;684&#34;&#xD;&#xA;  decoding=&#34;async&#34;&#xD;&#xA;  fetchpriority=&#34;auto&#34;&#xD;&#xA;  loading=&#34;lazy&#34;&#xD;&#xA;  alt=&#34;High level architecture picture&#34;id=&#34;h-rh-i-0&#34;&#xD;&#xA;/&gt;&lt;/p&gt;&#xA;&lt;p&gt;Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,8 +1,8 @@
 {
-  "name": "oakestra-documentation",
+  "name": "thulite-project",
   "version": "0.0.0",
   "description": "Doks theme",
-  "author": "Hyas",
+  "author": "Thulite",
   "license": "MIT",
   "scripts": {
     "create": "hugo new",
@@ -12,21 +12,16 @@
     "preview": "vite preview --outDir public"
   },
   "dependencies": {
-    "@docsearch/css": "^3.6.0",
-    "@docsearch/js": "^3.6.0",
-    "@hyas/doks-core": "^1.6.1",
-    "@hyas/images": "^3.2.0",
-    "@hyas/inline-svg": "^1.1.0",
-    "@hyas/seo": "^2.3.0",
-    "@tabler/core": "^1.0.0-beta20",
-    "@tabler/icons": "^3.2.0",
-    "bootstrap-icons": "^1.11.3",
-    "favicon": "^0.0.2",
-    "gethyas": "^2.4.2"
+    "@thulite/doks-core": "^1.8.0",
+    "@thulite/images": "^3.3.0",
+    "@thulite/inline-svg": "^1.1.0",
+    "@thulite/seo": "^2.4.1",
+    "@tabler/icons": "^3.12.0",
+    "thulite": "^2.5.0"
   },
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "vite": "^5.2.10"
+    "prettier": "^3.3.3",
+    "vite": "^5.4.2"
   },
   "engines": {
     "node": ">=20.11.0"
