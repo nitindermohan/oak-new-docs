@@ -37,7 +37,7 @@ Worker Node:
 {{< /callout >}}
 
 
-### Setup Your Root Cluster
+### Setup Your First Cluster
 
 Install your first **Root** and **Cluster Orchestrator** using:
 
