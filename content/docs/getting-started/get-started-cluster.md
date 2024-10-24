@@ -1,5 +1,5 @@
 ---
-title: "Deploy your first Oakestra Cluster"
+title: "Create your first Oakestra Cluster"
 summary: ""
 draft: false
 weight: 101
