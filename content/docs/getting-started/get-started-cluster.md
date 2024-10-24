@@ -11,183 +11,180 @@ seo:
   noindex: false # false (default) or true
 ---
 
-![High level architecture picture](highLevelArch.png)
+![High level architecture picture](arch.png)
 
 Oakestra lets you deploy your workload on devices of any size. From a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.
 
 * The **Root Orchestrator** manages different clusters of resources. The root only sees aggregated cluster resources.
 * The **Cluster orchestrator** manages your worker nodes. This component collects the real-time resources and schedules your workloads to the perfect matching device.
-* A **Worker** is any device where a component called NodeEngine is installed. Each node can support multiple execution environments such as Containers (containerd runtime), MicroVM (containerd runtime), and Unikernels (mirageOS).
+* A **Worker** executes your workloads. Each node can support multiple execution environments such as Containers (containerd runtime), MicroVM (containerd runtime), and Unikernels (mirageOS).
 
 {{< callout context="note" title="Did you know?" icon="outline/rocket">}} Since the stable Accordion release, Oakestra supports both containers and unikernel virtualization targets. {{< /callout >}}
 
-## Create your first Oakestra cluster
 
-Let's start simple with a single node deployment, where all the components are deployed on the same device.
+{{< callout context="caution" title="Minimum System Requirements" icon="outline/alert-triangle">}}
+Root and Cluster orchestrator (combined):
+- Docker + Docker Compose v2
+- 5GB of Disk
+- 1GB of RAM
+- ARM64 or AMD64 architecture
 
-{{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
-- Linux (Workers only)
-- Docker + Docker compose (Orchestrators only)
-- Cluster Orchestrator and Root Orchestrator machines must be mutually reachable.
+Worker Node:
+- Linux based distro with iptables compatbiliety 
+- 50MB of space
+- 100MB RAM
+- ARM64 or AMD64 architecture
 {{< /callout >}}
 
-### 1-DOC (1 Device, One Cluster)
 
-In this example, we will use a single device to deploy all the components. This is not recommended for production environments, but it is pretty cool for home environments and development.
+### Setup Your Root Cluster
 
-![Deployment example with a single device](SingleNodeExample.png)
-
-**0)** First, let's export the required environment variables
+Install your first **Root** and **Cluster Orchestrator** using:
 
 ```bash
-## Choose a unique name for your cluster
-export CLUSTER_NAME=My_Awesome_Cluster
-## Come up with a name for the current location
-export CLUSTER_LOCATION=My_Awesome_Apartment
-## Tell the NetManager where to find the system manager
-export SYSTEM_MANAGER_URL=<IP of device>
+curl -sfL oakestra.io/getstarted.sh | sh - 
 ```
 
 {{< callout context="note" title="Note" icon="outline/info-circle" >}}
-You can obtain the public IPv4 address of your device with
+Run this export before the previous command to deploy the Development version of Oakestra
 
 ```bash
-curl -4 https://ifconfig.co
+export OAKESTRA_BRANCH=develop
 ```
 
 {{< /callout >}}
 
-**1)** Clone the repository and move into it using:
+
+Install your **Worker Node** components on every Linux machine you want to use as worker running:
 
 ```bash
-git clone https://github.com/oakestra/oakestra.git && cd oakestra
+curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh | sh -  
 ```
 
-**2)** Run a local 1-DOC cluster
+Then, startup each **Worker Node** using the following command:
 
 ```bash
-sudo -E docker-compose -f run-a-cluster/1-DOC.yaml up
+sudo NodeEngine -a <IP address of your cluster orchestrator> -d
+```
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+the `-d` flag runs the NodeEngine in background (detatched mode)
+{{< /callout >}}
+
+Check if your worker is running and it's correctly registered to your cluster:
+```bash
+sudo NodeEngine status
 ```
 
+If everything is showing up green 🟢... Congratulations, your cluster is set up! 🎉
 
-**3)** In another terminal download, untar and install the node engine package
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+You can check the NodeEngine logs using 
 
 ```bash
-wget -c https://github.com/oakestra/oakestra/releases/download/v0.4.202/NodeEngine_$(dpkg --print-architecture).tar.gz && tar -xzf NodeEngine_$(dpkg --print-architecture).tar.gz && chmod +x install.sh && mv NodeEngine NodeEngine_$(dpkg --print-architecture) && ./install.sh $(dpkg --print-architecture)
+sudo NodeEngine logs
 ```
+{{< /callout >}}
 
-**4)** Download, unzip and install the network manager; this enables an overlay network across your services
+
+{{< callout context="caution" title="Network Configuration" icon="outline/alert-triangle">}}
+If you run into a restricted network (e.g., on a cloud VM) you need to configure the firewall rules and the NetManager component accordingly. Please refer to: [NetworkConfiguration](#advanced-network-configuration)  
+{{< /callout >}}
+
+### Add a New Cluster to your Infrastructure.
+
+If you want to create new Clusters to attatch to you Oakestra Root, on each Cluster Orchestrator machine you can run:
 
 ```bash
-wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.202/NetManager_$(dpkg --print-architecture).tar.gz && tar -xzf NetManager_$(dpkg --print-architecture).tar.gz && chmod +x install.sh && ./install.sh $(dpkg --print-architecture)
+curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/StartOakestraCluster.sh | sh -
 ```
-<!-- ( please replace < arch > with your device architecture: **arm-7** or **amd64** ) -->
 
-4.1) Edit `/etc/netmanager/netcfg.json` as follows:
+This will start a new **Cluster Orchestrator** component. 
+A script will ask you for your 
+ - **Cluster name** : A name of your choice for this cluster. 
+ - **Location** : Geographical coordinates and radius of competence in meters, e.g.:`48.1374,11.5755,1000`
+ - **IP address of the Root Orchestrator**
+
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+All these variables can be set before startup exporting them:
+```bash
+export CLUSTER_LOCATION=<latitude>,<longitude>,<radius>
+export CLUSTER_NAME=my_awesome_cluster
+export SYSTEM_MANAGER_URL=<url or ip>
+```
+{{< /callout >}}
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+Run this export before the cluster startup to deploy the Development version of the Cluster Orchestrator
 
 ```bash
-{
-  "NodePublicAddress": "<IP ADDRESS OF THIS DEVICE>",
-  "NodePublicPort": "<PORT REACHABLE FROM OUTSIDE, use 50103 as default>",
-  "ClusterUrl": "0.0.0.0",
-  "ClusterMqttPort": "10003"
-}
+export OAKESTRA_BRANCH=develop
 ```
-4.2) Start the NetManager on port 6000
+
+{{< /callout >}}
+
+
+You can attatch new worker nodes to this cluster using the same procedure shown in [Setup Your First Cluster](#setup-your-first-cluster)
+
+### Shutdown the Components
+
+To stop your **Root & Cluster** orchestrator components run:
 
 ```bash
-sudo NetManager -p 6000 &
+docker compose -f /u/home/bartolom/oakestra/1-DOC.yaml down
 ```
 
-**5)** Start the NodeEngine
+To stop each one of the additional clusters you configured, run:
 
 ```bash
-sudo NodeEngine -n 6000 -p 10100
+docker compose -f /u/home/bartolom/oakestra/cluster-orchestrator.yml down
 ```
-( you can use `NodeEngine -h` for further details )
 
-
-### M-DOC (M Devices, One Cluster)
-
-Now, let's separate the Oakestra components over multiple devices and create a more distributed cluster.
-
-The M-DOC deployment enables you to deploy One cluster with multiple worker nodes. The main difference between this deployment and 1-DOC is that the worker nodes might be external here, and there can be multiple of them.
-
-![](1ClusterExample.png)
-
-The deployment of this kind of cluster is similar to 1-DOC. We first need to start the root and cluster orchestrator. Afterward, we can attach the worker nodes.
-
-**1)** On the node you wish to use as a cluster and root orchestrator, execute steps **1-DOC.1** and **1-DOC.2**
-
-**2)** Now, we need to prepare all the worker nodes. On each worker node, execute the following:
-
-2.1) Download and unpack both the NodeEngine
+To stop a worker node use:
 
 ```bash
-wget -c https://github.com/oakestra/oakestra/releases/download/v0.4.202/NodeEngine_$(dpkg --print-architecture).tar.gz && tar -xzf NodeEngine_$(dpkg --print-architecture).tar.gz && chmod +x install.sh && mv NodeEngine NodeEngine_$(dpkg --print-architecture) && ./install.sh $(dpkg --print-architecture)
+sudo NodeEngine stop
 ```
 
-and the NetManager
+### Advanced Network Configuration
 
+If you run into a restricted network (e.g., on a cloud VM) you need to configure the firewall rules accordingly
+
+Root: 
+  - External APIs: port 10000
+  - Cluster APIs: ports 10099,10000
+
+Cluster: 
+  - Worker's Broker: port 10003
+  - Worker's APIs: port 10100
+
+Worker: 
+  - P2P tunnel towards other workers: port 50103 
+
+
+Additionally, the NetManager component, responsible for the worker nodes P2P tunnel, must be configured. Therefore follow these steps on every **Worker Node**
+
+1) Shutdown your worker node components using 
 ```bash
-wget -c https://github.com/oakestra/oakestra-net/releases/download/v0.4.202/NetManager_$(dpkg --print-architecture).tar.gz && tar -xzf NetManager_$(dpkg --print-architecture).tar.gz && chmod +x install.sh && ./install.sh $(dpkg --print-architecture)
-```
+sudo NodeEngine stop
+````
 
-2.2) Edit `/etc/netmanager/netcfg.json` accordingly:
+2) Edit the NetManager configuration file `/etc/netmanager/netcfg.json` as follows:
 
 ```json
 {
-  "NodePublicAddress": "<IP ADDRESS OF THIS DEVICE>",
-  "NodePublicPort": "<PORT REACHABLE FROM OUTSIDE, internal port is always 50103>",
-  "ClusterUrl": "<IP ADDRESS OF THE CLUSTER ORCHESTRATOR>",
-  "ClusterMqttPort": "10003"
+  "NodePublicAddress": "<IP ADDRESS OF THIS DEVICE, must be reachable from the other workers>",
+  "NodePublicPort": "<TUNNEL PORT, The PORT must be reachable from the other workers, use 50103 as default>",
+  "ClusterUrl": "<IP Address of cluster orchestrator or 0.0.0.0 if deployed on the same machine>",
+  "ClusterMqttPort": "10003",
+  "Debug": False
 }
 ```
-2.3) Run the NetManager and the NodeEngine components:
 
+3) Restart the NodeEngine
 ```bash
-sudo NetManager -p 6000 &
-sudo NodeEngine -n 6000 -p 10100 -a <IP ADDRESS OF THE CLUSTER ORCHESTRATOR>
-```
+sudo NodeEngine -a <IP address of your cluster orchestrator> -d
+````
 
-### MDNC (M Devices, N Clusters)
 
-This represents the most versatile deployment. You can split your resources into multiple clusters within different locations and with different resources. In this deployment, we need to deploy the root and the cluster orchestrator on different nodes. Each independent cluster orchestrator represents a cluster of resources. The worker nodes attached to each cluster are aggregated and seen as a unique big resource from the point of view of the Root. This deployment isolates the resources from the root perspective and delegates the responsibility to the cluster orchestrator.
-![two-cluster](2ClusterExample.png)
 
-**1)** In this first step, we need to deploy the root orchestrator component on a node. To do this, you need to clone the repository on the desired node, move to the root orchestrator folder, and execute the startup command.
 
-```bash
-git clone https://github.com/oakestra/oakestra.git && cd oakestra
-
-sudo -E docker-compose -f root_orchestrator/docker-compose-<arch>.yml up
-```
-( please replace < arch > with your device architecture: **arm** or **amd64** )
-
-**2)** For each node that needs to host a cluster orchestrator, you need to:
-
-2.1) Export the ENV variables needed to connect to the cluster orchestrator:
-
-```bash
-export SYSTEM_MANAGER_URL=<IP ADDRESS OF THE NODE HOSTING THE ROOT ORCHESTRATOR>
-export CLUSTER_NAME=<choose a name for your cluster>
-export CLUSTER_LOCATION=<choose a name for the cluster's location>
-```
-
-2.2) Clone the repo and run the cluster orchestrator:
-
-```bash
-git clone https://github.com/oakestra/oakestra.git && cd oakestra
-
-sudo -E docker-compose -f cluster_orchestrator/docker-compose-<arch>.yml up
-```
-( please replace < arch > with your device architecture: **arm** or **amd64** )
-
-**3)** Start and configure each worker as described in M-DOC.2
-
-### Hybrid Deployments
-
-You should have got the gist now, but if you want, you can build the infrastructure by composing the components like LEGO blocks.
-Do you want to give your Cluster Orchestrator computational capabilities for the deployment? Deploy an instance of NodeEngine + Netmanager components, and you're done. You don't want to use a separate node for the Root Orchestrator? Simply deploy it all together with a cluster orchestrator.
-
-With Oakestra you can build your infrastructure as you like, and you can always scale it up or down as you need!
