@@ -1,13 +1,13 @@
 # Hugo
-title = "My Docs"
-description = "Congrats on setting up a new Doks project!"
+title = "Oakestra"
+description = "Orchestrate your Edge!"
 images = ["cover.png"]
 
 # mainSections
 mainSections = ["docs"]
 
-[social]
-  twitter = "getdoks"
+#[social]
+#  twitter = "getdoks"
 
 # Doks (@thulite/doks-core)
 [doks]
@@ -20,8 +20,8 @@ mainSections = ["docs"]
   containerBreakpoint = "lg" # "", "sm", "md", "lg" (default), "xl", "xxl", or "fluid"
 
   ## Button
-  navBarButton = false # false (default) or true
-  navBarButtonUrl = "/docs/prologue/introduction/"
+  navBarButton = true # false (default) or true
+  navBarButtonUrl = "/docs/getting-started/deploy-your-first-oakestra-cluster/"
   navBarButtonText = "Get started"
 
   # FlexSearch
@@ -37,11 +37,11 @@ mainSections = ["docs"]
   searchLimit = 99 # 0 (no limit, default) or natural number
 
   # Global alert
-  alert = false # false (default) or true
+  alert = true # false (default) or true
   alertDismissable = true # true (default) or false
 
   # Bootstrap
-  bootstrapJavascript = false # false (default) or true
+  bootstrapJavascript = true # false (default) or true
 
   # Nav
   sectionNav = ["docs"] # ["docs"] (default) or list of sections (e.g. ["docs", "guides"])
@@ -59,11 +59,11 @@ mainSections = ["docs"]
   docsVersion = "1.0"
 
   # UX
-  headerBar = false # true (default) or false
+  headerBar = true # true (default) or false
   backgroundDots = true # true (default) or false
 
   # Homepage
-  sectionFooter = false # false (default) or true
+  sectionFooter = true # false (default) or true
 
   # Blog
   relatedPosts = false # false (default) or true
@@ -74,7 +74,7 @@ mainSections = ["docs"]
   editPage = false # false (default) or true
   lastMod = false # false (default) or true
   repoHost = "GitHub" # GitHub (default), Gitea, GitLab, Bitbucket, or BitbucketServer
-  docsRepo = "https://github.com/h-enk/doks"
+  docsRepo = "https://github.com/oakestra"
   docsRepoBranch = "main" # main (default), master, or <branch name>
   docsRepoSubPath = "" # "" (none, default) or <sub path>
 
