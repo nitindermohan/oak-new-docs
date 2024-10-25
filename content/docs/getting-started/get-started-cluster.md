@@ -17,7 +17,7 @@ Oakestra lets you deploy your workload on devices of any size. From a small Rasp
 
 * The **Root Orchestrator** manages different clusters of resources. The root only sees aggregated cluster resources.
 * The **Cluster orchestrator** manages your worker nodes. This component collects the real-time resources and schedules your workloads to the perfect matching device.
-* A **Worker** executes your workloads. Each node can support multiple execution environments such as Containers (containerd runtime), MicroVM (containerd runtime), and Unikernels (mirageOS).
+* A **Worker** is where your workloads are executed. E.g., your containers. 
 
 {{< callout context="note" title="Did you know?" icon="outline/rocket">}} Since the stable Accordion release, Oakestra supports both containers and unikernel virtualization targets. {{< /callout >}}
 
