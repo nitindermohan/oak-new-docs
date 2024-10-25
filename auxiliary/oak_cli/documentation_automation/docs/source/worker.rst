@@ -1,4 +1,4 @@
-.. typer:: oak_cli.main:app:w
-      :prog: oak w
+.. typer:: oak_cli.main:app:worker
+      :prog: oak worker/w
       :width: 70
       :show-nested:

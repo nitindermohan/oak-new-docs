@@ -1,4 +1,4 @@
-.. typer:: oak_cli.main:app:s
-      :prog: oak s
+.. typer:: oak_cli.main:app:service
+      :prog: oak service/s
       :width: 70
       :show-nested:
