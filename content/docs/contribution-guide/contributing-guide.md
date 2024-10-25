@@ -39,11 +39,14 @@ There are other ways you can contribute without writing a single line of code. H
 1. **Reporting Bugs**  
    Found a bug? Please report it by creating a GitHub issue. Clear and detailed bug reports are invaluable.
 
+   **Links to Pages "How to Create an Issue"**
+
 2. **Suggesting Features**  
    Have a new feature idea? Feature requests are welcome! Please submit them as GitHub issues with details on why it would be useful and any implementation suggestions.
 
 3. **Improving Documentation**  
    Documentation improvements are always appreciated! If you find something unclear or missing, feel free to submit a pull request.
+   **Links to Pages "How to contribute to documentation"**
 
 4. **Contributing Code**  
    Contributions to the codebase are welcomed. Check for issues labeled as [“help wanted”](https://github.com/oakestra/oakestra/labels/help%20wanted) for beginner-friendly options.
