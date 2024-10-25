@@ -20,6 +20,7 @@ docker exec oak-cli-docs-automator bash -c "
     oak v &&
     oak c l --purpose everything &&
     sphinx-build -M html docs/source docs/build &&
+    . reformat_html.sh &&
     cd docs/build/html &&
     tar -czvf '/tmp/${ARCHIVE_NAME}' *.html
 "
