@@ -11,8 +11,14 @@ ARCHIVE_NAME="oak_docs_html_files.tar.gz"
 cd "${AUTO_DOC_PATH}"
 docker build -t oak-cli-documentation-automator .
 docker run -d --name oak-cli-docs-automator oak-cli-documentation-automator sleep infinity
+# NOTE:
+# It seems to be the case that it is necessary to set the local-machine-purpose to everything to unlock all commands.
+# Only then the docs-generator can generate the API for every command.
+# Might need rework.
 docker exec oak-cli-docs-automator bash -c "
-    pip install oak-cli &&
+    pip install --upgrade oak-cli &&
+    oak v &&
+    oak c l --purpose everything &&
     sphinx-build -M html docs/source docs/build &&
     cd docs/build/html &&
     tar -czvf '/tmp/${ARCHIVE_NAME}' *.html
