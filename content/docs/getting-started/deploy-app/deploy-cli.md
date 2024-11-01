@@ -58,11 +58,7 @@ To configure the set of shown commands run `oak configuration local-machine-purp
 The CLI will ask you a set of questions about your intended use and your target environment.
 Based on your Yes/No responses it will provide you with the matching set of commands.
 
-aaaaaa
-
-{{< asciinema key="demo" >}}
-
-bbbbbb
+{{< asciinema key="cli_configuration_demo" poster="0:16" >}}
 
 {{< callout context="note" title="FYI - Using Command Shortcuts" icon="outline/bolt" >}}
 Most `oak` commands have shorter aliases that enable shorter commands and easier combinations, thus faster workflows.
