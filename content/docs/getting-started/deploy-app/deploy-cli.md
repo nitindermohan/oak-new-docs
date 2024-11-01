@@ -143,9 +143,14 @@ Click on your desired Service ID value in the Service ID column and copy it via 
 
 To deploy a new instance run `oak service deploy <YOUR_SERVICE_ID>`.
 
-{{< asciinema key="cli_minimal_service_demo" poster="0:10" >}}
+{{< asciinema key="cli_minimal_service_demo" poster="0:13" >}}
 <br>
 You can undeploy all instances of a service or only specific ones by providing the appropriate command option  `oak service undeploy --service-id <YOUR_SERVICE_ID> / --instance-id <INSTANCE_ID>`.
+
+{{< callout context="note" title="Combine Create & Deploy" icon="outline/bolt" >}}
+You can create an application and automatically deploy its services by providing the `-d` *(for deploy)* flag to the `oak app create (-d)` command. 
+
+{{< /callout >}}
 
 {{< callout context="note" title="Advanced Observation Features " icon="outline/eye" >}}
 
