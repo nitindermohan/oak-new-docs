@@ -14,7 +14,7 @@
       <link>http://localhost:1313/docs/reference/application-sla-description/</link>
       <pubDate>Thu, 07 Sep 2023 16:13:18 +0200</pubDate>
       <guid>http://localhost:1313/docs/reference/application-sla-description/</guid>
-      <description>Application Deployment SLA The SLA deplyment descriptor is a JSON file that describes the deployment of an application in the Oakestra platform.</description>
+      <description>Application Deployment SLA The SLA deployment descriptor is a JSON file that describes the deployment of an application in the Oakestra platform.</description>
     </item>
   </channel>
 </rss>
