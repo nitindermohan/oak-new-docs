@@ -42,7 +42,7 @@
       <link>http://localhost:1313/docs/getting-started/deploy-app/with-the-cli/</link>
       <pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate>
       <guid>http://localhost:1313/docs/getting-started/deploy-app/with-the-cli/</guid>
-      <description>In addition to using the API directly or clicking through the dashboard UI, you can also interact with Oakestra using the Oakestra Command Line Interface.</description>
+      <description>Besides using the API directly or clicking through the dashboard UI, you can also interact with Oakestra using the Oakestra Command Line Interface.</description>
     </item>
     <item>
       <title>High Level Architecture</title>
