@@ -9,9 +9,9 @@ hugo.darwin
 hugo.linux
 
 # Temporary lock file while building
-/.hugo_build.lock
+.hugo_build.lock
 
 # IDE Files
-.vscode/
+.vscode
 
 node_modules/
