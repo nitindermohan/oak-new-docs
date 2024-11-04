@@ -36,3 +36,14 @@ In Oakestra, plugins provide a way to swap out components, enhancing the system�
 ### Extensions Example
 
 Extensions in Oakestra can add substantial new capabilities to the system. One example could be the introduction of federated learning on edge computing devices. Federated learning enables decentralized training across multiple devices, enhancing privacy by not requiring raw data transfer. Implementing this as an extension involves adding new components to the Orchestrator control plane for the coordination and aggregation of distributed training processes. Users can activate or deactivate this extension based on their needs, making it a flexible addition that adapts Oakestra to specialized use cases.
+
+## Addon Lifecycle Management
+The lifecycle of an addon—from creation to deployment—is managed by the **Addons Engine** and the **Addons Marketplace**. This design allows for **hot-swapping**, where new features can be added or swapped without disrupting core services.
+
+## Addon System Design
+
+Addons in Oakestra are modular components that extend the platform’s core functionality while keeping the foundational architecture lightweight. This design ensures that Oakestra remains efficient, avoiding unnecessary bloat in edge computing environments.
+
+
+<img src="./addons-engine.png" alt="High level architecture of addons Engine" />
+<img src="./addons-marketplace.png" alt="High level architecture of marketplace" />
