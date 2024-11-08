@@ -1,0 +1,54 @@
+{
+    "sla_version" : "v2.0",
+    "customerID" : "Admin",
+    "applications" : [
+      {
+        "applicationID" : "",
+        "application_name" : "clientsrvr",
+        "application_namespace" : "test",
+        "application_desc" : "Simple demo with curl client and Nginx server",
+        "microservices" : [
+          {
+            "microserviceID": "",
+            "microservice_name": "curlv4",
+            "microservice_namespace": "test",
+            "virtualization": "container",
+            "cmd": ["sh", "-c", "curl 10.30.55.55 ; sleep 5"],
+            "memory": 100,
+            "vcpus": 1,
+            "vgpus": 0,
+            "vtpus": 0,
+            "bandwidth_in": 0,
+            "bandwidth_out": 0,
+            "storage": 0,
+            "code": "docker.io/curlimages/curl:7.82.0",
+            "state": "",
+            "port": "",
+            "added_files": []
+          },
+          {
+            "microserviceID": "",
+            "microservice_name": "nginx",
+            "microservice_namespace": "test",
+            "virtualization": "container",
+            "cmd": [],
+            "memory": 100,
+            "vcpus": 1,
+            "vgpus": 0,
+            "vtpus": 0,
+            "bandwidth_in": 0,
+            "bandwidth_out": 0,
+            "storage": 0,
+            "code": "docker.io/library/nginx:latest",
+            "state": "",
+            "port": "",
+            "addresses": {
+              "rr_ip": "10.30.55.55",
+              "rr_ip_v6": "fdff:2000::55:55"
+            },
+            "added_files": []
+          }
+        ]
+      }
+    ]
+  }
