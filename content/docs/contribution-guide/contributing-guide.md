@@ -32,61 +32,21 @@ Oakestra is committed to a respectful and inclusive environment. By contributing
 
 ## How You Can Contribute
 
-If you are eager to start contributing code right away, we have a list of [good first issues](https://github.com/oakestra/oakestra/labels/good%20first%20issue) that contain bugs which have a relatively limited scope. As you gain more experience and demonstrate a commitment to evolving React Native, you may be granted issue management permissions in the repository.
+If you are eager to start contributing code right away, we have a list of [good first issues](https://github.com/oakestra/oakestra/labels/good%20first%20issue) that contain bugs which have a relatively limited scope. Alternatively, you can ceck for issues labeled as [“help wanted”](https://github.com/oakestra/oakestra/labels/help%20wanted) for beginner-friendly feature extensions. As you gain more experience and demonstrate a commitment to evolving Oakestra, you may be granted issue management permissions in the repository.
 
 There are other ways you can contribute without writing a single line of code. Here are a few things you can do to help out:
 
 1. **Reporting Bugs**  
    Found a bug? Please report it by creating a GitHub issue. Clear and detailed bug reports are invaluable.
 
-   **Links to Pages "How to Create an Issue"**
+   **Links to [link](https://github.com/oakestra/oakestra/issues/new/choose)**
 
 2. **Suggesting Features**  
    Have a new feature idea? Feature requests are welcome! Please submit them as GitHub issues with details on why it would be useful and any implementation suggestions.
 
 3. **Improving Documentation**  
-   Documentation improvements are always appreciated! If you find something unclear or missing, feel free to submit a pull request.
+   Documentation improvements are always appreciated! If you find something unclear or missing, feel free to submit an [issue](https://github.com/oakestra/documentation/issues).
    **Links to Pages "How to contribute to documentation"**
-
-4. **Contributing Code**  
-   Contributions to the codebase are welcomed. Check for issues labeled as [“help wanted”](https://github.com/oakestra/oakestra/labels/help%20wanted) for beginner-friendly options.
-
-## Getting Started
-
-To start contributing code, follow these steps:
-
-1. **Fork the Repository**  
-   Begin by forking the [Oakestra repository](https://github.com/oakestra) on GitHub.
-
-2. **Clone Your Fork**  
-   Clone the forked repository to your machine.
-   ```bash
-   git clone https://github.com/your-username/oakestra.git
-   cd oakestra
-   ```
-
-3. **Create a Branch**  
-   For each contribution, create a new branch.
-   ```bash
-   git checkout -b your-branch-name
-   ```
-
-4. **Make Your Changes**  
-   Follow our coding guidelines to ensure consistency.
-
-5. **Test Your Changes**  
-   Run all tests to ensure your changes are stable.
-
-6. **Commit and Push**  
-   Write clear and descriptive commit messages, then push your branch to your fork.
-   ```bash
-   git add .
-   git commit -m "Descriptive message about your change"
-   git push origin your-branch-name
-   ```
-
-7. **Create a Pull Request**  
-   Open a pull request to the `main` branch in the Oakestra repository. Link any relevant issues and provide details about your changes.
 
 ## Reviewing and Merging Pull Requests
 
