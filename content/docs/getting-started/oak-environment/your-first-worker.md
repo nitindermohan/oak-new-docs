@@ -24,17 +24,16 @@ curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/In
 ```
 
 {{< callout context="caution" title="Worker Node Requirements" icon="outline/alert-triangle">}}
-- Linux-based distro with `iptables` compatibility 
-- 50MB of space
-- 100MB RAM
-- ARM64 or AMD64 architecture
+Check out the system requirements for the **Worker Node** in the [System Requirements](../high-level-setup-overview) section.
 {{< /callout >}}
 
 Each worker node must be attached to a running **Cluster Orchestrator**. To do so, you need to know the IP address of the Cluster Orchestrator you want to connect to. 
 
 {{< callout context="note" title="Note" icon="outline/info-circle" >}} You can obtain the public IPv4 address of your device with
 
+```bash
 curl -4 https://ifconfig.co
+```
 {{< /callout >}}
 
 Then, startup each **Worker Node** using the following command:
@@ -54,6 +53,8 @@ sudo NodeEngine status
 
 If everything is showing up green 🟢... Congratulations, your worker node is set up! 🎉
 
+[SCREENSHOT HERE]
+
 {{< callout context="note" title="Note" icon="outline/info-circle" >}}
 You can check the NodeEngine logs using 
 
@@ -63,7 +64,7 @@ sudo NodeEngine logs
 {{< /callout >}}
 
 {{< callout context="caution" title="Network Configuration" icon="outline/alert-triangle">}}
-If you run into a restricted network (e.g., on a cloud VM) you need to configure the firewall rules and the NetManager component accordingly. Please refer to: [NetworkConfiguration](#advanced-network-configuration)  
+If you run into a restricted network (e.g., on a cloud VM) you need to configure the firewall rules and the NetManager component accordingly. Please refer to: [Firewall Setup](../firewall-configuration)  
 {{< /callout >}}
 
 ### Shutdown a Worker

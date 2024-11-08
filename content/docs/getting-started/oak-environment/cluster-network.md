@@ -11,7 +11,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-**If** you're running Okaestra on a restricted network, **e.g., on cloud VMs**, you need to configure the firewall rules accordingly. 
+**If** you're running Oakestra on a restricted network, **e.g., on cloud VMs**, you need to configure the firewall rules accordingly. 
 
 ### Firewall Configuration
 
