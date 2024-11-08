@@ -1,14 +1,14 @@
 body {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    /* max-width: 800px; */
+    /* margin: 0 auto; */
+    /* padding: 20px; */
+    /* font-family: Arial, sans-serif; */
+    /* line-height: 1.6; */
 }
 
-h1, h2, h3 {
+/* h1, h2, h3 {
     margin-top: 30px;
-}
+} */
 
 [data-bs-theme="light"] {
     background-color: #ffffff;
@@ -18,9 +18,4 @@ h1, h2, h3 {
 [data-bs-theme="dark"] {
     background-color: #1a1a1a;
     color: #ffffff;
-}
-
-p {
-    color: red;
-    font-size: 2em;
 }
