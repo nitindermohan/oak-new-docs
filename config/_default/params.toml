@@ -9,6 +9,9 @@ mainSections = ["docs"]
 # [social]
 #   twitter = "getdoks"
 
+[options]
+  js = ["js/alex.js"]
+
 # Doks (@hyas/doks-core)
 [doks]
   # Color mode

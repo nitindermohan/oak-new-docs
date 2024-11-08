@@ -17,12 +17,12 @@ docker run -d --name oak-cli-docs-automator oak-cli-documentation-automator slee
 # Might need rework.
 docker exec oak-cli-docs-automator bash -c "
     pip install --upgrade oak-cli &&
-    oak v &&
+    oak v --no-show-logo &&
     oak c l --purpose everything &&
     sphinx-build -M html docs/source docs/build &&
     . reformat_html.sh &&
     cd docs/build/html &&
-    tar -czvf '/tmp/${ARCHIVE_NAME}' *.html
+    tar -czvf '/tmp/${ARCHIVE_NAME}' .
 "
 
 cd "../../../static/${AUTO_DOCS_DIR_NAME}"

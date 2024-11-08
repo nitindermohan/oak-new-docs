@@ -21,7 +21,10 @@ extensions = [
     "sphinxcontrib.typer",
 ]
 
-templates_path = ["_templates"]
+# templates_path = ["_templates"]
+html_static_path = ["_static"]
+# html_css_files = ["pygments.css", "basic.css", "minimal_theme/static/custom.css"]
+html_css_files = ["pygments.css", "basic.css"]
 exclude_patterns = []
 
 
@@ -47,3 +50,47 @@ html_add_permalinks = False
 html_split_index = False
 html_sidebars = {}
 html_show_copyright = False
+
+
+def setup(app):
+    app.connect("html-page-context", update_static_paths)
+
+
+def update_static_paths(app, pagename, templatename, context, doctree):
+    if "css_files" in context:
+        new_css_files = []
+        for css in context["css_files"]:
+            if hasattr(css, "filename"):
+                # This is a CascadingStyleSheet object
+                css_path = css.filename
+            else:
+                # This is a string
+                css_path = css
+
+            # Remove '_static/' from the beginning if it's there
+            if css_path.startswith("_static/"):
+                css_path = css_path[8:]
+
+            new_path = f"/automatically_generated_oak_cli_docs/_static/{css_path}"
+            new_css_files.append(new_path)
+
+        context["css_files"] = new_css_files
+
+    if "script_files" in context:
+        new_script_files = []
+        for js in context["script_files"]:
+            if hasattr(js, "filename"):
+                # This is a JavaScript object
+                js_path = js.filename
+            else:
+                # This is a string
+                js_path = js
+
+            # Remove '_static/' from the beginning if it's there
+            if js_path.startswith("_static/"):
+                js_path = js_path[8:]
+
+            new_path = f"/automatically_generated_oak_cli_docs/_static/{js_path}"
+            new_script_files.append(new_path)
+
+        context["script_files"] = new_script_files
