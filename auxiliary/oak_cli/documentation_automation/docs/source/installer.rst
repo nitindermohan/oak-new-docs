@@ -2,3 +2,4 @@
       :prog: oak installer/i
       :width: 70
       :show-nested:
+      :theme: dark

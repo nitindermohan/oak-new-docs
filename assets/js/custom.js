@@ -4,11 +4,14 @@
 
 (function() {
     function syncTheme() {
+        console.log("AAA")
         const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+        console.log(currentTheme)
         const iframe = document.getElementById('your-iframe-id');
         if (iframe && iframe.contentWindow) {
             iframe.contentWindow.postMessage({ theme: currentTheme }, '*');
         }
+        console.log("ZZZ")
     }
 
     // Initial sync

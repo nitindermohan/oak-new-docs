@@ -22,9 +22,9 @@ extensions = [
 ]
 
 # templates_path = ["_templates"]
-html_static_path = ["_static"]
+# html_static_path = ["_static"]
 # html_css_files = ["pygments.css", "basic.css", "minimal_theme/static/custom.css"]
-html_css_files = ["pygments.css", "basic.css"]
+# html_css_files = ["pygments.css", "basic.css"]
 exclude_patterns = []
 
 

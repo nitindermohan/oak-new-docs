@@ -2,3 +2,4 @@
       :prog: oak worker/w
       :width: 70
       :show-nested:
+      :theme: dark

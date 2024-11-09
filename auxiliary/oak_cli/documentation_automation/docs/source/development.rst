@@ -2,3 +2,4 @@
       :prog: oak docker/d
       :width: 70
       :show-nested:
+      :theme: dark
