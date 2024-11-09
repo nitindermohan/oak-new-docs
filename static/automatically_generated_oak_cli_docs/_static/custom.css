@@ -1,3 +1,15 @@
+:root {
+    /* --terminal-r1-fill: #c5c8c6; */
+    --terminal-r1-fill: red;
+    --terminal-r2-fill: #c5c8c6;
+    --terminal-r3-fill: #d0b344;
+    --terminal-r4-fill: #868887;
+    --terminal-r5-fill: #68a0b3;
+    --terminal-r6-fill: #8d7b39;
+    --terminal-r7-fill: #68a0b3;
+}
+
+
 body {
     /* max-width: 800px; */
     /* margin: 0 auto; */
@@ -51,10 +63,11 @@ body {
     font-family: arial;
 }
 
-[class^="terminal-"][class$="-r1"] { fill: #c5c8c6; font-weight: bold; }
-[class^="terminal-"][class$="-r2"] { fill: #c5c8c6; }
-[class^="terminal-"][class$="-r3"] { fill: #d0b344; font-weight: bold; }
-[class^="terminal-"][class$="-r4"] { fill: #868887; }
-[class^="terminal-"][class$="-r5"] { fill: #68a0b3; font-weight: bold; }
-[class^="terminal-"][class$="-r6"] { fill: #8d7b39; font-weight: bold; }
-[class^="terminal-"][class$="-r7"] { fill: #68a0b3; font-weight: bold; }
+
+[class^="terminal-"][class$="-r1"] { fill: var(--terminal-r1-fill); font-weight: bold; }
+[class^="terminal-"][class$="-r2"] { fill: var(--terminal-r2-fill); }
+[class^="terminal-"][class$="-r3"] { fill: var(--terminal-r3-fill); font-weight: bold; }
+[class^="terminal-"][class$="-r4"] { fill: var(--terminal-r4-fill); }
+[class^="terminal-"][class$="-r5"] { fill: var(--terminal-r5-fill); font-weight: bold; }
+[class^="terminal-"][class$="-r6"] { fill: var(--terminal-r6-fill); font-weight: bold; }
+[class^="terminal-"][class$="-r7"] { fill: var(--terminal-r7-fill); font-weight: bold; }

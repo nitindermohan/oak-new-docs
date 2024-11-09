@@ -30,4 +30,4 @@
         attributes: true,
         attributeFilter: ['data-bs-theme']
     });
-    })();
+})();
