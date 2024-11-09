@@ -1,28 +1,28 @@
 :root {
-    /* --terminal-r1-fill: #c5c8c6; */
-    --terminal-r1-fill: red;
-    --terminal-r2-fill: #c5c8c6;
-    --terminal-r3-fill: #d0b344;
-    --terminal-r4-fill: #868887;
-    --terminal-r5-fill: #68a0b3;
-    --terminal-r6-fill: #8d7b39;
-    --terminal-r7-fill: #68a0b3;
+    --terminal-r1-fill: #CED9E2;
+    --terminal-r2-fill: #CED9E2;
+    --terminal-r3-fill: #CED9E2;
+    --terminal-r4-fill: #FFE45F;
+    --terminal-r5-fill: #868887;
+    --terminal-r6-fill: #508DC0;
+    --terminal-r7-fill: #78E77F;
+    --terminal-r8-fill: #8482DD;
+    --terminal-r9-fill: #FFBC5F;
 }
 
-
-body {
-    /* max-width: 800px; */
-    /* margin: 0 auto; */
-    /* padding: 20px; */
-    /* font-family: Arial, sans-serif; */
-    /* line-height: 1.6; */
-}
+/* body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+} */
 
 /* h1, h2, h3 {
     margin-top: 30px;
 } */
 
-[data-bs-theme="light"] {
+/* [data-bs-theme="light"] {
     background-color: #ffffff;
     color: #000000;
 }
@@ -30,7 +30,7 @@ body {
 [data-bs-theme="dark"] {
     background-color: #1a1a1a;
     color: #ffffff;
-}
+} */
 
 
 @font-face {
@@ -71,3 +71,5 @@ body {
 [class^="terminal-"][class$="-r5"] { fill: var(--terminal-r5-fill); font-weight: bold; }
 [class^="terminal-"][class$="-r6"] { fill: var(--terminal-r6-fill); font-weight: bold; }
 [class^="terminal-"][class$="-r7"] { fill: var(--terminal-r7-fill); font-weight: bold; }
+[class^="terminal-"][class$="-r8"] { fill: var(--terminal-r8-fill); font-weight: bold; }
+[class^="terminal-"][class$="-r9"] { fill: var(--terminal-r9-fill); font-weight: bold; }

@@ -13,6 +13,6 @@ seo:
 
 TODOREMOVE - This is just a test to show the flexibility of this approach
 
-{{< include-html "/static/automatically_generated_oak_cli_docs/index.html" >}}
+{{< include-sphinx-html "/static/automatically_generated_oak_cli_docs/index.html" >}}
 
 TODOREMOVE - This is just a test to show the flexibility of this approach

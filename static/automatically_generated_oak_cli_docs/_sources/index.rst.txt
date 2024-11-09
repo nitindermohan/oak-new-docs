@@ -1,7 +1,6 @@
 .. typer:: oak_cli.main:app
       :prog: oak
       :width: 70
-      :theme: dark
 
 .. :show-nested:
 .. :make-sections:

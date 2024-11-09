@@ -2,4 +2,3 @@
       :prog: oak application/app/a
       :width: 70
       :show-nested:
-      :theme: dark

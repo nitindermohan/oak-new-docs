@@ -11,4 +11,4 @@ seo:
   noindex: false # false (default) or true
 ---
 
-{{< include-html "/static/automatically_generated_oak_cli_docs/development.html" >}}
+{{< include-sphinx-html "/static/automatically_generated_oak_cli_docs/development.html" >}}

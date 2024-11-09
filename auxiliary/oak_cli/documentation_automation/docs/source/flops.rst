@@ -2,4 +2,3 @@
       :prog: oak addon
       :width: 70
       :show-nested:
-      :theme: dark

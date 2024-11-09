@@ -1,10 +1,21 @@
-body {
-    /* max-width: 800px; */
-    /* margin: 0 auto; */
-    /* padding: 20px; */
-    /* font-family: Arial, sans-serif; */
-    /* line-height: 1.6; */
+:root {
+    --terminal-r1-fill: #c5c8c6;
+    --terminal-r2-fill: #c5c8c6;
+    --terminal-r3-fill: #d0b344;
+    --terminal-r4-fill: #868887;
+    --terminal-r5-fill: #68a0b3;
+    --terminal-r6-fill: #8d7b39;
+    --terminal-r7-fill: #68a0b3;
 }
+
+
+/* body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+} */
 
 /* h1, h2, h3 {
     margin-top: 30px;
@@ -19,3 +30,43 @@ body {
     background-color: #1a1a1a;
     color: #ffffff;
 }
+
+
+@font-face {
+    font-family: "Fira Code";
+    src: local("FiraCode-Regular"),
+            url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Regular.woff2") format("woff2"),
+            url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Regular.woff") format("woff");
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Fira Code";
+    src: local("FiraCode-Bold"),
+            url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Bold.woff2") format("woff2"),
+            url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Bold.woff") format("woff");
+    font-style: bold;
+    font-weight: 700;
+}
+
+[class^="terminal-"][class$="-matrix"] {
+    font-family: Fira Code, monospace;
+    font-size: 20px;
+    line-height: 24.4px;
+    font-variant-east-asian: full-width;
+}
+
+[class^="terminal-"][class$="-title"] {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: arial;
+}
+
+
+[class^="terminal-"][class$="-r1"] { fill: var(--terminal-r1-fill); font-weight: bold; }
+[class^="terminal-"][class$="-r2"] { fill: var(--terminal-r2-fill); }
+[class^="terminal-"][class$="-r3"] { fill: var(--terminal-r3-fill); font-weight: bold; }
+[class^="terminal-"][class$="-r4"] { fill: var(--terminal-r4-fill); }
+[class^="terminal-"][class$="-r5"] { fill: var(--terminal-r5-fill); font-weight: bold; }
+[class^="terminal-"][class$="-r6"] { fill: var(--terminal-r6-fill); font-weight: bold; }
+[class^="terminal-"][class$="-r7"] { fill: var(--terminal-r7-fill); font-weight: bold; }
