@@ -14,27 +14,28 @@ seo:
 # MQTT
 
 The following image shows how intra-cluster communication takes place. Nodes regularly report to the cluster-service-manager,
-and the cluster-service-manager appropiatly propegates this information. Since the nodes report sensitive information, such
+and the cluster-service-manager appropriately propagates this information. Since the nodes report sensitive information, such
 as IP Addresses, we highly recommend securing the MQTT channels.
 
 ![MQTT Architecture Picture](mqtt.png)
 
 # MQTTS
-MQTTS supports the exchanging of certificates to establish a TLS secured channel. For this the server (MQTT Broker) and every 
+MQTTS supports exchanging certificates to establish a TLS-secured channel. For this, the server (MQTT Broker) and every client require a certificate-keyfile pair signed by the same certificate Authority (CA).
+The MQTT broker can be configured to only accept incoming secured connections and to identify devices by their certificate CN entry.
 client require a certificate-keyfile pair singed against the same certificate Authority (CA).
 The MQTT broker can be configured to only accept incoming secured connection, and to identify devices by their certificate CN entry.
 
 # Enable Moqsuitto Authentication
 
 {{< callout context="note" title="Did you know?" icon="outline/rocket">}} The [Oakestra automation repository](https://github.com/oakestra/automation)
-contains many useful scripts such as ones for [creating MQTTS certificate files](https://github.com/oakestra/automation/tree/d43f701134fdf71e1206532883006e1937c38ef9/development_cluster_management/generate_mqtts_certificates) {{< /callout >}}
+contains many useful scripts such as ones for [creating MQTTS certificate files](https://github.com/oakestra/automation/tree/d43f701134fdf71e1206532883006e1937c38ef9/development_cluster_management/generate_mqtts_certificates). {{< /callout >}}
 
 The following instructions assume you know how to deploy an Oakestra cluster. Please consult the **Getting Started** section of the the documentation first.
 
 ## Configuring the Cluster Manager
-Navigate the cluster_orchestrator directory in the oakestra repository.
+Navigate into the `cluster_orchestrator` directory in the oakestra repository.
 
-1. First configure the MQTT Broker by adding the following lines to mosquitto/mosquitto.conf file
+1. Configure the MQTT Broker by adding the following lines to the `mosquitto/mosquitto.conf` file:
     ```
     cafile /certs/ca.crt
     certfile /certs/server.crt
@@ -64,7 +65,7 @@ Navigate the cluster_orchestrator directory in the oakestra repository.
             When prompted for the CN, enter `cluster_manager`
         3. Send the CSR to the CA:
             `openssl x509 -req -in cluster.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out cluster.crt -days <duration>`
-        4. Export the keyfile password as an environmental variable:\
+        4. Export the keyfile password as an environment variable:\
             `export CLUSTER_KEYFILE_PASSWORD=<keyfile password>`
     * **Cluster Service Manager (Client):**
         1. Generate a client key:\
@@ -74,7 +75,7 @@ Navigate the cluster_orchestrator directory in the oakestra repository.
           When prompted for the CN, enter `cluster_service_manager`
         3. Send the CSR to the CA:
           `openssl x509 -req -in cluster_net.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out cluster_net.crt -days <duration>`
-        4. Export the keyfile password as an environmental variable:\
+        4. Export the keyfile password as an environment variable:\
           `export CLUSTER_SERVICE_KEYFILE_PASSWORD=<keyfile password>`
 
 3. Deploy the cluster with the MQTTS override
@@ -82,13 +83,13 @@ Navigate the cluster_orchestrator directory in the oakestra repository.
 
 ## Configuring a Node
 
-1. Copy the ca.crt and ca.key file to node machine.
+1. Copy the `ca.crt` and `ca.key` files to the worker node.
 2. Generate the certificates
    1. Generate a client key:\
        `openssl genrsa -aes256 -out client.key 2048`
    2. Generate a certificate signing request:\
        `openssl req -out client.csr -key client.key -new`\
-       When prompted for the CN, enter the IP of the machine
+       When prompted for the CN, enter the public IP of the machine
    3. Send the CSR to the CA:\
        `openssl x509 -req -in client.csr -CA <path to ca file> -CAkey <path to ca key file> -CAcreateserial -out client.crt -days <duration>`
    4. Decrypt the keyfile:\
