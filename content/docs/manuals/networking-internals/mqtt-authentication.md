@@ -11,28 +11,37 @@ seo:
   noindex: false # false (default) or true
 ---
 
-# MQTT
-
-The following image shows how intra-cluster communication takes place. Nodes regularly report to the cluster-service-manager,
-and the cluster-service-manager appropriately propagates this information. Since the nodes report sensitive information, such
-as IP Addresses, we highly recommend securing the MQTT channels.
+## Intra-Cluster Communication
 
 ![MQTT Architecture Picture](mqtt.png)
 
-# MQTTS
-MQTTS supports exchanging certificates to establish a TLS-secured channel. For this, the server (MQTT Broker) and every client require a certificate-keyfile pair signed by the same certificate Authority (CA).
-The MQTT broker can be configured to only accept incoming secured connections and to identify devices by their certificate CN entry.
+The above image shows how intra-cluster communication takes place. Nodes send application status and node health reports to the cluster-service-manager.
+The cluster-service-manager then appropriately propagates this information to other nodes and the root-service-manager. Since the nodes report sensitive information, such
+as IP Addresses, we highly recommend securing the MQTT channels.
+
+{{< callout context="note" title="MQTT" icon="outline/info-circle">}} 
+MQTT is a lightweight messaging Protocol that supports publishing/subscribing to named channels. Oakestra uses MQTT due to it's minimal network usage and low processing overhead. More information at [mqtt.org](https://mqtt.org/).
+{{< /callout >}}
+
+
+## MQTTS
+MQTT supports the exchanging of certificates to establish a TLS secured channel. For this the server (MQTT Broker) and every 
 client require a certificate-keyfile pair singed against the same certificate Authority (CA).
 The MQTT broker can be configured to only accept incoming secured connection, and to identify devices by their certificate CN entry.
 
-# Enable Moqsuitto Authentication
+## Enable Moqsuitto Authentication
 
-{{< callout context="note" title="Did you know?" icon="outline/rocket">}} The [Oakestra automation repository](https://github.com/oakestra/automation)
-contains many useful scripts such as ones for [creating MQTTS certificate files](https://github.com/oakestra/automation/tree/d43f701134fdf71e1206532883006e1937c38ef9/development_cluster_management/generate_mqtts_certificates). {{< /callout >}}
+{{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}} 
+* You have a running Oakestra deployment
+* You have at least one worker node registered
+* (Optional) The NetManager is installed and properly configured
+{{< /callout >}}
 
-The following instructions assume you know how to deploy an Oakestra cluster. Please consult the **Getting Started** section of the the documentation first.
 
-## Configuring the Cluster Manager
+
+### Configuring the Cluster Manager
+
+
 Navigate into the `cluster_orchestrator` directory in the oakestra repository.
 
 1. Configure the MQTT Broker by adding the following lines to the `mosquitto/mosquitto.conf` file:
@@ -81,7 +90,7 @@ Navigate into the `cluster_orchestrator` directory in the oakestra repository.
 3. Deploy the cluster with the MQTTS override
 `sudo -E docker compose -f docker-compose.yml -f override-mosquitto-auth.yml`
 
-## Configuring a Node
+### Configuring a Node
 
 1. Copy the `ca.crt` and `ca.key` files to the worker node.
 2. Generate the certificates
@@ -97,3 +106,7 @@ Navigate into the `cluster_orchestrator` directory in the oakestra repository.
    5. Tell your OS to trust the certificate authority by placing the ca.crt file in the `/etc/ssl/certs/` directory
 3. Run the NodeEngine:\
        `sudo ./go_node_engine -n 0 -p 10100 -a <SYSTEM_MANAGER_URL> -c <path to client.crt> -k <path to unencrypt_client.key>`
+
+
+{{< callout context="note" title="Did you know?" icon="outline/rocket">}} The [Oakestra automation repository](https://github.com/oakestra/automation)
+contains many useful scripts such as ones for [creating MQTTS certificate files](https://github.com/oakestra/automation/tree/d43f701134fdf71e1206532883006e1937c38ef9/development_cluster_management/generate_mqtts_certificates). {{< /callout >}}
