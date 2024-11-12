@@ -35,6 +35,7 @@ The MQTT broker can be configured to only accept incoming secured connection, an
 * You have a running Oakestra deployment
 * You have at least one worker node registered
 * (Optional) The NetManager is installed and properly configured
+* Check out the [Getting Started](../../../getting-started/oak-environment/create-your-first-oakestra-orchestrator) for more details
 {{< /callout >}}
 
 
@@ -91,6 +92,7 @@ Navigate into the `cluster_orchestrator` directory in the oakestra repository.
 `sudo -E docker compose -f docker-compose.yml -f override-mosquitto-auth.yml`
 
 ### Configuring a Node
+<!--- Subject to change when NodeEngine and NetManager are demonized -->
 
 1. Copy the `ca.crt` and `ca.key` files to the worker node.
 2. Generate the certificates
@@ -105,7 +107,11 @@ Navigate into the `cluster_orchestrator` directory in the oakestra repository.
         `openssl rsa -in client.key -out unencrypt_client.key`
    5. Tell your OS to trust the certificate authority by placing the ca.crt file in the `/etc/ssl/certs/` directory
 3. Run the NodeEngine:\
-       `sudo ./go_node_engine -n 0 -p 10100 -a <SYSTEM_MANAGER_URL> -c <path to client.crt> -k <path to unencrypt_client.key>`
+       `sudo NodeEngine -n 0 -p 10100 -a <SYSTEM_MANAGER_URL> -c <path to client.crt> -k <path to unencrypt_client.key>`
+4. (Optional) Run the NetManager:\
+        1. Repeat step 2 for the NetManager\
+        2. Edit the `/etc/netmanager/netcfg.json` file so that the `"MqttCert"` and `"MqttKey"` fields specify the path to the NetManager certificate and key files\
+        3. Execute `sudo NetManager -p 10100`
 
 
 {{< callout context="note" title="Did you know?" icon="outline/rocket">}} The [Oakestra automation repository](https://github.com/oakestra/automation)
