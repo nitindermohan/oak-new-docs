@@ -14,13 +14,13 @@ seo:
 
 ![Nginx Balancing](balancing.png)
 
-To test out the balancing capabilities of Oakestra, we can deploy a simple Nginx server with a client that sends requests to the server. By assigning a Round-Robin balanced semantic IP to a Nginx service. When scaling up the Nginx service, the client requests will automatically be balanced across the service's instances.
+To test out the balancing capabilities of Oakestra, we can deploy a simple Nginx server and a client that sends requests to a Round-Robin balanced semantic IP assigned to the server. When scaling up the Nginx service, the client requests will automatically be balanced across the service's instances.
 
 #### SLA Template
 
-For this example we create a service named `curlv4` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Okestra semantic IP address of our choice (`10.30.55.55`) and then it fails. After failue Oakestra will re-deploy the instance indefinitely.
+For this example, we create a service named `curlv4` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Okestra semantic IP address of our choice (`10.30.55.55`), then fails. After failure, Oakestra will re-deploy the instance indefinitely.
 
-Together with the `curlv4` service we deploy a Nginx service named `nginx` using the `nginx:latest` docker image. This service will be assigned a Round-Robin semantic IPv4 address `10.30.55.55` (as well as a Round-Robin semantic IPv6 address `fdff:2000::55:55`, but this is optional).
+Together with the `curlv4` service, we deploy a Nginx service named `nginx` using the `nginx:latest` docker image. This service will be assigned a Round-Robin semantic IPv4 address,`10.30.55.55` (as well as a Round-Robin semantic IPv6 address `fdff:2000::55:55`, but this is optional).
 
 {{< callout context="caution" title="Oakestra Networking" icon="outline/alert-triangle">}}
 To find out more about networking, please refer to the [Networking](/docs/manuals/networking-internals) section.
@@ -33,13 +33,13 @@ Refer to the following SLA template to deploy the services.
     "sla_version" : "v2.0",
     "customerID" : "Admin",
     "applications" : [
-      {
+ {
         "applicationID" : "",
         "application_name" : "clientsrvr",
         "application_namespace" : "test",
         "application_desc" : "Simple demo with curl client and Nginx server",
         "microservices" : [
-          {
+ {
             "microserviceID": "",
             "microservice_name": "curlv4",
             "microservice_namespace": "test",
@@ -56,8 +56,8 @@ Refer to the following SLA template to deploy the services.
             "state": "",
             "port": "",
             "added_files": []
-          },
-          {
+ },
+ {
             "microserviceID": "",
             "microservice_name": "nginx",
             "microservice_namespace": "test",
@@ -76,13 +76,13 @@ Refer to the following SLA template to deploy the services.
             "addresses": {
               "rr_ip": "10.30.55.55",
               "rr_ip_v6": "fdff:2000::55:55"
-            },
+ },
             "added_files": []
-          }
-        ]
-      }
-    ]
-  }
+ }
+ ]
+ }
+ ]
+ }
 ```
 
 #### Let's deploy the services
@@ -90,7 +90,7 @@ Refer to the following SLA template to deploy the services.
  oak a c --sla-file-name $(pwd)/nginx-client-server.json -d
 ```
 
-Now the `curlv4` will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new `curlv4` instance and so the cycle will continue.
+Now the `curlv4` will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new `curlv4` instance, so the cycle will continue.
 
 #### Scale up the Nginx service
 Let's fetch the Nginx's Service ID using 
@@ -124,8 +124,8 @@ Use the following command to check the instance's logs:
 ```bash
 oak s i <Nginx Service ID>
 ```
-You'll see the nginx logs of both instances, and the effects of the resulting balancing.
-For this example we used the command `oak s i 672cf97ff7728660d15a5852`
+You'll see the nginx logs of both instances and the effects of the resulting balancing.
+For this example, we used the command `oak s i 672cf97ff7728660d15a5852`
 
 ```bash
 ╭───────────────────────────────────────────────────────────────────────────────────────────────╮

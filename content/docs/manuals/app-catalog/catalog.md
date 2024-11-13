@@ -12,18 +12,18 @@ seo:
 ---
 
 ![header](header.png)
-Here you'll find some examples of applications with their respective SLA template that you can use right away to test out Oakestra.
+Here, you'll find some examples of applications with their respective SLA template that you can use right away to test out Oakestra.
 
 ## Nginx Client-Server with Load Balancing
 ![Minecraft Preview](balancing.png)
 
-To test out the balancing capabilities of Oakestra, we can deploy a simple Nginx server with a client that sends requests to the server. By assigning a Round-Robin balanced semantic IP to a Nginx service. When scaling up the Nginx service, the client requests will automatically be balanced across the service's instances.
+To test out the balancing capabilities of Oakestra, we can deploy a simple Nginx server and a client that sends requests to a Round-Robin balanced semantic IP assigned to the server. When scaling up the Nginx service, the client requests will automatically be balanced across the service's instances.
 
 {{< link-card
-  title="Nginx Client-Server Example"
-  description="create load-balanced nginx servers"
-  href="../nginx-client-server-with-load-balancing/"
-  target="_blank"
+ title="Nginx Client-Server Example"
+ description="create load-balanced nginx servers"
+ href="../nginx-client-server-with-load-balancing/"
+ target="_blank"
 >}}
 
 ## Cloud/Edge Gaming: Minecraft 
@@ -37,10 +37,10 @@ Features:
 - 🛠️ Customize your deployment 
 
 {{< link-card
-  title="Minecraft Demo Repository"
-  description="github.com/oakestra/minecraft-client-server-example"
-  href="https://github.com/oakestra/minecraft-client-server-example"
-  target="_blank"
+ title="Minecraft Demo Repository"
+ description="github.com/oakestra/minecraft-client-server-example"
+ href="https://github.com/oakestra/minecraft-client-server-example"
+ target="_blank"
 >}}
 
 ## Object Detection Pipeline
@@ -48,28 +48,29 @@ Features:
 
 You can try out this AR Pipeline composed of three services: 
 
-**Preprocessing**: preprocessing microservice, collects the frames and adapts them for the model.
+**Preprocessing**: The preprocessing microservice collects the frames and adapts them for the model.
 
-**Object Detection**: detects the bounding boxes inside the image. If Object Recognition is up and running, it forwards the frames there. Otherwise, it sends the bounding boxes back to the client.
+**Object Detection**: This service detects the bounding boxes inside the image. If Object Recognition is up and running, it forwards the frames there. Otherwise, it sends the bounding boxes back to the client.
 
-**Object Recognitions**: it receives the frames from object detection. For each bounding box of type "Person" it detects the face features and sends them back to the client.
+**Object Recognitions**: This service receives the frames from object detection. For each bounding box of type "Person" it detects the face features and sends them back to the client.
 
 ![pipeline](https://github.com/oakestra/app-ar-pipeline/blob/main/img/pipeline.png?raw=true)
 
 {{< link-card
-  title="AR Pipeline Repository"
-  description="github.com/oakestra/app-ar-pipeline"
-  href="https://github.com/oakestra/app-ar-pipeline/tree/main"
-  target="_blank"
+ title="AR Pipeline Repository"
+ description="github.com/oakestra/app-ar-pipeline"
+ href="https://github.com/oakestra/app-ar-pipeline/tree/main"
+ target="_blank"
 >}}
 
 ## Unikraft Unikernels
 
-Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using [Unikraft](https://unikraft.org). This will allows us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
+Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using [Unikraft](https://unikraft.org). This will allow us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
 
 {{< link-card
-  title="Nginx Unikernel Deployment"
-  description="create load-balanced nginx servers"
-  href="../nginx-unikernel-deployment/"
-  target="_blank"
+ title="Nginx Unikernel Deployment"
+ description="create load-balanced nginx servers"
+ href="../nginx-unikernel-deployment/"
+ target="_blank"
 >}}
+
