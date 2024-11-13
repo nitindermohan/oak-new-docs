@@ -20,11 +20,12 @@ The cluster-service-manager then appropriately propagates this information to ot
 as IP Addresses, we highly recommend securing the MQTT channels.
 
 {{< callout context="note" title="MQTT" icon="outline/info-circle">}} 
-MQTT is a lightweight messaging Protocol that supports publishing/subscribing to named channels. Oakestra uses MQTT due to it's minimal network usage and low processing overhead. More information at [mqtt.org](https://mqtt.org/).
+MQTT is a lightweight messaging protocol that supports publishing/subscribing to named channels. Oakestra uses MQTT due to its minimal network usage and low processing overhead. More information at [mqtt.org](https://mqtt.org/).
 {{< /callout >}}
 
 
 ## MQTTS
+MQTT supports exchanging certificates to establish a TLS-secured channel. For this, the server (MQTT Broker) and every client require a certificate-key file pair signed against the same certificate Authority (CA). The MQTT broker can be configured to only accept incoming secured connections and to identify devices by their certificate common name (CN) entry.
 MQTT supports the exchanging of certificates to establish a TLS secured channel. For this the server (MQTT Broker) and every 
 client require a certificate-keyfile pair singed against the same certificate Authority (CA).
 The MQTT broker can be configured to only accept incoming secured connection, and to identify devices by their certificate common name (CN) entry.
@@ -130,7 +131,8 @@ Navigate into the `cluster_orchestrator` directory in the oakestra repository.
 1. Copy the `ca.crt` and `ca.key` files to the worker node.
 2. Generate the certificates
    1. Generate a client key:
-       ```bashopenssl genrsa -aes256 -out client.key 2048
+       ```bash
+       openssl genrsa -aes256 -out client.key 2048
        ```
    2. Generate a certificate signing request:
        ```bash
