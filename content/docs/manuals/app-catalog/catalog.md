@@ -26,7 +26,7 @@ To test out the balancing capabilities of Oakestra, we can deploy a simple Nginx
   target="_blank"
 >}}
 
-## Minecraft Server(s) and Browser Client
+## Cloud/Edge Gaming: Minecraft 
 ![Minecraft Preview](minecraft-full.png)
 
 Features:
@@ -60,5 +60,16 @@ You can try out this AR Pipeline composed of three services:
   title="AR Pipeline Repository"
   description="github.com/oakestra/app-ar-pipeline"
   href="https://github.com/oakestra/app-ar-pipeline/tree/main"
+  target="_blank"
+>}}
+
+## Unikraft Unikernels
+
+Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using [Unikraft](https://unikraft.org). This will allows us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
+
+{{< link-card
+  title="Nginx Unikernel Deployment"
+  description="create load-balanced nginx servers"
+  href="../nginx-unikernel-deployment/"
   target="_blank"
 >}}

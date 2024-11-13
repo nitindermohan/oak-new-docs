@@ -1,5 +1,5 @@
 ---
-title: "Nginx Client-Server with Load Balancing"
+title: "Nginx Unikernel Deployment"
 summary: ""
 draft: false
 weight: 331
@@ -14,13 +14,15 @@ seo:
 
 ![Nginx Balancing](balancing.png)
 
-To test out the balancing capabilities of Oakestra, we can deploy a simple Nginx server with a client that sends requests to the server. By assigning a Round-Robin balanced semantic IP to a Nginx service. When scaling up the Nginx service, the client requests will automatically be balanced across the service's instances.
+Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using [Unikraft](https://unikraft.org). This will allows us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
+
+{{< callout context="note" title="Unikernel Support" icon="outline/rocket">}} To enable unikernel support please refer to the Unikernel Support manual section{{< /callout >}}
 
 #### SLA Template
 
-For this example we create a service named `curlv4` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Okestra semantic IP address of our choice (`10.30.55.55`) and then it fails. After failue Oakestra will re-deploy the instance indefinitely.
+For this example we create a service named `curl` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Okestra semantic IP address of our choice (`10.30.30.31`) and then it fails. After failue Oakestra will re-deploy the instance indefinitely.
 
-Together with the `curlv4` service we deploy a Nginx service named `nginx` using the `nginx:latest` docker image. This service will be assigned a Round-Robin semantic IPv4 address `10.30.55.55` (as well as a Round-Robin semantic IPv6 address `fdff:2000::55:55`, but this is optional).
+Together with the `curlv4` service we deploy a Nginx service named `nginx` using the `nginx_amd64.tar.gz` unikraft image hosted online. This service will be assigned a Round-Robin semantic IPv4 address `10.30.30.31`. Since this kernel image is only available for `amd64` architecture, we specify this in the SLA template using `"arch": ["amd64"],` selector.
 
 {{< callout context="caution" title="Oakestra Networking" icon="outline/alert-triangle">}}
 To find out more about networking, please refer to the [Networking](/docs/manuals/networking-internals) section.
@@ -28,7 +30,7 @@ To find out more about networking, please refer to the [Networking](/docs/manual
 
 Refer to the following SLA template to deploy the services.
 
-```json {title="nginx-client-server.json"}
+```json {title="unikernel-nginx-client-server.json"}
 {
     "sla_version" : "v2.0",
     "customerID" : "Admin",
@@ -38,13 +40,37 @@ Refer to the following SLA template to deploy the services.
         "application_name" : "clientsrvr",
         "application_namespace" : "test",
         "application_desc" : "Simple demo with curl client and Nginx server",
-        "microservices" : [
+        "microservices": [
           {
             "microserviceID": "",
-            "microservice_name": "curlv4",
-            "microservice_namespace": "test",
+            "microservice_name": "nginx",
+            "microservice_namespace": "nginx",
+            "virtualization": "unikernel",
+            "cmd": [""],
+            "memory": 400,
+            "vcpus": 1,
+            "vgpus": 0,
+            "vtpus": 0,
+            "bandwidth_in": 0,
+            "bandwidth_out": 0,
+            "port":"9000:80",
+            "storage": 0,
+            "code": "https://github.com/oakestra/oakestra/releases/download/alpha-v0.4.301/nginx_amd64.tar.gz",
+            "arch": [
+              "amd64"
+            ],
+            "state": "",
+            "addresses": {
+              "rr_ip": "10.30.30.31"
+            },
+            "added_files": []
+          },
+          {
+            "microserviceID": "",
+            "microservice_name": "curl",
+            "microservice_namespace": "nginx",
             "virtualization": "container",
-            "cmd": ["sh", "-c", "curl 10.30.55.55 ; sleep 5"],
+            "cmd": ["sh", "-c", "curl 10.30.30.31 ; sleep 15"],
             "memory": 100,
             "vcpus": 1,
             "vgpus": 0,
@@ -56,41 +82,19 @@ Refer to the following SLA template to deploy the services.
             "state": "",
             "port": "",
             "added_files": []
-          },
-          {
-            "microserviceID": "",
-            "microservice_name": "nginx",
-            "microservice_namespace": "test",
-            "virtualization": "container",
-            "cmd": [],
-            "memory": 100,
-            "vcpus": 1,
-            "vgpus": 0,
-            "vtpus": 0,
-            "bandwidth_in": 0,
-            "bandwidth_out": 0,
-            "storage": 0,
-            "code": "docker.io/library/nginx:latest",
-            "state": "",
-            "port": "",
-            "addresses": {
-              "rr_ip": "10.30.55.55",
-              "rr_ip_v6": "fdff:2000::55:55"
-            },
-            "added_files": []
           }
         ]
       }
     ]
-  }
+}
 ```
 
 #### Let's deploy the services
 ```bash
- oak a c --sla-file-name $(pwd)/nginx-client-server.json -d
+ oak a c --sla-file-name $(pwd)/unikernel-nginx-client-server.json -d
 ```
 
-Now the `curlv4` will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new `curlv4` instance and so the cycle will continue.
+Now the `curl` service will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new instance and so the cycle will continue.
 
 #### Scale up the Nginx service
 Let's fetch the Nginx's Service ID using 
@@ -109,7 +113,7 @@ By running `oak s s` you should now see two instances of the Nginx service runni
 │ Service Name │ Service ID               │ Instances      │ App Name   │ App ID                   │
 ├──────────────┼──────────────────────────┼────────────────┼────────────┼──────────────────────────┤
 │              │                          │                │            │                          │
-│ curlv4       │ 672cf97ff7728660d15a584d │  0 RUNNING 🟢  │ clientsrvr │ 672cf97fa3ba9aac11ea11af │
+│ curl         │ 672cf97ff7728660d15a584d │  0 RUNNING 🟢  │ clientsrvr │ 672cf97fa3ba9aac11ea11af │
 │              │                          │                │            │                          │
 ├──────────────┼──────────────────────────┼────────────────┼────────────┼──────────────────────────┤
 │              │                          │                │            │                          │
