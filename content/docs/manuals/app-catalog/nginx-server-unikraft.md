@@ -14,15 +14,15 @@ seo:
 
 ![Nginx Balancing](balancing.png)
 
-Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using [Unikraft](https://unikraft.org). This will allows us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
+Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using [Unikraft](https://unikraft.org). This will allow us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
 
-{{< callout context="note" title="Unikernel Support" icon="outline/rocket">}} To enable unikernel support please refer to the Unikernel Support manual section{{< /callout >}}
+{{< callout context="note" title="Unikernel Support" icon="outline/rocket">}} To enable unikernel support, please refer to the Unikernel Support manual section{{< /callout >}}
 
 #### SLA Template
 
-For this example we create a service named `curl` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Okestra semantic IP address of our choice (`10.30.30.31`) and then it fails. After failue Oakestra will re-deploy the instance indefinitely.
+For this example, we create a service named `curl` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Okestra semantic IP address of our choice (`10.30.30.31`), and then it fails. After failure, Oakestra will re-deploy the instance indefinitely.
 
-Together with the `curlv4` service we deploy a Nginx service named `nginx` using the `nginx_amd64.tar.gz` unikraft image hosted online. This service will be assigned a Round-Robin semantic IPv4 address `10.30.30.31`. Since this kernel image is only available for `amd64` architecture, we specify this in the SLA template using `"arch": ["amd64"],` selector.
+Together with the `curlv4` service, we deploy a Nginx service named `nginx` using the `nginx_amd64.tar.gz` unikraft image hosted online. This service will be assigned a Round-Robin semantic IPv4 address `10.30.30.31`. Since this kernel image is only available for `amd64` architecture, we specify this in the SLA template using `"arch": ["amd64"],` selector.
 
 {{< callout context="caution" title="Oakestra Networking" icon="outline/alert-triangle">}}
 To find out more about networking, please refer to the [Networking](/docs/manuals/networking-internals) section.
@@ -35,13 +35,13 @@ Refer to the following SLA template to deploy the services.
     "sla_version" : "v2.0",
     "customerID" : "Admin",
     "applications" : [
-      {
+ {
         "applicationID" : "",
         "application_name" : "clientsrvr",
         "application_namespace" : "test",
         "application_desc" : "Simple demo with curl client and Nginx server",
         "microservices": [
-          {
+ {
             "microserviceID": "",
             "microservice_name": "nginx",
             "microservice_namespace": "nginx",
@@ -58,14 +58,14 @@ Refer to the following SLA template to deploy the services.
             "code": "https://github.com/oakestra/oakestra/releases/download/alpha-v0.4.301/nginx_amd64.tar.gz",
             "arch": [
               "amd64"
-            ],
+ ],
             "state": "",
             "addresses": {
               "rr_ip": "10.30.30.31"
-            },
+ },
             "added_files": []
-          },
-          {
+ },
+ {
             "microserviceID": "",
             "microservice_name": "curl",
             "microservice_namespace": "nginx",
@@ -82,10 +82,10 @@ Refer to the following SLA template to deploy the services.
             "state": "",
             "port": "",
             "added_files": []
-          }
-        ]
-      }
-    ]
+ }
+ ]
+ }
+ ]
 }
 ```
 
@@ -94,7 +94,7 @@ Refer to the following SLA template to deploy the services.
  oak a c --sla-file-name $(pwd)/unikernel-nginx-client-server.json -d
 ```
 
-Now the `curl` service will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new instance and so the cycle will continue.
+Now the `curl` service will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new instance, and so the cycle will continue.
 
 #### Scale up the Nginx service
 Let's fetch the Nginx's Service ID using 
