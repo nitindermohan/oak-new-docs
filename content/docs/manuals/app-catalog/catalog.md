@@ -63,9 +63,9 @@ You can try out this AR Pipeline composed of three services:
  target="_blank"
 >}}
 
-## Unikraft Unikernels
+## Unikraft Web Server
 
-Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using [Unikraft](https://unikraft.org). This will allow us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
+Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using [Unikraft](https://unikraft.org) Unikernels. This will allow us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
 
 {{< link-card
  title="Nginx Unikernel Deployment"
