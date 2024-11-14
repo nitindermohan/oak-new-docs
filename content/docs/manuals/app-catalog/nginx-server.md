@@ -16,6 +16,12 @@ seo:
 
 To test out the balancing capabilities of Oakestra, we can deploy a simple Nginx server and a client that sends requests to a Round-Robin balanced semantic IP assigned to the server. When scaling up the Nginx service, the client requests will automatically be balanced across the service's instances.
 
+{{< callout context="note" title="OAK CLI" icon="outline/rocket">}}
+
+In this guide we'll use the Oakestra CLI tool to interact with the Oakestra platform. To find out more about the CLI tool, please refer to the CLI section of the manuals.
+
+ {{< /callout >}}
+
 #### SLA Template
 
 For this example, we create a service named `curlv4` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Okestra semantic IP address of our choice (`10.30.55.55`), then fails. After failure, Oakestra will re-deploy the instance indefinitely.
@@ -28,67 +34,79 @@ To find out more about networking, please refer to the [Networking](/docs/manual
 
 Refer to the following SLA template to deploy the services.
 
-```json {title="nginx-client-server.json"}
+```json {title="~/oak_cli/SLAs/nginx-client-server.json"}
 {
-    "sla_version" : "v2.0",
-    "customerID" : "Admin",
-    "applications" : [
- {
-        "applicationID" : "",
-        "application_name" : "clientsrvr",
-        "application_namespace" : "test",
-        "application_desc" : "Simple demo with curl client and Nginx server",
-        "microservices" : [
- {
-            "microserviceID": "",
-            "microservice_name": "curlv4",
-            "microservice_namespace": "test",
-            "virtualization": "container",
-            "cmd": ["sh", "-c", "curl 10.30.55.55 ; sleep 5"],
-            "memory": 100,
-            "vcpus": 1,
-            "vgpus": 0,
-            "vtpus": 0,
-            "bandwidth_in": 0,
-            "bandwidth_out": 0,
-            "storage": 0,
-            "code": "docker.io/curlimages/curl:7.82.0",
-            "state": "",
-            "port": "",
-            "added_files": []
- },
- {
-            "microserviceID": "",
-            "microservice_name": "nginx",
-            "microservice_namespace": "test",
-            "virtualization": "container",
-            "cmd": [],
-            "memory": 100,
-            "vcpus": 1,
-            "vgpus": 0,
-            "vtpus": 0,
-            "bandwidth_in": 0,
-            "bandwidth_out": 0,
-            "storage": 0,
-            "code": "docker.io/library/nginx:latest",
-            "state": "",
-            "port": "",
-            "addresses": {
-              "rr_ip": "10.30.55.55",
-              "rr_ip_v6": "fdff:2000::55:55"
- },
-            "added_files": []
- }
- ]
- }
- ]
- }
+  "sla_version": "v2.0",
+  "customerID": "Admin",
+  "applications": [
+    {
+      "applicationID": "",
+      "application_name": "clientsrvr",
+      "application_namespace": "test",
+      "application_desc": "Simple demo with curl client and Nginx server",
+      "microservices": [
+        {
+          "microserviceID": "",
+          "microservice_name": "curlv4",
+          "microservice_namespace": "test",
+          "virtualization": "container",
+          "cmd": [
+            "sh",
+            "-c",
+            "curl 10.30.55.55 ; sleep 5"
+          ],
+          "memory": 100,
+          "vcpus": 1,
+          "vgpus": 0,
+          "vtpus": 0,
+          "bandwidth_in": 0,
+          "bandwidth_out": 0,
+          "storage": 0,
+          "code": "docker.io/curlimages/curl:7.82.0",
+          "state": "",
+          "port": "",
+          "added_files": []
+        },
+        {
+          "microserviceID": "",
+          "microservice_name": "nginx",
+          "microservice_namespace": "test",
+          "virtualization": "container",
+          "cmd": [],
+          "memory": 100,
+          "vcpus": 1,
+          "vgpus": 0,
+          "vtpus": 0,
+          "bandwidth_in": 0,
+          "bandwidth_out": 0,
+          "storage": 0,
+          "code": "docker.io/library/nginx:latest",
+          "state": "",
+          "port": "",
+          "addresses": {
+            "rr_ip": "10.30.55.55",
+            "rr_ip_v6": "fdff:2000::55:55"
+          },
+          "added_files": []
+        }
+      ]
+    }
+  ]
+}
 ```
 
 #### Let's deploy the services
 ```bash
+ oak a c --sla-file-name nginx-client-server.json -d
+```
+
+{{< callout context="note" title="Did you know?" icon="outline/rocket">}} If your SLA file is not in the ~/oak_cli/SLAs directory you can use the following command instead:
+
+```bash
  oak a c --sla-file-name $(pwd)/nginx-client-server.json -d
 ```
+
+ {{< /callout >}}
 
 Now the `curlv4` will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new `curlv4` instance, so the cycle will continue.
 

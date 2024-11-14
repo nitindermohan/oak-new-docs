@@ -12,7 +12,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-![Nginx Balancing](balancing.png)
+![Nginx Balancing](balancing-unikraft.png)
 
 Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using [Unikraft](https://unikraft.org). This will allow us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
 
@@ -30,69 +30,90 @@ To find out more about networking, please refer to the [Networking](/docs/manual
 
 Refer to the following SLA template to deploy the services.
 
-```json {title="unikernel-nginx-client-server.json"}
+```json {title="~/oak_cli/SLAs/unikernel-nginx-client-server.json"}
 {
-    "sla_version" : "v2.0",
-    "customerID" : "Admin",
-    "applications" : [
- {
-        "applicationID" : "",
-        "application_name" : "clientsrvr",
-        "application_namespace" : "test",
-        "application_desc" : "Simple demo with curl client and Nginx server",
-        "microservices": [
- {
-            "microserviceID": "",
-            "microservice_name": "nginx",
-            "microservice_namespace": "nginx",
-            "virtualization": "unikernel",
-            "cmd": [""],
-            "memory": 400,
-            "vcpus": 1,
-            "vgpus": 0,
-            "vtpus": 0,
-            "bandwidth_in": 0,
-            "bandwidth_out": 0,
-            "port":"9000:80",
-            "storage": 0,
-            "code": "https://github.com/oakestra/oakestra/releases/download/alpha-v0.4.301/nginx_amd64.tar.gz",
-            "arch": [
-              "amd64"
- ],
-            "state": "",
-            "addresses": {
-              "rr_ip": "10.30.30.31"
- },
-            "added_files": []
- },
- {
-            "microserviceID": "",
-            "microservice_name": "curl",
-            "microservice_namespace": "nginx",
-            "virtualization": "container",
-            "cmd": ["sh", "-c", "curl 10.30.30.31 ; sleep 15"],
-            "memory": 100,
-            "vcpus": 1,
-            "vgpus": 0,
-            "vtpus": 0,
-            "bandwidth_in": 0,
-            "bandwidth_out": 0,
-            "storage": 0,
-            "code": "docker.io/curlimages/curl:7.82.0",
-            "state": "",
-            "port": "",
-            "added_files": []
- }
- ]
- }
- ]
+  "sla_version": "v2.0",
+  "customerID": "Admin",
+  "applications": [
+    {
+      "applicationID": "",
+      "application_name": "clientsrvr",
+      "application_namespace": "test",
+      "application_desc": "Simple demo with curl client and Nginx server",
+      "microservices": [
+        {
+          "microserviceID": "",
+          "microservice_name": "nginx",
+          "microservice_namespace": "nginx",
+          "virtualization": "unikernel",
+          "cmd": [
+            ""
+          ],
+          "memory": 400,
+          "vcpus": 1,
+          "vgpus": 0,
+          "vtpus": 0,
+          "bandwidth_in": 0,
+          "bandwidth_out": 0,
+          "port": "9000:80",
+          "storage": 0,
+          "code": "https://github.com/oakestra/oakestra/releases/download/alpha-v0.4.301/nginx_amd64.tar.gz",
+          "arch": [
+            "amd64"
+          ],
+          "state": "",
+          "addresses": {
+            "rr_ip": "10.30.30.31"
+          },
+          "added_files": []
+        },
+        {
+          "microserviceID": "",
+          "microservice_name": "curl",
+          "microservice_namespace": "nginx",
+          "virtualization": "container",
+          "cmd": [
+            "sh",
+            "-c",
+            "curl 10.30.30.31 ; sleep 15"
+          ],
+          "memory": 100,
+          "vcpus": 1,
+          "vgpus": 0,
+          "vtpus": 0,
+          "bandwidth_in": 0,
+          "bandwidth_out": 0,
+          "storage": 0,
+          "code": "docker.io/curlimages/curl:7.82.0",
+          "state": "",
+          "port": "",
+          "added_files": []
+        }
+      ]
+    }
+  ]
 }
 ```
 
+{{< callout context="note" title="OAK CLI" icon="outline/rocket">}}
+
+In this guide we'll use the Oakestra CLI tool to interact with the Oakestra platform. To find out more about the CLI tool, please refer to the CLI section of the manuals.
+
+ {{< /callout >}}
+
+
 #### Let's deploy the services
+```bash
+ oak a c --sla-file-name unikernel-nginx-client-server.json -d
+```
+
+{{< callout context="note" title="Did you know?" icon="outline/rocket">}} If your SLA file is not in the ~/oak_cli/SLAs directory you can use the following command instead:
+
 ```bash
  oak a c --sla-file-name $(pwd)/unikernel-nginx-client-server.json -d
 ```
+
+ {{< /callout >}}
 
 Now the `curl` service will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new instance, and so the cycle will continue.
 
