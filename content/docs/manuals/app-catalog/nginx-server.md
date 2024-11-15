@@ -136,7 +136,7 @@ By running `oak s s` you should now see two instances of the Nginx service runni
 #### Sit down, relax, and watch the magic happen
 Use the following command to check the instance's logs:
 ```bash
-oak s i <Nginx Service ID>
+oak s i <Nginx Service ID> -l
 ```
 You'll see the nginx logs of both instances and the effects of the resulting balancing.
 For this example, we used the command `oak s i 672cf97ff7728660d15a5852`
