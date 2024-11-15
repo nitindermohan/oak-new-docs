@@ -54,7 +54,8 @@ You can try out this AR Pipeline composed of three services:
 
 **Object Recognitions**: This service receives the frames from object detection. For each bounding box of type "Person" it detects the face features and sends them back to the client.
 
-![pipeline](https://github.com/oakestra/app-ar-pipeline/blob/main/img/pipeline.png?raw=true)
+{{< inline-svg src="svgs/app-catalog/pipeline-light.svg" class="svg-inline-custom svg-lightmode" width="600px" height="250px" >}}
+{{< inline-svg src="svgs/app-catalog/pipeline-dark.svg" class="svg-inline-custom svg-darkmode" width="600px" height="250px">}}
 
 {{< link-card
  title="AR Pipeline Repository"
