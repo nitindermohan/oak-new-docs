@@ -150,18 +150,39 @@ Navigate into the `cluster_orchestrator` directory in the oakestra repository.
         ```
    5. Tell your OS to trust the certificate authority by placing the ca.crt file in the `/etc/ssl/certs/` directory
 3. Run the NodeEngine:
-    ```bashr34
+    ```bash
     sudo NodeEngine -n 0 -p 10100 -a <SYSTEM_MANAGER_URL> -c <path to client.crt> -k <path to unencrypt_client.key>
     ```
 4. **(Optional)** Configure the NetManager:
-    1. Repeat step 2 for the NetManager
-    2. Edit the `/etc/netmanager/netcfg.json` file so that the `"MqttCert"` and `"MqttKey"` fields specify the path to the NetManager certificate and key files
-    3. Run the NetManager:
+    1. Edit the `/etc/netmanager/netcfg.json` file so that the `"MqttCert"` and `"MqttKey"` fields specify the path to the node certificate and key files (The NetManager should use the same certificate-keyfile pair as the NodeEngine)
+    2. Run the NetManager:
         ```bash
         sudo NetManager -p 6000
+        ```
+    3. Run the NodeEngine:
+        ```bash
+        sudo NodeEngine -n 6000 -p 10100 -a <SYSTEM_MANAGER_URL> -c <path to client.crt> -k <path to unencrypt_client.key>
         ```
 
 {{< callout context="note" title="Did you know?" icon="outline/rocket">}} The [Oakestra automation repository](https://github.com/oakestra/automation)
 contains many useful scripts such as ones for [creating MQTTS certificate files](https://github.com/oakestra/automation/tree/d43f701134fdf71e1206532883006e1937c38ef9/development_cluster_management/generate_mqtts_certificates). {{< /callout >}}
 
-Congrats, your MQTT channels are now secured! When adding any further components, be sure to always give them a unique CN, as this is used to identify the device.
+### Finishing up
+
+Let's check if all the components succesfully registered with the MQTT Broker via TLS.
+1. **Cluster Manager:** Check the docker compose logs with
+    ```bash
+    docker compose logs | grep cluster_manager
+    docker compose logs | grep cluster_service_manager
+    ```
+    Look for the  following lines:
+    ```yaml
+    service_manager - INFO - MQTT - TLS configured
+    cluster_manager - INFO - MQTT - TLS configured
+    ```
+2. **Node:** Both the NodeEngine and NetManager should display the following log line after execution:
+    ```yaml
+    MQTT - Configuring TLS
+    ```
+
+If everything looks good then Congrats 🎉, your MQTT channels are now secured! When adding any further components, be sure to always give them a unique CN, as this is used to identify the device.
