@@ -56,7 +56,7 @@ git push origin vX.Y.Z
 ---
 
 {{< callout context="tip" title="Did you know?" icon="outline/seeding" >}}
-An initial Oakestra CLI was developed by Daniel Mair in his 2021 Bachelor Thesis [Designing Robust Interaction Frontend for Decentralized Edge Infrastructures](https://www.nitindermohan.com/documents/student-thesis/Daniel_Mair_BT.pdf).
-He extended this CLI slightly during his Interdisciplinary Masters Project [Enhancement of the Oakestra User Interface](https://balancer.bbb.rbg.tum.de/playback/presentation/2.3/7b059d2730236bd8ec85443c4fd8bd0faa6f029d-1689771548724).
-The current and first public version of the Oakestra CLI has been reimplemented from scratch by Alexander Malyuk during his 2024 Master Thesis [FLOps: Practical Federated Learning via Automated Orchestration (on the Edge)](https://www.nitindermohan.com/documents/student-thesis/AlexanderMalyuk_MT.pdf).
+An initial Oakestra CLI was developed by Daniel Mair in his 2021 Bachelor's Thesis [Designing Robust Interaction Frontend for Decentralized Edge Infrastructures](https://www.nitindermohan.com/documents/student-thesis/Daniel_Mair_BT.pdf).
+He extended this CLI slightly during his Interdisciplinary Project [Enhancement of the Oakestra User Interface](https://balancer.bbb.rbg.tum.de/playback/presentation/2.3/7b059d2730236bd8ec85443c4fd8bd0faa6f029d-1689771548724).
+The current and first public version of the Oakestra CLI has been reimplemented from scratch by Alexander Malyuk during his 2024 Master's Thesis [FLOps: Practical Federated Learning via Automated Orchestration (on the Edge)](https://www.nitindermohan.com/documents/student-thesis/AlexanderMalyuk_MT.pdf).
 {{< /callout >}}
