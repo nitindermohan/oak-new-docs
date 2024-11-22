@@ -21,7 +21,7 @@ mainSections = ["docs"]
 
   ## Button
   navBarButton = true # false (default) or true
-  navBarButtonUrl = "/docs/getting-started/deploy-your-first-oakestra-cluster/"
+  navBarButtonUrl = "/docs/getting-started/oak-environment/high-level-setup-overview/"
   navBarButtonText = "Get started"
 
   # FlexSearch
@@ -55,8 +55,8 @@ mainSections = ["docs"]
   showMissingLanguages = true # whether or not to show untranslated languages in the language menu; true (default) or false
 
   # Versioning
-  docsVersioning = false # false (default) or true
-  docsVersion = "1.0"
+  docsVersioning = true # false (default) or true
+  docsVersion = "0.4.400"
 
   # UX
   headerBar = true # true (default) or false
