@@ -39,4 +39,4 @@ hahah
 
 hahaha
  
-{{<svg "test">}}
+{{<svg "flops/centralized_ml">}}
