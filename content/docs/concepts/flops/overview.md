@@ -48,7 +48,7 @@ Federated Learning (FL) distributes the computational load of machine learning w
 
 {{< callout context="note" title="Want to know more about FLOps?" icon="outline/school" >}}
   The Oakestra Addon FLOps was developed as part of this [Master's Thesis](https://www.nitindermohan.com/documents/student-thesis/AlexanderMalyuk_MT.pdf).
-  This thesis prodivdes a comprehensive look and analysis of:
+  This thesis provides a comprehensive look and analysis of:
   - The need and use-cases for Federated Learning
   - The history and state of FL research and frameworks (2024)
   - FLOps motivation, requirements, architecture, workflows, and limitations
