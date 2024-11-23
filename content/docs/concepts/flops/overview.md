@@ -40,32 +40,14 @@ FLOps is an [Oakestra Addon](TODO) that enables streamlined and accelerated prac
 {{< details "Elevated Observability & Tracking via MLOps" >}}
   TODO
 {{< /details >}}
-{{< details "Utilization of the latest Frameworks & Tools" >}}
-  One of FLOps' pillars is to combine the latest state of the art solutions from different fields in novel ways instead of reinventing custom subpar solution from scratch.
+{{< details "Uses latest Frameworks & Tools" >}}
+  FLOps combines state of the art solutions from different fields in novel ways instead of reinventing custom subpar solution from scratch.
   Every third-party component and dependency has been carefully analyzed and compared with possible alternatives.
   The following is a selection of tools and frameworks that power FLOps.
 
-  {{< tabs "create-new-site" >}}
-    {{< tab "npm" >}}
-      ```bash
-      npm create thulite@latest
-      ```
-    {{< /tab >}}
-  {{< tab "pnpm" >}}
-
-  ```bash
-  pnpm create thulite@latest
-  ```
-
-  {{< /tab >}}
-  {{< tab "Yarn" >}}
-
-  ```bash
-  yarn create thulite
-  ```
-
-  {{< /tab >}}
-  {{< /tabs >}}
+  ### [Flower](https://flower.ai/) 
+  Flower is the leading FL framework on the market.
+  TODO how FLOPs uses Flower and why not just flower etc
 
 {{< /details >}}
 {{< details "Convenient Installation & native CLI" >}}
