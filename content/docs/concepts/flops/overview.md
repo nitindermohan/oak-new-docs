@@ -21,21 +21,75 @@ Federated Learning (FL) distributes the computational load of machine learning w
 >}}
 
 ## FL with Oakestra
-// Why Oakestra for FL and for FLOps
-
+The main target group for (cross-device) FL is heterogeneous edge devices.
+Oakestra specializes in handling such resource-constrained devices spread across various geographical areas.
+Infrastructure providers can have their own isolated cluster and cluster orchestrator - (ideal for cross-silo FL).
+Cluster orchestrators can only access detailed information about workers from their cluster.
+The metrics they share with the root are distilled and no longer contain sensitive individual metadata.
+This is an ideal environment for FL because this layout supports privacy on a structural level.
+Oakestra's slim open-source code base allows for easy extension, further development, and experimentation with FL features.
 
 ## FLOps
-// FLOps - Oakestra Addon
+FLOps is an [Oakestra Addon](TODO) that enables streamlined and accelerated practical FL workflows via:
+{{< details "Automated Orchestration of FL Components and Auxiliaries" >}}
+  TODO
+{{< /details >}}
+{{< details "Automated FL Augmentation/Containerization" >}}
+  TODO
+{{< /details >}}
+{{< details "Elevated Observability & Tracking via MLOps" >}}
+  TODO
+{{< /details >}}
+{{< details "Utilization of the latest Frameworks & Tools" >}}
+  One of FLOps' pillars is to combine the latest state of the art solutions from different fields in novel ways instead of reinventing custom subpar solution from scratch.
+  Every third-party component and dependency has been carefully analyzed and compared with possible alternatives.
+  The following is a selection of tools and frameworks that power FLOps.
 
-// TLDR - what is FLOps
+  {{< tabs "create-new-site" >}}
+    {{< tab "npm" >}}
+      ```bash
+      npm create thulite@latest
+      ```
+    {{< /tab >}}
+  {{< tab "pnpm" >}}
 
-// Federated Learning Operations
+  ```bash
+  pnpm create thulite@latest
+  ```
 
-// What does FLOps do - help you to do - why use FLOps
+  {{< /tab >}}
+  {{< tab "Yarn" >}}
+
+  ```bash
+  yarn create thulite
+  ```
+
+  {{< /tab >}}
+  {{< /tabs >}}
+
+{{< /details >}}
+{{< details "Convenient Installation & native CLI" >}}
+  FLOps can be easily set up via (TODO repo - or addon).
+  See the [FLOps Manuals](/docs/manuals/flops) for concrete instructions.
+
+  The [Oakestra CLI](/docs/getting-started/deploy-app/with-the-cli/#the-oak-cli) supports a [set of commands](/docs/manuals/cli/features/flops-addon/#oak-addon-flops) to work with FLOps.
+{{< /details >}}
+
+
+As a result individual with different levels of expertize in the areas of FL, automation, DevOps, containerization, and orchestration can benefit from these techniques and perform FL.
 
 // Place the entire architecture & steck 
 
-// Do not explain how to install/run FLOps -> delegate & mention the FLOps manuals for this
+{{< callout context="note" title="Naming Explained" icon="outline/info-circle" >}}
+  **FLOps** stands for *Federated Learning Operations*.
+  It is inspired by the field of *MLOps* that enhances ML with DevOps practices.
+
+  We do not claim any ownership of this term or name - in contrary, we want to spread awareness of benefiting from applying DevOps and other techniques to FL/ML to improve the onboarding, usage, and development of the entire field.  
+{{< /callout >}}
+
+
+
+---
 
 {{< link-card
   title="FLOps Manuals"
