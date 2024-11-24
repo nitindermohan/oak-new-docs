@@ -40,14 +40,37 @@ FLOps is an [Oakestra Addon](TODO) that enables streamlined and accelerated prac
 {{< details "Elevated Observability & Tracking via MLOps" >}}
   TODO
 {{< /details >}}
-{{< details "Uses latest Frameworks & Tools" >}}
+
+{{< details "Combine latest Frameworks & Tools" >}}
   FLOps combines state of the art solutions from different fields in novel ways instead of reinventing custom subpar solution from scratch.
   Every third-party component and dependency has been carefully analyzed and compared with possible alternatives.
   The following is a selection of tools and frameworks that power FLOps.
 
   ### [Flower](https://flower.ai/) 
-  Flower is the leading FL framework on the market.
-  TODO how FLOPs uses Flower and why not just flower etc
+  Flower is the leading research-backed open-source FL framework on the market.
+  Due to Flower's high flexibility and cutomization FLOps was able to combine it with other tools and its own components to achieve novel features.
+  FL implements and handles core FL components but it does not handle many other necessary aspects such as deployment, orchestraton, dependency management, containerization, or advanced tracking and observability tools seen in MLOps.
+
+  ### [mlflow](https://mlflow.org/)
+  MLflow is a mature open-source MLOps tool that powers the runtime observability and tracking features of FLOps.
+  MLflow augments and supports the entire ML life-cycle, starting from conception, to code and dependency archivation and unification to tracking and tagging ML models and artifacts to re-redeployments. 
+
+  ### Apache's 'Data Suite'
+  FLOps works with real data on learner devices.
+  To receive, store, and retrieve such data efficiently it employs several technologies provided by [Apache](https://www.apache.org/).
+  - [Arrow](https://arrow.apache.org/docs/format/Columnar.html) columnar format for working with data in memory.
+  - [Parquet](https://parquet.apache.org/) columnar file format for working with data stored on disk.
+  - [Arrow Flight](https://arrow.apache.org/docs/format/Flight.html) a gRPC-based framework to transport Apache formatted data over the network.
+
+  ### [Buildah](https://buildah.io/)
+  Buildah helps FLOps to build containerized FL images inside running containers.
+  Therefore distributing the computational load of image building across devices.
+
+  ### [Anaconda Suite](https://docs.anaconda.com/)
+  FLOps uses the Anaconda Suite to resolve dependencies to provide equal ML training across devices.
+  To be more specific:
+   - [Miniconda](https://docs.anaconda.com/miniconda/) for lightweight (base) images
+   - [Mamba](https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community) for fast dependency resolving
 
 {{< /details >}}
 {{< details "Convenient Installation & native CLI" >}}
