@@ -11,61 +11,76 @@ seo:
   noindex: false # false (default) or true
 ---
 
-Addons in Oakestra provide a flexible way to extend and customize the platform by adding new features or enhancing existing functionality. This guide demonstrates how to create an addon, publish it to the marketplace, and install it from the marketplace.
+Addons in Oakestra provide a powerful way to extend and customize the platform by adding new features or enhancing existing functionality. This guide walks you through the process of creating, publishing, and installing addons in Oakestra.
 
-## Creating an Addon
+To get started with addons, follow these high-level steps:
 
-To create an addon, developers must package their addon functionality into a Docker-compatible image. Here’s a step-by-step guide for building a basic addon:
+1. **Create the Addon**: Package your functionality into a Docker image and define it using an addon descriptor (`addon.json`).
+2. **Publish the Addon**: Submit the addon descriptor to Oakestra's Addons Marketplace.
+3. **Install the Addon**: Use the Addons Manager to install the addon in your Oakestra environment.
 
-1. **Define Addon Functionality**: Decide on the addon’s purpose, such as a new scheduler or monitoring tool, and write the code to support this functionality.
+The following sections provide a detailed walkthrough of each step.
 
-2. **Dockerize the Addon**: Package the code into a Docker image by creating a `Dockerfile` that specifies the environment and dependencies needed. For example:
-    ```dockerfile
-    # Use a base image
-    FROM python:3.9-alpine
-    
-    # Install dependencies
-    RUN pip install -r requirements.txt
-    
-    # Add your code
-    COPY . /addon
-    
-    # Define the entry point
-    ENTRYPOINT ["python", "/addon/main.py"]
-    ```
-3. **Push the Image to a Container Registry**: Publish the Docker image to a container registry, such as Docker Hub, to make it accessible by Oakestra’s marketplace.
-    ```bash
-    docker build -t your-username/addon-name:latest .
-    docker push your-username/addon-name:latest
-    ```
+---
 
-4. **Create the Addon Descriptor**: Define a JSON file (`addon.json`) to describe your addon. This file includes metadata like the addon name, version, container image, and any configuration parameters:
-    ```json
-      {
-        "name": "addon-name",
-        "networks": [],
-        "volumes": [{
-          "name": "myvolume",
-          "driver": "bridge"
-        }],
-        "services": [{
-          "image": "your-username/addon-name:latest",
-          "service_name": "my_service",
-          "networks": [],
-          "volumes": ["myvolume:/somevolume"],
-          "ports": {"10007":"10007"}
-        }]
-      }
-    ```
+## Step 1: Creating an Addon
 
-5. **Submit the Addon to the Marketplace**: 
-    - Send a `POST` request with the descriptor file to Oakestra’s Addons Marketplace API.
-    - The marketplace will validate the descriptor, and upon successful validation, your addon will be published for others to use.
+To create an addon, follow these steps:
 
-## Publishing the Addon
+### 1.1 Define Addon Functionality
+Decide on the addon’s purpose, such as introducing a new scheduler or monitoring tool, and implement the necessary code to achieve this functionality.
 
-To publish an addon to Oakestra’s Addons Marketplace, developers must submit the addon descriptor to the marketplace API.
+### 1.2 Dockerize the Addon
+Package your code into a Docker image by creating a `Dockerfile`. For example:
+```dockerfile
+# Use a base image
+FROM python:3.9-alpine
 
+# Install dependencies
+RUN pip install -r requirements.txt
+
+# Add your code
+COPY . /addon
+
+# Define the entry point
+ENTRYPOINT ["python", "/addon/main.py"]
+```
+
+Build and push the Docker image to a container registry, such as Docker Hub:
+```bash
+docker build -t your-username/addon-name:latest .
+docker push your-username/addon-name:latest
+```
+
+### 1.3 Create the Addon Descriptor
+Define the addon configuration using a JSON descriptor file (`addon.json`). For example:
+```json
+{
+  "name": "addon-name",
+  "networks": [],
+  "volumes": [{
+    "name": "myvolume",
+    "driver": "bridge"
+  }],
+  "services": [{
+    "image": "your-username/addon-name:latest",
+    "service_name": "my_service",
+    "networks": [],
+    "volumes": ["myvolume:/somevolume"],
+    "ports": {"10007":"10007"}
+  }]
+}
+```
+This descriptor specifies the addon’s name, required networks, volumes, services, and any necessary configurations.
+
+---
+
+## Step 2: Publishing the Addon
+
+To make the addon available for others in the Oakestra ecosystem, publish it to the Addons Marketplace.
+
+### 2.1 Submit the Addon Descriptor
+Send a `POST` request with the JSON descriptor to the Addons Marketplace API:
 ```bash
 curl -X POST \
   -H "Content-Type: application/json" \
@@ -73,20 +88,30 @@ curl -X POST \
   http://oakestra-marketplace/api/addons
 ```
 
-Upon submission, the marketplace will review the addon for compatibility and mark it as “approved” once verified.
+The Addons Marketplace will validate the descriptor. Once approved, the addon will be marked as `approved` and become available for installation.
 
-## Installing an Addon from the Marketplace
+---
 
-Once an addon is available in the marketplace, users can install it into their Oakestra environment:
+## Step 3: Installing an Addon to the Cluster
 
-1. **Browse Available Addons**: Visit the marketplace to view available addons and select the desired one.
+Once an addon is approved in the marketplace, it can be installed in your Oakestra environment:
 
-2. **Send Installation Request**: Use the `Addons Manager API` to send a `POST` request for the addon installation:
-    ```bash
-    curl -X POST \
-      -H "Content-Type: application/json" \
-      -d '{"marketplace_id": "unique-addon-id"}' \
-      http://oakestra/api/addons/install
-    ```
+### 3.1 Browse Available Addons
+Explore the addons available in the marketplace. Currently, the marketplace is accessible via a RESTful API, allowing users to query available addons programmatically.
 
-3. **Verify Installation**: The Addons Manager will pull the specified addon and make it available within the Oakestra environment, integrating seamlessly with the core system.
+### 3.2 Send an Installation Request
+Use the Addons Manager API to install the addon by sending a `POST` request with the marketplace ID of the desired addon:
+```bash
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"marketplace_id": "unique-addon-id"}' \
+  http://oakestra/api/addons/install
+```
+
+### 3.3 Verify the Installation
+The Addons Manager will:
+- Retrieve the addon from the marketplace.
+- Pull the Docker image associated with the addon.
+- Deploy and integrate the addon into the Oakestra environment.
+
+You can verify the installation by checking the addon’s status using the Addons Manager API.
