@@ -56,7 +56,7 @@ curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/St
 ```
 
 This script will download the required files to a directory called cluster_orchestrator. From there it will walk you through
-configuring the cluster. One the setup is complete it will build the cluster orchestrator and register with the root orchestrator.
+configuring the cluster. Once the setup is complete, it will build the cluster orchestrator and register with the root orchestrator.
 
 {{< callout context="danger" title="Note" icon="outline/alert-octagon" >}}
 The root orchestrator has to be reachable by the cluster orchestrator. When not on the same network the root orchestrator URL has to be a public
@@ -74,19 +74,19 @@ a unique `Cluster Name` and `Cluster Location`.
 Oakestra has many features which have not yet been released. You can check out what's in the pipeline by taking a look at some of the active [branches](https://github.com/oakestra/oakestra/branches) here.
 {{< /callout >}}
 
-By default these scripts will build from the `main` oakestra branch. However this can be changed by setting the environment variable `OAKESTRA_BRANCH`.
+By default these scripts will compose the services of the `main` oakestra branch, the latest stable release. However this can be changed by setting the environment variable `OAKESTRA_BRANCH` **before running the startup script**.
 This allows you to experiment with some unreleased features.
 
 ```bash
 export OAKESTRA_BRANCH=develop
 ```
-This will allow you to build the newest Oakestra version.
+This will allow you to use the services from the alpha Oakestra release.
 
 ### Compose Overrides
 
 Since Oakestra uses docker-compose to build the components, we can use overrides to fine-tune our build environment.
 
-To use the override files, specify the them in a comma-seperated list:
+To use the override files, specify the them in a comma-seperated list by setting the `OVERRIDE_FILES` env variable **before running the startup script**.
 ```bash
 export OVERRIDE_FILES=override-alpha-versions.yaml
 ```
