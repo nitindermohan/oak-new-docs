@@ -205,14 +205,9 @@
         {{ if eq site.Params.doks.docsVersioning true -}}
 
         <div class="dropdown mt-1 order-lg-2">
-          <button class="btn btn-dropdown dropdown-toggle" id="doks-versions" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static" aria-label="Toggle version menu">
+          <button class="btn btn-dropdown dropdown-toggle text-dark" id="doks-versions" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static" aria-label="Toggle version menu">
             <span class="">Releases</span> 
-            <span class="dropdown-caret">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M6 9l6 6l6 -6"></path>
-              </svg>
-            </span>
+            <span class="dropdown-caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-menu-lg-end me-lg-2 shadow rounded border-0" aria-labelledby="doks-versions">
             {{ partial "versions.html" . }}
@@ -250,14 +245,14 @@
 
         <!-- Navbar button mobile -->
         {{ if site.Params.doks.navBarButton -}}
-          <a class="btn btn-primary rounded-pill mt-2 btn-block d-lg-none" href="{{ site.Params.doks.navBarButtonUrl | absURL }}" role="button">{{ site.Params.doks.navBarButtonText }}</a>
+          <a class="btn btn-primary rounded-pill mt-2 btn-block d-lg-none navbar-custom-button " href="{{ site.Params.doks.navBarButtonUrl | absURL }}" role="button">{{ site.Params.doks.navBarButtonText }}</a>
         {{ end -}}
       </div>
     </div>
 
     <!-- Navbar button desktop -->
     {{ if site.Params.doks.navBarButton -}}
-      <a class="btn btn-primary rounded-pill ms-3 me-2 px-4 order-lg-3 d-none d-lg-block" href="{{ site.Params.doks.navBarButtonUrl | absURL }}" role="button">{{ site.Params.doks.navBarButtonText }}</a>
+      <a class="btn btn-primary rounded-pill ms-3 me-2 px-4 order-lg-3 d-none d-lg-block navbar-custom-button " href="{{ site.Params.doks.navBarButtonUrl | absURL }}" role="button">{{ site.Params.doks.navBarButtonText }}</a>
     {{ end -}}
 
   </div>
