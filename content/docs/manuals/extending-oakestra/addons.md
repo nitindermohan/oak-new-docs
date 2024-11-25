@@ -85,7 +85,7 @@ Send a `POST` request with the JSON descriptor to the Addons Marketplace API:
 curl -X POST \
   -H "Content-Type: application/json" \
   -d @addon.json \
-  http://oakestra-marketplace/api/addons
+  http://{marketplace_url:port}/api/v1/marketplace/addons
 ```
 
 The Addons Marketplace will validate the descriptor. Once approved, the addon will be marked as `approved` and become available for installation.
@@ -105,7 +105,7 @@ Use the Addons Manager API to install the addon by sending a `POST` request with
 curl -X POST \
   -H "Content-Type: application/json" \
   -d '{"marketplace_id": "unique-addon-id"}' \
-  http://oakestra/api/addons/install
+  http://{orchestrator_url:port}/api/v1/addons
 ```
 
 ### 3.3 Verify the Installation
