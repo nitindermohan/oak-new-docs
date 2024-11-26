@@ -11,6 +11,8 @@ seo:
   noindex: false # false (default) or true
 ---
 
+## Introduction
+
 Addons in Oakestra provide a powerful way to extend and customize the platform by adding new features or enhancing existing functionality. This guide walks you through the process of creating, publishing, and installing addons in Oakestra.
 
 To get started with addons, follow these high-level steps:
