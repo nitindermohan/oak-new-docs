@@ -46,7 +46,7 @@ sudo NodeEngine -a <IP address of your cluster orchestrator> -d
 the `-d` flag runs the NodeEngine in background (detached mode)
 {{< /callout >}}
 
-Check if your worker is running, and it's correctly registered to your cluster:
+Check if your worker is running, and that it's correctly registered to your cluster:
 ```bash
 sudo NodeEngine status
 ```
