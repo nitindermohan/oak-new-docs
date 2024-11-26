@@ -11,7 +11,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-# How to access a running container?
+## How to access a running container?
 
 If you need to access a running container in your worker node, the correct way of doing it is via the `ctr` utility. `ctr` is the cli of `containerd`, the runtime used by oakestra to deploy containers. 
 Oakestra uses a custom namespace `oakestra` where all the containers are. 
@@ -42,13 +42,13 @@ sudo ctr -n oakestra task exec --exec-id tty <your task name here> <the command 
 > ```
 >![Screenshot 2024-06-05 at 09.47.05](running-containers-debug.png)
 
-# Where are the logfiles stored?
+## Where are the logfiles stored?
 
 The `stdout` and `stderr` of each container or unikernel is stored under `/tmp/<appname>.<appns>.<servicename>.<servicens>.<instancenumber>` of the worker node running the instance.
 
 > E.g., to access the latest logs of instance 0 of `x.y.z.y` in my worker node I can run `tail /tmp/x.y.z.y.0`
 
-# What about Unikernels?
+## What about Unikernels?
 
 While you cannot directly attatch yourself to a running Unikernel, the logs are extracted, stored and treaded the same way as containers. 
 
