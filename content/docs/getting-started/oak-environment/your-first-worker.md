@@ -53,7 +53,7 @@ sudo NodeEngine status
 
 If everything is showing up green 🟢... Congratulations, your worker node is set up! 🎉
 
-[SCREENSHOT HERE]
+![running](running.png)
 
 {{< callout context="note" title="Note" icon="outline/info-circle" >}}
 You can check the NodeEngine logs using 
