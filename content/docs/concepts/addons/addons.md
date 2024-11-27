@@ -11,8 +11,8 @@ seo:
   noindex: false # false (default) or true
 ---
 
-
 ## What are Addons
+
 Addons in Oakestra are modular components designed to extend the core functionality of the system without modifying its foundational architecture. These components can either enhance existing capabilities or introduce entirely new features, allowing users to customize Oakestra according to their unique requirements. By utilizing addons, Oakestra achieves a flexible system architecture that empowers users to dynamically tailor the system to fit specific use cases while preserving a streamlined core.
 
 Addons fall into two primary categories in Oakestra:
@@ -71,10 +71,10 @@ such as Docker, to manage the life cycle of addons. This includes handling execu
 monitoring, and reporting of addon statuses to ensure that addons are running as
 expected and reporting any failures to the addons manager. The Addons Monitor
 performs the following checks:
-- **Install check**: Retrieves all addons from the Addons Manager that need installing.
-- **Uninstall check**: Retrieves all addons from the Addons Manager that need unin-
-stalling.
-- **Cleanup check**: Communicates with underlying containers engines to retrieve
-all running addons and validates that these addons exist in Addons Manager.
-The purpose of this is to check if an addon was deleted from the database in the
-Addons Manager.
+  - **Install check**: Retrieves all addons from the Addons Manager that need installing.
+  - **Uninstall check**: Retrieves all addons from the Addons Manager that need unin-
+  stalling.
+  - **Cleanup check**: Communicates with underlying containers engines to retrieve
+  all running addons and validates that these addons exist in Addons Manager.
+  The purpose of this is to check if an addon was deleted from the database in the
+  Addons Manager.
