@@ -56,8 +56,10 @@ publicly accessible. Currently, only docker images are supported, but it should 
 use any OCI-compliant image in the future. The Addons Marketplace subsystem offers API
 endpoints for developers to publish their addons to Oakestra. Upon receiving a request for
 registering an Addon, the marketplace asynchronously checks if the image is valid. Once
-it’s verified, the addon’s state in the database changes from ‘under_review‘ to `approved`. If
+it’s verified, the addon’s state in the database changes from `under_review` to `approved`. If
 invalid, the status becomes `failed_verification`.
+
+![](marketplace_light.png)
 
 
 #### Addons Engine:
@@ -78,3 +80,5 @@ performs the following checks:
   all running addons and validates that these addons exist in Addons Manager.
   The purpose of this is to check if an addon was deleted from the database in the
   Addons Manager.
+
+  ![](engine_light.png)
