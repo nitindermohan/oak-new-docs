@@ -37,6 +37,8 @@ Worker Nodes:
 
 ### Stand-alone Root Orchestrator
 
+{{<svg "architecture/Arch-Root">}}
+
 First, let's deploy a stand-alone root orchestrator. This component will manage your clusters and provide an interface for users to interact with the Oakestra setup 
 by providing an [API](../../getting-started/deploy-app/with-the-api/) and a [dashboard](../../getting-started/deploy-app/with-the-dashboard/).
 
@@ -47,6 +49,8 @@ curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/St
 This script will download the required files to a directory called root_orchestrator. From there it will build the root orchestrator.
 
 ### Stand-alone Cluster Orchestrator
+
+{{<svg "architecture/Arch-Cluster">}}
 
 Next, we can deploy a stand-alone cluster orchestrator. This component will manage the nodes by delegating applications, creating subnetworks and
 facilitating communication. Additionally the cluster orchestrator sends aggregated reports to the root orchestrator.
