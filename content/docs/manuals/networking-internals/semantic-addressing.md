@@ -31,7 +31,6 @@ the **Closest** balancing policy. The former balances the traffic evenly between
 latter finds the geographically closer instance.
 
 In the following tabs we go into further detail of what is happening with each above shown request.
-The ordering goes from top (First) to bottom (Fifth).
 
 {{< tabs-icon "Requests" >}}
 {{< tab-icon "First" "_envelope_1.png">}}
@@ -54,7 +53,7 @@ When Service A performs a third request using again the ServiceIP `fdff:2000::1`
 policy, this time, the network components' proxy randomly chooses Service B Instance 2.
 {{< /tab-icon >}}
 
-{{< tab-icon "Fourth" "envelope_4.png">}}
+{{< tab-icon "Fourth" "_envelope_4.png">}}
 The fourth request from Service A to Service B uses the Instance IP representing instance 3.
 
 The proxy component then automatically chooses Service B Instance 3.
