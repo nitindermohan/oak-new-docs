@@ -26,8 +26,8 @@ or hosts based on an address with a defined meaning rather than a specific entit
 network. This means semantic addresses resolve based on a given context at runtime instead of
 fixed paths.
 
-As an example, we can reserve an address (e.g. 10.10.10.2) in our platform,
-which instead of pointing to a host, points to the geographically closest instance of a
+As an example, we can reserve an address or domain name (e.g. 10.10.10.2 or `service-a.closest-instance.oakestra`)
+in our platform, which instead of pointing to a host, points to the geographically closest instance of a
 service the user is trying to reach.
 
 This generally assumes the presence of a special resolver on the network,
@@ -48,4 +48,4 @@ This information is cached locally for a very short period of time in order to a
 to the service instances is refreshed frequently, as rescheduling of (crashed) services can happen at any point in time.
 
 For further reading into how exactly this is done, take a look at the 
-[networking internals](../manuals/networking-internals/semantic-addressing.md).
+[networking internals](/docs/manuals/networking-internals/load-balancing/).
