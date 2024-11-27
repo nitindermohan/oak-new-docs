@@ -11,7 +11,8 @@ seo:
   noindex: false # false (default) or true
 ---
 
-We start by explaining the different network abstraction layers in place and then continue with the semantic addressing.
+We start by explaining the different network abstraction layers in place, as well as the associated address space
+reservations, before continuing with the [semantic addressing](semantic-addressing.md).
 
 ## Layers
 

@@ -33,34 +33,38 @@ latter finds the geographically closer instance.
 In the following tabs we go into further detail of what is happening with each above shown request.
 The ordering goes from top (First) to bottom (Fifth).
 
-{{< tabs "Requests" >}}
-{{< tab "First" >}}
+{{< tabs-icon "Requests" >}}
+{{< tab-icon "First" "_envelope_1.png">}}
 Service A performs the first request using the ServiceIP `fdff:1000::1` representing the closest instance balancing policy.
 The network components' proxy converts the address to the Namespace IP of Service B Instance 1, which looks like it is
 the geographically closer service. The message will be, therefore **transparently** delivered to the closest instance
 of Service B. Note that the Namespace IP is the real address of the instance, the one provisioned at deployment time,
 unique and dynamic. An application developer never sees or uses this address, as it depends on the subnetwork of the
 specific machine where the service is deployed.
-{{< /tab >}}
-{{< tab "Second">}}
-Service A performs a second request using the ServiceIP fdff:2000::1 representing the Round Robin balancing
+{{< /tab-icon >}}
+
+{{< tab-icon "Second" "_envelope_2.png">}}
+Service A performs a second request using the ServiceIP `fdff:2000::1` representing the Round Robin balancing
 policy. The network components' proxy converts the address to the Namespace IP of Service B Instance 3, which is
 randomly chosen among all the available instances.
-{{< /tab >}}
-{{< tab "Third" >}}
-When Service A performs a third request using again the ServiceIP fdff:2000::1 representing the Round Robin balancing
+{{< /tab-icon >}}
+
+{{< tab-icon "Third" "_envelope_3.png">}}
+When Service A performs a third request using again the ServiceIP `fdff:2000::1` representing the Round Robin balancing
 policy, this time, the network components' proxy randomly chooses Service B Instance 2.
-{{< /tab >}}
-{{< tab "Fourth" >}}
+{{< /tab-icon >}}
+
+{{< tab-icon "Fourth" "envelope_4.png">}}
 The fourth request from Service A to Service B uses the Instance IP representing instance 3.
 
 The proxy component then automatically chooses Service B Instance 3.
-{{< /tab >}}
+{{< /tab-icon >}}
 
-{{< tab "Fifth" >}}
+{{< tab-icon "Fifth" "_envelope_5.png">}}
 The last request demonstrates that IPv4 requests work the same way as described before.
-{{< /tab >}}
-{{< /tabs >}}
+{{< /tab-icon >}}
+
+{{< /tabs-icon >}}
 
 ---
 
