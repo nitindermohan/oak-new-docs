@@ -71,7 +71,7 @@ The last request demonstrates that IPv4 requests work the same way as described 
 Currently the **IPv6 Closest** balancing strategy IP addresses (reserved, but not implemented)
 are in the `fdff:1000::/21` subnet, and **IPv6 Round Robin** in `fdff:2000::/21`. In IPv4, both balancing
 strategies take their IPs from the `10.30.0.0/16` subnet. For further information, take a look at the
-[IPv4](ipv4-addressing.md) or [IPv6](ipv6-addressing.md) address space documentation pages.
+[IPv4](../ipv4-addressing/) or [IPv6](../ipv6-addressing/) address space documentation pages.
 {{< /callout >}}
 
 {{< callout context="note" title="Mixing IP protocols" icon="outline/info-circle">}}
@@ -95,3 +95,5 @@ accordingly to their need. Edge computing brings resources closer to the users, 
 traffic with very low latency using Closest balancing policy, or one might just want to evenly balance another
 endpoint with Round Robin policy.
 {{< /callout >}}
+
+Continue reading about what actually happens in the Oakestra Network Component in our [proxy conversion page](../proxy-conversion/).

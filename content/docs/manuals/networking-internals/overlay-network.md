@@ -12,7 +12,7 @@ seo:
 ---
 
 We start by explaining the different network abstraction layers in place, as well as the associated address space
-reservations, before continuing with the [semantic addressing](semantic-addressing.md).
+reservations, before continuing with the [semantic addressing](../load-balancing/).
 
 ## Layers
 
@@ -66,4 +66,4 @@ provisioned even before the deployment of a service instance.
 {{< /callout >}}
 
 Now that you know what types of different addresses there are in Oakestra, continue with how we actually use those 
-in [IPv4 addressing](/content/docs/manuals/networking-internals/ipv4-addressing.md).
+in [IPv4 addressing](../ipv4-addressing/).

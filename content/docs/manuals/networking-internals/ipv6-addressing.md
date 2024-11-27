@@ -68,3 +68,5 @@ The Oakestra platform currently only supports a very basic form of IPv6 addressi
 strict 1-to-1 mapping between IPv4 and IPv6 addresses.
 The limiting factor remains the IPv4 address space and there currently is **no** support for standalone IPv6 networking.
 {{< /callout >}}
+
+Continue reading about our [load balancing mechanisms](../load-balancing/).
