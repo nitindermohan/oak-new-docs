@@ -366,8 +366,6 @@ table.alt tfoot {
 
 .scroll-downs {
   margin: auto;
-  position: absolute;
-  bottom: 20%;
   left: 0;
   right: 0;
   width: 34px;
