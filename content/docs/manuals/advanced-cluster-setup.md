@@ -46,7 +46,7 @@ by providing an [API](../../getting-started/deploy-app/with-the-api/) and a [das
 curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/StartOakestraRoot.sh | sh - 
 ```
 
-This script will download the required files to a directory called root_orchestrator. From there it will build the root orchestrator.
+This script will download the required files to the directory `~/oakestra/root_orchestrator`. From there it will build the root orchestrator.
 
 ### Stand-alone Cluster Orchestrator
 
@@ -59,7 +59,7 @@ facilitating communication. Additionally the cluster orchestrator sends aggregat
 curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/StartOakestraCluster.sh | sh - 
 ```
 
-This script will download the required files to a directory called cluster_orchestrator. From there it will walk you through
+This script will download the required files to the directory `~/oakestra/cluster_orchestrator`. From there it will walk you through
 configuring the cluster. Once the setup is complete, it will build the cluster orchestrator and register with the root orchestrator.
 
 {{< callout context="danger" title="Note" icon="outline/alert-octagon" >}}
