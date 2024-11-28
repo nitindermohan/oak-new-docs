@@ -588,19 +588,19 @@ table.alt tfoot {
   border: none; 
   font-family: CMUSansSerifMedium;
   /* font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif; */
-  font-size: 180%;
+  font-size: 130%;
   /* font-weight: bold; */
   color: #497286 !important;
 }
 
 .pubs_authors {
   font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif;
-  font-size: 150%;
+  font-size: 110%;
 }
 
 .pubs_type {
   font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif;
-  font-size: 150%;
+  font-size: 110%;
   color: #526873;
 }
 
