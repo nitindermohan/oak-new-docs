@@ -53,7 +53,7 @@
     - v: "0.4.400"
 
 - group: v0.4.300
-  baseurl: "/archive/0.4.301"
+  baseurl: "/version/0.4.301"
   description: "Old release."
   versions:
     - v: "0.4.301"
