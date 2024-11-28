@@ -13,8 +13,7 @@ seo:
 
 ## Intra-Cluster Communication
 
-{{< inline-svg src="svgs/mqtt/MQTT-Arch.svg" class="svg-inline-custom svg-lightmode" >}}
-{{< inline-svg src="svgs/mqtt/MQTT-Arch-dark.svg" class="svg-inline-custom svg-darkmode" >}}
+{{<svg "mqtt/MQTT-Arch">}}
 
 The above image shows how intra-cluster communication takes place. Nodes send application status and node health reports to the cluster-service-manager.
 The cluster-service-manager then appropriately propagates this information to other nodes and the root-service-manager. Since the nodes report sensitive information, such

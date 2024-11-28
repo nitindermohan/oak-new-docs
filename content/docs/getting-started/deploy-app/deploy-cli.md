@@ -14,4 +14,8 @@ seo:
   description: "" # custom description (recommended)
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
+asciinema: true
 ---
+
+WIP asciinema EXAMPLE - WILL BE REMOVED 
+{{< asciinema key="cli_configuration_demo" poster="0:16" >}}
