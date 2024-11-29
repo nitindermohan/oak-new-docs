@@ -23,12 +23,12 @@
                       {{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
                         <div class="row">
                             <div class="pubs-img-container col-md-12 col-lg-3 col-xl-3">
-                                <a href={{ .Params.pdf | title }} class="no-decoration" target="_blank">
-                                    <img class="pubs_img" src={{ .Params.img | title }}>
+                                <a href={{ .Params.pdf }} class="no-decoration" target="_blank">
+                                    <img class="pubs_img" src={{ .Params.img }}>
                                 </a>
                                 <div class="badges-img text-center">
                                     {{ range .Params.badges }}
-                                        <img src="{{ . | title }}">
+                                        <img src="{{ . }}">
                                     {{ end }}
                                 </div>
                             </div>
