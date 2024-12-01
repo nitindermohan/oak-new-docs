@@ -1,8 +1,8 @@
 ---
-title: "Hooks"
+title: "Setup Hooks"
 summary: ""
 draft: false
-weight: 332
+weight: 4
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -41,7 +41,7 @@ Hooks are implemented using the **Resource Abstractor** component, which central
 
 ## Using Hooks
 
-### Step 1: Registering a Hook
+### Registering a Hook
 
 To subscribe to life-cycle events, services must register their webhook URL and specify the events they want to listen to. Here’s how to do it:
 
@@ -66,7 +66,7 @@ Send a `POST` request to the Resource Abstractor API with the following JSON bod
 
 ---
 
-### Step 2: Receiving Notifications
+### Receiving Notifications
 
 When a life-cycle event occurs, the Resource Abstractor sends a notification to the registered `webhook_url`. The notification structure depends on the event type:
 
