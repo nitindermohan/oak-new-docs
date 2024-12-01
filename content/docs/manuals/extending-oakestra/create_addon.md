@@ -63,3 +63,11 @@ Here is an example:
 To make the addon available for others in the Oakestra ecosystem, publish it to the Addons Marketplace by sending a `POST` request with the JSON descriptor to the Addons Marketplace API `/api/v1/marketplace/addons`.
 
 The Addons Marketplace will validate the descriptor. Once approved, the addon will be marked as `approved` and become available for installation.
+
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+To create a service that would replace a *component/container* inside Oakestra, the service name should match the name of that component. 
+
+For instance, to replace the `scheduler` component in the Root Orchestrator where its exact name of the component is called `cloud_scheduler`, the service would then need to be called `cloud_scheduler`. Note the difference between a service and an addon, is that an **addon may contain multiple services**.
+
+{{< /callout >}}
