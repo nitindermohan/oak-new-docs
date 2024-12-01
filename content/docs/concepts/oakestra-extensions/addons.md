@@ -37,9 +37,6 @@ In Oakestra, plugins provide a way to swap out components, enhancing the systems
 
 Extensions in Oakestra can add substantial new capabilities to the system. One example could be the introduction of federated learning on edge computing devices. Federated learning enables decentralized training across multiple devices, enhancing privacy by not requiring raw data transfer. Implementing this as an extension involves adding new components to the Orchestrator control plane for the coordination and aggregation of distributed training processes. Users can activate or deactivate this extension based on their needs, making it a flexible addition that adapts Oakestra to specialized use cases.
 
-## Addon Lifecycle Management
-The lifecycle of an addon—from creation to deployment—is managed by the **Addons Engine** and the **Addons Marketplace**. This design allows for **hot-swapping**, where new features can be added or swapped without disrupting core services.
-
 ## Addon System Design
 
 Addons in Oakestra are modular components that extend the platforms core functionality while keeping the foundational architecture lightweight. This design ensures that Oakestra remains efficient, avoiding unnecessary bloat in edge computing environments.
@@ -50,6 +47,8 @@ Addons system is composed of two subsystems:
 
 #### Addons Marketplace:
 
+![](marketplace_light.png)
+
 The marketplace allows developers to publish their add-ons for Oakestra. To create
 an addon, users must package their code and convert it into an OCI-compliant image that is
 publicly accessible. Currently, only docker images are supported, but it should be possible to
@@ -59,10 +58,9 @@ registering an Addon, the marketplace asynchronously checks if the image is vali
 it’s verified, the addon’s state in the database changes from `under_review` to `approved`. If
 invalid, the status becomes `failed_verification`.
 
-![](marketplace_light.png)
-
-
 #### Addons Engine:
+
+![](engine_light.png)
 
 The addons engine is composed of two main components:
 
@@ -81,4 +79,9 @@ performs the following checks:
   The purpose of this is to check if an addon was deleted from the database in the
   Addons Manager.
 
-  ![](engine_light.png)
+
+## Addon Lifecycle Management
+
+The lifecycle of an addon—from creation to deployment—is managed by the **Addons Engine** and the **Addons Marketplace**. This design allows for **hot-swapping**, where new features can be added or swapped without disrupting core services.
+
+When installing an addon, the Addons Engine checks if a similar core component is running. If thats the case, the core component is stopped and the addon is run in its place. In this scenario the addon inherits the port mappings and network specifications of the core component. If no core component exists than its an extension and doesn't replace any other component.
