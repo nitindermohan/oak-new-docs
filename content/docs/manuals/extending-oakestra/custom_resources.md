@@ -1,8 +1,8 @@
 ---
-title: "Custom Resources"
+title: "Create a Custom Resource"
 summary: ""
 draft: false
-weight: 333
+weight: 5
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -35,7 +35,7 @@ Custom Resources operate via the **Resource Abstractor**, which centralizes enti
 
 ## Using Custom Resources
 
-### Step 1: Defining a Custom Resource
+### Defining a Custom Resource
 
 Custom Resources are defined by specifying their type and schema. The schema determines the structure of the data the resource can hold.
 
@@ -62,13 +62,13 @@ Send a `POST` request to the Resource Abstractor API with the following JSON bod
 - **resource_type**: The name of the new resource type (e.g., `custom_type`).
 - **schema**: Defines the structure of the resource using an OpenAPI-compliant format.
 
-### Step 2: Accessing the Custom Resource
+### Accessing the Custom Resource
 
 Once created, the Custom Resource is accessible through its API endpoint:
 - Endpoint: `/custom-resources/{resource_type}`
 - Methods: `GET`, `POST`, `PUT`, `PATCH`, `DELETE`
 
-#### Example: Adding a Resource Instance
+#### Adding a Resource Instance
 To add an instance of the resource, send a `POST` request to the resource’s endpoint:
 ```json
 {
@@ -80,7 +80,7 @@ To add an instance of the resource, send a `POST` request to the resource’s en
 
 ---
 
-### Step 3: Using Controllers with Custom Resources
+### Using Controllers with Custom Resources
 
 Controllers enable automation and state management for Custom Resources. When a Custom Resource is updated, controllers can monitor the changes and perform corresponding actions. These controllers can be implemented as Oakestra addons.
 
