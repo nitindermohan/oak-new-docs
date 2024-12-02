@@ -16,23 +16,29 @@ seo:
 
 To test out the balancing capabilities of Oakestra, we can deploy a simple Nginx server and a client that sends requests to a Round-Robin balanced semantic IP assigned to the server. When scaling up the Nginx service, the client requests will automatically be balanced across the service's instances.
 
-{{< callout context="note" title="OAK CLI" icon="outline/rocket">}}
+{{< callout context="tip" title="Oakestra CLI Tool" icon="outline/rocket">}}
 
-In this guide we'll use the Oakestra CLI tool to interact with the Oakestra platform. To find out more about the CLI tool, please refer to the CLI section of the manuals.
+In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with the Oakestra-managed infrastructure. To find out more about the CLI tool, please refer to the CLI section of the manuals.
+
+You can check if `oak-cli` is installed by running the following command:
+
+```bash
+oak v
+```
 
  {{< /callout >}}
 
 #### SLA Template
 
-For this example, we create a service named `curlv4` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Okestra semantic IP address of our choice (`10.30.55.55`), then fails. After failure, Oakestra will re-deploy the instance indefinitely.
+For this example, we will create a microservice named `curlv4` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Oakestra semantic IP address of our choice (`10.30.55.55`), then fails. Oakestra will detect the failure and automatically re-deploy the instance indefinitely, and we should observe continous curl requests everytime the service is successfully deployed.
 
-Together with the `curlv4` service, we deploy a Nginx service named `nginx` using the `nginx:latest` docker image. This service will be assigned a Round-Robin semantic IPv4 address,`10.30.55.55` (as well as a Round-Robin semantic IPv6 address `fdff:2000::55:55`, but this is optional).
+Together with the `curlv4` service, we deploy a server microservice named `nginx` using the `nginx:latest` docker image. This service will be assigned a Round-Robin semantic IPv4 address,`10.30.55.55` (as well as a Round-Robin semantic IPv6 address `fdff:2000::55:55`, but this is optional).
 
-{{< callout context="caution" title="Oakestra Networking" icon="outline/alert-triangle">}}
+{{< callout context="note" title="Good to know" icon="outline/info-circle">}}
 To find out more about networking, please refer to the [Networking](/docs/manuals/networking-internals) section.
 {{< /callout >}}
 
-Refer to the following SLA template to deploy the services.
+You can use the following SLA template to deploy the services (if you want to have custom setup, feel free to modify the SLA file):
 
 ```json {title="~/oak_cli/SLAs/nginx-client-server.json"}
 {
@@ -95,12 +101,15 @@ Refer to the following SLA template to deploy the services.
 }
 ```
 
-#### Let's deploy the services
+#### Now we can deploy the services on our cluster
+
+Use the following command to deploy the services:
+
 ```bash
  oak a c --sla-file-name nginx-client-server.json -d
 ```
 
-{{< callout context="note" title="Did you know?" icon="outline/rocket">}} If your SLA file is not in the ~/oak_cli/SLAs directory you can use the following command instead:
+{{< callout context="note" title="Did you know?" icon="outline/rocket">}} If your SLA file is not in the `~/oak_cli/SLAs` directory you can use the following command instead:
 
 ```bash
  oak a c --sla-file-name $(pwd)/nginx-client-server.json -d
@@ -111,17 +120,19 @@ Refer to the following SLA template to deploy the services.
 Now the `curlv4` will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new `curlv4` instance, so the cycle will continue.
 
 #### Scale up the Nginx service
+
+Now lets try to increase the number of Nginx server instances to see the balancing in action.
 Let's fetch the Nginx's Service ID using 
 ```bash
 oak s s
 ```
 
-Then let's deploy a second Nginx instance using:
+Copy the service ID displayed. Then let's deploy a second Nginx instance using:
 ```bash
 oak s d <Nginx Service's ID>
 ```
 
-By running `oak s s` you should now see two instances of the Nginx service running.
+If everything goes well, you should see two instances of the Nginx service operations by running `oak s s` command.
 ```bash
 ╭──────────────┬──────────────────────────┬────────────────┬────────────┬──────────────────────────╮
 │ Service Name │ Service ID               │ Instances      │ App Name   │ App ID                   │
@@ -133,7 +144,9 @@ By running `oak s s` you should now see two instances of the Nginx service runni
 │              │                          │  1 RUNNING ●   │            │                          │
 ╰──────────────┴──────────────────────────┴────────────────┴────────────┴──────────────────────────╯
 ```
-#### Sit down, relax, and watch the magic happen
+
+
+#### Sit down, relax, and watch the magic happen 🪄
 Use the following command to check the instance's logs:
 ```bash
 oak s i <Nginx Service ID> -l
@@ -158,3 +171,8 @@ For this example, we used the command `oak s i 672cf97ff7728660d15a5852`
 ```
 
 As you can see both instances got requests from the single client we have, even if the client is always using the same IP address. 
+
+{{< callout context="tip" title="Oakestra Dashboard" icon="outline/rocket">}}
+You can also monitor the services and their instances using the Oakestra Dashboard. To access the dashboard, open your browser and navigate to `http://<your-oakestra-root-ip>`. See the [Dashboard](/docs/getting-started/deploy-app/with-the-dashboard) section for more information.
+
+ {{< /callout >}}
