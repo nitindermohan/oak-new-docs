@@ -10,26 +10,28 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
+You can run a wide variety of applications in your Oakestra cluster.
+Here, you'll find some examples applications with their respective SLA template that you can use right away to test out Oakestra. You can also use these examples as a starting point to build your own applications.
 
 ![header](header.png)
-Here, you'll find some examples of applications with their respective SLA template that you can use right away to test out Oakestra.
 
-## Nginx Client-Server with Load Balancing
+
+## I. Nginx Client-Server with Load Balancing
 ![Minecraft Preview](balancing.png)
 
-To test out the balancing capabilities of Oakestra, we can deploy a simple Nginx server and a client that sends requests to a Round-Robin balanced semantic IP assigned to the server. When scaling up the Nginx service, the client requests will automatically be balanced across the service's instances.
+To test out the balancing capabilities of Oakestra, you can deploy a simple Nginx server and a client that sends requests to a **Round-Robin** balanced semantic IP assigned to the server. This means that when scaling up your Nginx service, the client requests will automatically be balanced across the service's instances without you having to change anything in application code.
 
 {{< link-card
  title="Nginx Client-Server Example"
- description="create load-balanced nginx servers"
+ description="Read more about how to create load-balanced microservices"
  href="../nginx-client-server-with-load-balancing/"
  target="_blank"
 >}}
 
-## Cloud/Edge Gaming: Minecraft 
+## II. Cloud/Edge Gaming: Minecraft 
 ![Minecraft Preview](minecraft-full.png)
 
-Features:
+**Features**:
 - 🎮 Play Minecraft from a browser, no client installation needed (thanks to [WebMC](https://github.com/michaljaz/webmc))
 - 👭 Play multiplayer locally or remotely 
 - 🖥️ Host your Minecraft server ([Openhack](https://github.com/noelbundick/minecraft-server)) and proxy. 
@@ -37,32 +39,36 @@ Features:
 - 🛠️ Customize your deployment 
 
 {{< link-card
- title="Minecraft Demo Repository"
- description="github.com/oakestra/minecraft-client-server-example"
+ title="Self-hosted Minecraft Demo"
+ description="See GitHub repository for installation details."
  href="https://github.com/oakestra/minecraft-client-server-example"
  target="_blank"
 >}}
 
-## Object Detection Pipeline
+## III. Augmented Reality (AR)
 ![Object Detection Preview](ar-demo.gif)
 
-You can try out this AR Pipeline composed of three services: 
+You can try out our custom distributed AR application, which is composed of three microservices. 
 
-**Preprocessing**: The preprocessing microservice collects the frames and adapts them for the model.
+**1. Preprocessing**: The preprocessing microservice collects the frames and adapts them for the model.
 
-**Object Detection**: This service detects the bounding boxes inside the image. If Object Recognition is up and running, it forwards the frames there. Otherwise, it sends the bounding boxes back to the client.
+**2. Object Detection**: This service detects the bounding boxes inside the image. If Object Recognition is up and running, it forwards the frames there. Otherwise, it sends the bounding boxes back to the client.
 
-**Object Recognitions**: This service receives the frames from object detection. For each bounding box of type "Person" it detects the face features and sends them back to the client.
+**3. Object Recognition**: This service receives the frames from object detection. For each bounding box of type "Person" it detects the face features and sends them back to the client.
 
 {{< inline-svg src="svgs/app-catalog/pipeline-light.svg" class="svg-inline-custom svg-lightmode" width="600px" height="250px" >}}
 {{< inline-svg src="svgs/app-catalog/pipeline-dark.svg" class="svg-inline-custom svg-darkmode" width="600px" height="250px">}}
 
 {{< link-card
- title="AR Pipeline Repository"
- description="github.com/oakestra/app-ar-pipeline"
+ title="Augmented Reality Pipeline Setup"
+ description="See GitHub repository for installation details."
  href="https://github.com/oakestra/app-ar-pipeline/tree/main"
  target="_blank"
 >}}
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+Read our research on how Augmented Reality and video analytics applications can be accelerated using Oakestra here. 
+{{< /callout >}}
 
 ## Unikraft Web Server
 
@@ -70,7 +76,7 @@ Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using
 
 {{< link-card
  title="Nginx Unikernel Deployment"
- description="create load-balanced nginx servers"
+ description="Read more to learn how to create unikernel microservices."
  href="../nginx-unikernel-deployment/"
  target="_blank"
 >}}
