@@ -157,4 +157,4 @@ For this example, we used the command `oak s i 672cf97ff7728660d15a5852`
 ╰───────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
-As you can see both instances got requests from the single client we have, even is the client is always using the same IP address. 
+As you can see both instances got requests from the single client we have, even if the client is always using the same IP address. 
