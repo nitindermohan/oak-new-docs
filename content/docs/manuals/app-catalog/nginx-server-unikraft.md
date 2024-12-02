@@ -14,15 +14,21 @@ seo:
 
 ![Nginx Balancing](balancing-unikraft.png)
 
-Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using [Unikraft](https://unikraft.org). This will allow us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
+{{< callout context="caution" title="Unikernels within Oakestra" icon="outline/alert-triangle">}}
+This guide is (almost) a clone of the containers Nginx client-server applications described in [previous walkthrough](/docs/manuals/app-catalog/nginx-sever), however, we instead use Unikraft Nginx server. 
 
-{{< callout context="note" title="Unikernel Support" icon="outline/rocket">}} To enable unikernel support, please refer to the Unikernel Support manual section{{< /callout >}}
+To enable unikernel support, please refer to the Unikernel Support manual section.
+{{< /callout >}}
+
+We can deploy Nginx using [Unikraft](https://unikraft.org). This will allow us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
+
+<!-- {{< callout context="note" title="Unikernel Support" icon="outline/rocket">}} To enable unikernel support, please refer to the Unikernel Support manual section{{< /callout >}} -->
 
 #### SLA Template
 
-For this example, we create a service named `curl` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Okestra semantic IP address of our choice (`10.30.30.31`), and then it fails. After failure, Oakestra will re-deploy the instance indefinitely.
+We create a service named `curl` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Oakestra semantic IP address of our choice (`10.30.30.31`), and then it fails. After failure, Oakestra will re-deploy the instance indefinitely.
 
-Together with the `curlv4` service, we deploy a Nginx service named `nginx` using the `nginx_amd64.tar.gz` unikraft image hosted online. This service will be assigned a Round-Robin semantic IPv4 address `10.30.30.31`. Since this kernel image is only available for `amd64` architecture, we specify this in the SLA template using `"arch": ["amd64"],` selector.
+Together with the `curlv4` service, we deploy a Nginx service named `nginx` using the `nginx_amd64.tar.gz` Unikraft image hosted online. This service will be assigned a Round-Robin semantic IPv4 address `10.30.30.31`. Since this kernel image is only available for `amd64` architecture, we specify this in the SLA template using `"arch": ["amd64"],` selector.
 
 {{< callout context="caution" title="Oakestra Networking" icon="outline/alert-triangle">}}
 To find out more about networking, please refer to the [Networking](/docs/manuals/networking-internals) section.
@@ -95,9 +101,21 @@ Refer to the following SLA template to deploy the services.
 }
 ```
 
-{{< callout context="note" title="OAK CLI" icon="outline/rocket">}}
+<!-- {{< callout context="note" title="OAK CLI" icon="outline/rocket">}}
 
 In this guide we'll use the Oakestra CLI tool to interact with the Oakestra platform. To find out more about the CLI tool, please refer to the CLI section of the manuals.
+
+ {{< /callout >}} -->
+
+ {{< callout context="tip" title="Oakestra CLI Tool" icon="outline/rocket">}}
+
+In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with the Oakestra-managed infrastructure. To find out more about the CLI tool, please refer to the CLI section of the manuals.
+
+You can check if `oak-cli` is installed by running the following command:
+
+```bash
+oak v
+```
 
  {{< /callout >}}
 
@@ -140,7 +158,7 @@ By running `oak s s` you should now see two instances of the Nginx service runni
 │              │                          │  1 RUNNING ●   │            │                          │
 ╰──────────────┴──────────────────────────┴────────────────┴────────────┴──────────────────────────╯
 ```
-#### Sit down, relax, and watch the magic happen
+#### Sit down, relax, and watch the magic happen 🪄
 Use the following command to check the instance's logs:
 ```bash
 oak s i <Nginx Service ID>
