@@ -66,7 +66,7 @@ You can try out our custom distributed AR application, which is composed of thre
  target="_blank"
 >}}
 
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+{{< callout context="note" title="Good to know" icon="outline/info-circle" >}}
 Read our research on how Augmented Reality and video analytics applications can be accelerated using Oakestra here. 
 {{< /callout >}}
 
