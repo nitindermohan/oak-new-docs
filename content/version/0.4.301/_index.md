@@ -6,6 +6,5 @@ weight: 200
 exclude_search: true
 toc_hide: false
 hide_summary: true
-type: "docs"
 ---
 

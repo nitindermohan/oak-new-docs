@@ -574,7 +574,7 @@ table.alt tfoot {
 
 .pubs_img {
   width: 50%;
-  min-width: 80px;
+  min-width: 120px;
   display: box;
   /* border-right: 2px solid black;
   padding-right: 1em;
@@ -586,7 +586,7 @@ table.alt tfoot {
 .pubs_title {
   text-decoration: none !important;
   border: none; 
-  font-family: CMUSansSerifMedium;
+  /* font-family: CMUSansSerifMedium;
   /* font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif; */
   font-size: 130%;
   /* font-weight: bold; */
@@ -594,12 +594,12 @@ table.alt tfoot {
 }
 
 .pubs_authors {
-  font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif;
+  /* font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif; */
   font-size: 110%;
 }
 
 .pubs_type {
-  font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif;
+  /* font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif; */
   font-size: 110%;
   color: #526873;
 }
@@ -613,10 +613,11 @@ table.alt tfoot {
 /* overlap */
 
 .pubs-img-container {
-  padding-right: 2px; 
   padding-top: 1em; 
   padding-right: 1.1em; 
+  margin-right: 1em;
   width: 10vw;
+  min-width: 120px;
 }
 
 .pubs_img {
@@ -644,7 +645,8 @@ table.alt tfoot {
 } */
 
 .badges-img {
-  width: 33%;
+  width: 40%;
+  min-width: 40px;
   display: flex;
 }
 

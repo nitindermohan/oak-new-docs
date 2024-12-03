@@ -1,5 +1,5 @@
 ---
-title: "Publications"
+title: "Research" # Figure out why title not working
 description: ""
 summary: ""
 date: 2023-09-07T16:21:44+02:00
@@ -17,3 +17,6 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
+
+Oakestra is a research-driven platform. Most of its components have been documented in peer-reviewed publications.
+Please take a look at the list of our publications:

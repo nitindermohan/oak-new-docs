@@ -21,10 +21,10 @@
     <!-- Site title -->
     <a class="navbar-brand me-auto me-lg-3" href="{{ relLangURL "" }}">
       <figure class="svg-lightmode">
-          <img src="/img/logo/logo_light.png" class="logo-navbar">
+          <img src="/img/logo/color-min.png" class="logo-navbar">
       </figure>
       <figure class="svg-darkmode">
-        <img src="/img/logo/logo_dark.png" class="logo-navbar">
+        <img src="/img/logo/color-min.png" class="logo-navbar">
       </figure>
     </a>
 
@@ -148,7 +148,7 @@
         {{ partial "main/showFlexSearch" . }}
         {{ $showFlexSearch := .Scratch.Get "showFlexSearch" -}}
         {{ if $showFlexSearch -}}
-        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block" aria-label="Search website">
+        <button type="button" id="searchToggleDesktop" class="btn btn-link nav-link p-2 d-none d-lg-block order-lg-2" aria-label="Search website">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <circle cx="10" cy="10" r="7"></circle>
@@ -209,24 +209,24 @@
         {{ end -}}
 
         <!-- Versioning dropdown  -->
-        {{ if eq site.Params.doks.docsVersioning true -}}
+        {{ if eq site.Params.doks.docsVersioning true -}}{{ if not (eq .Params.hideVersions true) -}}
 
-        <div class="dropdown mt-1 order-lg-2">
+        <div class="dropdown mt-1 order-lg-5">
           <button class="btn btn-dropdown dropdown-toggle text-dark" id="doks-versions" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static" aria-label="Toggle version menu">
-            <span class="">Releases</span> 
+            <span class="">Releases ▿</span> 
             <span class="dropdown-caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-menu-lg-end me-lg-2 shadow rounded border-0" aria-labelledby="doks-versions">
             {{ partial "versions.html" . }}
           </ul>
         </div>
-        {{ end -}}
+        {{ end -}}{{ end -}}
         
 
 
         <!-- Color mode toggler -->
         {{ if and (eq site.Params.doks.colorMode "auto") site.Params.doks.colorModeToggler -}}
-        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1" type="button" aria-label="Toggle theme">
+        <button id="buttonColorMode" class="btn btn-link mx-auto nav-link p-0 ms-lg-2 me-lg-1 order-lg-3" type="button" aria-label="Toggle theme">
           <svg data-bs-theme-value="dark" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
@@ -240,7 +240,7 @@
 
         <!-- Social menu -->
         {{ if .Site.Menus.social -}}
-        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-4">
+        <ul id="socialMenu" class="nav mx-auto flex-row order-lg-1">
           {{ range .Site.Menus.social -}}
             <li class="nav-item">
               <a class="nav-link social-link" href="{{ .URL | relURL }}">{{ .Pre | safeHTML }}<small class="ms-2 visually-hidden">{{ .Name | safeHTML }}</small></a>
@@ -251,16 +251,16 @@
 
 
         <!-- Navbar button mobile -->
-        {{ if site.Params.doks.navBarButton -}}
+        {{ if site.Params.doks.navBarButton -}} {{ if eq .Params.hideVersions true  -}}
           <a class="btn btn-primary rounded-pill mt-2 btn-block d-lg-none navbar-custom-button " href="{{ site.Params.doks.navBarButtonUrl | absURL }}" role="button">{{ site.Params.doks.navBarButtonText }}</a>
-        {{ end -}}
+        {{ end -}} {{ end -}}
       </div>
     </div>
 
     <!-- Navbar button desktop -->
-    {{ if site.Params.doks.navBarButton -}}
+    {{ if site.Params.doks.navBarButton -}} {{ if eq .Params.hideVersions true  -}}
       <a class="btn btn-primary rounded-pill ms-3 me-2 px-4 order-lg-3 d-none d-lg-block navbar-custom-button " href="{{ site.Params.doks.navBarButtonUrl | absURL }}" role="button">{{ site.Params.doks.navBarButtonText }}</a>
-    {{ end -}}
+    {{ end -}}{{ end -}}
 
   </div>
 </header>
