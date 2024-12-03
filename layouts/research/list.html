@@ -1,15 +1,10 @@
 {{ define "main" }}
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="/css/main.css" />
-<link rel="stylesheet" href="/css/academicons.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/bibtext.css" />
-<link rel="stylesheet" href="/css/zocial.css" />
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<link rel="icon" href="/img/favicon.ico" />
 
 <div class="row justify-content-center pubs">
-    <div class="col-md-12 col-lg-10 col-xl-8">
+    <div class="col-md-12 col-lg-12 col-xl-12">
       <article>
         <h1 class="text-center">{{ if eq .CurrentSection .FirstSection }}{{ .Section | humanize }}{{ else }}{{ .Title }}{{ end }}</h1>
         {{ with .Content }}<div class="text-center">{{ . }}</div>{{ end }}
@@ -32,24 +27,24 @@
                                     {{ end }}
                                 </div>
                             </div>
-                            <div style="vertical-align: top" class="col-md-12 col-lg-8 col-xl-8">
+                            <div style="vertical-align: top" class="col-md-12 col-lg-12 col-xl-12">
                                 <div style="position: relative; min-height: 180px; padding-left: -2em; padding-top: 1em">
                                     <span class="pubs_title">
                                         <a href={{ .Params.pdf }}
-                                            style="text-decoration: none!important; border: none; font-family: CMUSansSerifMedium; color: inherit;"
+                                            style="text-decoration: none!important; border: none; color: inherit;"
                                             target="_blank">
                                             {{ .Params.title }}
                                         </a>
                                     </span>
                                     <br>
-                                    <span style="font-family: CMUSansSerifMedium" class="pubs_authors">
+                                    <span class="pubs_authors">
                                         {{ .Params.authors }}
                                     </span>
                                     <br><br>
-                                    <span style="font-family: CMUSansSerifMedium;" class="pubs_type">
+                                    <span class="pubs_type">
                                         {{ .Params.conference }}
-                                    </span><br>
-                                    <a class="btn-primary-overide btn-sm"  href={{ .Params.doi }}
+                                    </span> 
+                                    <a class="btn btn-sm" style="font-size: 110%;" href={{ .Params.doi }}
                                             target="_blank">
                                             <i class="fa fa-globe" aria-hidden="true"></i> DOI
                                     </a>
