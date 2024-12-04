@@ -30,7 +30,7 @@ A developer can communicate with any instance of Service B either with **Round R
 the **Closest** balancing policy. The former balances the traffic evenly between all the instances, and the
 latter finds the geographically closer instance.
 
-In the following tabs we go into further detail of what is happening with each above shown request.
+Click on the following tabs to see how every request is handled.
 
 {{< tabs-icon "Requests" >}}
 {{< tab-icon "First" "_envelope_1.png">}}
@@ -96,4 +96,4 @@ traffic with very low latency using Closest balancing policy, or one might just 
 endpoint with Round Robin policy.
 {{< /callout >}}
 
-Continue reading about what actually happens in the Oakestra Network Component in our [proxy conversion page](../proxy-conversion/).
+Continue reading about what actually happens in the Oakestra network component.

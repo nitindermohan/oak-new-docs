@@ -13,25 +13,25 @@ seo:
 
 In order to make the service layer networking functional, a worker-level tun-proxy is transparently instantiated
 as part of the Oakestra network component. The following picture is an example of what happens in a worker node
-based on the IPv4 implementation of the NetManager component. It is worth noting, that
-**IPv4 and IPv6 work identically**. For simplicity, we will stick to IPv4 addresses.
+based on the IPv4 implementation of the NetManager component. Note that
+**IPv4 and IPv6 work identically**. For simplicity, we will stick to IPv4 addresses in this walkthrough.
 
 ## Example
 
-In this example, we have two worker nodes, namely Node 1 and Node 2, each containing two containers.
+Lets assume that we have two worker nodes, namely Node 1 and Node 2, each executing two containers.
 The containers are instantiated and managed by the NodeEngine (See High-Level Architecture wiki), while
 the Net Manager, creates a network namespace for each container (the cloud surrounding the container),
 enabling the Virtual Layer abstraction.
 
 ![Proxy Conversion](_overlay-example.png)
 
-The Service Layer abstraction is realized hierarchically with a mechanism of route Interest Registration and
-Proxying Translation. This section details the proxy Translation, hence the mechanism that allows transparent
-conversion of Service IPs into Namespace IPs, therefore transparent Virtual Layer - Service Layer conversion.
+The Service Layer abstraction is realized hierarchically with a mechanism of *route interest registration* and
+*proxy translation*. This section details the proxy translation that allows transparent
+conversion of Service IPs into Namespace IPs, therefore enabling transparent Virtual Layer &harr; Service Layer conversion.
 
 Following the example mentioned above, suppose we deployed services X1 and X3 using the following deployment descriptor.
 
-{{< details "Example deployment descriptor for Services X1 and X3" >}}
+{{< details "Click here to view the deployment descriptor for Services X1 and X3" >}}
 
 ```yaml
 {
@@ -83,7 +83,7 @@ Robin policy. Therefore, X1 will use this address to perform load-balanced reque
 
 ---
 
-In the following selection you can take a closer look at what is happening in each step of above's example.
+Click on different steps to see what is happening behind-the-scenes.
 
 {{< tabs >}}
 {{< tab "Step 1 - GET" >}}

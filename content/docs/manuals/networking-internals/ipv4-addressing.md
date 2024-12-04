@@ -30,7 +30,7 @@ In the following we give a short meaning for each tag.
 
 ## Example Application Assignment
 
-If we deploy an example application A with Service S and two instances (S1 and S2) on the worker node W, an example address configuration can be the following:
+If we deploy an example application `A` with two instances of microservice `S` (i.e. {{< math >}}$S_1${{< /math >}} and {{< math >}}$S_2${{< /math >}}) on the worker node W, an example address configuration can be the following:
 
 | App A    | Addresses / Subnets assigned                             |
 |----------|----------------------------------------------------------|
@@ -39,4 +39,4 @@ If we deploy an example application A with Service S and two instances (S1 and S
 | S1       | Instance IP: `10.30.0.2`<br> Namespace IP: `10.18.30.65` |
 | S2       | Instance IP: `10.30.0.3`<br> Namespace IP: `10.18.30.66` |
 
-Oakestra also has IPv6 support, which you can read in [IPv6 address partitioning](../ipv6-addressing/).
+Oakestra also has IPv6 support, which you can read in the next page [IPv6 address partitioning](../ipv6-addressing/).
