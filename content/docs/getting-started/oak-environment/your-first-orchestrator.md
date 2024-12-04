@@ -13,6 +13,17 @@ seo:
 
 Let's get you up to speed with the easiest possible setup. You'll be able to run your first Oakestra Orchestrator in a few seconds!
 
+{{< callout context="note" title="Did you know?" icon="outline/info-circle" >}}
+You can install all required dependencies for Oakestra setup on your machine using `oak-cli`. Simply use the command
+
+```bash
+oak i fundamentals 
+```
+
+Learn more about installing `oak-cli` in the [CLI Setup](/docs/getting-started/deploy-app/with-the-cli) page.
+
+{{< /callout >}}
+
 ### Startup the Orchestrators in a Single Machine
 
 In this guide, we'll perform a Single Machine Setup. This setup is the easiest way to get started with Oakestra with a single Cluster managed by a single machine. To do so, we'll install the **Root Orchestrator** and the **Cluster Orchestrator** together, as shown in the following figure. 
