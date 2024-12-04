@@ -25,28 +25,41 @@ Besides using the API directly or clicking through the dashboard UI, you can als
 {{< /callout >}}
 
 
-## The OAK CLI
-The benefits of using this CLI are:
-- Easy installation via pip
-- Native Interface for the Oakestra APIs
+## The `oak-cli`
+
+{{< callout context="note" title="Benefits of `oak-cli`" icon="outline/rocket">}} 
+
+- Easy installation via `pip`
+- Native interface for the Oakestra APIs
   - Eliminates the need to use external third-party tools
-- Accelerated & Simpler Workflows
+- Accelerated & simpler workflows
   - Removes the need to memorize necessary API endpoints
   - The CLI commands can be chained together and used in custom scripts
-  - Automates tedious tasks away
-    - E.g. Acquiring the Login Token
+  - Automates tedious tasks away (e.g. acquiring login token)
+{{< /callout >}}
+
   
 
 
 ## CLI Setup
-You can install the CLI via `pip install oak-cli`. <br>
-When you run the CLI for the first time it will welcome you.
+You can install the CLI via `pip install oak-cli`. 
 
-![OAK CLI Initial Welcome ASCII Art](./cli-images/welcome-message.png)
+{{< callout context="note" title="Helpful tip!" icon="outline/info-circle" >}}
+  You may need to setup a Python virtual environment first to avoid conflicts with other Python packages.
+  ```bash
+  python3 -m venv venv
+
+  source ~/venv/bin/activate
+  ```
+{{< /callout >}}
+
+Execute `oak` and you will be welcomed into the Oakestra CLI world 🌎
+
+![`oak-cli` Initial Welcome ASCII Art](./cli-images/welcome-message.png)
 
 
 ### Configurating the CLI
-The OAK CLI supports different scenarios based on the concrete Oakestra use case and user preferences.
+The `oak-cli` supports different scenarios based on the concrete Oakestra use case and user preferences.
 
 This CLI initially hides many of its commands to avoid overwhelming new users.
 Additionally, not every user needs every available command, and not every command makes sense in every situation or environment.
@@ -68,7 +81,7 @@ Based on your Yes/No responses it will provide you with the matching set of comm
 
 This configuration is persistently stored on your machine.
 
-Configuring your OAK-CLI is optional yet highly recommended.
+Configuring your `oak-cli` is optional yet highly recommended.
 You can always revert your configuration to its initial state.
 
 For further information about the CLI configuration see the **CLI Manuals**.
@@ -86,7 +99,7 @@ The root command for the CLI is **oak**
 
 ### Working with Application SLAs
 As detailed in the [API Approach]({{< relref "deploy-api.md" >}}) Oakestra apps and services are defined in SLAs.<br>
-The OAK-CLI comes with a set of pre-defined default SLAs.<br>
+The `oak-cli` comes with a set of pre-defined default SLAs.<br>
 All available SLAs can be inspected via the `oak application sla` command.
 {{< asciinema key="cli_sla_inspect" poster="0:16" >}}
 
@@ -140,11 +153,11 @@ You can undeploy all instances of a service or only specific ones by providing t
 
 
 ## Further Details & All Available Commands
-This page only highlights a small subset of available OAK-CLI capabilities.<br>
+This page only highlights a small subset of available `oak-cli` capabilities.<br>
 For more details on every available CLI command and more see the **CLI Manuals**.
 
 {{< callout context="note" title="Maximize Speed & Convenience" icon="outline/bolt" >}}
-  The OAK-CLI is powered by [Typer](https://github.com/fastapi/typer) which supports tab autocompletion natively.
+  The `oak-cli` is powered by [Typer](https://github.com/fastapi/typer) which supports tab autocompletion natively.
 
   This means that you can press your **tab** key to either automatically complete the command you are currently typing or get a list of matching available commands.
   There is no need to memorize or fully type out the commands.
