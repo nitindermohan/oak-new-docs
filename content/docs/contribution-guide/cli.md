@@ -24,7 +24,7 @@ Go to the CLI Repository and create a new Issue.
 
 
 ## CLI Foundations
-The OAK CLI is built via [Poetry](https://python-poetry.org/) and [Typer](https://typer.tiangolo.com/).<br>
+The `oak-cli` is built via [Poetry](https://python-poetry.org/) and [Typer](https://typer.tiangolo.com/).<br>
 Typer is primarily powered by [Click](https://github.com/pallets/click) and [Rich](https://github.com/Textualize/rich).<br>
 We highly recommend using and looking into Rich to ensure a user-friendly and appealing look and feel for the CLI.
 Additionally, Typer heavily relies on the good and consistent use of [Python Type Hints](https://docs.python.org/3/library/typing.html).
@@ -34,8 +34,8 @@ Always stick to this convention to ensure smooth CLI and Typer workflows and beh
 The CLI repository uses the same Python linting and formatting as the Oakestra repository.
 
 ## Philosophy
-The OAK CLI is a gateway to Oakestra and a multifaceted set of tools.<br>
-Ensure high Cohesion and low Coupling by splitting unrelated/different parts into their own files and ["typer apps"](https://typer.tiangolo.com/tutorial/subcommands/add-typer/).
+The `oak-cli` is a gateway to Oakestra and a multifaceted set of tools.<br>
+Ensure high cohesion and low coupling by splitting unrelated/different parts into their own files and ["typer apps"](https://typer.tiangolo.com/tutorial/subcommands/add-typer/).
 Use the static CLI configuration, local machine purposes, and their filters.
 Users should always have access to generic/universal features - specialized features should only be available in fitting conditions/use-cases/environments.
 
@@ -45,7 +45,7 @@ For local development clone the CLI repository and install the CLI.
 pip install -e .
 ```
 Create a new branch and create a Pull Request as usual.<br>
-Note that the final/merged CLI changes always require a CLI version increase that has to be followed up by a matching Release.<br>
+Note that the final/merged CLI changes always require a CLI version increase that has to be followed up by a matching tag.<br>
 
 We configured an automatic CI (GitHub Actions) to build and release these changes.<br>
 This CI will be triggered by a new tag.<br>
