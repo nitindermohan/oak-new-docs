@@ -83,7 +83,7 @@ Here is an example of an Nginx server using Unikraft:
  }
  ```
 
- #### What's important to note in this SLA?
+ #### Note
 
 - The `virtualization` field is set to `unikernel`
 - The `code` field contains the URL to the unikernel tarball. This URL must be accessible to the Oakestra worker nodes. We're using the Oakestra release page as an example here to host the tarball file.
