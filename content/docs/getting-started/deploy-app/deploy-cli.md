@@ -84,7 +84,7 @@ This configuration is persistently stored on your machine.
 Configuring your `oak-cli` is optional yet highly recommended.
 You can always revert your configuration to its initial state.
 
-For further information about the CLI configuration see the **CLI Manuals**.
+For further information about the CLI configuration see the [CLI Configuration Manuals](/docs/manuals/cli/features/configuration).
 
 
 ## Basic CLI Usage
@@ -148,13 +148,19 @@ You can undeploy all instances of a service or only specific ones by providing t
   You can even display and automatically follow the latest service logs.
   ![Inspected Service](./cli-images/inspect_service.png)
 
-  For further details and recorded examples see the **CLI Manuals**.
+  For further details and recorded examples see the [CLI Services Manuals](/docs/manuals/cli/features/services).
 {{< /callout >}}
 
 
-## Further Details & All Available Commands
-This page only highlights a small subset of available `oak-cli` capabilities.<br>
-For more details on every available CLI command and more see the **CLI Manuals**.
+## Further Details
+This page only highlights a small subset of available `oak-cli` capabilities.
+
+{{< link-card
+  title="CLI Manuals"
+  description="Explore every available CLI command in detail and more"
+  href="/docs/manuals/cli/overview"
+  target="_blank"
+>}}
 
 {{< callout context="note" title="Maximize Speed & Convenience" icon="outline/bolt" >}}
   The `oak-cli` is powered by [Typer](https://github.com/fastapi/typer) which supports tab autocompletion natively.
