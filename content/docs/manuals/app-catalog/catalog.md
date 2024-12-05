@@ -72,7 +72,7 @@ Read our research on how Augmented Reality and video analytics applications can 
 
 ## Unikraft Web Server
 
-Similarly to the regular Nginx deployment in Oakestra, we can deploy Nginx using [Unikraft](https://unikraft.org) Unikernels. This will allow us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
+Similarly to the regular Nginx deployment in Oakestra, we can deploy nginx using [Unikraft](https://unikraft.org) Unikernels. This will allow us to have a more lightweight and isolated version of nginx for the machines supporting unikernel virtualization.
 
 {{< link-card
  title="Nginx Unikernel Deployment"
