@@ -19,7 +19,7 @@ All you need to start deploying unikernels is:
 
 1. A unikernel .tar.gz hosted somewhere accessible to the Oakestra.
 2. A service deployment descriptor 
-3. A worker Node with Unikernel Runtime enabled
+3. A Worker Node with Unikernel Runtime enabled
 
 {{< /callout >}}
 
