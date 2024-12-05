@@ -28,7 +28,7 @@ oak v
 
  {{< /callout >}}
 
-#### SLA Template
+## SLA Template
 
 For this example, we will create a microservice named `curlv4` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Oakestra semantic IP address of our choice (`10.30.55.55`), then fails. Oakestra will detect the failure and automatically re-deploy the instance indefinitely, and we should observe continous curl requests everytime the service is successfully deployed.
 
@@ -101,7 +101,7 @@ You can use the following SLA template to deploy the services (if you want to ha
 }
 ```
 
-#### Now we can deploy the services on our cluster
+## Now we can deploy the services on our cluster
 
 Use the following command to deploy the services:
 
@@ -119,7 +119,7 @@ Use the following command to deploy the services:
 
 Now the `curlv4` will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new `curlv4` instance, so the cycle will continue.
 
-#### Scale up the Nginx service
+## Scale up the Nginx service
 
 Now lets try to increase the number of Nginx server instances to see the balancing in action.
 Let's fetch the Nginx's Service ID using 
@@ -146,7 +146,7 @@ If everything goes well, you should see two instances of the Nginx service opera
 ```
 
 
-#### Sit down, relax, and watch the magic happen 🪄
+## Sit down, relax, and watch the magic happen 🪄
 Use the following command to check the instance's logs:
 ```bash
 oak s i <Nginx Service ID> -l

@@ -24,7 +24,7 @@ We can deploy Nginx using [Unikraft](https://unikraft.org). This will allow us t
 
 <!-- {{< callout context="note" title="Unikernel Support" icon="outline/rocket">}} To enable unikernel support, please refer to the Unikernel Support manual section{{< /callout >}} -->
 
-#### SLA Template
+## SLA Template
 
 We create a service named `curl` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Oakestra semantic IP address of our choice (`10.30.30.31`), and then it fails. After failure, Oakestra will re-deploy the instance indefinitely.
 
@@ -120,7 +120,7 @@ oak v
  {{< /callout >}}
 
 
-#### Let's deploy the services
+## Let's deploy the services
 ```bash
  oak a c --sla-file-name unikernel-nginx-client-server.json -d
 ```
@@ -135,7 +135,7 @@ oak v
 
 Now the `curl` service will perform a `curl` request to `nginx`, then it will fail. Oakestra will re-deploy a new instance, and so the cycle will continue.
 
-#### Scale up the Nginx service
+## Scale up the Nginx service
 Let's fetch the Nginx's Service ID using 
 ```bash
 oak s s
@@ -158,7 +158,7 @@ By running `oak s s` you should now see two instances of the Nginx service runni
 │              │                          │  1 RUNNING ●   │            │                          │
 ╰──────────────┴──────────────────────────┴────────────────┴────────────┴──────────────────────────╯
 ```
-#### Sit down, relax, and watch the magic happen 🪄
+## Sit down, relax, and watch the magic happen 🪄
 Use the following command to check the instance's logs:
 ```bash
 oak s i <Nginx Service ID>
