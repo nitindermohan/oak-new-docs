@@ -104,7 +104,7 @@ If your node supports nested virtualization and you have KVM installed, you can 
 Please follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM on your worker node.
 {{< /callout >}}
 
-All you need to do is:
+Follow these steps on the **worker node**:
 
 1. Stop your worker node (if already running)
 ```bash
