@@ -21,7 +21,7 @@ mainSections = ["docs"]
 
   ## Button
   navBarButton = true # false (default) or true
-  navBarButtonUrl = "/docs/getting-started/oak-environment/high-level-setup-overview/"
+  navBarButtonUrl = "/docs/getting-started/welcome-to-oakestra-docs/"
   navBarButtonText = "Get started"
 
   # FlexSearch

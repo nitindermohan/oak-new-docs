@@ -11,7 +11,13 @@ seo:
   noindex: false # false (default) or true
 ---
 
-Git hooks are scripts that run automatically at various points in the Git workflow (e.g., before committing or pushing changes). They help maintain code quality by performing tasks like linting, formatting, and testing before changes land in the repository. [Learn more about Git hooks](https://git-scm.com/docs/githooks).
+<span class="lead">
+Git hooks are scripts that run automatically at various points in the Git workflow (e.g., before committing or pushing changes). They help maintain code quality by performing tasks like linting, formatting, and testing before changes land in the repository. 
+</span>
+
+{{< callout context="tip" icon="outline/book" >}}
+Learn more about Git hooks [here](https://git-scm.com/docs/githooks).
+{{< /callout >}}
 
 ## Why Use Git Hooks?
 
@@ -21,7 +27,7 @@ Without automated checks, simple issues like linting errors can slip into the co
 
 By default, Git hooks live only on the local machine and aren’t shared with others. This means each developer would need to set them up manually. **Pre-commit** solves this problem by allowing you to define hook configurations in a shared `.pre-commit-config.yaml` file. Once committed to the repository, these configurations ensure every contributor runs the same hooks.
 
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+{{< callout context="note" icon="outline/info-circle" >}}
 Despite the name, *pre-commit* can manage multiple hook types (such as `pre-push`). [Learn more about pre-commit](https://pre-commit.com/).
 {{< /callout >}}
 

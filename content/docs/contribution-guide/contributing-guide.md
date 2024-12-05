@@ -11,8 +11,9 @@ seo:
   noindex: false # false (default) or true
 ---
 
-
-**Welcome to Oakestra!** We're excited that you're interested in contributing to our project. This guide provides an overview of how to get started as a contributor. Whether you’re fixing bugs, improving documentation, or developing new features, your contribution is valued and important.
+<span>
+We're excited that you're interested in contributing to Oakestra! This guide provides an overview of how to get started as a contributor. Whether you’re fixing bugs, improving documentation, or developing new features, your contribution is valued and important.
+</span>
 
 ## Our Community Goals
 

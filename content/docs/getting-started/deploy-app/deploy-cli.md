@@ -17,15 +17,15 @@ seo:
 asciinema: true
 ---
 
-Besides using the API directly or clicking through the dashboard UI, you can also interact with Oakestra using the Oakestra Command Line Interface.
+<span class="lead">
+Besides using the API directly or clicking through the dashboard UI, you can also interact with Oakestra using the Command Line Interface (`oak-cli`).
+</span>
 
 {{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
   - You have a running Oakestra setup.
   - You can access the APIs at `<IP_OF_CLUSTER_ORCHESTRATOR>:10000`
 {{< /callout >}}
 
-
-## The `oak-cli`
 
 {{< callout context="note" title="Benefits of `oak-cli`" icon="outline/rocket">}} 
 
