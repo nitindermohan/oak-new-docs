@@ -153,7 +153,7 @@ You can undeploy all instances of a service or only specific ones by providing t
 
 
 ## Further Details
-This page only highlights a small subset of available `oak-cli` capabilities.<br>
+This page only highlights a small subset of available `oak-cli` capabilities.
 
 {{< link-card
   title="CLI Manuals"
