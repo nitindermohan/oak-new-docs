@@ -32,3 +32,8 @@ docker cp "oak-cli-docs-automator:/tmp/${ARCHIVE_NAME}" .
 docker rm -f oak-cli-docs-automator
 tar -xzvf "${ARCHIVE_NAME}"
 rm -f "${ARCHIVE_NAME}"
+# Ensure only the necessary files remain.
+rm -rf _sources
+find . -type f \
+    -not \( -path '*/_static/*' -o -name '*.html' -o -name '*.js' \) \
+    -delete
