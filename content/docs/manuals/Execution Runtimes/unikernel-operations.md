@@ -106,7 +106,7 @@ You need at least one worker node in one of your clusters with a unikernel runti
 If your node supports nested virtualization and you have KVM installed, you can enable the KVM runtime for your Oakestra worker node.
 
 {{< callout context="tip" title="How to install KVM?" icon="outline/rocket" >}}
-Please follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM on your worker node.
+E.g., If your worker node uses an Ubuntu distro, you can follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM on your worker node.
 {{< /callout >}}
 
 If your infrastrcuture fulfills all the requirements, all you need to do is:
