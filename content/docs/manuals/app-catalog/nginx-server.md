@@ -31,6 +31,13 @@ oak v
 ## SLA Template
 
 For this example, we will create a microservice named `curlv4` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Oakestra semantic IP address of our choice (`10.30.55.55`), then fails. Oakestra will detect the failure and automatically re-deploy the instance indefinitely, and we should observe continous curl requests everytime the service is successfully deployed.
+#### SLA Template
+
+For this example, we create a service named `curlv4` using a `curlimages/curl:7.82.0` docker image. This service performs a curl request to an Okestra semantic IP address of our choice (`10.30.55.55`), then fails. After failure, Oakestra will re-deploy the instance indefinitely.
+
+{{< callout context="tip" title="Oakestra Dashboard" icon="outline/rocket">}}
+  You can choose the IPv4 addresses for each service arbitrarily. In your deployment descriptor, you can type an IP address in the form `10.30.X.Y` next to the associated balancing policy. In this example,` "rr_ip": "10.30.55.55"`  binds `10.30.55.55` to the round-robin policy for that service. Every time we perform a request towards that address, the packets are balanced across its instances using round-robin balancing. More details are available in the Networking section of the manuals. 
+{{< /callout >}}
 
 Together with the `curlv4` service, we deploy a server microservice named `nginx` using the `nginx:latest` docker image. This service will be assigned a Round-Robin semantic IPv4 address,`10.30.55.55` (as well as a Round-Robin semantic IPv6 address `fdff:2000::55:55`, but this is optional).
 
