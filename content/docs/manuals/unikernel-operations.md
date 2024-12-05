@@ -13,16 +13,19 @@ seo:
 
 Oakestra supports the deployment of unikernels built using [Unikraft](http://unikraft.org). 
 
-#### What do you need?
-It's simple. All you need to start deploying unikernels is:
+{{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
+
+All you need to start deploying unikernels is:
 
 1. A unikernel .tar.gz hosted somewhere accessible to the Oakestra.
 2. A service deployment descriptor 
-3. A worker Node with KVM Runtime enabled
+3. A worker Node with Unikernel Runtime enabled
+
+{{< /callout >}}
 
 ## Packaging your first Unikraft image 
 
-Once you build your first Unikernel using [Unikraft](http://unikraft.org), you can create a tarball of the kernel image and the necessary files.
+Once you build your first Unikernel using Unikraft, you can create a tarball of the kernel image and the necessary files.
 
 ```bash
 myunikernel.tar.gz
@@ -92,13 +95,9 @@ Here is an example of an Nginx server using Unikraft:
 The rest of the fields are similar to the ones used for container services.
 You can then deploy the application as usual using the Oakestra Dashboard, the Oakestra CLI, or the Oakestra APIs.
 
-{{< callout context="caution" title="Caution" icon="outline/alert-triangle" >}}
-You need at least one worker node in one of your clusters with a unikernel runtime enabled to deploy your unikernels. 
-{{< /callout >}}
+## Enable a KVM based Unikernel Runtime for an Oakestra Worker Node
 
-## Enable a KVM Runtime for an Oakestra Worker Node
-
-If your node supports nested virtualization and you have KVM installed, you can enable the KVM runtime for your Oakestra worker node.
+If your node supports nested virtualization and you have KVM installed, you can enable the KVM runtime for your Oakestra worker node. This will allow you to deploy unikernels on your worker node.
 
 {{< callout context="tip" title="How to install KVM?" icon="outline/rocket" >}}
 Please follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM on your worker node.
@@ -118,7 +117,7 @@ sudo NodeEngine config virtualization unikernel on
 ```bash
 sudo NodeEngine -a <Cluster Orchestrator IP> -d
 ```
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+{{< callout context="note" title="Did you know?" icon="outline/info-circle" >}}
 You can check the list of enabled runtimes using:
 ```bash
 sudo NodeEngine config virtualization
