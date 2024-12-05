@@ -3,7 +3,7 @@ title: "Nginx Client-Server with Load Balancing"
 summary: ""
 draft: false
 weight: 332
-toc: false
+toc: true
 hidden: true
 seo:
   title: "" # custom title (optional)
