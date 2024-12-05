@@ -3,7 +3,7 @@ title: "Nginx Unikernel Deployment"
 summary: ""
 draft: false
 weight: 333
-toc: false
+toc: true
 hidden: true
 seo:
   title: "" # custom title (optional)
