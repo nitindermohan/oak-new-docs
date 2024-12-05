@@ -86,7 +86,7 @@ Here is an example of an Nginx server using Unikraft:
  }
  ```
 
- #### What's important to note in this SLA?
+ #### Note
 
 - The `virtualization` field is set to `unikernel`
 - The `code` field contains the URL to the unikernel tarball. This URL must be accessible to the Oakestra worker nodes. We're using the Oakestra release page as an example here to host the tarball file.
@@ -100,12 +100,12 @@ You can then deploy the application as usual using the Oakestra Dashboard, the O
 If your node supports nested virtualization and you have KVM installed, you can enable the KVM runtime for your Oakestra worker node. This will allow you to deploy unikernels on your worker node.
 
 {{< callout context="tip" title="How to install KVM?" icon="outline/rocket" >}}
-Please follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM on your worker node.
+E.g., If your worker node uses an Ubuntu distro, you can follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM on your worker node.
 {{< /callout >}}
 
-All you need to do is:
+Follow these steps on the **worker node**:
 
-1: Stop your worker node (if already running)
+1. Stop your worker node (if already running)
 ```bash
 sudo NodeEngine stop
 ```
