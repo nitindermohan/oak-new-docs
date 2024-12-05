@@ -100,7 +100,7 @@ You can then deploy the application as usual using the Oakestra Dashboard, the O
 If your node supports nested virtualization and you have KVM installed, you can enable the KVM runtime for your Oakestra worker node. This will allow you to deploy unikernels on your worker node.
 
 {{< callout context="tip" title="How to install KVM?" icon="outline/rocket" >}}
-E.g., If your worker node uses an Ubuntu distro, you can follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM on your worker node.
+E.g., If your worker node uses an Ubuntu distro, you can follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM.
 {{< /callout >}}
 
 Follow these steps on the **worker node**:
