@@ -85,8 +85,10 @@ Robin policy. Therefore, X1 will use this address to perform load-balanced reque
 
 Click on different steps to see what is happening behind-the-scenes.
 
-{{< tabs >}}
-{{< tab "Step 1 - GET" >}}
+{{< tabs-icon "Requests" >}}
+{{< tab-icon "Step 1 - GET" "_step1.png">}}
+
+
 #### http://10.30.1.30:30443/api/hello
 
 X1 performs a GET request using the Service IP `10.30.1.30`. The default gateway for the `10.0.0.0/8` subnetwork
@@ -103,9 +105,9 @@ payload: ....
 
 The `from ip`, is the Virtual Layer IP, the **Namespace IP** of the container. This Namespace IP is assigned to the
 VETH device used to connect the container namespace to the virtual bridge in the system namespace.
-{{< /tab >}}
+{{< /tab-icon >}}
 
-{{< tab "Step 2 - Cache Miss" >}}
+{{< tab-icon "Step 2 - Cache Miss" "_step2.png">}}
 
 #### Cache Miss
 
@@ -122,9 +124,9 @@ The entries of the table keep the cross-layer information of each service, inclu
 port, the virtual layer address, and all the service layer addresses. As the number of records is limited, the table
 only keeps track of the services currently deployed in this machine. No interest in external services has been
 recorded so far.
-{{< /tab >}}
+{{< /tab-icon >}}
 
-{{< tab "Step 3 - Table Query" >}}
+{{< tab-icon "Step 3 - Table Query" "_step3.png">}}
 
 #### Table query
 
@@ -138,9 +140,9 @@ This operation is called **table query** and serves a double purpose:
    Therefore, any update, such as a service migration or service scaling, results in an update for that table entry.
 
 This is one of the building blocks of the proposed abstraction, and it is detailed in the [Interest Registration section](#interest-registration).
-{{< /tab >}}
+{{< /tab-icon >}}
 
-{{< tab "Step 4 - Update" >}}
+{{< tab-icon "Step 4 - Update" "_step4.png" >}}
 
 #### Update
 
@@ -169,9 +171,9 @@ instances: [
 ]
 ``` 
 
-{{< /tab >}}
+{{< /tab-icon >}}
 
-{{< tab "Step 5 - Conversion" >}}
+{{< tab-icon "Step 5 - Conversion" "_step5.png">}}
 
 #### Service IP conversion - from: 10.30.1.30 to 10.21.0.1
 
@@ -208,16 +210,16 @@ to
 ```
 
 The conversion just shown is the key to enabling transparent Service Layer abstraction.
-{{< /tab >}}
+{{< /tab-icon >}}
 
-{{< tab "Step 6 - UDP Request" >}}
+{{< tab-icon "Step 6 - UDP Request" "_step6.png" >}}
 
 #### UDP to 131.1.21.5:55301
 
 In this step, the proxy tunnel uses the **Physical layer** information to create a tunnel between Node 1
 and Node 2 and forward the packet to the destination machine's Network Manager.
-{{< /tab >}}
-{{< tab "Step 7 - GET" >}}
+{{< /tab-icon >}}
+{{< tab-icon "Step 7 - GET" "_step7.png">}}
 
 #### http://10.21.0.1:30443/api/hello
 
@@ -225,8 +227,9 @@ The Network Manager does not need to translate the incoming packet as the recipi
 
 A response from X3 to X1 then follows the same steps in-order as shown in this example.
 
-{{< /tab >}}
-{{< /tabs >}}
+{{< /tab-icon >}}
+{{< /tabs-icon >}}
+<hr>
 
 ---
 
