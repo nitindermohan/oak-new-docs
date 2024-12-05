@@ -106,7 +106,7 @@ Please follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to inst
 
 All you need to do is:
 
-1: Stop your worker node (if already running)
+1. Stop your worker node (if already running)
 ```bash
 sudo NodeEngine stop
 ```
