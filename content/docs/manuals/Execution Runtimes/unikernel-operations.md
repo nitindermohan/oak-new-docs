@@ -2,7 +2,7 @@
 title: "Unikernel Deployment"
 summary: ""
 draft: false
-weight: 301
+weight: 20
 toc: true
 seo:
   title: "Unikernel Deployment" # custom title (optional)
@@ -11,20 +11,21 @@ seo:
   noindex: false # false (default) or true
 ---
 
-Oakestra supports the deployment of unikernels built using [Unikraft](http://unikraft.org). 
+Oakestra supports unikernel executions for applications built using [Unikraft](http://unikraft.org). 
 
-#### What do you need?
+{{< callout context="tip" title="What do you need?" icon="outline/rocket" >}}
 It's simple. All you need to start deploying unikernels is:
 
-1. A unikernel .tar.gz hosted somewhere accessible to the Oakestra.
+1. A unikernel .tar.gz hosted in a repository accessible to the Oakestra
 2. A service deployment descriptor 
-3. A worker Node with KVM Runtime enabled
+3. A worker machine with KVM Runtime enabled
+{{< /callout >}}
 
-## Packaging your first Unikraft image 
+### Packaging your first Unikraft image 
 
 Once you build your first Unikernel using [Unikraft](http://unikraft.org), you can create a tarball of the kernel image and the necessary files.
 
-```bash
+```bash {frame="none"}
 myunikernel.tar.gz
 |-- kernel
 `--files1/
@@ -34,17 +35,20 @@ myunikernel.tar.gz
 
 Your unikernel tarball MUST contain a file named `kernel`, which is the unikernel image itself. Additionally, it CAN contain a `files1` folder, which is mounted by Oakestra as kernel filesystem at runtime. This folder contains all the additional files for the unikernel to run.
 
-{{< callout context="tip" title="Looking for an example?" icon="outline/rocket" >}}
-Check out the **Unikraft Nginx** example in the Application Catalogue section of the wiki.
-{{< /callout >}}
+{{< link-card
+  title="Looking for an example?"
+  description="Check out the Unikraft Nginx walkthrough in the Application Catalogue"
+  href="/docs/manuals/app-catalog"
+  target="_blank"
+>}}
 
 Once you've packaged your unikernel, you can upload it to a location accessible to Oakestra, such as a web server or a cloud storage service.
 
-## Creating a Service Deployment Descriptor for your Unikernel
+### Creating a Service Deployment Descriptor for your Unikernel
 
 Unikernels can be deployed to Oakestra like any other service. You need to create a service deployment descriptor that describes the unikernel service you want to deploy.
-Here is an example of an Nginx server using Unikraft:
 
+{{< details "Here is an example of an Nginx server using Unikraft" open >}}
 ```json {title="unikernel-nginx.json"}
  {
    "sla_version": "v2.0",
@@ -82,8 +86,9 @@ Here is an example of an Nginx server using Unikraft:
  ]
  }
  ```
+ {{< /details >}}
 
- #### What's important to note in this SLA?
+**What's important to note in this SLA?**
 
 - The `virtualization` field is set to `unikernel`
 - The `code` field contains the URL to the unikernel tarball. This URL must be accessible to the Oakestra worker nodes. We're using the Oakestra release page as an example here to host the tarball file.
@@ -96,7 +101,7 @@ You can then deploy the application as usual using the Oakestra Dashboard, the O
 You need at least one worker node in one of your clusters with a unikernel runtime enabled to deploy your unikernels. 
 {{< /callout >}}
 
-## Enable a KVM Runtime for an Oakestra Worker Node
+### Enable a KVM Runtime for an Oakestra Worker Node
 
 If your node supports nested virtualization and you have KVM installed, you can enable the KVM runtime for your Oakestra worker node.
 
@@ -104,17 +109,17 @@ If your node supports nested virtualization and you have KVM installed, you can 
 Please follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM on your worker node.
 {{< /callout >}}
 
-All you need to do is:
+If your infrastrcuture fulfills all the requirements, all you need to do is:
 
-1: Stop your worker node (if already running)
+**1: Stop your worker node (if already running)**
 ```bash
 sudo NodeEngine stop
 ```
-2: Enable unikernel runtime using 
+**2: Enable unikernel runtime**
 ```bash
 sudo NodeEngine config virtualization unikernel on
 ```
-3: Re-start your worker node
+**3: Restart your worker node**
 ```bash
 sudo NodeEngine -a <Cluster Orchestrator IP> -d
 ```
