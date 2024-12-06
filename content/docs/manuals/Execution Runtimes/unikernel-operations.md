@@ -23,7 +23,7 @@ It's simple. All you need to start deploying unikernels is:
 
 ### Packaging your first Unikraft image 
 
-Once you build your first Unikernel using [Unikraft](http://unikraft.org), you can create a tarball of the kernel image and the necessary files.
+Once you build your first unikernel using Unikraft, you can create a tarball of the kernel image and the necessary files.
 
 ```bash {frame="none"}
 myunikernel.tar.gz
@@ -33,7 +33,7 @@ myunikernel.tar.gz
  `--...
 ```
 
-Your unikernel tarball MUST contain a file named `kernel`, which is the unikernel image itself. Additionally, it CAN contain a `files1` folder, which is mounted by Oakestra as kernel filesystem at runtime. This folder contains all the additional files for the unikernel to run.
+Your unikernel tarball MUST contain a file named `kernel`, which is the unikernel image itself. Additionally, it CAN contain a `files1` folder, which is mounted by Oakestra as a kernel filesystem at runtime. This folder contains all the additional files required by the unikernel to run.
 
 {{< link-card
   title="Looking for an example?"
@@ -97,16 +97,12 @@ Unikernels can be deployed to Oakestra like any other service. You need to creat
 The rest of the fields are similar to the ones used for container services.
 You can then deploy the application as usual using the Oakestra Dashboard, the Oakestra CLI, or the Oakestra APIs.
 
-{{< callout context="caution" title="Caution" icon="outline/alert-triangle" >}}
-You need at least one worker node in one of your clusters with a unikernel runtime enabled to deploy your unikernels. 
-{{< /callout >}}
+### Enable a KVM based Unikernel Runtime for an Oakestra Worker Node
 
-### Enable a KVM Runtime for an Oakestra Worker Node
-
-If your node supports nested virtualization and you have KVM installed, you can enable the KVM runtime for your Oakestra worker node.
+If your node supports nested virtualization and you have KVM installed, you can enable the KVM runtime for your Oakestra worker node. This will allow you to deploy unikernels on your worker node.
 
 {{< callout context="tip" title="How to install KVM?" icon="outline/rocket" >}}
-Please follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM on your worker node.
+E.g., If your worker node uses an Ubuntu distro, you can follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM.
 {{< /callout >}}
 
 If your infrastrcuture fulfills all the requirements, all you need to do is:
@@ -123,7 +119,7 @@ sudo NodeEngine config virtualization unikernel on
 ```bash
 sudo NodeEngine -a <Cluster Orchestrator IP> -d
 ```
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+{{< callout context="note" title="Did you know?" icon="outline/info-circle" >}}
 You can check the list of enabled runtimes using:
 ```bash
 sudo NodeEngine config virtualization
