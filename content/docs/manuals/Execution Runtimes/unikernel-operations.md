@@ -33,7 +33,7 @@ myunikernel.tar.gz
  `--...
 ```
 
-Your unikernel tarball MUST contain a file named `kernel`, which is the unikernel image itself. Additionally, it CAN contain a `files1` folder, which is mounted by Oakestra as kernel filesystem at runtime. This folder contains all the additional files for the unikernel to run.
+Your unikernel tarball MUST contain a file named `kernel`, which is the unikernel image itself. Additionally, it CAN contain a `files1` folder, which is mounted by Oakestra as a kernel filesystem at runtime. This folder contains all the additional files required by the unikernel to run.
 
 {{< link-card
   title="Looking for an example?"
