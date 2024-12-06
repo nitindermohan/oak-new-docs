@@ -1,0 +1,14 @@
+{{- range $p := .Site.Pages -}}
+{{- range .Aliases }}
+{{ . }} {{ $p.RelPermalink -}}
+{{- end }}
+{{- end -}}
+
+/docs/0.4.400/          /docs/getting-started/oak-environment/high-level-setup-overview
+/docs/                  /docs/getting-started/oak-environment/high-level-setup-overview    
+/docs/0.4.301/          /version/0.4.301/
+# /docs/1.0/            /docs/1.0/prologue/introduction/
+# /docs/                /docs/1.0/prologue/introduction/
+#
+# /docs/0.1/*           https://v0-1-0--doks-versioning-poc.netlify.app/docs/0.1/:splat  200
+# /docs/0.2/*           https://v0-2-0--doks-versioning-poc.netlify.app/docs/0.2/:splat  200

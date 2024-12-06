@@ -21,14 +21,14 @@ mainSections = ["docs"]
 
   ## Button
   navBarButton = true # false (default) or true
-  navBarButtonUrl = "/docs/getting-started/deploy-your-first-oakestra-cluster/"
+  navBarButtonUrl = "/docs/getting-started/oak-environment/high-level-setup-overview/"
   navBarButtonText = "Get started"
 
   # FlexSearch
   flexSearch = true # true (default) or false
-  searchExclKinds = [] # list of page kinds to exclude from search indexing (e.g. ["home", "taxonomy", "term"] )
-  searchExclTypes = [] # list of content types to exclude from search indexing (e.g. ["blog", "docs", "legal", "contributors", "categories"])
-  showSearch = [] # [] (all pages, default) or homepage (optionally) and list of sections (e.g. ["homepage", "blog", "guides"])
+  searchExclKinds = ["version"] # list of page kinds to exclude from search indexing (e.g. ["home", "taxonomy", "term"] )
+  searchExclTypes = ["version"] # list of content types to exclude from search indexing (e.g. ["blog", "docs", "legal", "contributors", "categories"])
+  showSearch = ["docs","research"] # [] (all pages, default) or homepage (optionally) and list of sections (e.g. ["homepage", "blog", "guides"])
   indexSummary = false # true or false (default); whether to index only the `.Summary` instead of the full `.Content`; limits the respective JSON field size and thus increases loading time
 
   ## Search results
@@ -55,8 +55,8 @@ mainSections = ["docs"]
   showMissingLanguages = true # whether or not to show untranslated languages in the language menu; true (default) or false
 
   # Versioning
-  docsVersioning = false # false (default) or true
-  docsVersion = "1.0"
+  docsVersioning = true # false (default) or true
+  docsVersion = "0.4.400"
 
   # UX
   headerBar = true # true (default) or false

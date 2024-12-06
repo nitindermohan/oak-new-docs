@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<div class="row justify-content-center pubs">
+    <div class="col-md-12 col-lg-10 col-xl-8">
+      <article>
+                <div class="container-fluid">
+                
+                <br>
+                <table class="pubs-table">
+                   
+                  {{ $currentSection := .CurrentSection }}
+                      {{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
+                        <div class="row">
+                            <div class="pubs-img-container col-md-12 col-lg-3 col-xl-3">
+                                <a href={{ .Params.pdf }} class="no-decoration" target="_blank">
+                                    <img class="pubs_img" src={{ .Params.img }}>
+                                </a>
+                                <div class="badges-img text-center">
+                                    {{ range .Params.badges }}
+                                        <img src="{{ . }}">
+                                    {{ end }}
+                                </div>
+                            </div>
+                            <div style="vertical-align: top" class="col-md-12 col-lg-8 col-xl-8">
+                                <div style="position: relative; min-height: 180px; padding-left: -2em; padding-top: 1em">
+                                    <span class="pubs_title">
+                                        <a href={{ .Params.pdf }}
+                                            style="text-decoration: none!important; border: none; font-family: CMUSansSerifMedium; color: inherit;"
+                                            target="_blank">
+                                            {{ .Params.title }}
+                                        </a>
+                                    </span>
+                                    <br>
+                                    <span style="font-family: CMUSansSerifMedium" class="pubs_authors">
+                                        {{ .Params.authors }}
+                                    </span>
+                                    <br><br>
+                                    <span style="font-family: CMUSansSerifMedium;" class="pubs_type">
+                                        {{ .Params.conference }}
+                                    </span><br>
+                                    <a class="btn-primary-overide btn-sm"  href={{ .Params.doi }}
+                                            target="_blank">
+                                            <i class="fa fa-globe" aria-hidden="true"></i> DOI
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                  {{ end }}
+                </table>
+                </div>
+              </div>
+      </article>
+    </div>
+</div>
+{{ end }}
