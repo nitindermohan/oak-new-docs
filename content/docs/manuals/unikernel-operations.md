@@ -17,15 +17,15 @@ Oakestra supports the deployment of unikernels built using [Unikraft](http://uni
 
 All you need to start deploying unikernels is:
 
-1. A unikernel .tar.gz hosted somewhere accessible to the Oakestra.
+1. A unikernel `.tar.gz` hosted somewhere accessible to Oakestra
 2. A service deployment descriptor 
-3. A Worker Node with a Unikernel Runtime enabled
+3. A worker node with a unikernel runtime enabled
 
 {{< /callout >}}
 
 ## Packaging your first Unikraft image 
 
-Once you build your first Unikernel using Unikraft, you can create a tarball of the kernel image and the necessary files.
+Once you build your first unikernel using Unikraft, you can create a tarball of the kernel image and the necessary files.
 
 ```bash
 myunikernel.tar.gz
@@ -109,11 +109,11 @@ Follow these steps on the **worker node**:
 ```bash
 sudo NodeEngine stop
 ```
-2: Enable unikernel runtime using 
+2. Enable unikernel runtime using 
 ```bash
 sudo NodeEngine config virtualization unikernel on
 ```
-3: Re-start your worker node
+3. Re-start your worker node
 ```bash
 sudo NodeEngine -a <Cluster Orchestrator IP> -d
 ```
