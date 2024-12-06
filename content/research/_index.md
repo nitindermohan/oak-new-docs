@@ -1,5 +1,5 @@
 ---
-title: "Research" # Figure out why title not working
+title: "Research"
 description: ""
 summary: ""
 date: 2023-09-07T16:21:44+02:00
