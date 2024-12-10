@@ -11,7 +11,6 @@ seo:
   noindex: false # false (default) or true
 ---
 
-
 ## How do I access the network namespace of a container in my worker node?
 
 When `containerd` generates the network namespace for your container it does not show up out of the box in the network namespace list. In fact, when running:

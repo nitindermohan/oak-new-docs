@@ -2,7 +2,7 @@
 title: "Control Plane Monitoring"
 summary: ""
 draft: false
-weight: 340
+weight: 342
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -10,30 +10,6 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
-
-## How can I access Root and Cluster orchestrator logs?
-
-You have two ways: **(A)** Grafana Dashboard or **(B)** docker logs.
-
-### Using Grafana Dashboard
-
-The Grafana dashboards are exposed at <root_orchestrator_ip>:3000 and <cluster_orchestrator_ip>:3001, respectively. 
-
-{{< callout context="caution" title="Caution" icon="outline/alert-triangle" >}}
-The cluster Grafana dashboard is not available for 1-DOC deployments. For 1-DOC all the data is aggregated in the same dashboard.
-{{< /callout >}}
-
-![](control-plane-grafanalogs.png)
-
-### Using docker logs 
-
-Run `docker ps -a` on the orchestrator machine to check all running containers. 
-
-![](control-plane-docker-logs-1.png)
-
-Then simply run `docker logs <container name>` to check its logs. 
-
-![](control-plane-docker-logs-2.png)
 
 ## How do I access Worker Node control plane logs?
 
