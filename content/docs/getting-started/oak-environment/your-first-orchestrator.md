@@ -57,6 +57,6 @@ You're now ready to add your first worker node to your cluster (see: [Add Edge D
 To stop your **Root & Cluster** orchestrator components run:
 
 ```bash
-docker compose -f ~/oakestra/compose-single-machine.yaml down
+docker compose -f ~/oakestra/1-DOC.yaml down
 ```
 
