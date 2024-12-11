@@ -14,7 +14,7 @@ seo:
 ## How do I access Worker Node control plane logs?
 
 ### Node Engine Component
-On Node Engine v0.4.203 and above you can use 
+Run the following command to access the logs:
 
 ```bash {frame="none"}
 sudo NodeEngine logs
@@ -28,7 +28,7 @@ Or you can manually access the logs in
 
 ### Net Manager Component
 
-On Net Manager v0.4.203 and above you can access the logs at 
+NetManager logs are available at this location on every Worker Node:
 
 ```bash {frame="none"}
 /var/log/oakestra/netmanager.log
@@ -36,7 +36,7 @@ On Net Manager v0.4.203 and above you can access the logs at
 
 ## How do I activate Debug Mode in NetManager? 
 
-In NetManager v0.4.302 or above add the debug `true` flag in your `netcfg.json` file as follows:
+You can add the debug `true` flag in your `netcfg.json` file as follows:
 
 1: Stop the Worker Node using `sudo NodeEngine stop`
 
@@ -53,17 +53,13 @@ In NetManager v0.4.302 or above add the debug `true` flag in your `netcfg.json` 
 ```
 3: Restart the Worker Node using `sudo NodeEngine start`
 
-{{< callout context="note" title="v0.4.301 or previous releases" icon="outline/info-circle" >}}
-If you're running NetManager and NodeEngine **v0.4.301 or previous releases**, just start the NetManager using the `-D` flag.
+{{< callout context="note" title="legacy v0.4.301 or previous releases" icon="outline/info-circle" >}}
+If you're running a legacy NetManager and NodeEngine **v0.4.301 or previous releases**, just start the NetManager using the `-D` flag.
 E.g., `NetManager -p 6000 -D`
 
 You can check your NodeEngine version by running `NodeEngine version`
 {{< /callout >}}
 
-
-## Where do I find Worker NetManager logs? 
-
-From `v0.4.302` NetManager logs are available in `/var/log/oakestra/netmanager.log`
 
 ## Accessing Root Orchestrator database component
 
