@@ -31,9 +31,15 @@ Contributors and people new to open source alike will find the following guides 
 
 Oakestra is committed to a respectful and inclusive environment. By contributing, you agree to abide by our [Code of Conduct](../code-of-conduct/).
 
-## How You Can Contribute
+## Contribution Guidelines
 
-If you are eager to start contributing code right away, we have a list of [good first issues](https://github.com/oakestra/oakestra/labels/good%20first%20issue) that contain bugs which have a relatively limited scope. Alternatively, you can ceck for issues labeled as [“help wanted”](https://github.com/oakestra/oakestra/labels/help%20wanted) for beginner-friendly feature extensions. As you gain more experience and demonstrate a commitment to evolving Oakestra, you may be granted issue management permissions in the repository.
+<!-- If you are eager to start contributing code right away, we have a list of [good first issues](https://github.com/oakestra/oakestra/labels/good%20first%20issue) that contain bugs which have a relatively limited scope. Alternatively, you can ceck for issues labeled as [“help wanted”](https://github.com/oakestra/oakestra/labels/help%20wanted) for beginner-friendly feature extensions. As you gain more experience and demonstrate a commitment to evolving Oakestra, you may be granted issue management permissions in the repository. -->
+
+If you are eager to start contributing code right away, we have a list of [good first issues](https://github.com/oakestra/oakestra/labels/good%20first%20issue) that contain bugs which have a relatively limited scope. Alternatively, you can ceck for issues labeled as [“help wanted”](https://github.com/oakestra/oakestra/labels/help%20wanted) for feature extensions that have not been handled yet. As you gain more experience and demonstrate a commitment to evolving Oakestra, you may be granted issue management permissions in the repository.
+
+{{< callout context="tip" title="How to contribute on GitHub?" icon="outline/info-circle" >}}
+Just comment on an unassigned issue, stating you want to work on it. Once you get an ACK from one of the maintainers, you'll get assigned to a branch related to the issue. All your work must be merged to the assigned branch first via Pull Request.
+{{< /callout >}}
 
 There are other ways you can contribute without writing a single line of code. Here are a few things you can do to help out:
 
@@ -45,7 +51,7 @@ There are other ways you can contribute without writing a single line of code. H
   target="_blank"
    >}}
 
-2. **Suggesting Features**  
+1. **Suggesting Features**  
    Have a new feature idea? Feature requests are welcome! Please submit them as GitHub issues with details on why it would be useful and any implementation suggestions.
    {{< link-card
   description="Suggest a feature idea"
@@ -53,7 +59,7 @@ There are other ways you can contribute without writing a single line of code. H
   target="_blank"
    >}}
 
-3. **Improving Documentation**  
+1. **Improving Documentation**  
    Documentation improvements are always appreciated! If you find something unclear or missing, feel free to submit an issue.
 
    {{< link-card
