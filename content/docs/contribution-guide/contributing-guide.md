@@ -21,10 +21,12 @@ Oakestra is a welcoming, collaborative, and inclusive community. We want Oakestr
 
 The [Open Source Guides](https://opensource.guide/) website has a collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.
 
-Contributors and people new to open source alike will find the following guides especially useful:
+Contributors and people new to open source alike will find the following guides especially useful.
 
-- [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/)
-- [Building Welcoming Communities](https://opensource.guide/building-community/)
+{{< card-grid >}}
+{{< link-card description="How to Contribute to Open Source" href="https://opensource.guide/how-to-contribute/" target="_blank" >}}
+{{< link-card description="Building Welcoming Communities" href="https://opensource.guide/building-community/" target="_blank" >}}
+{{< /card-grid >}}
 
 ## Code of Conduct
 
