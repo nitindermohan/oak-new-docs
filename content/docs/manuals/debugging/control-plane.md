@@ -53,7 +53,7 @@ You can add the debug `true` flag in your `netcfg.json` file as follows:
 ```
 3: Restart the Worker Node using `sudo NodeEngine start`
 
-{{< callout context="note" title="legacy v0.4.301 or previous releases" icon="outline/info-circle" >}}
+{{< callout context="note" title="Legacy v0.4.301 or previous releases" icon="outline/info-circle" >}}
 If you're running a legacy NetManager and NodeEngine **v0.4.301 or previous releases**, just start the NetManager using the `-D` flag.
 E.g., `NetManager -p 6000 -D`
 
