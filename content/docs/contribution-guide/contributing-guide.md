@@ -16,7 +16,7 @@ seo:
 
 ## Our Community Goals
 
-Oakestra is a welcoming, collaborative, and inclusive community. We want Oakestra to be a place where contributors feel empowered to share ideas, ask questions, and grow. All contributors are expected to follow our ~Code of Conduct~ to keep our community positive and open.
+Oakestra is a welcoming, collaborative, and inclusive community. We want Oakestra to be a place where contributors feel empowered to share ideas, ask questions, and grow. All contributors are expected to follow our _Code of Conduct_ to keep our community positive and open.
 
 The [Open Source Guides](https://opensource.guide/) website has a collection of resources for individuals, communities, and companies who want to learn how to run and contribute to an open source project.
 
