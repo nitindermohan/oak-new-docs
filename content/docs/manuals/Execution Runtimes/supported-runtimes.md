@@ -31,8 +31,7 @@ Currently, Oakestra supports the following virtualization runtimes.
 
 | Technology    | Type |  Description |
 | --------- | ----------- | ----------- |
-| Docker    | Container Execution Runtime | Ideal for deploying applications that require easy portability and management. |
-| LXC | Linux Containers        |  Lightweight and flexible containers that provide an environment as close to a standard Linux. |
+| Containerd    | Container Execution Runtime | Ideal for deploying applications that require easy portability and management. |
 | Unikraft | Unikernel Execution Runtime |  Specialized, lightweight virtual machines that are optimized for high performance and security. |
 
 ### How to Choose a Runtime
