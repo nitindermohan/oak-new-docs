@@ -222,9 +222,9 @@
 
         <!-- Versioning dropdown  -->
         {{ if eq site.Params.doks.docsVersioning true -}}{{ if not (eq .Params.hideVersions true) -}}
-        <div class="dropdown mt-1 order-lg-5 nav-item" role="group">
+        <div class="dropdown mt-1 order-lg-5" role="group">
           <button class="btn btn-dropdown dropdown-toggle text-dark" id="doks-versions" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle version menu">
-            <span class="">Releases</span> 
+            <span class="">Releases ▿</span> 
             <span class="dropdown-caret"></span>
           </button>
           <div class="dropdown-menu me-lg-2 shadow rounded dropdown-menu-end" aria-labelledby="doks-versions">
