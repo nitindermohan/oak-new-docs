@@ -13,24 +13,24 @@ seo:
 
 ## How do I access Worker Node control plane logs?
 
-### Node Engine 
+### Node Engine Component
 On Node Engine v0.4.203 and above you can use 
 
-```
+```bash {frame="none"}
 sudo NodeEngine logs
 ```
 
 Or you can manually access the logs in 
 
-```
+```bash {frame="none"}
 /var/log/oakestra/nodeengine.log
 ```
 
-### Net Manager
+### Net Manager Component
 
 On Net Manager v0.4.203 and above you can access the logs at 
 
-```
+```bash {frame="none"}
 /var/log/oakestra/netmanager.log
 ```
 
@@ -65,12 +65,13 @@ You can check your NodeEngine version by running `NodeEngine version`
 
 From `v0.4.302` NetManager logs are available in `/var/log/oakestra/netmanager.log`
 
-## How to access Root Orchestrators DB?
+## Accessing Root Orchestrator database component
 
 You can access a live MongoDB shell of each one of the Oakestra's databases by running the following commands:
 
-For the System Manager DB run:
-```bash
+For the System Manager database run:
+
+```bash 
 docker exec -it mongo mongo localhost:10007
 ```
 
@@ -79,30 +80,30 @@ For the Root Service Manager DB run:
 docker exec -it mongo mongo_net localhost:10008
 ```
 
-
 This command opens a shell to the corresponding MongoDB instance running on the root orchestrator. From here, you can run MongoDB commands to query the database.
 
 For example:
-```bash
+```bash {frame="none"}
 show dbs #shows all available databases.
 ```
 
-```bash
+```bash {frame="none"}
 use clusters #move to the clusters database
 ```
 
-```bash
+```bash {frame="none"}
 db.clusters.find().pretty() #pretty print of the clusters collection
 ```
 
-```bash
+```bash {frame="none"}
 use jobs #move to the jobs database
 ```
 
-```bash
+```bash {frame="none"}
 db.jobs.find().pretty() #pretty print of all the jobs
 ```
-## How do I access Cluster Orchestrator DB?
+
+## Access Cluster Orchestrator database component
 
 You can access a live MongoDB shell of each one of the Oakestra Cluster's databases by running the following commands:
 
