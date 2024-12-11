@@ -3,21 +3,21 @@
 <link rel="stylesheet" href="/css/main.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="row justify-content-center pubs">
-    <div class="col-md-12 col-lg-12 col-xl-12">
+<div class="justify-content-center pubs">
+    <div class="container">
       <article>
         <h1 class="text-center">{{ if eq .CurrentSection .FirstSection }}{{ .Section | humanize }}{{ else }}{{ .Title }}{{ end }}</h1>
         {{ with .Content }}<div class="text-center">{{ . }}</div>{{ end }}
                 <div class="container-fluid">
                 
                 <br>
-                <table class="pubs-table">
+                <div class="pubs-table">
                    
                   {{ $currentSection := .CurrentSection }}
                   {{ range where .Site.RegularPages.ByWeight "Section" .Section }}
                       {{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
                         <div class="row">
-                            <div class="pubs-img-container col-md-12 col-lg-3 col-xl-3">
+                            <div class="col-3 pubs-img-container">
                                 <a href={{ .Params.pdf }} class="no-decoration" target="_blank">
                                     <img class="pubs_img" src={{ .Params.img }}>
                                 </a>
@@ -27,8 +27,7 @@
                                     {{ end }}
                                 </div>
                             </div>
-                            <div style="vertical-align: top" class="col-md-12 col-lg-12 col-xl-12">
-                                <div style="position: relative; min-height: 180px; padding-left: -2em; padding-top: 1em">
+                            <div class="col-12">
                                     <span class="pubs_title">
                                         <a href={{ .Params.pdf }}
                                             style="text-decoration: none!important; border: none; color: inherit;"
@@ -49,13 +48,13 @@
                                             target="_blank">
                                         <i class="fa fa-globe" aria-hidden="true"></i> DOI
                                     </a>
-                                </div>
+  
                             </div>
                         </div>
                         <hr/>
                       {{ end }}
                   {{ end }}
-                </table>
+                 </div>
                 </div>
               </div>
       </article>
