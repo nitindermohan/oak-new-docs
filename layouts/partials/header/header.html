@@ -2,6 +2,18 @@
   {{ partial "header/alert.html" . }}
 {{ end -}}
 
+<!-- Bootstrap scripts -->
+{{ $bootstrap := resources.Get "js/bootstrap.js" }}
+{{ $params := dict }}
+{{ $sourceMap := cond hugo.IsProduction "" "inline" }}
+{{ $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params }}
+{{ $bootstrap = $bootstrap | js.Build $opts }}
+{{ if hugo.IsProduction }}
+{{ $bootstrap = $bootstrap | fingerprint "sha512" }}
+{{ end }}
+<script crossorigin="anonymous" defer {{ if hugo.IsProduction }}integrity="{{ $bootstrap.Data.Integrity }}"{{end}} type="application/javascript">{{$bootstrap.Content | safeJS}}</script>
+<!-- End Bootstrap scripts -->
+
 {{ if site.Params.doks.navbarSticky -}}
 <div class="sticky-top">
 {{ end -}}
@@ -210,15 +222,14 @@
 
         <!-- Versioning dropdown  -->
         {{ if eq site.Params.doks.docsVersioning true -}}{{ if not (eq .Params.hideVersions true) -}}
-
-        <div class="dropdown mt-1 order-lg-5">
-          <button class="btn btn-dropdown dropdown-toggle text-dark" id="doks-versions" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static" aria-label="Toggle version menu">
-            <span class="">Releases ▿</span> 
+        <div class="dropdown mt-1 order-lg-5 nav-item" role="group">
+          <button class="btn btn-dropdown dropdown-toggle text-dark" id="doks-versions" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Toggle version menu">
+            <span class="">Releases</span> 
             <span class="dropdown-caret"></span>
           </button>
-          <ul class="dropdown-menu dropdown-menu-lg-end me-lg-2 shadow rounded border-0" aria-labelledby="doks-versions">
+          <div class="dropdown-menu me-lg-2 shadow rounded dropdown-menu-end" aria-labelledby="doks-versions">
             {{ partial "versions.html" . }}
-          </ul>
+          </div>
         </div>
         {{ end -}}{{ end -}}
         
