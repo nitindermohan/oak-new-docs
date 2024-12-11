@@ -29,7 +29,7 @@ Contributors and people new to open source alike will find the following guides 
 
 ## Code of Conduct
 
-Oakestra is committed to a respectful and inclusive environment. By contributing, you agree to abide by our [Code of Conduct](#link-to-code-of-conduct).
+Oakestra is committed to a respectful and inclusive environment. By contributing, you agree to abide by our [Code of Conduct](../code-of-conduct/).
 
 ## How You Can Contribute
 
