@@ -81,5 +81,8 @@ members of the project's leadership.
 This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org/), version 2.1,
 available at [here](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).
 
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
 For answers to common questions about this code of conduct, see
-[https://www.contributor-covenant.org/faq](https://www.contributor-covenant.org/faq)
+[here](https://www.contributor-covenant.org/faq).
+{{< /callout >}}
+
