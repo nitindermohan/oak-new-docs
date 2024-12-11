@@ -38,15 +38,28 @@ There are other ways you can contribute without writing a single line of code. H
 
 1. **Reporting Bugs**  
    Found a bug? Please report it by creating a GitHub issue. Clear and detailed bug reports are invaluable.
-
-   **Links to [link](https://github.com/oakestra/oakestra/issues/new/choose)**
+   {{< link-card
+  description="Submit a bug report"
+  href="https://github.com/oakestra/oakestra/issues/new?assignees=&labels=&projects=&template=bug.md&title="
+  target="_blank"
+   >}}
 
 2. **Suggesting Features**  
    Have a new feature idea? Feature requests are welcome! Please submit them as GitHub issues with details on why it would be useful and any implementation suggestions.
+   {{< link-card
+  description="Suggest a feature idea"
+  href="https://github.com/oakestra/oakestra/issues/new?assignees=&labels=&projects=&template=proposal.md&title="
+  target="_blank"
+   >}}
 
 3. **Improving Documentation**  
-   Documentation improvements are always appreciated! If you find something unclear or missing, feel free to submit an [issue](https://github.com/oakestra/documentation/issues).
-   **Links to Pages "How to contribute to documentation"**
+   Documentation improvements are always appreciated! If you find something unclear or missing, feel free to submit an issue.
+
+   {{< link-card
+  description="Suggest documentation improvements"
+  href="https://github.com/oakestra/documentation/issues"
+  target="_blank"
+   >}}
 
 ## Reviewing and Merging Pull Requests
 
@@ -54,7 +67,7 @@ Your PR will be reviewed by a maintainer. Please be patient, as we maintain high
 
 ## Coding Guidelines
 
-- **Code Style**: Follow the [Oakestra Coding Style Guide](#link-to-style-guide).
+<!-- - **Code Style**: Follow the [Oakestra Coding Style Guide](#link-to-style-guide). -->
 - **Commit Messages**: Use [Conventional Commits](https://www.conventionalcommits.org/).
 - **Documentation**: Update relevant documentation, especially if introducing new features or changing functionality.
 
