@@ -69,7 +69,7 @@ Your PR will be reviewed by a maintainer. Please be patient, as we maintain high
 
 ## Coding Guidelines
 
-<!-- - **Code Style**: Follow the [Oakestra Coding Style Guide](#link-to-style-guide). -->
+- **Code Style**: Follow the [Oakestra Coding Style Guide](/docs/contribution-guide/code-style-guide-and-tools).
 - **Commit Messages**: Use [Conventional Commits](https://www.conventionalcommits.org/).
 - **Documentation**: Update relevant documentation, especially if introducing new features or changing functionality.
 
