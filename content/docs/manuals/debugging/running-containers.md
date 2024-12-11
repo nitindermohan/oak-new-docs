@@ -13,12 +13,14 @@ seo:
 
 ## How to access a running container?
 
-If you need to access a running container in your worker node, the correct way of doing it is via the `ctr` utility. `ctr` is the cli of `containerd`, the runtime used by oakestra to deploy containers. 
-Oakestra uses a custom namespace `oakestra` where all the containers are. 
+To interact with a running container on a worker node, use the `ctr` utility. This CLI tool is part of `containerd`, the runtime Oakestra uses for deploying containers. All Oakestra containers are placed in a custom namespace called `oakestra`.
 
-In `containerd` we distinguish between tasks and containers. A container is the environment, the filesystem, and all the metadata. A task is a process running in such an environment. 
+In `containerd`, there are two key concepts:
 
-Therefore, to check all running containers on a given worker node you can use:
+- **Containers:** Represent the filesystem, environment, and associated metadata.
+- **Tasks:** Represent the processes running inside those containers.
+
+### Listing Containers and Tasks
 
 ```bash
 sudo ctr -n oakestra container ls
@@ -30,13 +32,16 @@ To check all running tasks you can use the following:
 sudo ctr -n oakestra task ls
 ```
 
-If you wish to attach and execute commands inside a running container, you can use:
+### Executing Commands Inside a Running Container
+
+To attach to a running container and execute commands inside it:
+
 
 ```bash
 sudo ctr -n oakestra task exec --exec-id tty <your task name here> <the command you wish to execute>
 ```
 
->E.g., to use a shell inside the container x.y.z we can use
+>For example, to use a shell inside the container x.y.z we can use
 > ```bash
 > sudo ctr -n oakestra task exec --exec-id tty x.y.z /bin/sh
 > ```
@@ -46,9 +51,9 @@ sudo ctr -n oakestra task exec --exec-id tty <your task name here> <the command 
 
 The `stdout` and `stderr` of each container or unikernel is stored under `/tmp/<appname>.<appns>.<servicename>.<servicens>.<instancenumber>` of the worker node running the instance.
 
-> E.g., to access the latest logs of instance 0 of `x.y.z.y` in my worker node I can run `tail /tmp/x.y.z.y.0`
+> For example, to access the latest logs of instance 0 of `x.y.z.y` in my worker node I can run `tail /tmp/x.y.z.y.0`
 
 ## What about Unikernels?
 
-While you cannot directly attatch yourself to a running Unikernel, the logs are extracted, stored and treaded the same way as containers. 
+You cannot attach directly to a running unikernel, but their logs are stored in the same way as containers. Check the `/tmp` directory structure as described above to access and review their logs.
 
