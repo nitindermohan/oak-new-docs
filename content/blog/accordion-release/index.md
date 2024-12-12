@@ -8,7 +8,7 @@ draft: false
 weight: 50
 categories: [releases]
 tags: [releases, announcements]
-contributors: []
+contributors: ["Oakestra Dev Team"]
 pinned: false
 homepage: false
 seo:
