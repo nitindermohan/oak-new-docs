@@ -15,3 +15,10 @@ hugo.linux
 .vscode
 
 node_modules/
+
+# draio bkp files
+*.bkp
+
+# macOS
+.DS_Store
+
