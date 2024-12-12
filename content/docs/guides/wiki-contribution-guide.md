@@ -37,7 +37,7 @@ New Pictures should be added to this DB.
 Some pictures that are not yet present in the Drawio master DB have the corresponding .drawio file in the docs. 
 
 - These files should be kept up to date. 
-- Make sue to always ahve the CMU Sans Serif font installed in your machine otherwise figures might no be rendered correctly. 
+- Make sure to always have the CMU Sans Serif font installed on your machine otherwise, figures might not be rendered correctly. 
 
 ## Documentation versioning 
 
