@@ -23,7 +23,7 @@ The containers are instantiated and managed by the NodeEngine (See High-Level Ar
 the Net Manager, creates a network namespace for each container (the cloud surrounding the container),
 enabling the Virtual Layer abstraction.
 
-![Proxy Conversion](_overlay-example.png)
+{{<svg "_overlay_example" >}}
 
 The Service Layer abstraction is realized hierarchically with a mechanism of *route interest registration* and
 *proxy translation*. This section details the proxy translation that allows transparent
