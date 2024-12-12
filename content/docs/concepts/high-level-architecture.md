@@ -23,7 +23,7 @@ As shown in our [getting started](../../getting-started/deploy-your-first-oakest
 
 The root orchestrator is the centralized control plane that coordinates the participating clusters.
 
-![](arch-root.png)
+{{< svg "concepts/orchestration/arch-root" >}}
 
 The above image describes the components of the root orchestrator. Each component is deployed as a separate container
 and docker-compose is used to integrate and run them.
@@ -48,7 +48,7 @@ new services and intra-cluster migrations.
 
 # Cluster Orchestrator
 
-![](arch-cluster.png)
+{{< svg "concepts/orchestration/arch-cluster" >}}
 
 The cluster orchestrator is a twin of the root, with the following distinctions:
 * The scope of the cluster orchestrator the is worker nodes
@@ -62,7 +62,7 @@ resources and obscures the cluster composition to the root
 At each level, schedulers receive job placement tasks and return a placement decision. At the root level a
 cluster is chosen for a given service. At the cluster level a worker node is chosen.
 
-![](scheduling-celery-worker.png)
+{{< svg "concepts/orchestration/scheduler" >}}
 
 A job placement task is comprised of a service with it's instances and resource requirements.
 Currently placement follows the best-fit algorithm.
