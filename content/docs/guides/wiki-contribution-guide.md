@@ -34,7 +34,7 @@ https://drive.google.com/file/d/1zfgXwXPI2Yb8G2N-U8Gd0xPaiQIe9R-2/view?usp=shari
 New Pictures should be added to this DB.
 
 ## Drawio files in the docs
-Some pictures that are not yet present in the Drawio master DB have the corrspondign .drawio file in the docs. 
+Some pictures that are not yet present in the Drawio master DB have the corresponding .drawio file in the docs. 
 
 - These files should be kept up to date. 
 - Make sue to always ahve the CMU Sans Serif font installed in your machine otherwise figures might no be rendered correctly. 
