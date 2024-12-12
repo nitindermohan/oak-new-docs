@@ -27,14 +27,8 @@ The color palette used in the Oakestra documentation is as follows:
 
 ![OakGreen](wiki-contribution-guide/oak-green.png) Oakestra Tree Green: R:125 B:195 G:132 #7DC384
 
-## Drawio master DB
-This is the reference drawio diagram for the Oakestra project.
-https://drive.google.com/file/d/1zfgXwXPI2Yb8G2N-U8Gd0xPaiQIe9R-2/view?usp=sharing
-
-New Pictures should be added to this DB.
-
 ## Drawio files in the docs
-Some pictures that are not yet present in the Drawio master DB have the corresponding .drawio file in the docs. 
+For each picture `xyz.png`/`xyz.svg` in the wiki we MUST have a `xyz.drawio` source file. This ensures pictures versioning and source availability. In every folder containing a picture we MUST always be able to find its source file.
 
 - These files should be kept up to date. 
 - Make sure to always have the CMU Sans Serif font installed on your machine otherwise, figures might not be rendered correctly. 
