@@ -1,8 +1,8 @@
 ---
 title: "Gateway Operations"
 summary: ""
-draft: false
-weight: 314
+draft: true
+weight: 317
 toc: true
 seo:
   title: "" # custom title (optional)
