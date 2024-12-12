@@ -44,7 +44,7 @@ Some pictures that are not yet present in the Drawio master DB have the correspo
 To archive the current version of the docs you need to do the following:
 
 1. create a new folder inside the `content/version` folder with the name of the version you want to archive. E.g. `content/version/v0.4.400`
-2. copy the surrent content of the `content/docs` folder to the new folder. E.g. `content/version/v0.4.400/docs`
+2. copy the current content of the `content/docs` folder to the new folder. E.g., `content/version/v0.4.400/docs`
 3. Update the version index file `content/version/v0.4.400/docs/_index.md` with the new version number. E.g.
 
 ```
