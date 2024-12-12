@@ -13,15 +13,14 @@ seo:
 
 ## How does the scheduling work in Oakestra?
 
-
 Oakestra's architecture is composed of two tiers. Resources are divided into clusters. A cluster is seen as the aggregation of all its resources. A job is first scheduled to a cluster, and then the cluster scheduler decides the target worker.  
 
 {{< svg "concepts/scheduling/cluster-worker-selection" >}}
 
-The scheduling component is as simple as a Celery worker. The scheduler receives a job description and gives back an allocation target. We differentiate between the Root scheduler and Cluster scheduler. The Root scheduler finds a suitable cluster (step 1), and the Cluster scheduler finds a suitable worker node (step 2).
+The scheduler component is as simple as a Celery worker. The scheduler receives a job description and gives back an allocation target. We differentiate between the Root scheduler and Cluster scheduler. The Root scheduler finds a suitable cluster (step 1), and the Cluster scheduler finds a suitable worker node (step 2).
 To abstract the target resource, we use a `Resource Abstractor`. This service transforms a cluster or a worker node into a generic resource with some capabilities. This ensures interoperability between cluster and worker selection algorithms. 
 
-![scheduling algo](scheduling-celery-worker.png)
+{{< svg "concepts/scheduling/scheduler" >}}
 
 This filtering component reduces the search space, and the scheduling algorithm can focus on the most suitable candidates. The filtering is based on the job requirements and the resource capabilities.
 
