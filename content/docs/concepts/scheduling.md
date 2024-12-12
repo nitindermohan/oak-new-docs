@@ -16,7 +16,7 @@ seo:
 
 Oakestra's architecture is composed of two tiers. Resources are divided into clusters. A cluster is seen as the aggregation of all its resources. A job is first scheduled to a cluster, and then the cluster scheduler decides the target worker.  
 
-{< figure src="scheduling-architecture.png" alt="Scheduling Architecture" caption="Scheduling Architecture" >}
+{{< svg "concepts/scheduling/cluster-worker-selection" >}}
 
 ![scheduling algo](cluster-worker-selection.png)
 
