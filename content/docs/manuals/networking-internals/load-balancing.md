@@ -24,7 +24,7 @@ addresses as the number of balancing policies supported (and active) within the 
 
 #### Example
 
-![Network Example - Dual Stack](_net_example_dual_stack.png)
+{{<svg "_net_example_dual_stack">}}
 
 A developer can communicate with any instance of Service B either with **Round Robin** balancing policy or
 the **Closest** balancing policy. The former balances the traffic evenly between all the instances, and the
@@ -60,7 +60,8 @@ The proxy component then automatically chooses Service B Instance 3.
 {{< /tab-icon >}}
 
 {{< tab-icon "Fifth" "_envelope_5.png">}}
-The last request demonstrates that IPv4 requests work the same way as described before.
+The last request demonstrates how the requests using the IPv4 Round Robin semantic address works exactly the same way as
+the IPv6 Round Robin semantic address used in the first request.
 {{< /tab-icon >}}
 
 {{< /tabs-icon >}}

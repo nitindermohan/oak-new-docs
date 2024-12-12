@@ -11,16 +11,16 @@ seo:
   noindex: false # false (default) or true
 ---
 
-In order to make the service layer networking functional, a worker-level tun-proxy is transparently instantiated
+In order to make the service layer networking functional, a worker-level tunnel-proxy is transparently instantiated
 as part of the Oakestra network component. The following picture is an example of what happens in a worker node
-based on the IPv4 implementation of the NetManager component. Note that
+based on the IPv4 implementation of the Network Manager component. Note that
 **IPv4 and IPv6 work identically**. For simplicity, we will stick to IPv4 addresses in this walkthrough.
 
 ## Example
 
 Lets assume that we have two worker nodes, namely Node 1 and Node 2, each executing two containers.
-The containers are instantiated and managed by the NodeEngine (See High-Level Architecture wiki), while
-the Net Manager, creates a network namespace for each container (the cloud surrounding the container),
+The containers are instantiated and managed by the Node Engine, while
+the Network Manager, creates a network namespace for each container (the cloud surrounding the container),
 enabling the Virtual Layer abstraction.
 
 {{<svg "_overlay_example" >}}
@@ -118,7 +118,12 @@ services deployed on other worker nodes.
 
 This is an example of the Conversion Table maintained by the Environment Manager at this moment.
 
-![Conversion Table Before](_proxy_table_before.png)
+
+##### Node Service 1 Table before X3 table query
+| Appname | Appns   | Sname | Sns     | Instance # | Cluster | Node IP & Port  | Ns IP     | Instance IP | Round Robin IP | ... Service IPs |
+|---------|---------|-------|---------|------------|---------|-----------------|-----------|-------------|----------------|-----------------|
+| X       | default | X1    | default | 0          | 1       | 131.1.0.1 50103 | 10.19.1.3 | 10.30.0.2   | 10.30.0.1      | ...             |
+| X       | default | X1    | default | 1          | 1       | 131.1.0.2 50103 | 10.19.1.6 | 10.30.0.3   | 10.30.0.1      |                 |
 
 The entries of the table keep the cross-layer information of each service, including the physical layer address and
 port, the virtual layer address, and all the service layer addresses. As the number of records is limited, the table
@@ -148,7 +153,12 @@ This is one of the building blocks of the proposed abstraction, and it is detail
 
 Upon completion of the table query, the internal Conversion table is updated as follows.
 
-![Conversion Table After](_proxy_table_after.png)
+##### Node Service 1 Table after X3 table query
+| Appname | Appns   | Sname | Sns     | Instance # | Cluster | Node IP & Port   | Ns IP     | Instance IP | Round Robin IP | ... Service IPs |
+|---------|---------|-------|---------|------------|---------|------------------|-----------|-------------|----------------|-----------------|
+| X       | default | X1    | default | 0          | 1       | 131.1.0.1 50103  | 10.19.1.3 | 10.30.0.2   | 10.30.0.1      | ...             |
+| X       | default | X1    | default | 1          | 1       | 131.1.0.2 50103  | 10.19.1.6 | 10.30.0.3   | 10.30.0.1      | ...             |
+| X       | default | X3    | default | 0          | 1       | 131.1.21.5 55301 | 10.21.0.1 | 10.30.0.6   | 10.30.1.30     | ...             |
 
 The cluster resolved the Service IP `10.30.1.30` into a table entry describing only `X.default.X3.default.0`
 (apparently, no other instances are in the system yet).
@@ -238,7 +248,7 @@ A response from X3 to X1 then follows the same steps in-order as shown in this e
 Here we show a sequence diagram of how a table query and an interest registration work in the worker-cluster-root
 hierarchy.
 
-![Interest](_overlay-example-seq.png)
+{{<svg "_overlay_example_sequential" >}}
 
 * The environment manager keeps the 'interests subscriptions' for 10 seconds
 * If the route is not used for more than 10 seconds, the interest is removed, and the table entry is cleared

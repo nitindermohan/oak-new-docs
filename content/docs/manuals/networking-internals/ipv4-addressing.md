@@ -39,4 +39,4 @@ If we deploy an example application `A` with two instances of microservice `S` (
 | S1       | Instance IP: `10.30.0.2`<br> Namespace IP: `10.18.30.65` |
 | S2       | Instance IP: `10.30.0.3`<br> Namespace IP: `10.18.30.66` |
 
-Oakestra also has IPv6 support, which you can read in the next page [IPv6 address partitioning](../ipv6-addressing/).
+Continue reading about our IPv6 support.
