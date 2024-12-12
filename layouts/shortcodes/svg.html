@@ -1,0 +1,10 @@
+{{ $svgName := index .Params 0 }}
+{{ $lightSvgPath := printf "/static/svgs/%s_light.svg" $svgName }}
+{{ $darkSvgPath := printf "/static/svgs/%s_dark.svg" $svgName }}
+
+<figure class="svg-lightmode">
+    {{ readFile $lightSvgPath | safeHTML }}
+</figure>
+<figure class="svg-darkmode">
+    {{ readFile $darkSvgPath | safeHTML }}
+</figure>
