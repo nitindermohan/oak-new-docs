@@ -1,20 +1,27 @@
 // Put your custom SCSS code here
 .navbar-custom-button {
-    background-color: #497286 !important;
-    border-color: #497286 !important;
-  }
+  background-color: #497286 !important;
+  border-color: #497286 !important;
+}
 
-  .navbar-custom-button:hover {
-    background-color: #28a745 !important;
-    border-color: #28a745 !important;
-  }
+.navbar-custom-button:hover {
+  background-color: #28a745 !important;
+  border-color: #28a745 !important;
+}
 
-  .logo-navbar {
-    height: 55px;
-    margin-bottom: -25px;
-    margin-top: -20px;
-  }
-  
+.logo-navbar {
+  height: 55px;
+  margin-bottom: -25px;
+  margin-top: -20px;
+}
+
+@font-face {
+  font-family: 'CMU Sans Serif';
+  src: url('/fonts/cmunss.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/cmunss.woff') format('woff'),
+    url('/fonts/cmunss.ttf') format('truetype'),
+    url('/fonts/cmunss.svg#svgFontName') format('svg');
+}
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
@@ -220,13 +227,20 @@ input[type="button"]:disabled,
 .btn-primary-overide {
   color: #fff;
   background-color: #3c5d6e;
-  border-color: #3c5d6e; /*set the color you want here*/
+  border-color: #3c5d6e;
+  /*set the color you want here*/
   height: 2.5em;
 }
-.btn-primary-overide:hover, .btn-primary-overide:focus, .btn-primary-overide:active, .btn-primary-overide.active, .open>.dropdown-toggle.btn-primary-overide {
+
+.btn-primary-overide:hover,
+.btn-primary-overide:focus,
+.btn-primary-overide:active,
+.btn-primary-overide.active,
+.open>.dropdown-toggle.btn-primary-overide {
   color: #3c5d6e;
   background-color: #fff;
-  border-color: #3c5d6e; /*set the color you want here*/
+  border-color: #3c5d6e;
+  /*set the color you want here*/
   text-decoration: none;
 }
 
@@ -302,11 +316,11 @@ table.alt tfoot {
   border-top: 0;
 }
 
-.pubs-table{
-  width: 80%; 
-  padding-left:2.2em; 
-  table-layout:fixed; 
-  margin-left: auto; 
+.pubs-table {
+  width: 80%;
+  padding-left: 2.2em;
+  table-layout: fixed;
+  margin-left: auto;
   margin-right: auto
 }
 
@@ -327,7 +341,7 @@ table.alt tfoot {
   text-transform: none !important;
 }
 
-.icon > .label {
+.icon>.label {
   display: none;
 }
 
@@ -349,7 +363,7 @@ table.alt tfoot {
   height: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-bottom:4em; 
+  padding-bottom: 4em;
   /*margin-top: -25%;*/
 }
 
@@ -373,7 +387,7 @@ table.alt tfoot {
 }
 
 .morebutton {
-  text-decoration: none; 
+  text-decoration: none;
   font-size: 60%;
   border: none
 }
@@ -387,6 +401,7 @@ table.alt tfoot {
   width: 34px;
   height: 55px;
 }
+
 .mousey {
   width: 3px;
   padding: 10px 15px;
@@ -396,6 +411,7 @@ table.alt tfoot {
   opacity: 0.75;
   box-sizing: content-box;
 }
+
 .scroller {
   width: 3px;
   height: 10px;
@@ -406,14 +422,17 @@ table.alt tfoot {
   animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
   animation-iteration-count: infinite;
 }
+
 @keyframes scroll {
   0% {
     opacity: 0;
   }
+
   10% {
     transform: translateY(0);
     opacity: 1;
   }
+
   100% {
     transform: translateY(15px);
     opacity: 0;
@@ -450,13 +469,13 @@ table.alt tfoot {
   text-align: center;
 }
 
-.decorated > span {
+.decorated>span {
   position: relative;
   /* display: inline-block; */
 }
 
-.decorated > span:before,
-.decorated > span:after {
+.decorated>span:before,
+.decorated>span:after {
   content: '';
   position: absolute;
   top: 50%;
@@ -465,11 +484,11 @@ table.alt tfoot {
   margin: 0 20px;
 }
 
-.decorated > span:before {
+.decorated>span:before {
   right: 100%;
 }
 
-.decorated > span:after {
+.decorated>span:after {
   left: 100%;
 }
 
@@ -602,7 +621,7 @@ table.alt tfoot {
 
 .pubs_title {
   text-decoration: none !important;
-  border: none; 
+  border: none;
   /* font-family: CMUSansSerifMedium;
   /* font-family: SegoeUILightWeb, Segoe UI Light, Helvetica, Verdana, Sans-Serif; */
   font-size: 130%;
@@ -630,8 +649,8 @@ table.alt tfoot {
 /* overlap */
 
 .pubs-img-container {
-  padding-top: 1em; 
-  padding-right: 1.1em; 
+  padding-top: 1em;
+  padding-right: 1.1em;
   margin-right: 1em;
   width: 10vw;
   min-width: 120px;
