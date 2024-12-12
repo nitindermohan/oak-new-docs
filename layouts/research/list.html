@@ -1,0 +1,63 @@
+{{ define "main" }}
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="/css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="justify-content-center pubs">
+    <div class="container">
+      <article>
+        <h1 class="text-center">{{ if eq .CurrentSection .FirstSection }}{{ .Section | humanize }}{{ else }}{{ .Title }}{{ end }}</h1>
+        {{ with .Content }}<div class="text-center">{{ . }}</div>{{ end }}
+                <div class="container-fluid">
+                
+                <br>
+                <div class="pubs-table">
+                   
+                  {{ $currentSection := .CurrentSection }}
+                  {{ range where .Site.RegularPages.ByWeight "Section" .Section }}
+                      {{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
+                        <div class="row">
+                            <div class="col-3 pubs-img-container">
+                                <a href={{ .Params.pdf }} class="no-decoration" target="_blank">
+                                    <img class="pubs_img" src={{ .Params.img }}>
+                                </a>
+                                <div class="badges-img text-center">
+                                    {{ range .Params.badges }}
+                                        <img src="{{ . }}">
+                                    {{ end }}
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                    <span class="pubs_title">
+                                        <a href={{ .Params.pdf }}
+                                            style="text-decoration: none!important; border: none; color: inherit;"
+                                            target="_blank">
+                                            {{ .Params.title }}
+                                        </a>
+                                    </span>
+                                    <br>
+                                    <span class="pubs_authors">
+                                        {{ .Params.authors }}
+                                    </span>
+                                    <br>
+                                    <span class="pubs_type">
+                                        {{ .Params.conference }}
+                                    </span> 
+                                    <br>
+                                    <a class="btn btn-sm" style="font-size: 110%; padding: 0em;" href={{ .Params.doi }}
+                                            target="_blank">
+                                        <i class="fa fa-globe" aria-hidden="true"></i> DOI
+                                    </a>
+  
+                            </div>
+                        </div>
+                        <hr/>
+                      {{ end }}
+                  {{ end }}
+                 </div>
+                </div>
+              </div>
+      </article>
+    </div>
+</div>
+{{ end }}
