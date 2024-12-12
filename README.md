@@ -8,7 +8,7 @@ In order to build the webside you need to install:
 - [`npm`](https://nodejs.org/en/download/package-manager)
 - [`golang`](https://go.dev/doc/install)
 
-then you can install al the project dependencies using
+then you can install all the project dependencies using
 
 ```
 npm install
