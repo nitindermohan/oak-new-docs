@@ -271,7 +271,6 @@ input[type="button"]:disabled,
 }
 
 /* Table of content changes */
-
 nav.docs-toc {
     border-left: 2px solid var(--bs-border-color);
 }
@@ -293,15 +292,20 @@ div.docs-sidebar summary {
 }
 
 
+// page width changes
 // @media (min-width: 1200px) {
 //     main.docs-content {
-//         width: 65% !important;
+//         padding-left: 5rem;
+//         width: 70% !important;
 //     }
 
 //     div.docs-sidebar {
-//         margin-left: -3rem !important;
+//         width: 30%;
+//         flex:0 1 320px;
+//         // margin-left: -10rem !important;
 //     }
 //     nav.docs-toc {
+//         margin-left: 3rem;
 //         margin-right: -3rem !important;
 //     }
 
@@ -309,6 +313,72 @@ div.docs-sidebar summary {
 //         margin: 0 !important;
 //         min-width: 100% !important;
 //     }
+// }
+
+// @media (min-width: 992px) {
+//     @supports (position: sticky) {
+//         .docs-sidebar {
+//             position:sticky;
+//             top: 4.25rem;
+//             z-index: 1000;
+//             height: calc(100vh - 4.25rem)
+//         }
+
+//         .docs-links {
+//             max-height:calc(100vh - 4rem);
+//             overflow-y: scroll
+//         }
+//     }
+// }
+
+// @media (min-width: 1200px) {
+//     .docs-sidebar {
+//         flex:0 1 320px
+//     }
+// }
+
+// .docs-links {
+//     padding-bottom: 5rem
+// }
+// @media (min-width: 992px) {
+//     .docs-links {
+//         display:block;
+//         width: auto;
+//         margin-right: -1.5rem;
+//         padding-bottom: 4rem
+//     }
+// }
+
+// .docs-toc {
+//     order: 2
+// }
+
+// @supports (position: sticky) {
+//     .docs-toc {
+//         position:sticky;
+//         top: 4.25rem;
+//         height: calc(100vh - 4.25rem);
+//         overflow-y: auto
+//     }
+// }
+
+// .docs-content {
+//     padding-bottom: 3rem;
+//     order: 1
+// }
+
+// .navbar a:hover,.navbar a:focus {
+//     text-decoration: none
+// }
+
+// #TableOfContents ul,#toc ul {
+//     padding-left: 0;
+//     list-style: none
+// }
+
+// #toc a.active {
+//     color: #3347ff;
+//     font-weight: 500
 // }
 
 /* Table */
