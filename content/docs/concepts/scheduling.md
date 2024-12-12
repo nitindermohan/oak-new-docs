@@ -18,8 +18,6 @@ Oakestra's architecture is composed of two tiers. Resources are divided into clu
 
 {{< svg "concepts/scheduling/cluster-worker-selection" >}}
 
-![scheduling algo](cluster-worker-selection.png)
-
 The scheduling component is as simple as a Celery worker. The scheduler receives a job description and gives back an allocation target. We differentiate between the Root scheduler and Cluster scheduler. The Root scheduler finds a suitable cluster (step 1), and the Cluster scheduler finds a suitable worker node (step 2).
 To abstract the target resource, we use a `Resource Abstractor`. This service transforms a cluster or a worker node into a generic resource with some capabilities. This ensures interoperability between cluster and worker selection algorithms. 
 
