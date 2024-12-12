@@ -290,6 +290,16 @@ div.docs-sidebar ul li.active {
 div.docs-sidebar summary {
     margin-bottom: 0.25rem !important;
 }
+nav.docs-toc {
+        // margin-left: 3rem;
+        padding-left: 1rem;
+        margin-right: -3rem !important;
+}
+
+main.docs-content {
+    // padding-left: 5rem;
+    width: 85% !important;
+}
 
 
 // page width changes
@@ -381,8 +391,20 @@ div.docs-sidebar summary {
 //     font-weight: 500
 // }
 
-/* Table */
+/* Announcement */
+.alert-primary {
+    color: #fff;
+    background-color: #497286;
+}
 
+@include color-mode(dark) {
+    .alert-primary {
+        color: #fff;
+        background-color: #93e8a7;
+    }
+}
+
+/* Table */
 .table-wrapper {
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
