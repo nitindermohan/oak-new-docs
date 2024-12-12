@@ -21,3 +21,9 @@ These are the root **`oak-cli`** commands shown in the main `--help` output.
 {{< include-sphinx-html "/static/automatically_generated_oak_cli_docs/index.html" >}}
 Most root commands have their own set of subcommands.<br>
 Each root command represents a separate set of features and comes with its own documentation page (See **CLI Features**).<br>
+
+{{< link-card
+    title="The CLI in action"
+    description="Use the CLI to deploy your first Oakestra app."
+    href="/docs/getting-started/deploy-app/with-the-cli/"
+>}}
