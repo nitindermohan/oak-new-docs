@@ -214,7 +214,11 @@ Oakestra was invited as default framework in the course "Networked AI Systems" o
 
 ### Oakestra was inivited to IETF 119 in Australia 🇦🇺 
 
-Internet Engineering Task Force (IETF) is a standards organization for the Internet and is responsible for the technical standards that make up the Internet. Oakestra was invited to attend the **Exposure of Network and Compute information to Support Edge Computing Applications** [side-meeting](https://github.com/communication-compute-exposure/ietf-side-meetings/tree/main/ietf-119-side-meeting) to showcase how applications can be accelerated within Oakestra by sharing internal QoS metrics. Oakestra was well-appreciated by the IETFers and is making strides as leading orchestration framework for managing edge computing applications and infrastructures.
+Internet Engineering Task Force (IETF) is a standards organization for the Internet and is responsible for the technical standards that make up the Internet. Oakestra was invited to attend the **Exposure of Network and Compute information to Support Edge Computing Applications** [side-meeting](https://github.com/communication-compute-exposure/ietf-side-meetings/tree/main/ietf-119-side-meeting) to showcase how applications can be accelerated within Oakestra by sharing internal QoS metrics. 
+
+{{< link-card title="Oakestra in IETF 117" description="Oakestra was also presented at COINRG in IETF 117. See the presentation here." href="https://youtu.be/HVfKAzE_wsY?t=2678" >}}
+
+Oakestra was well-appreciated by the IETFers and is making strides as leading orchestration framework for managing edge computing applications and infrastructures.
  
 {{< callout context="tip" title="Stay tuned for more" icon="outline/rocket" >}} 
 Oakestra developers are hard at work on the next release, which will include several new features and improvements, such as: 
