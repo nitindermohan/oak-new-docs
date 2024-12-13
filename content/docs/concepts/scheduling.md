@@ -33,7 +33,7 @@ The resource abstractor component is currently experimental and deployed only at
 
 At each layer, the scheduling decision consists of the creation of a `candidate_list` of clusters (or workers) called **filtering** process, and finally, the selection of the "best" candidate according to a scheduling algorithm.
 
-![scheduling algo](scheduling-algo.png)
+{{< svg "concepts/scheduling/scheduling-algo" >}}
 
 The `schedule_policy` algorithm is implemented in the `calculation.py` component of each respective scheduler.  
 
