@@ -62,7 +62,7 @@ curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/St
 This script will download the required files to the directory `~/oakestra/cluster_orchestrator`. From there it will walk you through
 configuring the cluster. Once the setup is complete, it will build the cluster orchestrator and register with the root orchestrator.
 
-{{< callout context="danger" title="Note" icon="outline/alert-octagon" >}}
+{{< callout context="danger" title="Watch out!" icon="outline/alert-octagon" >}}
 The root orchestrator has to be reachable by the cluster orchestrator. When not on the same network the root orchestrator URL has to be a public
 address!
 {{< /callout >}}
