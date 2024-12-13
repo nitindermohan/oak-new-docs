@@ -1,9 +1,14 @@
 ---
-title: "Features"
+title: "Command Line Interface"
+description: "Explore the Oakestra CLI"
 summary: ""
+date: 2023-09-07T16:06:50+02:00
+lastmod: 2023-09-07T16:06:50+02:00
 draft: false
-weight: 341
-toc: true
+weight: 330
+toc: false
+sidebar:
+  collapsed: true
 seo:
   title: "" # custom title (optional)
   description: "" # custom description (recommended)

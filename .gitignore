@@ -20,6 +20,7 @@ resources/_gen/
 .vscode
 
 node_modules/
+auxiliary/oak_cli/documentation_automation/docs/build/
 
 # draio bkp files
 *.bkp
