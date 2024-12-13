@@ -18,11 +18,9 @@ Oakestra's architecture is composed of two tiers. Resources are divided into clu
 {{< svg "concepts/scheduling/cluster-worker-selection" >}}
 
 The scheduler component is as simple as a Celery worker. The scheduler receives a job description and gives back an allocation target. We differentiate between the Root scheduler and Cluster scheduler. The Root scheduler finds a suitable cluster (step 1), and the Cluster scheduler finds a suitable worker node (step 2).
-To abstract the target resource, we use a `Resource Abstractor`. This service transforms a cluster or a worker node into a generic resource with some capabilities. This ensures interoperability between cluster and worker selection algorithms. 
+To abstract the target resource, we use a `Resource Abstractor`. This service transforms a cluster or a worker node into a generic resource with some capabilities. This ensures interoperability between cluster and worker selection algorithms. A scheduling algorithm can therfore be *generic* if it works just the same for clusters selection as for worker selection, or *specific* if it only works for a specific resource type -- E.g. it accesses cluster specific (e.g. cluster location) or worker specific (e.g. available sensors) information for the scheduling decision.
 
 {{< svg "concepts/scheduling/scheduler" >}}
-
-This filtering component reduces the search space, and the scheduling algorithm can focus on the most suitable candidates. The filtering is based on the job requirements and the resource capabilities.
 
 {{< callout context="caution" title="Caution" icon="outline/alert-triangle">}}
 The resource abstractor component is currently experimental and deployed only at the root. Therefore, up to the current version, the cluster scheduler still interacts directly with the cluster resources. Future releases will include the resource abstractor in the cluster scheduler as well to maximize the interoperability between the scheduling algorithms.
@@ -32,6 +30,7 @@ The resource abstractor component is currently experimental and deployed only at
 ## Scheduling Algorithm
 
 At each layer, the scheduling decision consists of the creation of a `candidate_list` of clusters (or workers) called **filtering** process, and finally, the selection of the "best" candidate according to a scheduling algorithm.
+This filtering process reduces the search space, and the scheduling algorithm can focus on the most suitable candidates. The filtering is based on the job requirements and the resource capabilities.
 
 {{< svg "concepts/scheduling/scheduling-algo" >}}
 

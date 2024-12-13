@@ -37,8 +37,8 @@ child clusters. Oakestra differentiates between
 * The **Resource Abstractor**, as the name suggests, abstracts a generic resources to a common interface. Weather we're managing a cluster or a worker, these resources are standardized in a common interface, making scheduling algorithms interoperable between root and clusters. This component is also exposing an interface to interact with the service lifecycle.
 * **Grafana** exposes a dashboard with the global system alerts, log and statistics.
 <!--* TODO: Add link to hooks-->
-* The **Root Network component** manages the Semanti IP and Instance IP addresses of each service as well as the cluster's subnetworks. Check the Networking concepts and manuals for further details. 
-<!--* TODO: Add netwprk links-->
+* The **Root Network component** manages the Semanti IP and Instance IP addresses of each service as well as the cluster's subnetworks. Check the Networking [concepts](../networking) and [manuals](../../manuals/networking-internals/semantic-addressing/) for further details. 
+
 
 ## Cluster Orchestrator
 
@@ -72,7 +72,7 @@ The **Net Manager** component manages the service to service communcation within
 
 * **Environment Manager** Responsible for the installation of virtual network interfaces, network namespaces and iptables.
 * **Proxy** The component that manages the traffic balancing and the tunneling of packets across nodes.
-* **Translation table** Table of the Service IP <--> Instance IPs+Balancing Polocy translation for each service. More details in the Networking concepts docs. <!-- add link -->
+* **Translation table** Table of the Service IP <--> Instance IPs+Balancing Polocy translation for each service. More details in the [networking concepts](../networking) docs. <!-- add link -->
 * **Proxy Table** Cache for the active proxy translations.
 * **MQTT component** The interface between the Net Manager and the Cluster Network Component. It is used to resolve Service IP transaltion requests as well as asking for the node's subnetwork at startup.
 
