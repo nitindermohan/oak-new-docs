@@ -23,7 +23,8 @@ It's simple. All you need to start deploying unikernels is:
 
 ### Packaging your first Unikraft image 
 
-Once you build your first unikernel using Unikraft, you can create a tarball of the kernel image and the necessary files.
+
+Once you build your first Unikernel using [Unikraft](http://unikraft.org), you can create a tarball of the kernel image and the necessary files.
 
 ```bash {frame="none"}
 myunikernel.tar.gz
@@ -97,9 +98,14 @@ Unikernels can be deployed to Oakestra like any other service. You need to creat
 The rest of the fields are similar to the ones used for container services.
 You can then deploy the application as usual using the Oakestra Dashboard, the Oakestra CLI, or the Oakestra APIs.
 
-### Enable a KVM based Unikernel Runtime for an Oakestra Worker Node
+{{< callout context="caution" title="Caution" icon="outline/alert-triangle" >}}
+You need at least one worker node in one of your clusters with a unikernel runtime enabled to deploy your unikernels. 
+{{< /callout >}}
 
-If your node supports nested virtualization and you have KVM installed, you can enable the KVM runtime for your Oakestra worker node. This will allow you to deploy unikernels on your worker node.
+### Enable a KVM Runtime for an Oakestra Worker Node
+
+If your node supports nested virtualization and you have KVM installed, you can enable the KVM runtime for your Oakestra worker node.
+
 
 {{< callout context="tip" title="How to install KVM?" icon="outline/rocket" >}}
 E.g., If your worker node uses an Ubuntu distro, you can follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM.
@@ -119,7 +125,9 @@ sudo NodeEngine config virtualization unikernel on
 ```bash
 sudo NodeEngine -a <Cluster Orchestrator IP> -d
 ```
+
 {{< callout context="note" title="Did you know?" icon="outline/info-circle" >}}
+
 You can check the list of enabled runtimes using:
 ```bash
 sudo NodeEngine config virtualization
