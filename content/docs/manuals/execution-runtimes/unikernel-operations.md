@@ -23,6 +23,7 @@ It's simple. All you need to start deploying unikernels is:
 
 ### Packaging your first Unikraft image 
 
+
 Once you build your first Unikernel using [Unikraft](http://unikraft.org), you can create a tarball of the kernel image and the necessary files.
 
 ```bash {frame="none"}
@@ -105,6 +106,7 @@ You need at least one worker node in one of your clusters with a unikernel runti
 
 If your node supports nested virtualization and you have KVM installed, you can enable the KVM runtime for your Oakestra worker node.
 
+
 {{< callout context="tip" title="How to install KVM?" icon="outline/rocket" >}}
 E.g., If your worker node uses an Ubuntu distro, you can follow [this](https://phoenixnap.com/kb/ubuntu-install-kvm) guide to install KVM.
 {{< /callout >}}
@@ -123,7 +125,9 @@ sudo NodeEngine config virtualization unikernel on
 ```bash
 sudo NodeEngine -a <Cluster Orchestrator IP> -d
 ```
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+
+{{< callout context="note" title="Did you know?" icon="outline/info-circle" >}}
+
 You can check the list of enabled runtimes using:
 ```bash
 sudo NodeEngine config virtualization
