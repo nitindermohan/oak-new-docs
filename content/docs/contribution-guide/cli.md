@@ -41,7 +41,7 @@ Users should always have access to generic/universal features - specialized feat
 
 ## Local Development
 For local development clone the CLI repository and install the CLI.
-```bash {title="Example Command"}
+```bash
 pip install -e .
 ```
 Create a new branch and create a Pull Request as usual.
@@ -49,7 +49,7 @@ Note that the final/merged CLI changes always require a CLI version increase tha
 
 We configured an automatic CI (GitHub Actions) to build and release these changes.
 This CI will be triggered by a new tag.
-```bash {title="Example Commands"}
+```bash
 git tag -a vX.Y.Z -m "<New Custom Tag Message>"
 git push origin vX.Y.Z
 ```
