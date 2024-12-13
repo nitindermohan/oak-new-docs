@@ -163,7 +163,7 @@ This page only highlights a small subset of available `oak-cli` capabilities.
 >}}
 
 {{< callout context="note" title="Maximize Speed & Convenience" icon="outline/bolt" >}}
-  The OAK-CLI is powered by [Typer](https://github.com/fastapi/typer) which supports tab autocompletion natively.
+  The `oak-cli` is powered by [Typer](https://github.com/fastapi/typer) which supports tab autocompletion natively.
 
   This means that you can press your **tab** key to either automatically complete the command you are currently typing or get a list of matching available commands.
   There is no need to memorize or fully type out the commands.
