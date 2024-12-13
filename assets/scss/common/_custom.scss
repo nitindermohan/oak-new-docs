@@ -898,3 +898,10 @@ table.alt tfoot {
   text-align: center;
   color: #6d7993;
 }
+
+@include color-mode(dark) {
+  td {
+    background-color: $body-bg-dark !important;
+    color: $body-color-dark !important;
+  }
+}
