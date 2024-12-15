@@ -85,27 +85,6 @@ Do this:
 {{<svg "my-wiki/my-fig-2">}}
 ```
 
-SVG sizing is a surprisingly tricky deal.
-Currently we have four different sizes:
-- svg : 100%
-- svg-smaller : 75%
-- svg-small : 50%
-- svg-tiny : 25%
-
-You can also have an svg and a block of text next to each other.
-For this use the custom `svg-paragraph` shortcode.
-
-```bash
-{{<svg-paragraph svg="my-svg-name" alignment="right">}}
-    My cool paragraph.
-    Any text should be fine.
-    Even like this: <i> hi </i> bye.
-{{< /svg-paragraph >}}
-```
-
-Supported aligmnets: "right", "left"
-
-
 ## Documentation versioning 
 
 To archive the current version of the docs you need to do the following:
