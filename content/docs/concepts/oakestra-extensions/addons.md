@@ -2,7 +2,7 @@
 title: "Addons"
 summary: ""
 draft: false
-weight: 210
+weight: 221
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -19,7 +19,12 @@ Addons fall into two primary categories in Oakestra:
 - **Plugins**: Components that replace or augment core functionalities. E.g. a scheduler that accounts for energy consumption
 - **Extensions**: Components that introduce entirely new capabilities outside of the core functionalities. E.g. FLOps
 
-This modular design enables developers to activate or deactivate features as needed, maintaining a lightweight, adaptable system suitable for diverse operational contexts.
+{{< link-card
+  title="FLOps"
+  description="Oakestra federated learing extension"
+  href="../../flops"
+  target="_blank"
+>}}
 
 ## Addon System Design
 
@@ -55,6 +60,6 @@ addons. This includes handling execution, monitoring, and reporting of addon sta
 
 ## Addon Lifecycle Management
 
-The lifecycle of an addon, from creation to deployment, is managed by the **Addons Engine** and the **Addons Marketplace**. This design allows for **hot-swapping**, where new features can be added or swapped without disrupting core services.
+The lifecycle of an addon, from creation to deployment, is managed by the **addons engine** and the **addons marketplace**. This design allows for **hot-swapping**, where new features can be added or swapped without disrupting core services.
 
-When installing an addon, the Addons Engine checks if a similar core component is running. If thats the case, the core component is stopped and the addon is run in its place. In this scenario the addon inherits the port mappings and network specifications of the core component. If no core component exists than its an extension and doesn't replace any other component.
+When installing an addon, the Addons Engine checks if a similar core component is running. If that's the case, the core component is stopped and the addon is run in its place. In this scenario the addon inherits the port mappings and network specifications of the core component. If no core component exists then it's an extension and no component is replaced.
