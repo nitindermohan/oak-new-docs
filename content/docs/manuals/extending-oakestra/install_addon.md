@@ -11,19 +11,11 @@ seo:
   noindex: false # false (default) or true
 ---
 
-## Introduction
-
-Addons in Oakestra allow developers to extend the platform by adding new features or enhancing existing ones. This guide focuses on the installation process for addons, enabling you to integrate published addons into your Oakestra environment seamlessly.
-
-
-## Install an Addon
-
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+{{< callout context="caution" title="Requirements" icon="outline/alert-triangle" >}}
 Before installing an Addon make sure that the Addons System is running and that the Addon to be installed is published in the Marketplace.
 
-- Verify that the Addon is published in the Marketplace. This can be done by sending a `GET` request to `/api/v1/marketplace/addons/{addon_marketplace_id}`.
-- Also verify that the Addons Engine component is running inside your orchestrator.
-
+- Verfy that the Addons Engine component is running inside your orchestrator. Visit the [prerequisite section](./prerequisite.md) for more details onto running the Addons Engine component.
+- Verify that the Addon is published in the Marketplace. This can be done by sending a `GET` request to `/api/v1/marketplace/addons/{addon_marketplace_id}`. For more details on how to get the `addon_marketplace_id` please use the APIs at `<marketplace-ip>:11102/api/docs.
 {{< /callout >}}
 
 Installing an addon is a simple step involving sending a `POST` request to the Addons Engine - `/api/v1/addons`. Example of the body of the request could be:

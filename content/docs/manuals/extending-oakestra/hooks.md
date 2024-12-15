@@ -2,7 +2,7 @@
 title: "Setup Hooks"
 summary: ""
 draft: false
-weight: 4
+weight: 5
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -11,13 +11,12 @@ seo:
   noindex: false # false (default) or true
 ---
 
-## Introduction
-
 Hooks in Oakestra provide a mechanism for listening to and reacting to system life-cycle events. By leveraging hooks, developers can decouple components and enable services to dynamically respond to events like creation, updates, or deletion of system entities. This section explains how to use hooks effectively, with step-by-step instructions for registering and implementing them.
 
-Hooks allow developers to:
+{{< callout context="tip" title="Why should developers use hooks?" icon="outline/rocket" >}}
 1. **Subscribe to Events**: Register services to listen for system life-cycle events such as entity creation, updates, or deletion.
 2. **React to Events**: Perform specific actions when events occur, either synchronously (blocking) or asynchronously (non-blocking).
+{{< /callout >}}
 
 Lifecycle events in Oakestra are limited to:
 - **Creation**: Triggered when a new entity is added.

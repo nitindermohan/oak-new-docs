@@ -2,7 +2,7 @@
 title: "Create a Custom Resource"
 summary: ""
 draft: false
-weight: 5
+weight: 6
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -11,16 +11,18 @@ seo:
   noindex: false # false (default) or true
 ---
 
-## Introduction to Custom Resources
-
-Custom Resources in Oakestra provide a mechanism to extend the system’s API dynamically by introducing new resource types. Inspired by Kubernetes’ Custom Resources, this feature allows developers to define and manage tailored data structures to meet specific needs, enabling Oakestra to adapt to a wide range of scenarios.
+Custom Resources in Oakestra provide a mechanism to extend the system’s API dynamically by introducing new resource types. Inspired by [Kubernetes’ Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/), this feature allows developers to define and manage tailored data structures to meet specific needs, enabling Oakestra to adapt to a wide range of scenarios.
 
 This section demonstrates how to create, manage, and utilize Custom Resources within Oakestra.
+
+{{< callout context="tip" title="Why should developers use Custom Resources?" icon="outline/rocket" >}}
 
 Custom Resources in Oakestra enable:
 1. **Dynamic API Extensions**: Add new resource types to the system beyond the default ones.
 2. **Declarative Management**: Store and retrieve structured data through API endpoints.
 3. **Custom Logic**: Use controllers to act on the data defined by the Custom Resources, enabling automation and state management.
+
+{{< /callout >}}
 
 ---
 

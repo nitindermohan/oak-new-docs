@@ -2,7 +2,7 @@
 title: "Create an Addon"
 summary: ""
 draft: false
-weight: 1
+weight: 3
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -35,7 +35,7 @@ docker push your-username/addon-name:latest
 ```
 
 ### Publish the Addon to the Marketplace
-Define the addon configuration.</br> 
+Define the addon configuration.
 Here is an example:
 ```json
 {
