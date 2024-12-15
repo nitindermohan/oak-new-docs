@@ -33,6 +33,58 @@ For each picture `xyz.png`/`xyz.svg` in the wiki we MUST have a `xyz.drawio` sou
 - These files should be kept up to date. 
 - Make sure to always have the CMU Sans Serif font installed on your machine otherwise, figures might not be rendered correctly. 
 
+### Working with SVGs
+Please follow this structure to ensure uniformity.
+
+Let's say you are working on `my-wiki.md` located in `content/docs/concepts/`.
+You want to add a figure called my-fig to this guide.
+Create the figure in drawio.
+Safe the drawio file to be able to modify it easily in the future.
+Export your figure as SVG in dark and light mode with transparent background.
+Make sure to use the font from above.
+
+The final file structure has to look like this:
+```
+.
+├── ...
+├── my-wiki.md
+└── svgs
+    └── my-fig
+        ├── .drawio
+        ├── dark.svg
+        └── light.svg
+```
+
+You can use this SVG in your `.md` file like this:
+```
+{{<svg "my-fig">}}
+```
+
+Let`s say you have many figures in your doc and the svgs folder gets crowded because it gets shared with other pages in the same directory.
+
+Do this:
+```
+.
+├── ...
+├── my-wiki.md
+└── svgs
+    ├── ...
+    └── my-wiki
+        ├── my-fig-1
+        │   ├── .drawio
+        │   ├── dark.svg
+        │   └── light.svg
+        └── my-fig-2
+            ├── .drawio
+            ├── dark.svg
+            └── light.svg
+```
+```
+{{<svg "my-wiki/my-fig-1">}}
+...
+{{<svg "my-wiki/my-fig-2">}}
+```
+
 ## Documentation versioning 
 
 To archive the current version of the docs you need to do the following:
