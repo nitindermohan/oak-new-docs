@@ -1,6 +1,8 @@
 {{ $svgName := index .Params 0 }}
-{{ $lightSvgPath := printf "/static/svgs/%s_light.svg" $svgName }}
-{{ $darkSvgPath := printf "/static/svgs/%s_dark.svg" $svgName }}
+{{ $pageDir := .Page.File.Dir }}
+
+{{ $lightSvgPath := printf "%ssvgs/%s/light.svg" $pageDir $svgName }}
+{{ $darkSvgPath := printf "%ssvgs/%s/dark.svg" $pageDir $svgName }}
 
 <style>
     .constrain-image {
