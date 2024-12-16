@@ -11,16 +11,6 @@ seo:
   noindex: false # false (default) or true
 ---
 
-## Deploy Multiple Clusters
-
-<!--- Insert image here -->
-
-Having one root orchestrator and one cluster orchestrator on one device is a great way to start using Oakestra, but the true power
-of the system lies in it's federated architecture.
-
-This guide will walk you through deploying stand-alone components, allowing you to
-deploy multiple cluster orchestrators across multiple devices. These clusters will be managed by a single root orchestrator.
-
 {{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
 Root and Cluster orchestrators:
 - Docker + Docker Compose v2
@@ -34,6 +24,15 @@ Worker Nodes:
 - 100MB RAM
 - ARM64 or AMD64 architecture
 {{< /callout >}}
+
+## Deploy Multiple Clusters
+
+Having one root orchestrator and one cluster orchestrator on one device is a great way to start using Oakestra, but the true power
+of the system lies in it's federated architecture.
+
+This guide will walk you through deploying stand-alone components, allowing you to
+deploy multiple cluster orchestrators across multiple devices. These clusters will be managed by a single root orchestrator.
+
 
 ### Stand-alone Root Orchestrator
 
@@ -70,13 +69,25 @@ address!
 You can register as many cluster orchestrators with the root orchestrator as you would like. Repeat the above commmand on a new device and specify
 a unique `Cluster Name` and `Cluster Location`.
 
+{{< link-card
+  title="Registering Nodes"
+  description="Check out how to register worker nodes with a cluster"
+  href="../../getting-started/oak-environment/add-edge-devices-workers-to-your-setup"
+  target="_blank"
+>}}
+
+
 ## Custom Deployments
 
-### Choose a Different Branch
+Oakestra also allows you to customize your system deployment to best suit your needs. 
 
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
-Oakestra has many features which have not yet been released. You can check out what's in the pipeline by taking a look at some of the active [branches](https://github.com/oakestra/oakestra/branches) here.
+{{< callout context="tip" title="Oakestra Addons" icon="outline/rocket" >}}
+
+Check out [addons](../extending-oakestra/creating-addons) for even more customization options!
+
 {{< /callout >}}
+
+### Choose a Different Branch
 
 By default these scripts will compose the services of the `main` oakestra branch, the latest stable release. However this can be changed by setting the environment variable `OAKESTRA_BRANCH` **before running the startup script**.
 This allows you to experiment with some unreleased features.
@@ -85,6 +96,10 @@ This allows you to experiment with some unreleased features.
 export OAKESTRA_BRANCH=develop
 ```
 This will allow you to use the services from the alpha Oakestra release.
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+Oakestra has many features which have not yet been released. You can check out what's in the pipeline by taking a look at some of the active [branches](https://github.com/oakestra/oakestra/branches) here.
+{{< /callout >}}
 
 ### Compose Overrides
 
@@ -96,6 +111,7 @@ export OVERRIDE_FILES=override-alpha-versions.yaml
 ```
 
 **Overview of Root Orchestrator Overrides:**
+* `override-addons.yml`: Eanble the [addons](../extending-oakestra/creating-addons) engine and marketplace
 * `override-no-dashboard.yml`: Do not deploy the dashboard
 * `override-no-network.yml`: Exclude network components
 * `override-ipv6-enabled.yml`: Enable IPv6 for container deployments
@@ -105,12 +121,4 @@ export OVERRIDE_FILES=override-alpha-versions.yaml
 * `override-ipv6-enabled.yml`: Enable IPv6 for container deployments
 * `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md)
 * `override-mosquitto-auth.yml`: Enable [MQTT Authentication](../networking-internals/MQTT-Authentication)
-
-\
-{{< link-card
-  title="Registering Nodes"
-  description="Check out how to register worker nodes with a cluster"
-  href="../../getting-started/oak-environment/add-edge-devices-workers-to-your-setup"
-  target="_blank"
->}}
 
