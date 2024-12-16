@@ -748,3 +748,19 @@ table.alt tfoot {
   text-align: center;
   color: #6d7993;
 }
+
+.container {
+  display: grid;
+  width: 100%;
+  height: auto;
+  justify-items: center;
+}
+
+.constrain-image {
+  max-width: 100% !important;
+  height: auto !important;
+}
+.constrain-image svg {
+  width: 100% !important;
+  height: auto !important;
+}
