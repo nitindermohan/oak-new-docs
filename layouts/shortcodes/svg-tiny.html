@@ -1,0 +1,12 @@
+{{ $svgName := index .Params 0 }}
+{{ $pageDir := .Page.File.Dir }}
+
+{{ $lightSvgPath := printf "%ssvgs/%s/light.svg" $pageDir $svgName }}
+{{ $darkSvgPath := printf "%ssvgs/%s/dark.svg" $pageDir $svgName }}
+
+<figure class="svg-lightmode constrain-image" style="width: 25%;">
+    {{ readFile $lightSvgPath | safeHTML }}
+</figure>
+<figure class="svg-darkmode constrain-image" style="width: 25%;">
+    {{ readFile $darkSvgPath | safeHTML }}
+</figure>
