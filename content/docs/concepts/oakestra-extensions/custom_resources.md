@@ -30,3 +30,10 @@ In Oakestra, a custom controller could be implemented as an [addon](../addons), 
 - **Separation of Concerns**: By decoupling data storage from active state management, custom resources and controllers provide a modular, maintainable architecture.
 - **Enhanced Automation**: With controllers managing custom resources, Oakestra can automate workflows and maintain system alignment with external configurations, streamlining operations.
 {{< /callout >}}
+
+{{< link-card
+  title="Creating Custom Resources"
+  description="Start using custom resources"
+  href="../../../manuals/extending-oakestra/setting-up-hooks"
+  target="_blank"
+>}}

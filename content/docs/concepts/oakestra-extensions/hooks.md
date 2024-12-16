@@ -33,3 +33,10 @@ Hooks can be triggered in two modes:
 - **Dynamic Reactivity**: Hooks enable services to adapt dynamically based on lifecycle changes, maintaining an up-to-date environment.
 - **Improved System Flow**: By offering asynchronous and synchronous modes, hooks provide a flexible mechanism that suits both immediate and non-blocking response needs, enhancing system performance and modularity.
 {{< /callout >}}
+
+{{< link-card
+  title="Setting up Hooks"
+  description="Read up on setting up hooks here"
+  href="../../../manuals/extending-oakestra/setting-up-hooks"
+  target="_blank"
+>}}

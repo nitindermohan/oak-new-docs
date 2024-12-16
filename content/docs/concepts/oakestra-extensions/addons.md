@@ -63,3 +63,10 @@ addons. This includes handling execution, monitoring, and reporting of addon sta
 The lifecycle of an addon, from creation to deployment, is managed by the **addons engine** and the **addons marketplace**. This design allows for **hot-swapping**, where new features can be added or swapped without disrupting core services.
 
 When installing an addon, the Addons Engine checks if a similar core component is running. If that's the case, the core component is stopped and the addon is run in its place. In this scenario the addon inherits the port mappings and network specifications of the core component. If no core component exists then it's an extension and no component is replaced.
+
+{{< link-card
+  title="Installing addons"
+  description="Read more on using addons here"
+  href="../../../manuals/extending-oakestra/installing-addons"
+  target="_blank"
+>}}

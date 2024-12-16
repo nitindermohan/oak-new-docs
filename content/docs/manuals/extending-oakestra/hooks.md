@@ -59,7 +59,6 @@ Where:
   - `pre_create`: Synchronous notification before creation.
   - `post_update`: Asynchronous notification after an update.
 
----
 
 ### Receiving Notifications
 
