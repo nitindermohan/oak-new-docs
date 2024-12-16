@@ -15,12 +15,12 @@ seo:
 
 Oakestra's architecture is composed of two tiers. Resources are divided into clusters. A cluster is seen as the aggregation of all its resources. A job is first scheduled to a cluster, and then the cluster scheduler decides the target worker.  
 
-{{< svg "concepts/scheduling/cluster-worker-selection" >}}
+{{< svg "scheduling/cluster-worker-selection" >}}
 
 The scheduler component is as simple as a Celery worker. The scheduler receives a job description and gives back an allocation target. We differentiate between the Root scheduler and the Cluster scheduler. The Root scheduler finds a suitable cluster (step 1), and the Cluster scheduler finds a suitable worker node (step 2).
 To abstract the target resource, we use a `Resource Abstractor`. This service transforms a cluster or a worker node into a generic resource with some capabilities. This ensures interoperability between cluster and worker selection algorithms. A scheduling algorithm can, therefore, be *generic* if it works just the same for cluster selection as for worker selection, or *specific* if it only works for a specific resource type -- E.g., it accesses cluster-specific (like cluster location) or worker specific (like available sensors) information for the scheduling decision.
 
-{{< svg "concepts/scheduling/scheduler" >}}
+{{< svg-small "scheduling/scheduler" >}}
 
 {{< callout context="caution" title="Caution" icon="outline/alert-triangle">}}
 The resource abstractor component is currently experimental and deployed only at the root. Therefore, up to the current version, the cluster scheduler still interacts directly with the cluster resources. Future releases will include the resource abstractor in the cluster scheduler as well to maximize the interoperability between the scheduling algorithms.
@@ -32,15 +32,19 @@ The resource abstractor component is currently experimental and deployed only at
 At each layer, the scheduling decision consists of the creation of a `candidate_list` of clusters (or workers) called **filtering** process, and finally, the selection of the "best" candidate according to a scheduling algorithm.
 This filtering process reduces the search space, and the scheduling algorithm can focus on the most suitable candidates. The filtering is based on the job requirements and the resource capabilities.
 
-{{< svg "concepts/scheduling/scheduling-algo" >}}
+{{< svg-small "scheduling/scheduling-algo" >}}
 
-The `schedule_policy` algorithm is implemented in the `calculation.py` component of each respective scheduler.  
+The `schedule_policy` algorithm is implemented in the `calculation.py` file of each scheduler.  
 
-The current released version only implements **best fit** and **first fit** calculation strategies. However, on its way to the release, we have our new LDP algorithm (check it out on our [whitepaper](https://arxiv.org/pdf/2207.01577.pdf)).
+The current released version only implements **best fit** and **first fit** calculation strategies. However, on its way to the release, we have our LDP algorithm (check it out on our [whitepaper](https://arxiv.org/pdf/2207.01577.pdf)).
 
 ## Job Constraints
 
-The Job deployment descriptor allows a developer to specify constraints of 4 types: node **resources**, **network** capabilities, **geographical** positioning, and **direct** mapping. 
+The Job deployment descriptor allows a developer to specify constraints of 3 types: node **resources**, **geographical** positioning, and **direct** mapping. 
+
+{{< callout context="note" title="Note" icon="outline/info-circle" >}}
+Check out [SLA Description](../../reference/application-sla-description) for more details on the deployment descriptor keywords and how to enforce these constraints in your applications.
+{{< /callout >}}
 
 ### Resources
 
@@ -67,10 +71,33 @@ The networking requirements selection and geographic constraints support are com
 
 ### Direct mapping positioning
 
-It is possible to specify a **direct mapping** constraint. Therefore, in the deployment description, a developer can specify a list of target clusters and nodes. The scheduling algorithm operates only on the active clusters (or nodes) among the given list. 
+It is possible to specify a **direct mapping** constraint. Therefore, in the deployment description, a developer can specify a list of target clusters and nodes. The scheduling algorithm operates only on the active clusters (or nodes) in the given list. 
 
-This direct mapping approach is currently based on `cluster names` and `worker hostnames`. We are also considering adding a label-based positioning where it is possible to tag resources with custom-defined labels. Stay tuned for more.
+For example, adding the following constraint: 
 
+```
+"constraints":[
+            {
+              "type":"direct",
+              "node":"xavier1",
+              "cluster":"clsuter1"
+            }
+          ]
+```
+
+limits the deployment to the node `xavier1` of the cluster `clsuter1`. While the following constraint:
+
+
+```
+"constraints":[
+            {
+              "type":"direct",
+              "cluster":"gpu"
+            }
+          ]
+```
+
+is limiting the deployment to all the workers of the workers in `clsuter1`.
 
 
 

@@ -20,7 +20,7 @@ Oakestra is composed of 3 key building blocks:
 
 The root orchestrator is the centralized control plane that coordinates the participating clusters.
 
-{{< svg "concepts/orchestration/arch-root" >}}
+{{< svg "orchestration/arch-root" >}}
 
 The above image describes the components of the root orchestrator. Each component is deployed as a separate service
 and docker compose plugin is used to integrate and run them.
@@ -42,7 +42,7 @@ child clusters. Oakestra differentiates between
 
 ## Cluster Orchestrator
 
-{{< svg "concepts/orchestration/arch-cluster" >}}
+{{< svg "orchestration/arch-cluster" >}}
 
 The cluster orchestrator is a logical twin of the root but with the following distinctions:
 * The cluster orchestrator manages workers and not clusters. 
@@ -55,7 +55,7 @@ The worker node is the component responsible for running the workloads requested
 deployment of applications according to the runtimes installed. The latter provides networking
 components to enable inter-application communication.
 
-{{< svg "concepts/orchestration/arch-node-engine" >}}
+{{< svg "orchestration/arch-node-engine" >}}
 
 The **Node Engine** is a single binary implemented using Go and is composed of the following modules:
 * **MQTT:** The interface between the worker and the cluster. Deployment commands, node status
