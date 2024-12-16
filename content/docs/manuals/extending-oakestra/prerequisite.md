@@ -1,8 +1,8 @@
 ---
-title: "Setup Addons System"
+title: "Setting Up"
 summary: ""
 draft: false
-weight: 1
+weight: 340
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -11,27 +11,30 @@ seo:
   noindex: false # false (default) or true
 ---
 
-In order to utilize addons for your orchestrator, do the following:
-
-## Run the Addons System
-
-The addons system consists of two sub-systems:
-- Addons Engine
-- Addons Marketplace
+The addons system consists of two subsystems that must both be running:
+- The addons engine
+- The addons marketplace
 
 <!-- Fix links in another issue - once concepts is merged -->
-You can find more details [here](../../concepts/addons) 
+{{< link-card
+  title="Addons"
+  description="Learn more about addons"
+  href="../../../concepts/oakestra-extensions/addons"
+  target="_blank"
+>}}
+
+## Run the Addons System
 
 Navigate to director `run-a-cluster` in home folder of the project, run this command
 ```bash
 docker compose -f 1-DOC.yaml -f override-addons.yaml up addons_manager addons_monitor marketplace_manager
 ```
 
-This should spin up 3 docker containers inside the `root-orchestrator`. Notice that also it will run the addons marketplace locally. Currently there isn't a global `Marketplace` for addons. However, in the future there should be one, in which case there wouldn't be a need to run it locally.
+This should spin up 3 docker containers inside the `root-orchestrator`. Notice that it also starts up the addons marketplace locally. 
 
-{{< callout context="tip" title="Can Addons Engine Run inside a cluster orchestrator too" icon="outline/rocket" >}}
+{{< callout context="tip" title="Global Marketplace" icon="outline/rocket" >}}
 
-Although not tested, technically, the `Addons Engine` can run inside the `Cluster Orchestrator` as well.
+Currently there isn't a global marketplace for addons. Keep an eye our for this in future releases!
 
 {{< /callout >}}
 

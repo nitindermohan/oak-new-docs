@@ -1,8 +1,8 @@
 ---
-title: "Create an Addon"
+title: "Creating Addons"
 summary: ""
 draft: false
-weight: 3
+weight: 342
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -11,14 +11,11 @@ seo:
   noindex: false # false (default) or true
 ---
 
-To create an addon, follow these steps:
-
-### Define Addon Functionality
-Decide on the addon’s purpose: does it replace an existing component in Oakestra such as the scheduler or is it something new.
-Next implement the necessary code to achieve this functionality and containerize it. 
+To install an addon, it first has to be published to the marketplace. Addons are published as a Dockerfile
+containing the addon functionality and a configuration file outlining the addons specifications.
 
 ### Dockerize the Addon
-Package your code into a Docker image by creating a `Dockerfile`. For example:
+Package your code into a Docker image by creating a `Dockerfile` such as:
 ```dockerfile
 FROM python:3.9-alpine
 
@@ -28,15 +25,14 @@ COPY . /addon
 ENTRYPOINT ["python", "/addon/main.py"]
 ```
 
-Build and push the Docker image to a container registry, such as Docker Hub:
+Build and push the Docker image to a container registry, such as [Docker Hub](https://hub.docker.com/):
 ```bash
 docker build -t your-username/addon-name:latest .
 docker push your-username/addon-name:latest
 ```
 
 ### Publish the Addon to the Marketplace
-Define the addon configuration.
-Here is an example:
+Define the addon configuration according to the following template:
 ```json
 {
   "name": "addon-name",
@@ -54,20 +50,21 @@ Here is an example:
   }]
 }
 ```
-
-- **name**: The addon’s identifier.
+Where:
+- **name**: Identifies the addon
 - **services**: Defines the service(s) required by the addon.
-- **volumes/networks**: Optional configurations for data persistence or connectivity.
+- **volumes/networks**: Specifies optional configurations for data persistence or connectivity.
 
 
-To make the addon available for others in the Oakestra ecosystem, publish it to the Addons Marketplace by sending a `POST` request with the JSON descriptor to the Addons Marketplace API `/api/v1/marketplace/addons`.
+To make the addon available for others in the Oakestra ecosystem, publish it to the addons marketplace by sending a `POST` request with the JSON descriptor to the addons marketplace API `/api/v1/marketplace/addons`.
 
-The Addons Marketplace will validate the descriptor. Once approved, the addon will be marked as `approved` and become available for installation.
+The addons marketplace will validate the descriptor. Once approved, the addon will be marked as `approved` and become available for installation.
 
 
-{{< callout context="note" title="Note" icon="outline/info-circle" >}}
-To create a service that would replace a *component/container* inside Oakestra, the service name should match the name of that component. 
+{{< callout context="note" title="Plugins" icon="outline/info-circle" >}}
+To create a service that would replace a component inside Oakestra (i.e. a [Plugin](../../../concepts/oakestra-extensions/addons)), the service name should match the name of that component. 
 
-For instance, to replace the `scheduler` component in the Root Orchestrator where its exact name of the component is called `cloud_scheduler`, the service would then need to be called `cloud_scheduler`. Note the difference between a service and an addon, is that an **addon may contain multiple services**.
+For instance, to replace the scheduler component the service would have to be called by its exact name `cloud_scheduler`.
+Note the difference between a service and an addon, is that an **addon may contain multiple services**.
 
 {{< /callout >}}
