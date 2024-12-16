@@ -313,14 +313,17 @@ div.docs-sidebar summary {
     margin-bottom: 0.25rem !important;
 }
 nav.docs-toc {
-        // margin-left: 3rem;
+        //margin-left: 1rem;
         padding-left: 0.5rem;
-        padding-right: 2rem !important;
+        //padding-right: 2rem !important;
 }
 
 main.docs-content {
-    // padding-left: 5rem;
-    width: 85% !important;
+    width: 100% !important;
+
+    @include media-breakpoint-up(xl) {
+      width: 70% !important;
+    }
 }
 
 
