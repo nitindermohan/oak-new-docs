@@ -23,7 +23,7 @@ The root orchestrator is the centralized control plane that coordinates the part
 {{< svg "concepts/orchestration/arch-root" >}}
 
 The above image describes the components of the root orchestrator. Each component is deployed as a separate service
-and docker-compose is used to integrate and run them.
+and docker compose plugin is used to integrate and run them.
 
 * The **System Manager** is the interface by which users access the system as an application deployment platform.
 It exposes 2 sets of APIs:
@@ -37,7 +37,7 @@ child clusters. Oakestra differentiates between
 * The **Resource Abstractor**, as the name suggests, abstracts generic resources to a common interface. Weather we're managing a cluster or a worker, these resources are standardized in a common interface, making scheduling algorithms interoperable between root and clusters. This component also exposes an interface that interacts with the service lifecycle.
 * **Grafana** exposes a dashboard with global system alerts, logs, and statistics.
 <!--* TODO: Add link to hooks-->
-* The **Root Network component** manages the Semanti IP and Instance IP addresses of each service as well as the cluster's subnetworks. Check the Networking [concepts](../networking) and [manuals](../../manuals/networking-internals/semantic-addressing/) for further details. 
+* The **Root Network Component** manages the Semantic IP and Instance IP addresses of each service as well as the cluster's subnetworks. Check the Networking [concepts](../networking) and [manuals](../../manuals/networking-internals/semantic-addressing/) for further details. 
 
 
 ## Cluster Orchestrator
@@ -57,7 +57,7 @@ components to enable inter-application communication.
 
 {{< svg "concepts/orchestration/arch-node-engine" >}}
 
-The **Node Enginw** is a single binary implemented using Go and is composed of the following modules:
+The **Node Engine** is a single binary implemented using Go and is composed of the following modules:
 * **MQTT:** The interface between the worker and the cluster. Deployment commands, node status
 updates, and job updates are pushed and received with this component.
 * **Models:** Models that describe the nodes and jobs  
@@ -66,37 +66,37 @@ updates, and job updates are pushed and received with this component.
  service usage statistics
 * **Jobs:** Background jobs that monitor the status of the worker node and the deployed applications
 * **Runtimes:** The supported system runtimes. Currently, containers and Unikernels are supported
-* **Net API** local socket used to interact with the Net Manager.
+* **Net API:** local socket used to interact with the Net Manager.
 
 The **Net Manager** component manages the service-to-service communication within and across nodes. It fetches the balancing policies for each service, installs the virtual network interfaces, ensures traffic balancing and tunnels the packets across nodes. The Net Manager is composed of the following modules:
 
-* **Environment Manager** Responsible for the installation of virtual network interfaces, network namespaces, and iptables.
-* **Proxy** The component that manages the traffic balancing and the tunneling of packets across nodes.
-* **Translation table** Table of the Service IP <--> Instance IPs+Balancing Polocy translation for each service. More details in the [networking concepts](../networking) docs. <!-- add link -->
-* **Proxy Table** Cache for the active proxy translations.
-* **MQTT component** The interface between the Net Manager and the Cluster Network Component. It is used to resolve Service IP translation requests as well as ask for the node's subnetwork at startup.
+* **Environment Manager:** Responsible for the installation of virtual network interfaces, network namespaces, and iptables.
+* **Proxy:** The component that manages the traffic balancing and the tunneling of packets across nodes.
+* **Translation table:** Table of the Service IP <--> Instance IPs+Balancing Polocy translation for each service. More details in the [networking concepts](../networking) docs. <!-- add link -->
+* **Proxy Table:** Cache for the active proxy translations.
+* **MQTT component:** The interface between the Net Manager and the Cluster Network Component. It is used to resolve Service IP translation requests and ask for the node's subnetwork at startup.
 
 ## Considerations on Failure and scalability
 
 ### Root Orchestrator Failure
-The key drawback of a centralized control plane is that it represents a single point of failure. Oakestra mitigates this by ensuring that the clusters are able to satisfy the SLAs for deployed applications autonomously. Therefore, by design, a total Root Orchestrator failure affects:
-- the deployment of new applications. The system manager APIs are not available.
-- Inter-cluster root discovery. Pre-existing P2P worker node communication is not affected. But new inter-cluster routes cannot be discovered. 
+The key drawback of a centralized control plane is that it represents a single point of failure. Oakestra mitigates this by ensuring that the clusters are able to satisfy the SLAs for deployed applications autonomously. Therefore, by design, a Root Orchestrator failure only affects the following orchestration aspects:
+- Deployment of new applications. The system manager APIs are not available, and therefore, deploying new workloads is not possible.
+- Inter-cluster root discovery. Pre-existing P2P worker node communication is not affected. However, new inter-cluster routes cannot be discovered. 
 - New clusters cannot join the infrastructure. 
 
-Solutions based on leader election for a new root among cluster orchestrators are a possible solution. However, this feature is not implemented out of the box yet.
+Solutions based on leader election for a new root among cluster orchestrators are a possible solution. However, this feature has not yet been implemented in the current release.
 
 ### Cluster Orchestrator Failure
-Cluster failure by design must not affect (i) other clsuters (ii) running workloads on the workers. With the current design a total failure of the cluster orchestator has the following consequences: 
+The failure of a cluster orchestrator by design must not affect **(i)** other clusters **(ii)** running workloads on the workers. With the current design, a failure of the cluster orchestrator has the following consequences: 
 - The cluster is not able to receive new workloads.
-- The cluster is not able to receive new workers.
+- The cluster is not able to connect new workers.
 - The cluster is not able to reschedule failed workloads. 
-- Inter-cluster network routes discovery is not possible. Only pre-existing connections are maintained.
+- Inter-cluster network route discovery is not possible. Only pre-existing connections are maintained.
 
 {{< callout context="note" title="Did you know?" icon="outline/info">}}
 Cluster and Root orchestrator failure can be mitigated by setting up a high availability setup for the microservices composing the control plane. 
 {{< /callout >}}
 
 ### Worker Node Failure
-A worker node failure is common and expected at the edge. The cluster will re-deploy the workload affected by the worker failure. Worker failures are detected via a heartbeat mechanism. If a worker stops responding for more than 5 seconds, the cluster will scale up and re-deploy the workload on another worker. The worker node failure time threshold is configurable.
+A worker node failure is common and expected at the edge. The cluster will re-deploy the workload affected by the worker failure. Worker failures are detected via a heartbeat mechanism. If a worker stops responding for more than 5 seconds, the cluster will scale up and re-deploy the workload on another worker. The worker node failure time threshold is a [parameter](https://github.com/oakestra/oakestra/blob/c0f3250ebdf8fbff5d35c1662e59cb1f4a8e899a/cluster_orchestrator/cluster-manager/cluster_manager.py#L52) of the cluster manager.
 
