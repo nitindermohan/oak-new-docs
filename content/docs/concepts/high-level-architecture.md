@@ -11,10 +11,12 @@ seo:
   noindex: false # false (default) or true
 ---
 
+{{< callout context="tip" title="Did you know?" icon="outline/rocket" >}}
 Oakestra is composed of 3 key building blocks:
-* The [Root Orchestrator](#root-orchestrator)
-* The [Cluster Orchestrator](#cluster-orchestrator)
-* The [Worker Node](#worker-node) composed of **NodeEngine**, and **Net Manager**
+* The [Root Orchestrator](#root-orchestrator): an orchestrator for clusters. 
+* The [Cluster Orchestrator](#cluster-orchestrator): an orchestrator for workers. 
+* The [Worker Node](#worker-node) composed of **NodeEngine**, and **Net Manager**, manages the workloads.
+{{< /callout >}}
 
 ## Root Orchestrator
 
