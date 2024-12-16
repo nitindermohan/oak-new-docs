@@ -14,6 +14,13 @@ seo:
 To install an addon, it first has to be published to the marketplace. Addons are published as a Dockerfile
 containing the addon functionality and a configuration file outlining the addons specifications.
 
+{{< callout context="tip" title="Global Marketplace" icon="outline/rocket" >}}
+
+Currently there isn't a global marketplace for addons. Keep an eye our for this in future releases!
+
+{{< /callout >}}
+
+
 ### Dockerize the Addon
 Package your code into a Docker image by creating a `Dockerfile` such as:
 ```dockerfile
