@@ -32,8 +32,14 @@ You can find a detailed outline of all the API endpoints at:
 ```bash
 <marketplace-ip>:11102/api/docs
 ```
-
 {{< /callout >}}
+
+{{< link-card
+  title="Oakestra API"
+  description="Learn more about the Oakestra API"
+  href="../../../getting-started/deploy-app/with-the-api"
+  target="_blank"
+>}}
 
 ## Verify Installation
 The Addons Manager will:
