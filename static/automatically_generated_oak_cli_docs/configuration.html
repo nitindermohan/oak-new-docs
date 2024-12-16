@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>oak configuration/c &#8212; OAK-CLI v0.4.4 documentation</title>
+    <link rel="stylesheet" href="/automatically_generated_oak_cli_docs/_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="/automatically_generated_oak_cli_docs/_static/basic.css" type="text/css" />
+    <script src="/automatically_generated_oak_cli_docs/_static/documentation_options.js"></script>
+    <script src="/automatically_generated_oak_cli_docs/_static/doctools.js"></script>
+    <script src="/automatically_generated_oak_cli_docs/_static/sphinx_highlight.js"></script>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="oak docker/d" href="development.html" />
+    <link rel="prev" title="oak addon" href="flops.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <section id="oak-configuration-c">
+<h1> oak configuration/c<a class="headerlink" href="#oak-configuration-c" title="Link to this heading">¶</a></h1>
+<svg class="rich-terminal" viewBox="0 0 872 538.0" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+
+    <defs>
+    <clipPath id="terminal-2781569726-clip-terminal">
+      <rect x="0" y="0" width="853.0" height="487.0" />
+    </clipPath>
+    <clipPath id="terminal-2781569726-line-0">
+    <rect x="0" y="1.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-1">
+    <rect x="0" y="25.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-2">
+    <rect x="0" y="50.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-3">
+    <rect x="0" y="74.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-4">
+    <rect x="0" y="99.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-5">
+    <rect x="0" y="123.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-6">
+    <rect x="0" y="147.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-7">
+    <rect x="0" y="172.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-8">
+    <rect x="0" y="196.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-9">
+    <rect x="0" y="221.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-10">
+    <rect x="0" y="245.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-11">
+    <rect x="0" y="269.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-12">
+    <rect x="0" y="294.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-13">
+    <rect x="0" y="318.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-14">
+    <rect x="0" y="343.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-15">
+    <rect x="0" y="367.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-16">
+    <rect x="0" y="391.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-17">
+    <rect x="0" y="416.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2781569726-line-18">
+    <rect x="0" y="440.7" width="854" height="24.65"/>
+            </clipPath>
+    </defs>
+
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-2781569726-clip-terminal)">
+    
+    <g class="terminal-2781569726-matrix">
+    <text class="terminal-2781569726-r2" x="854" y="20" textLength="12.2" clip-path="url(#terminal-2781569726-line-0)">
+</text><text class="terminal-2781569726-r3" x="12.2" y="44.4" textLength="85.4" clip-path="url(#terminal-2781569726-line-1)">Usage:&#160;</text><text class="terminal-2781569726-r1" x="97.6" y="44.4" textLength="573.4" clip-path="url(#terminal-2781569726-line-1)">oak&#160;configuration/c&#160;[OPTIONS]&#160;COMMAND&#160;[ARGS]...</text><text class="terminal-2781569726-r2" x="854" y="44.4" textLength="12.2" clip-path="url(#terminal-2781569726-line-1)">
+</text><text class="terminal-2781569726-r2" x="854" y="68.8" textLength="12.2" clip-path="url(#terminal-2781569726-line-2)">
+</text><text class="terminal-2781569726-r2" x="12.2" y="93.2" textLength="634.4" clip-path="url(#terminal-2781569726-line-3)">Command&#160;for&#160;OAK&#160;CLI&#160;Configuration&#160;related&#160;activities</text><text class="terminal-2781569726-r2" x="854" y="93.2" textLength="12.2" clip-path="url(#terminal-2781569726-line-3)">
+</text><text class="terminal-2781569726-r2" x="854" y="117.6" textLength="12.2" clip-path="url(#terminal-2781569726-line-4)">
+</text><text class="terminal-2781569726-r4" x="0" y="142" textLength="24.4" clip-path="url(#terminal-2781569726-line-5)">╭─</text><text class="terminal-2781569726-r4" x="24.4" y="142" textLength="109.8" clip-path="url(#terminal-2781569726-line-5)">&#160;Options&#160;</text><text class="terminal-2781569726-r4" x="134.2" y="142" textLength="695.4" clip-path="url(#terminal-2781569726-line-5)">─────────────────────────────────────────────────────────</text><text class="terminal-2781569726-r4" x="829.6" y="142" textLength="24.4" clip-path="url(#terminal-2781569726-line-5)">─╮</text><text class="terminal-2781569726-r2" x="854" y="142" textLength="12.2" clip-path="url(#terminal-2781569726-line-5)">
+</text><text class="terminal-2781569726-r4" x="0" y="166.4" textLength="12.2" clip-path="url(#terminal-2781569726-line-6)">│</text><text class="terminal-2781569726-r5" x="24.4" y="166.4" textLength="12.2" clip-path="url(#terminal-2781569726-line-6)">-</text><text class="terminal-2781569726-r5" x="36.6" y="166.4" textLength="61" clip-path="url(#terminal-2781569726-line-6)">-help</text><text class="terminal-2781569726-r2" x="219.6" y="166.4" textLength="329.4" clip-path="url(#terminal-2781569726-line-6)">Show&#160;this&#160;message&#160;and&#160;exit.</text><text class="terminal-2781569726-r4" x="841.8" y="166.4" textLength="12.2" clip-path="url(#terminal-2781569726-line-6)">│</text><text class="terminal-2781569726-r2" x="854" y="166.4" textLength="12.2" clip-path="url(#terminal-2781569726-line-6)">
+</text><text class="terminal-2781569726-r4" x="0" y="190.8" textLength="854" clip-path="url(#terminal-2781569726-line-7)">╰────────────────────────────────────────────────────────────────────╯</text><text class="terminal-2781569726-r2" x="854" y="190.8" textLength="12.2" clip-path="url(#terminal-2781569726-line-7)">
+</text><text class="terminal-2781569726-r4" x="0" y="215.2" textLength="24.4" clip-path="url(#terminal-2781569726-line-8)">╭─</text><text class="terminal-2781569726-r4" x="24.4" y="215.2" textLength="122" clip-path="url(#terminal-2781569726-line-8)">&#160;Commands&#160;</text><text class="terminal-2781569726-r4" x="146.4" y="215.2" textLength="683.2" clip-path="url(#terminal-2781569726-line-8)">────────────────────────────────────────────────────────</text><text class="terminal-2781569726-r4" x="829.6" y="215.2" textLength="24.4" clip-path="url(#terminal-2781569726-line-8)">─╮</text><text class="terminal-2781569726-r2" x="854" y="215.2" textLength="12.2" clip-path="url(#terminal-2781569726-line-8)">
+</text><text class="terminal-2781569726-r4" x="0" y="239.6" textLength="12.2" clip-path="url(#terminal-2781569726-line-9)">│</text><text class="terminal-2781569726-r5" x="24.4" y="239.6" textLength="305" clip-path="url(#terminal-2781569726-line-9)">key-vars,&#160;k&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2781569726-r2" x="353.8" y="239.6" textLength="475.8" clip-path="url(#terminal-2781569726-line-9)">Configure&#160;OAK-CLI&#160;Key&#160;Variables&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2781569726-r4" x="841.8" y="239.6" textLength="12.2" clip-path="url(#terminal-2781569726-line-9)">│</text><text class="terminal-2781569726-r2" x="854" y="239.6" textLength="12.2" clip-path="url(#terminal-2781569726-line-9)">
+</text><text class="terminal-2781569726-r4" x="0" y="264" textLength="12.2" clip-path="url(#terminal-2781569726-line-10)">│</text><text class="terminal-2781569726-r5" x="24.4" y="264" textLength="305" clip-path="url(#terminal-2781569726-line-10)">local-machine-purpose,&#160;l&#160;</text><text class="terminal-2781569726-r2" x="353.8" y="264" textLength="475.8" clip-path="url(#terminal-2781569726-line-10)">Configure&#160;the&#160;purpose&#160;of&#160;the&#160;local&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2781569726-r4" x="841.8" y="264" textLength="12.2" clip-path="url(#terminal-2781569726-line-10)">│</text><text class="terminal-2781569726-r2" x="854" y="264" textLength="12.2" clip-path="url(#terminal-2781569726-line-10)">
+</text><text class="terminal-2781569726-r4" x="0" y="288.4" textLength="12.2" clip-path="url(#terminal-2781569726-line-11)">│</text><text class="terminal-2781569726-r2" x="353.8" y="288.4" textLength="475.8" clip-path="url(#terminal-2781569726-line-11)">machine&#160;w.r.t.&#160;Oakestra.&#160;Specify&#160;one&#160;or</text><text class="terminal-2781569726-r4" x="841.8" y="288.4" textLength="12.2" clip-path="url(#terminal-2781569726-line-11)">│</text><text class="terminal-2781569726-r2" x="854" y="288.4" textLength="12.2" clip-path="url(#terminal-2781569726-line-11)">
+</text><text class="terminal-2781569726-r4" x="0" y="312.8" textLength="12.2" clip-path="url(#terminal-2781569726-line-12)">│</text><text class="terminal-2781569726-r2" x="353.8" y="312.8" textLength="475.8" clip-path="url(#terminal-2781569726-line-12)">multiple&#160;purposes&#160;at&#160;once.&#160;E.g.&#160;...&#160;&#160;&#160;&#160;</text><text class="terminal-2781569726-r4" x="841.8" y="312.8" textLength="12.2" clip-path="url(#terminal-2781569726-line-12)">│</text><text class="terminal-2781569726-r2" x="854" y="312.8" textLength="12.2" clip-path="url(#terminal-2781569726-line-12)">
+</text><text class="terminal-2781569726-r4" x="0" y="337.2" textLength="12.2" clip-path="url(#terminal-2781569726-line-13)">│</text><text class="terminal-2781569726-r5" x="353.8" y="337.2" textLength="12.2" clip-path="url(#terminal-2781569726-line-13)">-</text><text class="terminal-2781569726-r5" x="366" y="337.2" textLength="97.6" clip-path="url(#terminal-2781569726-line-13)">-purpose</text><text class="terminal-2781569726-r2" x="463.6" y="337.2" textLength="36.6" clip-path="url(#terminal-2781569726-line-13)">&#160;A&#160;</text><text class="terminal-2781569726-r5" x="500.2" y="337.2" textLength="12.2" clip-path="url(#terminal-2781569726-line-13)">-</text><text class="terminal-2781569726-r5" x="512.4" y="337.2" textLength="97.6" clip-path="url(#terminal-2781569726-line-13)">-purpose</text><text class="terminal-2781569726-r2" x="610" y="337.2" textLength="219.6" clip-path="url(#terminal-2781569726-line-13)">&#160;B&#160;|&#160;For&#160;further&#160;&#160;</text><text class="terminal-2781569726-r4" x="841.8" y="337.2" textLength="12.2" clip-path="url(#terminal-2781569726-line-13)">│</text><text class="terminal-2781569726-r2" x="854" y="337.2" textLength="12.2" clip-path="url(#terminal-2781569726-line-13)">
+</text><text class="terminal-2781569726-r4" x="0" y="361.6" textLength="12.2" clip-path="url(#terminal-2781569726-line-14)">│</text><text class="terminal-2781569726-r2" x="353.8" y="361.6" textLength="475.8" clip-path="url(#terminal-2781569726-line-14)">information&#160;run&#160;&#x27;oak&#160;explain&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2781569726-r4" x="841.8" y="361.6" textLength="12.2" clip-path="url(#terminal-2781569726-line-14)">│</text><text class="terminal-2781569726-r2" x="854" y="361.6" textLength="12.2" clip-path="url(#terminal-2781569726-line-14)">
+</text><text class="terminal-2781569726-r4" x="0" y="386" textLength="12.2" clip-path="url(#terminal-2781569726-line-15)">│</text><text class="terminal-2781569726-r2" x="353.8" y="386" textLength="475.8" clip-path="url(#terminal-2781569726-line-15)">local-machine-purpose&#x27;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2781569726-r4" x="841.8" y="386" textLength="12.2" clip-path="url(#terminal-2781569726-line-15)">│</text><text class="terminal-2781569726-r2" x="854" y="386" textLength="12.2" clip-path="url(#terminal-2781569726-line-15)">
+</text><text class="terminal-2781569726-r4" x="0" y="410.4" textLength="12.2" clip-path="url(#terminal-2781569726-line-16)">│</text><text class="terminal-2781569726-r5" x="24.4" y="410.4" textLength="305" clip-path="url(#terminal-2781569726-line-16)">reset-config&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2781569726-r2" x="353.8" y="410.4" textLength="475.8" clip-path="url(#terminal-2781569726-line-16)">Reset&#160;the&#160;current&#160;OAK-CLI&#160;configuration</text><text class="terminal-2781569726-r4" x="841.8" y="410.4" textLength="12.2" clip-path="url(#terminal-2781569726-line-16)">│</text><text class="terminal-2781569726-r2" x="854" y="410.4" textLength="12.2" clip-path="url(#terminal-2781569726-line-16)">
+</text><text class="terminal-2781569726-r4" x="0" y="434.8" textLength="12.2" clip-path="url(#terminal-2781569726-line-17)">│</text><text class="terminal-2781569726-r2" x="353.8" y="434.8" textLength="475.8" clip-path="url(#terminal-2781569726-line-17)">to&#160;its&#160;initial&#160;state&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2781569726-r4" x="841.8" y="434.8" textLength="12.2" clip-path="url(#terminal-2781569726-line-17)">│</text><text class="terminal-2781569726-r2" x="854" y="434.8" textLength="12.2" clip-path="url(#terminal-2781569726-line-17)">
+</text><text class="terminal-2781569726-r4" x="0" y="459.2" textLength="12.2" clip-path="url(#terminal-2781569726-line-18)">│</text><text class="terminal-2781569726-r5" x="24.4" y="459.2" textLength="305" clip-path="url(#terminal-2781569726-line-18)">show-config,&#160;s&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2781569726-r2" x="353.8" y="459.2" textLength="475.8" clip-path="url(#terminal-2781569726-line-18)">Show&#160;the&#160;current&#160;OAK-CLI&#160;configuration&#160;</text><text class="terminal-2781569726-r4" x="841.8" y="459.2" textLength="12.2" clip-path="url(#terminal-2781569726-line-18)">│</text><text class="terminal-2781569726-r2" x="854" y="459.2" textLength="12.2" clip-path="url(#terminal-2781569726-line-18)">
+</text><text class="terminal-2781569726-r4" x="0" y="483.6" textLength="854" clip-path="url(#terminal-2781569726-line-19)">╰────────────────────────────────────────────────────────────────────╯</text><text class="terminal-2781569726-r2" x="854" y="483.6" textLength="12.2" clip-path="url(#terminal-2781569726-line-19)">
+</text>
+    </g>
+    </g>
+</svg>
+<section id="oak-configuration-c-key-vars-k">
+<h2> oak configuration/c key-vars, k<a class="headerlink" href="#oak-configuration-c-key-vars-k" title="Link to this heading">¶</a></h2>
+<svg class="rich-terminal" viewBox="0 0 872 318.4" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+
+    <defs>
+    <clipPath id="terminal-2721404688-clip-terminal">
+      <rect x="0" y="0" width="853.0" height="267.4" />
+    </clipPath>
+    <clipPath id="terminal-2721404688-line-0">
+    <rect x="0" y="1.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2721404688-line-1">
+    <rect x="0" y="25.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2721404688-line-2">
+    <rect x="0" y="50.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2721404688-line-3">
+    <rect x="0" y="74.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2721404688-line-4">
+    <rect x="0" y="99.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2721404688-line-5">
+    <rect x="0" y="123.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2721404688-line-6">
+    <rect x="0" y="147.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2721404688-line-7">
+    <rect x="0" y="172.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2721404688-line-8">
+    <rect x="0" y="196.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2721404688-line-9">
+    <rect x="0" y="221.1" width="854" height="24.65"/>
+            </clipPath>
+    </defs>
+
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-2721404688-clip-terminal)">
+    
+    <g class="terminal-2721404688-matrix">
+    <text class="terminal-2721404688-r2" x="854" y="20" textLength="12.2" clip-path="url(#terminal-2721404688-line-0)">
+</text><text class="terminal-2721404688-r3" x="12.2" y="44.4" textLength="85.4" clip-path="url(#terminal-2721404688-line-1)">Usage:&#160;</text><text class="terminal-2721404688-r1" x="97.6" y="44.4" textLength="719.8" clip-path="url(#terminal-2721404688-line-1)">oak&#160;configuration/c&#160;key-vars,&#160;k&#160;[OPTIONS]&#160;COMMAND&#160;[ARGS]...</text><text class="terminal-2721404688-r2" x="854" y="44.4" textLength="12.2" clip-path="url(#terminal-2721404688-line-1)">
+</text><text class="terminal-2721404688-r2" x="854" y="68.8" textLength="12.2" clip-path="url(#terminal-2721404688-line-2)">
+</text><text class="terminal-2721404688-r2" x="12.2" y="93.2" textLength="378.2" clip-path="url(#terminal-2721404688-line-3)">Configure&#160;OAK-CLI&#160;Key&#160;Variables</text><text class="terminal-2721404688-r2" x="854" y="93.2" textLength="12.2" clip-path="url(#terminal-2721404688-line-3)">
+</text><text class="terminal-2721404688-r2" x="854" y="117.6" textLength="12.2" clip-path="url(#terminal-2721404688-line-4)">
+</text><text class="terminal-2721404688-r4" x="0" y="142" textLength="24.4" clip-path="url(#terminal-2721404688-line-5)">╭─</text><text class="terminal-2721404688-r4" x="24.4" y="142" textLength="109.8" clip-path="url(#terminal-2721404688-line-5)">&#160;Options&#160;</text><text class="terminal-2721404688-r4" x="134.2" y="142" textLength="695.4" clip-path="url(#terminal-2721404688-line-5)">─────────────────────────────────────────────────────────</text><text class="terminal-2721404688-r4" x="829.6" y="142" textLength="24.4" clip-path="url(#terminal-2721404688-line-5)">─╮</text><text class="terminal-2721404688-r2" x="854" y="142" textLength="12.2" clip-path="url(#terminal-2721404688-line-5)">
+</text><text class="terminal-2721404688-r4" x="0" y="166.4" textLength="12.2" clip-path="url(#terminal-2721404688-line-6)">│</text><text class="terminal-2721404688-r5" x="24.4" y="166.4" textLength="12.2" clip-path="url(#terminal-2721404688-line-6)">-</text><text class="terminal-2721404688-r5" x="36.6" y="166.4" textLength="61" clip-path="url(#terminal-2721404688-line-6)">-help</text><text class="terminal-2721404688-r2" x="219.6" y="166.4" textLength="329.4" clip-path="url(#terminal-2721404688-line-6)">Show&#160;this&#160;message&#160;and&#160;exit.</text><text class="terminal-2721404688-r4" x="841.8" y="166.4" textLength="12.2" clip-path="url(#terminal-2721404688-line-6)">│</text><text class="terminal-2721404688-r2" x="854" y="166.4" textLength="12.2" clip-path="url(#terminal-2721404688-line-6)">
+</text><text class="terminal-2721404688-r4" x="0" y="190.8" textLength="854" clip-path="url(#terminal-2721404688-line-7)">╰────────────────────────────────────────────────────────────────────╯</text><text class="terminal-2721404688-r2" x="854" y="190.8" textLength="12.2" clip-path="url(#terminal-2721404688-line-7)">
+</text><text class="terminal-2721404688-r4" x="0" y="215.2" textLength="24.4" clip-path="url(#terminal-2721404688-line-8)">╭─</text><text class="terminal-2721404688-r4" x="24.4" y="215.2" textLength="122" clip-path="url(#terminal-2721404688-line-8)">&#160;Commands&#160;</text><text class="terminal-2721404688-r4" x="146.4" y="215.2" textLength="683.2" clip-path="url(#terminal-2721404688-line-8)">────────────────────────────────────────────────────────</text><text class="terminal-2721404688-r4" x="829.6" y="215.2" textLength="24.4" clip-path="url(#terminal-2721404688-line-8)">─╮</text><text class="terminal-2721404688-r2" x="854" y="215.2" textLength="12.2" clip-path="url(#terminal-2721404688-line-8)">
+</text><text class="terminal-2721404688-r4" x="0" y="239.6" textLength="12.2" clip-path="url(#terminal-2721404688-line-9)">│</text><text class="terminal-2721404688-r5" x="24.4" y="239.6" textLength="158.6" clip-path="url(#terminal-2721404688-line-9)">configure,&#160;c&#160;</text><text class="terminal-2721404688-r2" x="207.4" y="239.6" textLength="622.2" clip-path="url(#terminal-2721404688-line-9)">Configure&#160;a&#160;core&#160;variable.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-2721404688-r4" x="841.8" y="239.6" textLength="12.2" clip-path="url(#terminal-2721404688-line-9)">│</text><text class="terminal-2721404688-r2" x="854" y="239.6" textLength="12.2" clip-path="url(#terminal-2721404688-line-9)">
+</text><text class="terminal-2721404688-r4" x="0" y="264" textLength="854" clip-path="url(#terminal-2721404688-line-10)">╰────────────────────────────────────────────────────────────────────╯</text><text class="terminal-2721404688-r2" x="854" y="264" textLength="12.2" clip-path="url(#terminal-2721404688-line-10)">
+</text>
+    </g>
+    </g>
+</svg>
+<section id="oak-configuration-c-key-vars-k-configure-c">
+<h3> oak configuration/c key-vars, k configure, c<a class="headerlink" href="#oak-configuration-c-key-vars-k-configure-c" title="Link to this heading">¶</a></h3>
+<svg class="rich-terminal" viewBox="0 0 872 586.8" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+
+    <defs>
+    <clipPath id="terminal-429230566-clip-terminal">
+      <rect x="0" y="0" width="853.0" height="535.8" />
+    </clipPath>
+    <clipPath id="terminal-429230566-line-0">
+    <rect x="0" y="1.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-1">
+    <rect x="0" y="25.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-2">
+    <rect x="0" y="50.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-3">
+    <rect x="0" y="74.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-4">
+    <rect x="0" y="99.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-5">
+    <rect x="0" y="123.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-6">
+    <rect x="0" y="147.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-7">
+    <rect x="0" y="172.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-8">
+    <rect x="0" y="196.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-9">
+    <rect x="0" y="221.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-10">
+    <rect x="0" y="245.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-11">
+    <rect x="0" y="269.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-12">
+    <rect x="0" y="294.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-13">
+    <rect x="0" y="318.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-14">
+    <rect x="0" y="343.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-15">
+    <rect x="0" y="367.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-16">
+    <rect x="0" y="391.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-17">
+    <rect x="0" y="416.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-18">
+    <rect x="0" y="440.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-19">
+    <rect x="0" y="465.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-429230566-line-20">
+    <rect x="0" y="489.5" width="854" height="24.65"/>
+            </clipPath>
+    </defs>
+
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-429230566-clip-terminal)">
+    
+    <g class="terminal-429230566-matrix">
+    <text class="terminal-429230566-r2" x="854" y="20" textLength="12.2" clip-path="url(#terminal-429230566-line-0)">
+</text><text class="terminal-429230566-r3" x="12.2" y="44.4" textLength="85.4" clip-path="url(#terminal-429230566-line-1)">Usage:&#160;</text><text class="terminal-429230566-r1" x="97.6" y="44.4" textLength="549" clip-path="url(#terminal-429230566-line-1)">oak&#160;configuration/c&#160;key-vars,&#160;k&#160;configure,&#160;c&#160;</text><text class="terminal-429230566-r2" x="854" y="44.4" textLength="12.2" clip-path="url(#terminal-429230566-line-1)">
+</text><text class="terminal-429230566-r1" x="12.2" y="68.8" textLength="256.2" clip-path="url(#terminal-429230566-line-2)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[OPTIONS]&#160;</text><text class="terminal-429230566-r2" x="854" y="68.8" textLength="12.2" clip-path="url(#terminal-429230566-line-2)">
+</text><text class="terminal-429230566-r1" x="12.2" y="93.2" textLength="597.8" clip-path="url(#terminal-429230566-line-3)">KEY:{local_machine_purpose|main_oak_repo_path|flo</text><text class="terminal-429230566-r2" x="854" y="93.2" textLength="12.2" clip-path="url(#terminal-429230566-line-3)">
+</text><text class="terminal-429230566-r1" x="12.2" y="117.6" textLength="829.6" clip-path="url(#terminal-429230566-line-4)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ps_repo_path|system_manager_ip|cluster_manager_ip|cluster</text><text class="terminal-429230566-r2" x="854" y="117.6" textLength="12.2" clip-path="url(#terminal-429230566-line-4)">
+</text><text class="terminal-429230566-r1" x="12.2" y="142" textLength="24.4" clip-path="url(#terminal-429230566-line-5)">_n</text><text class="terminal-429230566-r2" x="854" y="142" textLength="12.2" clip-path="url(#terminal-429230566-line-5)">
+</text><text class="terminal-429230566-r1" x="12.2" y="166.4" textLength="390.4" clip-path="url(#terminal-429230566-line-6)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ame|cluster_location}</text><text class="terminal-429230566-r2" x="854" y="166.4" textLength="12.2" clip-path="url(#terminal-429230566-line-6)">
+</text><text class="terminal-429230566-r2" x="854" y="190.8" textLength="12.2" clip-path="url(#terminal-429230566-line-7)">
+</text><text class="terminal-429230566-r2" x="12.2" y="215.2" textLength="317.2" clip-path="url(#terminal-429230566-line-8)">Configure&#160;a&#160;core&#160;variable.</text><text class="terminal-429230566-r2" x="854" y="215.2" textLength="12.2" clip-path="url(#terminal-429230566-line-8)">
+</text><text class="terminal-429230566-r2" x="854" y="239.6" textLength="12.2" clip-path="url(#terminal-429230566-line-9)">
+</text><text class="terminal-429230566-r4" x="0" y="264" textLength="24.4" clip-path="url(#terminal-429230566-line-10)">╭─</text><text class="terminal-429230566-r4" x="24.4" y="264" textLength="134.2" clip-path="url(#terminal-429230566-line-10)">&#160;Arguments&#160;</text><text class="terminal-429230566-r4" x="158.6" y="264" textLength="671" clip-path="url(#terminal-429230566-line-10)">───────────────────────────────────────────────────────</text><text class="terminal-429230566-r4" x="829.6" y="264" textLength="24.4" clip-path="url(#terminal-429230566-line-10)">─╮</text><text class="terminal-429230566-r2" x="854" y="264" textLength="12.2" clip-path="url(#terminal-429230566-line-10)">
+</text><text class="terminal-429230566-r4" x="0" y="288.4" textLength="12.2" clip-path="url(#terminal-429230566-line-11)">│</text><text class="terminal-429230566-r5" x="24.4" y="288.4" textLength="12.2" clip-path="url(#terminal-429230566-line-11)">*</text><text class="terminal-429230566-r2" x="85.4" y="288.4" textLength="36.6" clip-path="url(#terminal-429230566-line-11)">key</text><text class="terminal-429230566-r3" x="195.2" y="288.4" textLength="292.8" clip-path="url(#terminal-429230566-line-11)">KEY:{local_machine_purpo</text><text class="terminal-429230566-r4" x="512.4" y="288.4" textLength="183" clip-path="url(#terminal-429230566-line-11)">[default:&#160;None]</text><text class="terminal-429230566-r6" x="707.6" y="288.4" textLength="122" clip-path="url(#terminal-429230566-line-11)">[required]</text><text class="terminal-429230566-r4" x="841.8" y="288.4" textLength="12.2" clip-path="url(#terminal-429230566-line-11)">│</text><text class="terminal-429230566-r2" x="854" y="288.4" textLength="12.2" clip-path="url(#terminal-429230566-line-11)">
+</text><text class="terminal-429230566-r4" x="0" y="312.8" textLength="12.2" clip-path="url(#terminal-429230566-line-12)">│</text><text class="terminal-429230566-r3" x="195.2" y="312.8" textLength="24.4" clip-path="url(#terminal-429230566-line-12)">se</text><text class="terminal-429230566-r7" x="219.6" y="312.8" textLength="12.2" clip-path="url(#terminal-429230566-line-12)">|</text><text class="terminal-429230566-r3" x="231.8" y="312.8" textLength="219.6" clip-path="url(#terminal-429230566-line-12)">main_oak_repo_path</text><text class="terminal-429230566-r7" x="451.4" y="312.8" textLength="12.2" clip-path="url(#terminal-429230566-line-12)">|</text><text class="terminal-429230566-r3" x="463.6" y="312.8" textLength="24.4" clip-path="url(#terminal-429230566-line-12)">fl</text><text class="terminal-429230566-r4" x="841.8" y="312.8" textLength="12.2" clip-path="url(#terminal-429230566-line-12)">│</text><text class="terminal-429230566-r2" x="854" y="312.8" textLength="12.2" clip-path="url(#terminal-429230566-line-12)">
+</text><text class="terminal-429230566-r4" x="0" y="337.2" textLength="12.2" clip-path="url(#terminal-429230566-line-13)">│</text><text class="terminal-429230566-r3" x="195.2" y="337.2" textLength="158.6" clip-path="url(#terminal-429230566-line-13)">ops_repo_path</text><text class="terminal-429230566-r7" x="353.8" y="337.2" textLength="12.2" clip-path="url(#terminal-429230566-line-13)">|</text><text class="terminal-429230566-r3" x="366" y="337.2" textLength="122" clip-path="url(#terminal-429230566-line-13)">system_man</text><text class="terminal-429230566-r4" x="841.8" y="337.2" textLength="12.2" clip-path="url(#terminal-429230566-line-13)">│</text><text class="terminal-429230566-r2" x="854" y="337.2" textLength="12.2" clip-path="url(#terminal-429230566-line-13)">
+</text><text class="terminal-429230566-r4" x="0" y="361.6" textLength="12.2" clip-path="url(#terminal-429230566-line-14)">│</text><text class="terminal-429230566-r3" x="195.2" y="361.6" textLength="85.4" clip-path="url(#terminal-429230566-line-14)">ager_ip</text><text class="terminal-429230566-r7" x="280.6" y="361.6" textLength="12.2" clip-path="url(#terminal-429230566-line-14)">|</text><text class="terminal-429230566-r3" x="292.8" y="361.6" textLength="195.2" clip-path="url(#terminal-429230566-line-14)">cluster_manager_</text><text class="terminal-429230566-r4" x="841.8" y="361.6" textLength="12.2" clip-path="url(#terminal-429230566-line-14)">│</text><text class="terminal-429230566-r2" x="854" y="361.6" textLength="12.2" clip-path="url(#terminal-429230566-line-14)">
+</text><text class="terminal-429230566-r4" x="0" y="386" textLength="12.2" clip-path="url(#terminal-429230566-line-15)">│</text><text class="terminal-429230566-r3" x="195.2" y="386" textLength="24.4" clip-path="url(#terminal-429230566-line-15)">ip</text><text class="terminal-429230566-r7" x="219.6" y="386" textLength="12.2" clip-path="url(#terminal-429230566-line-15)">|</text><text class="terminal-429230566-r3" x="231.8" y="386" textLength="146.4" clip-path="url(#terminal-429230566-line-15)">cluster_name</text><text class="terminal-429230566-r7" x="378.2" y="386" textLength="12.2" clip-path="url(#terminal-429230566-line-15)">|</text><text class="terminal-429230566-r3" x="390.4" y="386" textLength="97.6" clip-path="url(#terminal-429230566-line-15)">cluster_</text><text class="terminal-429230566-r4" x="841.8" y="386" textLength="12.2" clip-path="url(#terminal-429230566-line-15)">│</text><text class="terminal-429230566-r2" x="854" y="386" textLength="12.2" clip-path="url(#terminal-429230566-line-15)">
+</text><text class="terminal-429230566-r4" x="0" y="410.4" textLength="12.2" clip-path="url(#terminal-429230566-line-16)">│</text><text class="terminal-429230566-r3" x="195.2" y="410.4" textLength="292.8" clip-path="url(#terminal-429230566-line-16)">location}&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-429230566-r4" x="841.8" y="410.4" textLength="12.2" clip-path="url(#terminal-429230566-line-16)">│</text><text class="terminal-429230566-r2" x="854" y="410.4" textLength="12.2" clip-path="url(#terminal-429230566-line-16)">
+</text><text class="terminal-429230566-r4" x="0" y="434.8" textLength="854" clip-path="url(#terminal-429230566-line-17)">╰────────────────────────────────────────────────────────────────────╯</text><text class="terminal-429230566-r2" x="854" y="434.8" textLength="12.2" clip-path="url(#terminal-429230566-line-17)">
+</text><text class="terminal-429230566-r4" x="0" y="459.2" textLength="24.4" clip-path="url(#terminal-429230566-line-18)">╭─</text><text class="terminal-429230566-r4" x="24.4" y="459.2" textLength="109.8" clip-path="url(#terminal-429230566-line-18)">&#160;Options&#160;</text><text class="terminal-429230566-r4" x="134.2" y="459.2" textLength="695.4" clip-path="url(#terminal-429230566-line-18)">─────────────────────────────────────────────────────────</text><text class="terminal-429230566-r4" x="829.6" y="459.2" textLength="24.4" clip-path="url(#terminal-429230566-line-18)">─╮</text><text class="terminal-429230566-r2" x="854" y="459.2" textLength="12.2" clip-path="url(#terminal-429230566-line-18)">
+</text><text class="terminal-429230566-r4" x="0" y="483.6" textLength="12.2" clip-path="url(#terminal-429230566-line-19)">│</text><text class="terminal-429230566-r8" x="24.4" y="483.6" textLength="12.2" clip-path="url(#terminal-429230566-line-19)">-</text><text class="terminal-429230566-r8" x="36.6" y="483.6" textLength="73.2" clip-path="url(#terminal-429230566-line-19)">-value</text><text class="terminal-429230566-r3" x="207.4" y="483.6" textLength="48.8" clip-path="url(#terminal-429230566-line-19)">TEXT</text><text class="terminal-429230566-r4" x="841.8" y="483.6" textLength="12.2" clip-path="url(#terminal-429230566-line-19)">│</text><text class="terminal-429230566-r2" x="854" y="483.6" textLength="12.2" clip-path="url(#terminal-429230566-line-19)">
+</text><text class="terminal-429230566-r4" x="0" y="508" textLength="12.2" clip-path="url(#terminal-429230566-line-20)">│</text><text class="terminal-429230566-r8" x="24.4" y="508" textLength="12.2" clip-path="url(#terminal-429230566-line-20)">-</text><text class="terminal-429230566-r8" x="36.6" y="508" textLength="61" clip-path="url(#terminal-429230566-line-20)">-help</text><text class="terminal-429230566-r2" x="280.6" y="508" textLength="329.4" clip-path="url(#terminal-429230566-line-20)">Show&#160;this&#160;message&#160;and&#160;exit.</text><text class="terminal-429230566-r4" x="841.8" y="508" textLength="12.2" clip-path="url(#terminal-429230566-line-20)">│</text><text class="terminal-429230566-r2" x="854" y="508" textLength="12.2" clip-path="url(#terminal-429230566-line-20)">
+</text><text class="terminal-429230566-r4" x="0" y="532.4" textLength="854" clip-path="url(#terminal-429230566-line-21)">╰────────────────────────────────────────────────────────────────────╯</text><text class="terminal-429230566-r2" x="854" y="532.4" textLength="12.2" clip-path="url(#terminal-429230566-line-21)">
+</text>
+    </g>
+    </g>
+</svg>
+</section>
+</section>
+<section id="oak-configuration-c-local-machine-purpose-l">
+<h2> oak configuration/c local-machine-purpose, l<a class="headerlink" href="#oak-configuration-c-local-machine-purpose-l" title="Link to this heading">¶</a></h2>
+<svg class="rich-terminal" viewBox="0 0 872 464.79999999999995" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+
+    <defs>
+    <clipPath id="terminal-1511890996-clip-terminal">
+      <rect x="0" y="0" width="853.0" height="413.79999999999995" />
+    </clipPath>
+    <clipPath id="terminal-1511890996-line-0">
+    <rect x="0" y="1.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-1">
+    <rect x="0" y="25.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-2">
+    <rect x="0" y="50.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-3">
+    <rect x="0" y="74.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-4">
+    <rect x="0" y="99.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-5">
+    <rect x="0" y="123.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-6">
+    <rect x="0" y="147.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-7">
+    <rect x="0" y="172.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-8">
+    <rect x="0" y="196.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-9">
+    <rect x="0" y="221.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-10">
+    <rect x="0" y="245.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-11">
+    <rect x="0" y="269.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-12">
+    <rect x="0" y="294.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-13">
+    <rect x="0" y="318.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-14">
+    <rect x="0" y="343.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-1511890996-line-15">
+    <rect x="0" y="367.5" width="854" height="24.65"/>
+            </clipPath>
+    </defs>
+
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-1511890996-clip-terminal)">
+    
+    <g class="terminal-1511890996-matrix">
+    <text class="terminal-1511890996-r2" x="854" y="20" textLength="12.2" clip-path="url(#terminal-1511890996-line-0)">
+</text><text class="terminal-1511890996-r3" x="12.2" y="44.4" textLength="85.4" clip-path="url(#terminal-1511890996-line-1)">Usage:&#160;</text><text class="terminal-1511890996-r1" x="97.6" y="44.4" textLength="549" clip-path="url(#terminal-1511890996-line-1)">oak&#160;configuration/c&#160;local-machine-purpose,&#160;l&#160;</text><text class="terminal-1511890996-r2" x="854" y="44.4" textLength="12.2" clip-path="url(#terminal-1511890996-line-1)">
+</text><text class="terminal-1511890996-r1" x="12.2" y="68.8" textLength="244" clip-path="url(#terminal-1511890996-line-2)">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[OPTIONS]</text><text class="terminal-1511890996-r2" x="854" y="68.8" textLength="12.2" clip-path="url(#terminal-1511890996-line-2)">
+</text><text class="terminal-1511890996-r2" x="854" y="93.2" textLength="12.2" clip-path="url(#terminal-1511890996-line-3)">
+</text><text class="terminal-1511890996-r2" x="12.2" y="117.6" textLength="829.6" clip-path="url(#terminal-1511890996-line-4)">Configure&#160;the&#160;purpose&#160;of&#160;the&#160;local&#160;machine&#160;w.r.t.&#160;Oakestra.&#160;Specify&#160;</text><text class="terminal-1511890996-r2" x="854" y="117.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-4)">
+</text><text class="terminal-1511890996-r2" x="12.2" y="142" textLength="524.6" clip-path="url(#terminal-1511890996-line-5)">one&#160;or&#160;multiple&#160;purposes&#160;at&#160;once.&#160;E.g.&#160;...&#160;</text><text class="terminal-1511890996-r4" x="536.8" y="142" textLength="12.2" clip-path="url(#terminal-1511890996-line-5)">-</text><text class="terminal-1511890996-r4" x="549" y="142" textLength="97.6" clip-path="url(#terminal-1511890996-line-5)">-purpose</text><text class="terminal-1511890996-r2" x="646.6" y="142" textLength="36.6" clip-path="url(#terminal-1511890996-line-5)">&#160;A&#160;</text><text class="terminal-1511890996-r4" x="683.2" y="142" textLength="12.2" clip-path="url(#terminal-1511890996-line-5)">-</text><text class="terminal-1511890996-r4" x="695.4" y="142" textLength="97.6" clip-path="url(#terminal-1511890996-line-5)">-purpose</text><text class="terminal-1511890996-r2" x="793" y="142" textLength="48.8" clip-path="url(#terminal-1511890996-line-5)">&#160;B&#160;|</text><text class="terminal-1511890996-r2" x="854" y="142" textLength="12.2" clip-path="url(#terminal-1511890996-line-5)">
+</text><text class="terminal-1511890996-r2" x="12.2" y="166.4" textLength="768.6" clip-path="url(#terminal-1511890996-line-6)">For&#160;further&#160;information&#160;run&#160;&#x27;oak&#160;explain&#160;local-machine-purpose&#x27;</text><text class="terminal-1511890996-r2" x="854" y="166.4" textLength="12.2" clip-path="url(#terminal-1511890996-line-6)">
+</text><text class="terminal-1511890996-r2" x="854" y="190.8" textLength="12.2" clip-path="url(#terminal-1511890996-line-7)">
+</text><text class="terminal-1511890996-r5" x="0" y="215.2" textLength="24.4" clip-path="url(#terminal-1511890996-line-8)">╭─</text><text class="terminal-1511890996-r5" x="24.4" y="215.2" textLength="109.8" clip-path="url(#terminal-1511890996-line-8)">&#160;Options&#160;</text><text class="terminal-1511890996-r5" x="134.2" y="215.2" textLength="695.4" clip-path="url(#terminal-1511890996-line-8)">─────────────────────────────────────────────────────────</text><text class="terminal-1511890996-r5" x="829.6" y="215.2" textLength="24.4" clip-path="url(#terminal-1511890996-line-8)">─╮</text><text class="terminal-1511890996-r2" x="854" y="215.2" textLength="12.2" clip-path="url(#terminal-1511890996-line-8)">
+</text><text class="terminal-1511890996-r5" x="0" y="239.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-9)">│</text><text class="terminal-1511890996-r4" x="24.4" y="239.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-9)">-</text><text class="terminal-1511890996-r4" x="36.6" y="239.6" textLength="97.6" clip-path="url(#terminal-1511890996-line-9)">-purpose</text><text class="terminal-1511890996-r6" x="231.8" y="239.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-9)">[</text><text class="terminal-1511890996-r3" x="244" y="239.6" textLength="85.4" clip-path="url(#terminal-1511890996-line-9)">initial</text><text class="terminal-1511890996-r6" x="329.4" y="239.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-9)">|</text><text class="terminal-1511890996-r3" x="341.6" y="239.6" textLength="122" clip-path="url(#terminal-1511890996-line-9)">everything</text><text class="terminal-1511890996-r6" x="463.6" y="239.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-9)">|</text><text class="terminal-1511890996-r3" x="475.8" y="239.6" textLength="36.6" clip-path="url(#terminal-1511890996-line-9)">roo</text><text class="terminal-1511890996-r2" x="536.8" y="239.6" textLength="292.8" clip-path="url(#terminal-1511890996-line-9)">A&#160;local&#160;machine&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-1511890996-r5" x="841.8" y="239.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-9)">│</text><text class="terminal-1511890996-r2" x="854" y="239.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-9)">
+</text><text class="terminal-1511890996-r5" x="0" y="264" textLength="12.2" clip-path="url(#terminal-1511890996-line-10)">│</text><text class="terminal-1511890996-r3" x="231.8" y="264" textLength="170.8" clip-path="url(#terminal-1511890996-line-10)">t_orchestrator</text><text class="terminal-1511890996-r6" x="402.6" y="264" textLength="12.2" clip-path="url(#terminal-1511890996-line-10)">|</text><text class="terminal-1511890996-r3" x="414.8" y="264" textLength="97.6" clip-path="url(#terminal-1511890996-line-10)">cluster_</text><text class="terminal-1511890996-r2" x="536.8" y="264" textLength="292.8" clip-path="url(#terminal-1511890996-line-10)">purposes.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-1511890996-r5" x="841.8" y="264" textLength="12.2" clip-path="url(#terminal-1511890996-line-10)">│</text><text class="terminal-1511890996-r2" x="854" y="264" textLength="12.2" clip-path="url(#terminal-1511890996-line-10)">
+</text><text class="terminal-1511890996-r5" x="0" y="288.4" textLength="12.2" clip-path="url(#terminal-1511890996-line-11)">│</text><text class="terminal-1511890996-r3" x="231.8" y="288.4" textLength="146.4" clip-path="url(#terminal-1511890996-line-11)">orchestrator</text><text class="terminal-1511890996-r6" x="378.2" y="288.4" textLength="12.2" clip-path="url(#terminal-1511890996-line-11)">|</text><text class="terminal-1511890996-r3" x="390.4" y="288.4" textLength="122" clip-path="url(#terminal-1511890996-line-11)">worker_nod</text><text class="terminal-1511890996-r5" x="536.8" y="288.4" textLength="292.8" clip-path="url(#terminal-1511890996-line-11)">[default:&#160;None]&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-1511890996-r5" x="841.8" y="288.4" textLength="12.2" clip-path="url(#terminal-1511890996-line-11)">│</text><text class="terminal-1511890996-r2" x="854" y="288.4" textLength="12.2" clip-path="url(#terminal-1511890996-line-11)">
+</text><text class="terminal-1511890996-r5" x="0" y="312.8" textLength="12.2" clip-path="url(#terminal-1511890996-line-12)">│</text><text class="terminal-1511890996-r3" x="231.8" y="312.8" textLength="12.2" clip-path="url(#terminal-1511890996-line-12)">e</text><text class="terminal-1511890996-r6" x="244" y="312.8" textLength="12.2" clip-path="url(#terminal-1511890996-line-12)">|</text><text class="terminal-1511890996-r3" x="256.2" y="312.8" textLength="158.6" clip-path="url(#terminal-1511890996-line-12)">addon_support</text><text class="terminal-1511890996-r6" x="414.8" y="312.8" textLength="12.2" clip-path="url(#terminal-1511890996-line-12)">|</text><text class="terminal-1511890996-r3" x="427" y="312.8" textLength="85.4" clip-path="url(#terminal-1511890996-line-12)">develop</text><text class="terminal-1511890996-r5" x="841.8" y="312.8" textLength="12.2" clip-path="url(#terminal-1511890996-line-12)">│</text><text class="terminal-1511890996-r2" x="854" y="312.8" textLength="12.2" clip-path="url(#terminal-1511890996-line-12)">
+</text><text class="terminal-1511890996-r5" x="0" y="337.2" textLength="12.2" clip-path="url(#terminal-1511890996-line-13)">│</text><text class="terminal-1511890996-r3" x="231.8" y="337.2" textLength="48.8" clip-path="url(#terminal-1511890996-line-13)">ment</text><text class="terminal-1511890996-r6" x="280.6" y="337.2" textLength="12.2" clip-path="url(#terminal-1511890996-line-13)">]</text><text class="terminal-1511890996-r5" x="841.8" y="337.2" textLength="12.2" clip-path="url(#terminal-1511890996-line-13)">│</text><text class="terminal-1511890996-r2" x="854" y="337.2" textLength="12.2" clip-path="url(#terminal-1511890996-line-13)">
+</text><text class="terminal-1511890996-r5" x="0" y="361.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-14)">│</text><text class="terminal-1511890996-r4" x="24.4" y="361.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-14)">-</text><text class="terminal-1511890996-r4" x="36.6" y="361.6" textLength="61" clip-path="url(#terminal-1511890996-line-14)">-help</text><text class="terminal-1511890996-r2" x="536.8" y="361.6" textLength="292.8" clip-path="url(#terminal-1511890996-line-14)">Show&#160;this&#160;message&#160;and&#160;&#160;&#160;</text><text class="terminal-1511890996-r5" x="841.8" y="361.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-14)">│</text><text class="terminal-1511890996-r2" x="854" y="361.6" textLength="12.2" clip-path="url(#terminal-1511890996-line-14)">
+</text><text class="terminal-1511890996-r5" x="0" y="386" textLength="12.2" clip-path="url(#terminal-1511890996-line-15)">│</text><text class="terminal-1511890996-r2" x="536.8" y="386" textLength="292.8" clip-path="url(#terminal-1511890996-line-15)">exit.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-1511890996-r5" x="841.8" y="386" textLength="12.2" clip-path="url(#terminal-1511890996-line-15)">│</text><text class="terminal-1511890996-r2" x="854" y="386" textLength="12.2" clip-path="url(#terminal-1511890996-line-15)">
+</text><text class="terminal-1511890996-r5" x="0" y="410.4" textLength="854" clip-path="url(#terminal-1511890996-line-16)">╰────────────────────────────────────────────────────────────────────╯</text><text class="terminal-1511890996-r2" x="854" y="410.4" textLength="12.2" clip-path="url(#terminal-1511890996-line-16)">
+</text>
+    </g>
+    </g>
+</svg>
+</section>
+<section id="oak-configuration-c-reset-config">
+<h2> oak configuration/c reset-config<a class="headerlink" href="#oak-configuration-c-reset-config" title="Link to this heading">¶</a></h2>
+<svg class="rich-terminal" viewBox="0 0 872 245.2" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+
+    <defs>
+    <clipPath id="terminal-2571218285-clip-terminal">
+      <rect x="0" y="0" width="853.0" height="194.2" />
+    </clipPath>
+    <clipPath id="terminal-2571218285-line-0">
+    <rect x="0" y="1.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2571218285-line-1">
+    <rect x="0" y="25.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2571218285-line-2">
+    <rect x="0" y="50.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2571218285-line-3">
+    <rect x="0" y="74.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2571218285-line-4">
+    <rect x="0" y="99.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2571218285-line-5">
+    <rect x="0" y="123.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-2571218285-line-6">
+    <rect x="0" y="147.9" width="854" height="24.65"/>
+            </clipPath>
+    </defs>
+
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-2571218285-clip-terminal)">
+    
+    <g class="terminal-2571218285-matrix">
+    <text class="terminal-2571218285-r2" x="854" y="20" textLength="12.2" clip-path="url(#terminal-2571218285-line-0)">
+</text><text class="terminal-2571218285-r3" x="12.2" y="44.4" textLength="85.4" clip-path="url(#terminal-2571218285-line-1)">Usage:&#160;</text><text class="terminal-2571218285-r1" x="97.6" y="44.4" textLength="512.4" clip-path="url(#terminal-2571218285-line-1)">oak&#160;configuration/c&#160;reset-config&#160;[OPTIONS]</text><text class="terminal-2571218285-r2" x="854" y="44.4" textLength="12.2" clip-path="url(#terminal-2571218285-line-1)">
+</text><text class="terminal-2571218285-r2" x="854" y="68.8" textLength="12.2" clip-path="url(#terminal-2571218285-line-2)">
+</text><text class="terminal-2571218285-r2" x="12.2" y="93.2" textLength="732" clip-path="url(#terminal-2571218285-line-3)">Reset&#160;the&#160;current&#160;OAK-CLI&#160;configuration&#160;to&#160;its&#160;initial&#160;state</text><text class="terminal-2571218285-r2" x="854" y="93.2" textLength="12.2" clip-path="url(#terminal-2571218285-line-3)">
+</text><text class="terminal-2571218285-r2" x="854" y="117.6" textLength="12.2" clip-path="url(#terminal-2571218285-line-4)">
+</text><text class="terminal-2571218285-r4" x="0" y="142" textLength="24.4" clip-path="url(#terminal-2571218285-line-5)">╭─</text><text class="terminal-2571218285-r4" x="24.4" y="142" textLength="109.8" clip-path="url(#terminal-2571218285-line-5)">&#160;Options&#160;</text><text class="terminal-2571218285-r4" x="134.2" y="142" textLength="695.4" clip-path="url(#terminal-2571218285-line-5)">─────────────────────────────────────────────────────────</text><text class="terminal-2571218285-r4" x="829.6" y="142" textLength="24.4" clip-path="url(#terminal-2571218285-line-5)">─╮</text><text class="terminal-2571218285-r2" x="854" y="142" textLength="12.2" clip-path="url(#terminal-2571218285-line-5)">
+</text><text class="terminal-2571218285-r4" x="0" y="166.4" textLength="12.2" clip-path="url(#terminal-2571218285-line-6)">│</text><text class="terminal-2571218285-r5" x="24.4" y="166.4" textLength="12.2" clip-path="url(#terminal-2571218285-line-6)">-</text><text class="terminal-2571218285-r5" x="36.6" y="166.4" textLength="61" clip-path="url(#terminal-2571218285-line-6)">-help</text><text class="terminal-2571218285-r2" x="219.6" y="166.4" textLength="329.4" clip-path="url(#terminal-2571218285-line-6)">Show&#160;this&#160;message&#160;and&#160;exit.</text><text class="terminal-2571218285-r4" x="841.8" y="166.4" textLength="12.2" clip-path="url(#terminal-2571218285-line-6)">│</text><text class="terminal-2571218285-r2" x="854" y="166.4" textLength="12.2" clip-path="url(#terminal-2571218285-line-6)">
+</text><text class="terminal-2571218285-r4" x="0" y="190.8" textLength="854" clip-path="url(#terminal-2571218285-line-7)">╰────────────────────────────────────────────────────────────────────╯</text><text class="terminal-2571218285-r2" x="854" y="190.8" textLength="12.2" clip-path="url(#terminal-2571218285-line-7)">
+</text>
+    </g>
+    </g>
+</svg>
+</section>
+<section id="oak-configuration-c-show-config-s">
+<h2> oak configuration/c show-config, s<a class="headerlink" href="#oak-configuration-c-show-config-s" title="Link to this heading">¶</a></h2>
+<svg class="rich-terminal" viewBox="0 0 872 245.2" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+
+    <defs>
+    <clipPath id="terminal-4280264839-clip-terminal">
+      <rect x="0" y="0" width="853.0" height="194.2" />
+    </clipPath>
+    <clipPath id="terminal-4280264839-line-0">
+    <rect x="0" y="1.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-4280264839-line-1">
+    <rect x="0" y="25.9" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-4280264839-line-2">
+    <rect x="0" y="50.3" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-4280264839-line-3">
+    <rect x="0" y="74.7" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-4280264839-line-4">
+    <rect x="0" y="99.1" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-4280264839-line-5">
+    <rect x="0" y="123.5" width="854" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-4280264839-line-6">
+    <rect x="0" y="147.9" width="854" height="24.65"/>
+            </clipPath>
+    </defs>
+
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-4280264839-clip-terminal)">
+    
+    <g class="terminal-4280264839-matrix">
+    <text class="terminal-4280264839-r2" x="854" y="20" textLength="12.2" clip-path="url(#terminal-4280264839-line-0)">
+</text><text class="terminal-4280264839-r3" x="12.2" y="44.4" textLength="85.4" clip-path="url(#terminal-4280264839-line-1)">Usage:&#160;</text><text class="terminal-4280264839-r1" x="97.6" y="44.4" textLength="536.8" clip-path="url(#terminal-4280264839-line-1)">oak&#160;configuration/c&#160;show-config,&#160;s&#160;[OPTIONS]</text><text class="terminal-4280264839-r2" x="854" y="44.4" textLength="12.2" clip-path="url(#terminal-4280264839-line-1)">
+</text><text class="terminal-4280264839-r2" x="854" y="68.8" textLength="12.2" clip-path="url(#terminal-4280264839-line-2)">
+</text><text class="terminal-4280264839-r2" x="12.2" y="93.2" textLength="463.6" clip-path="url(#terminal-4280264839-line-3)">Show&#160;the&#160;current&#160;OAK-CLI&#160;configuration</text><text class="terminal-4280264839-r2" x="854" y="93.2" textLength="12.2" clip-path="url(#terminal-4280264839-line-3)">
+</text><text class="terminal-4280264839-r2" x="854" y="117.6" textLength="12.2" clip-path="url(#terminal-4280264839-line-4)">
+</text><text class="terminal-4280264839-r4" x="0" y="142" textLength="24.4" clip-path="url(#terminal-4280264839-line-5)">╭─</text><text class="terminal-4280264839-r4" x="24.4" y="142" textLength="109.8" clip-path="url(#terminal-4280264839-line-5)">&#160;Options&#160;</text><text class="terminal-4280264839-r4" x="134.2" y="142" textLength="695.4" clip-path="url(#terminal-4280264839-line-5)">─────────────────────────────────────────────────────────</text><text class="terminal-4280264839-r4" x="829.6" y="142" textLength="24.4" clip-path="url(#terminal-4280264839-line-5)">─╮</text><text class="terminal-4280264839-r2" x="854" y="142" textLength="12.2" clip-path="url(#terminal-4280264839-line-5)">
+</text><text class="terminal-4280264839-r4" x="0" y="166.4" textLength="12.2" clip-path="url(#terminal-4280264839-line-6)">│</text><text class="terminal-4280264839-r5" x="24.4" y="166.4" textLength="12.2" clip-path="url(#terminal-4280264839-line-6)">-</text><text class="terminal-4280264839-r5" x="36.6" y="166.4" textLength="61" clip-path="url(#terminal-4280264839-line-6)">-help</text><text class="terminal-4280264839-r2" x="219.6" y="166.4" textLength="329.4" clip-path="url(#terminal-4280264839-line-6)">Show&#160;this&#160;message&#160;and&#160;exit.</text><text class="terminal-4280264839-r4" x="841.8" y="166.4" textLength="12.2" clip-path="url(#terminal-4280264839-line-6)">│</text><text class="terminal-4280264839-r2" x="854" y="166.4" textLength="12.2" clip-path="url(#terminal-4280264839-line-6)">
+</text><text class="terminal-4280264839-r4" x="0" y="190.8" textLength="854" clip-path="url(#terminal-4280264839-line-7)">╰────────────────────────────────────────────────────────────────────╯</text><text class="terminal-4280264839-r2" x="854" y="190.8" textLength="12.2" clip-path="url(#terminal-4280264839-line-7)">
+</text>
+    </g>
+    </g>
+</svg>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

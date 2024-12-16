@@ -1,8 +1,8 @@
 ---
-title: "Features"
+title: "FLOps"
 summary: ""
 draft: false
-weight: 341
+weight: 360
 toc: true
 seo:
   title: "" # custom title (optional)

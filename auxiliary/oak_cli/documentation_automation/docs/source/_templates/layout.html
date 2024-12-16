@@ -1,0 +1,21 @@
+{% extends "!layout.html" %}
+
+{% block footer %}
+{{ super() }}
+<script>
+    function syncTheme() {
+        const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+    }
+
+    // Listen for theme changes from the parent Doks/Hugo site
+    window.addEventListener('message', function(event) {
+        if (event.data === 'theme-changed') {
+            syncTheme();
+        }
+    });
+
+    // Initial sync
+    syncTheme();
+</script>
+{% endblock %}
