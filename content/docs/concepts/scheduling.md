@@ -36,7 +36,7 @@ This filtering process reduces the search space, and the scheduling algorithm ca
 
 The `schedule_policy` algorithm is implemented in the `calculation.py` file of each scheduler.  
 
-The current released version only implements **best fit** and **first fit** calculation strategies. However, on its way to the release, we have our LDP algorithm (check it out on our [whitepaper](https://arxiv.org/pdf/2207.01577.pdf)).
+The current released version only implements **best fit** and **first fit** calculation strategies. However, on its way to the release, we have our LDP algorithm (check it out on our [publication](https://www.usenix.org/conference/atc23/presentation/bartolomeo)).
 
 ## Job Constraints
 
