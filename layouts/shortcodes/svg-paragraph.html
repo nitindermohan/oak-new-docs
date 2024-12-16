@@ -1,0 +1,53 @@
+{{ $svgName := .Get "svg" }}
+{{ $alignment := default "right" (.Get "alignment") }}
+{{ $pageDir := .Page.File.Dir }}
+
+{{ $lightSvgPath := printf "%ssvgs/%s/light.svg" $pageDir $svgName }}
+{{ $darkSvgPath := printf "%ssvgs/%s/dark.svg" $pageDir $svgName }}
+
+<style>
+    .grid {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .col-30 {
+        width: 30%;
+    }
+
+    .col-70 {
+        width: 70%;
+    }
+
+    .content {
+        padding: 10px;
+    }
+</style>
+
+<div class="grid">
+    {{ if eq $alignment "right"}}
+        <div class="col-70">
+            <div class="content">
+            {{ .Inner | safeHTML }}
+            </div>
+        </div>
+    {{ end }}
+    <div class="col-30">
+        <div class="content">
+            <figure class="svg-lightmode constrain-image center">
+                {{ readFile $lightSvgPath | safeHTML }}
+            </figure>
+            <figure class="svg-darkmode constrain-image center">
+                {{ readFile $darkSvgPath | safeHTML }}
+            </figure>
+        </div>
+    </div>
+    {{ if eq $alignment "left"}}
+        <div class="col-70">
+            <div class="content">
+            {{ .Inner | safeHTML }}
+            </div>
+        </div>
+    {{ end }}
+</div>

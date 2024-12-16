@@ -4,9 +4,13 @@
 {{ $lightSvgPath := printf "%ssvgs/%s/light.svg" $pageDir $svgName }}
 {{ $darkSvgPath := printf "%ssvgs/%s/dark.svg" $pageDir $svgName }}
 
-<figure class="svg-lightmode constrain-image" style="width: 75%;">
-    {{ readFile $lightSvgPath | safeHTML }}
-</figure>
-<figure class="svg-darkmode constrain-image" style="width: 75%;">
-    {{ readFile $darkSvgPath | safeHTML }}
-</figure>
+<div class="container">
+    <div class="box" style="width: 75%">
+        <figure class="svg-lightmode constrain-image">
+            {{ readFile $lightSvgPath | safeHTML }}
+        </figure>
+        <figure class="svg-darkmode constrain-image">
+            {{ readFile $darkSvgPath | safeHTML }}
+        </figure>
+    </div>
+</div>
