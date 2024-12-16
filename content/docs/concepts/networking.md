@@ -35,7 +35,7 @@ translating this semantic address to a physical address.
 
 #### Example
 
-{{<svg "_semantic_network" >}}
+{{<svg "semantic_network" >}}
 
 In our example we demonstrate two small interconnected networks with semantic routing enabled routers and one
 additional one without semantic routing support. 
