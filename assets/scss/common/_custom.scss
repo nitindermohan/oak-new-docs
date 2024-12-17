@@ -66,19 +66,19 @@ body {
   /* font-size: 80% !important; */
 }
 
-a {
-  -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  /*border-bottom: solid 1px #e4e4e4;*/
-  color: inherit;
-  text-decoration: none !important;
-}
+// a {
+//   -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+//   -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+//   -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+//   transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+//   /*border-bottom: solid 1px #e4e4e4;*/
+//   color: inherit;
+//   text-decoration: none !important;
+// }
 
-a:hover {
-  border-bottom-color: transparent;
-}
+// a:hover {
+//   border-bottom-color: transparent;
+// }
 
 /* Button */
 
