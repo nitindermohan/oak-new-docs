@@ -46,7 +46,7 @@ Check out [Advanced Oakestra Clusters Setup](/docs/manuals/advanced-cluster-setu
 {{< /callout >}}
 
 {{< callout context="caution" title="Network Configuration" icon="outline/alert-triangle">}}
-If you run into a restricted network (e.g., on a cloud VM) you need to configure the firewall rules and the NetManager component accordingly. Please refer to: [Firewall Setup](../firewall-configuration)  
+If you run into a restricted network (e.g., on a cloud VM) you need to configure the firewall rules and the NetManager component accordingly. Please refer to: [Firewall Setup](../../../manuals/firewall-configuration)  
 {{< /callout >}}
 
 If the startup succeeds, **congratulations! 🎉🎉**

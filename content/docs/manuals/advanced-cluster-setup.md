@@ -33,7 +33,6 @@ of the system lies in it's federated architecture.
 This guide will walk you through deploying stand-alone components, allowing you to
 deploy multiple cluster orchestrators across multiple devices. These clusters will be managed by a single root orchestrator.
 
-
 ### Stand-alone Root Orchestrator
 
 {{<svg "architecture/Arch-Root">}}
@@ -46,6 +45,10 @@ curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/St
 ```
 
 This script will download the required files to the directory `~/oakestra/root_orchestrator`. From there it will build the root orchestrator.
+
+{{< callout context="caution" title="Network Configuration" icon="outline/alert-triangle">}}
+If you run into a restricted network (e.g., on a cloud VM) you need to configure the firewall rules and the NetManager component accordingly. Please refer to: [Firewall Setup](../firewall-configuration)  
+{{< /callout >}}
 
 ### Stand-alone Cluster Orchestrator
 
