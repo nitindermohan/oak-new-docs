@@ -36,7 +36,7 @@ Hooks can be triggered in two modes:
 
 {{< link-card
   title="Setting up Hooks"
-  description="Read up on setting up hooks here"
+  description="Read up on how to set up hooks within Oakestra"
   href="../../../manuals/extending-oakestra/setting-up-hooks"
   target="_blank"
 >}}
