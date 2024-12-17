@@ -36,7 +36,7 @@ Addons system is composed of two subsystems:
 
 ## Addons Marketplace
 
-{{<svg "marketplace">}}
+{{<svg-smaller "marketplace">}}
 
 The addons marketplace allows developers to publish their addons for Oakestra as docker images. The marketplace subsystem offers API
 endpoints for developers to publish their addons. Upon receiving a request for registering an addon, the marketplace asynchronously 
@@ -44,7 +44,7 @@ checks if the image is valid. Once it’s verified, the addon’s state in the d
 
 ## Addons Engine
 
-{{<svg "engine">}}
+{{<svg-smaller "engine">}}
 
 The addons engine is composed of two main components:
 
@@ -66,7 +66,7 @@ When installing an addon, the Addons Engine checks if a similar core component i
 
 {{< link-card
   title="Installing addons"
-  description="Read more on using addons here"
+  description="Read more on how to use addons within Oakestra"
   href="../../../manuals/extending-oakestra/installing-addons"
   target="_blank"
 >}}
