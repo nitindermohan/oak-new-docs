@@ -11,14 +11,14 @@ seo:
   noindex: false # false (default) or true
 ---
 
-{{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
-Root and Cluster orchestrators:
+{{< callout context="caution" title="System Requirements" icon="outline/alert-triangle">}}
+**Root and Cluster orchestrators:**
 - Docker + Docker Compose v2
 - 5GB of Disk
 - 500MB of RAM
 - ARM64 or AMD64 architecture
 
-Worker Nodes:
+**Worker Nodes:**
 - Linux-based distro with `iptables` compatibility 
 - 50MB of space
 - 100MB RAM
@@ -92,7 +92,7 @@ Check out [addons](../extending-oakestra/creating-addons) for even more customiz
 
 ### Choose a Different Branch
 
-By default these scripts will compose the services of the `main` oakestra branch, the latest stable release. However this can be changed by setting the environment variable `OAKESTRA_BRANCH` **before running the startup script**.
+By default these scripts will compose the services of the `main` oakestra branch, the latest stable release. However this can be changed by setting the environment variable `OAKESTRA_BRANCH` <u>before running the startup script</u>.
 This allows you to experiment with some unreleased features.
 
 ```bash
@@ -108,20 +108,22 @@ Oakestra has many features which have not yet been released. You can check out w
 
 Since Oakestra uses docker-compose to build the components, we can use overrides to fine-tune our build environment.
 
-To use the override files, specify the them in a comma-seperated list by setting the `OVERRIDE_FILES` env variable **before running the startup script**.
+To use the override files, specify the them in a comma-seperated list by setting the `OVERRIDE_FILES` env variable <u>before running the startup script</u>.
 ```bash
 export OVERRIDE_FILES=override-alpha-versions.yaml
 ```
 
-**Overview of Root Orchestrator Overrides:**
+{{< details "*Click to see overview of Root Orchestrator overrides*" >}}
 * `override-addons.yml`: Eanble the [addons](../extending-oakestra/creating-addons) engine and marketplace
 * `override-no-dashboard.yml`: Do not deploy the dashboard
 * `override-no-network.yml`: Exclude network components
 * `override-ipv6-enabled.yml`: Enable IPv6 for container deployments
 * `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md)
+{{< /details >}}
 
-**Overview of Cluster Orchestrator Overrides:**
+{{< details "*Click to see overview of Cluster Orchestrator overrides*" >}}
 * `override-ipv6-enabled.yml`: Enable IPv6 for container deployments
 * `override-no-observe.yml`: Disable the [observability stack](https://github.com/oakestra/oakestra/blob/7107115a747cf83268aea592df1478cd20933907/root_orchestrator/config/README.md)
 * `override-mosquitto-auth.yml`: Enable [MQTT Authentication](../networking-internals/MQTT-Authentication)
+{{< /details >}}
 

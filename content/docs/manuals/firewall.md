@@ -11,23 +11,29 @@ seo:
   noindex: false # false (default) or true
 ---
 
-**If** you're running Oakestra on a restricted network, **e.g., on cloud VMs**, you need to configure the firewall rules accordingly. 
+{{< callout context="tip" title="Did you know?" icon="outline/rocket" >}}
+*If* you're running Oakestra on a restricted network, *e.g., on cloud VMs*, you need to configure the firewall rules. 
+{{< /callout >}}
+
+Oakestra components interact with each other over specific ports. These ports need to be open for the components to communicate. Firewall configurations are necessary to ensure that the network traffic is allowed to flow between the components.
 
 ### Firewall Configuration
 
 These are the ports that need to be open for the Oakestra components to communicate. 
 
-Root: 
+{{< details "**Root Orchestrator**" open >}}
   - External APIs: port `10000` (APIs used by the CLI and the Web Interface to interact with the Root Orchestrator)
   - Cluster APIs: ports `10099`,`10000` (APIs used by each Cluster Orchestrator)
+{{< /details >}}
 
-Cluster: 
+{{< details "**Cluster Orchestrator**" open >}}
   - Worker's Broker: port `10003` (MQTT Broker port, used by the workers to communicate with the Cluster Orchestrator)
   - Worker's APIs: port `10100` (HTTP APIs used by the workers to perform the initial cluster handshake)
+{{< /details >}}
 
-Worker: 
-  - P2P tunnel towards other workers: port `50103` (P2P tunnel used by the workers to communicate with each other; this port can be customized for each worker, check [Worker P2P Tunnel Configuration](#worker-p2p-tunnel-configuration) for more details)
-
+{{< details "**Worker machine**" open >}}
+  - P2P tunnel towards other workers: port `50103` (P2P tunnel used by the workers to communicate with each other; this port can be customized for each worker, check [Worker Peer-to-Peer (P2P) Tunnel Configuration](#worker-p2p-tunnel-configuration) for more details)
+{{< /details >}}
 
 ### Worker P2P Tunnel Configuration
 
@@ -35,7 +41,7 @@ The NetManager component, responsible for the worker nodes' P2P tunnel, must be 
 
 The P2P tunnel is used to exchange service traffic across nodes. Each worker node must be reachable from the other workers at the specified address and port.
 
-Follow these steps on every **Worker Node**
+Follow these steps on every **Worker Node** attached to the Oakestra cluster.
 
 1) Shutdown your worker node components using 
 ```bash
@@ -59,6 +65,7 @@ sudo NodeEngine stop
 sudo NodeEngine -a <IP address of your cluster orchestrator> -d
 ````
 
+You should now have a working P2P tunnel between your worker nodes. 🌎
 
 
 
