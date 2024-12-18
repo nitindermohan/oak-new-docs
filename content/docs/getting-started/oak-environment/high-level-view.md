@@ -11,7 +11,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-![High level architecture picture](arch-new.png)
+{{< svg "architecture" >}}
 
 Oakestra lets you deploy your workload on devices of any size, from a small RasperryPi to a cloud instance far away on GCP or AWS. The tree structure enables you to create multiple clusters of resources.
 

@@ -15,7 +15,7 @@ seo:
 
 If you have a running **Root Orchestrator** and at least one **Cluster Orchestrator** you can add a new worker node to your cluster. 
 
-![High level architecture picture](deploy-worker.png)
+{{< svg "deploy-worker" >}}
 
 First, you need to install your **Worker Node** components on every Edge Device you want to use as a worker running:
 
