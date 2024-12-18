@@ -17,7 +17,7 @@ seo:
 asciinema: true
 ---
 
-<span>
+<span class="lead">
 Besides using the API directly or clicking through the dashboard UI, you can also interact with Oakestra using the Command Line Interface (`oak-cli`).
 </span>
 

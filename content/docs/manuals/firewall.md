@@ -10,7 +10,7 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
-<span>
+<span class="lead">
 Oakestra components interact with each other over specific ports. These ports need to be open for the components to communicate. Firewall configurations are necessary to ensure that the network traffic is allowed to flow between the components.
 </span>
 

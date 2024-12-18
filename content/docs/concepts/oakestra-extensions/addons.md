@@ -10,7 +10,7 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
-<span>
+<span class="lead">
 Addons in Oakestra are modular components designed to extend the core functionality of the system without modifying its foundational architecture. Addons can either enhance existing capabilities, introduce entirely new features, or customize Oakestra components according to their unique requirements.  
 </span>
 

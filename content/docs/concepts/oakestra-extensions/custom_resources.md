@@ -11,7 +11,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-<span>
+<span class="lead">
 Custom resources in Oakestra extend the system’s API by enabling the dynamic addition of new data types as a colllection of API endpoints. 
 </span>
 

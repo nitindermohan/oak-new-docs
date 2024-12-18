@@ -11,9 +11,8 @@ seo:
   noindex: false # false (default) or true
 ---
 
-<span>
+<span class="lead">
 Oakestra aims to streamline how different virtualization technologies are managed and orchestrated. Instead of limiting you to one type of runtime, Oakestra lets you mix and match different virtualizations for different microservices of your application. This gives you the freedom to choose the best environment for each workload.
-
 </span>
 {{< callout context="note" title="What is virtualization?" icon="outline/settings-question" >}}
 Modern computing environments often combine different types of runtimes. For example, some applications run best in containers for faster startup times, while others need the strong security boundaries of unikernels. Developers package their applications in these runtimes to take advantage of their unique benefits and deploy them on supported hardware.

@@ -16,7 +16,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-<span>
+<span class="lead">
 You can also manage your infrastructure and deploy/monitor applications using Oakestra frontend dashboard. 
 </span>
 

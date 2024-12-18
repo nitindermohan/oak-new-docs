@@ -10,7 +10,7 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
-<span>
+<span class="lead">
 Oakestra is a flexible and lightweight orchestration framework designed for all your edge computing needs. Accelerate your next-generation applications with Oakestra!
 </span>
 

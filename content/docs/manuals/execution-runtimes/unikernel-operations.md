@@ -10,8 +10,9 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
-
-Oakestra supports unikernel executions for applications built using [Unikraft](http://unikraft.org). 
+<span class="lead">
+Oakestra supports unikernel executions for applications built using Unikraft. 
+</span>
 
 {{< callout context="tip" title="What do you need?" icon="outline/rocket" >}}
 It's simple. All you need to start deploying unikernels is:

@@ -11,7 +11,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-<span>
+<span class="lead">
 Federated Learning (FL) distributes the computational load of machine learning while preserving privacy by keeping sensitive data on the client devices instead of a centralized server.
 </span>
 

@@ -11,7 +11,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-<span>
+<span class="lead">
 Hooks are a mechanism in Oakestra designed to enhance system flexibility by allowing components to react to specific lifecycle events within the system. 
 </span>
 
