@@ -1,4 +1,13 @@
 // Put your custom SCSS code here
+
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+@import url(http://fonts.googleapis.com/css?family=Raleway+Dots);
+@import url(http://fonts.googleapis.com/css?family=Advent+Pro:400,200,700);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
 .navbar-custom-button {
   background-color: #497286 !important;
   border-color: #497286 !important;
@@ -57,19 +66,19 @@ body {
   /* font-size: 80% !important; */
 }
 
-a {
-  -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  /*border-bottom: solid 1px #e4e4e4;*/
-  color: inherit;
-  text-decoration: none !important;
-}
+// a {
+//   -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+//   -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+//   -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+//   transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+//   /*border-bottom: solid 1px #e4e4e4;*/
+//   color: inherit;
+//   text-decoration: none !important;
+// }
 
-a:hover {
-  border-bottom-color: transparent;
-}
+// a:hover {
+//   border-bottom-color: transparent;
+// }
 
 /* Button */
 
@@ -244,12 +253,183 @@ input[type="button"]:disabled,
   text-decoration: none;
 }
 
-.github:hover {
-  background-color: #50a457;
+.list.section.showcase {
+    .wrap.container-fluid,
+    .wrap.container-lg {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .content {
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+}
+
+.col-main-section {
+    flex: 0 0 auto;
+    width: calc(100% - 2rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include media-breakpoint-up(md) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+        max-width: 100rem;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .col-xl {
+        flex: 0 0 auto;
+        width: 33.3333%;
+    }
+}
+
+/* Table of content changes */
+nav.docs-toc {
+    border-left: 2px solid var(--bs-border-color);
+}
+
+.page-links li:not(:first-child) {
+    border-top-style: solid !important;
+}
+
+div.docs-sidebar ul li {
+    border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0;
+    border: 1.5px solid transparent;
+    border-left: none;
+}
+div.docs-sidebar ul li.active {
+    border-color: var(--toc-border-color);
+}
+div.docs-sidebar summary {
+    margin-bottom: 0.25rem !important;
+}
+nav.docs-toc {
+        //margin-left: 1rem;
+        padding-left: 0.5rem;
+        //padding-right: 2rem !important;
+}
+
+main.docs-content {
+    width: 100% !important;
+
+    @include media-breakpoint-up(xl) {
+      width: 70% !important;
+    }
+}
+
+
+// page width changes
+// @media (min-width: 1200px) {
+//     main.docs-content {
+//         padding-left: 5rem;
+//         width: 70% !important;
+//     }
+
+//     div.docs-sidebar {
+//         width: 30%;
+//         flex:0 1 320px;
+//         // margin-left: -10rem !important;
+//     }
+//     nav.docs-toc {
+//         margin-left: 3rem;
+//         margin-right: -3rem !important;
+//     }
+
+//     :is(footer, header) > div {
+//         margin: 0 !important;
+//         min-width: 100% !important;
+//     }
+// }
+
+// @media (min-width: 992px) {
+//     @supports (position: sticky) {
+//         .docs-sidebar {
+//             position:sticky;
+//             top: 4.25rem;
+//             z-index: 1000;
+//             height: calc(100vh - 4.25rem)
+//         }
+
+//         .docs-links {
+//             max-height:calc(100vh - 4rem);
+//             overflow-y: scroll
+//         }
+//     }
+// }
+
+// @media (min-width: 1200px) {
+//     .docs-sidebar {
+//         flex:0 1 320px
+//     }
+// }
+
+// .docs-links {
+//     padding-bottom: 5rem
+// }
+// @media (min-width: 992px) {
+//     .docs-links {
+//         display:block;
+//         width: auto;
+//         margin-right: -1.5rem;
+//         padding-bottom: 4rem
+//     }
+// }
+
+// .docs-toc {
+//     order: 2
+// }
+
+// @supports (position: sticky) {
+//     .docs-toc {
+//         position:sticky;
+//         top: 4.25rem;
+//         height: calc(100vh - 4.25rem);
+//         overflow-y: auto
+//     }
+// }
+
+// .docs-content {
+//     padding-bottom: 3rem;
+//     order: 1
+// }
+
+// .navbar a:hover,.navbar a:focus {
+//     text-decoration: none
+// }
+
+// #TableOfContents ul,#toc ul {
+//     padding-left: 0;
+//     list-style: none
+// }
+
+// #toc a.active {
+//     color: #3347ff;
+//     font-weight: 500
+// }
+
+/* Announcement */
+.alert-primary {
+    color: #fff;
+    background-color: #497286;
+}
+
+@include color-mode(dark) {
+    .alert-primary {
+        color: #fff;
+        background-color: #93e8a7;
+    }
 }
 
 /* Table */
-
 .table-wrapper {
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
@@ -763,4 +943,11 @@ table.alt tfoot {
 .constrain-image svg {
   width: 100% !important;
   height: auto !important;
+}
+
+@include color-mode(dark) {
+  td {
+    background-color: $body-bg-dark !important;
+    color: $body-color-dark !important;
+  }
 }

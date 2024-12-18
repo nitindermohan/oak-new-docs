@@ -1,0 +1,75 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0" version="25.0.3">
+  <diagram name="Page-1" id="eNhSS1pfd8gZq1iU_jg5">
+    <mxGraphModel dx="1368" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#FF3333;strokeWidth=9;fillColor=none;opacity=80;" vertex="1" parent="1">
+          <mxGeometry x="210" y="110" width="610" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-3" value="&lt;font data-font-src=&quot;https://online-fonts.com/fonts/cmu-sans-serif&quot; face=&quot;CMU Sans Serif&quot; style=&quot;font-size: 36px;&quot;&gt;Addons Engine&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B85450;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="402.5" y="55" width="225" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-5" value="&lt;font style=&quot;font-size: 28px&quot;&gt;Addon&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;glass=0;sketch=0;fontFamily=CMU Sans Serif;fontColor=#999999;opacity=70;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="29.999999999999996" y="120" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-6" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.code_file;pointerEvents=1;rounded=1;glass=0;labelBackgroundColor=default;labelBorderColor=#000000;sketch=0;fontFamily=CMU Sans Serif;fontSize=28;fontColor=#000000;opacity=70;" vertex="1" parent="1">
+          <mxGeometry x="82.99" y="165" width="64.02" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-7" value="" style="endArrow=classic;html=1;rounded=0;fontFamily=CMU Sans Serif;fontColor=#FFFFFF;startSize=8;endSize=10;strokeWidth=3;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="164.02" y="194.5" as="sourcePoint" />
+            <mxPoint x="224.02" y="194.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-14" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB2aWV3Qm94PSIwIDAgNzU2LjI2IDU5Ni45IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGRhdGEtbmFtZT0iTGF5ZXIgMSIgaWQ9IkxheWVyXzEiPiYjeGE7ICA8ZGVmcz4mI3hhOyAgICA8c3R5bGU+JiN4YTsgICAgICAuY2xzLTEgeyYjeGE7ICAgICAgICBmaWxsOiAjMWQ2M2VkOyYjeGE7ICAgICAgICBzdHJva2Utd2lkdGg6IDBweDsmI3hhOyAgICAgIH0mI3hhOyAgICA8L3N0eWxlPiYjeGE7ICA8L2RlZnM+JiN4YTsgIDxwYXRoIGQ9Ik03NDMuOTYsMjQ1LjI1Yy0xOC41NC0xMi40OC02Ny4yNi0xNy44MS0xMDIuNjgtOC4yNy0xLjkxLTM1LjI4LTIwLjEtNjUuMDEtNTMuMzgtOTAuOTVsLTEyLjMyLTguMjctOC4yMSwxMi40Yy0xNi4xNCwyNC41LTIyLjk0LDU3LjE0LTIwLjUzLDg2LjgxLDEuOSwxOC4yOCw4LjI2LDM4LjgzLDIwLjUzLDUzLjc0LTQ2LjEsMjYuNzQtODguNTksMjAuNjctMjc2Ljc3LDIwLjY3SC4wNmMtLjg1LDQyLjQ5LDUuOTgsMTI0LjIzLDU3Ljk2LDE5MC43Nyw1Ljc0LDcuMzUsMTIuMDQsMTQuNDYsMTguODcsMjEuMzEsNDIuMjYsNDIuMzIsMTA2LjExLDczLjM1LDIwMS41OSw3My40NCwxNDUuNjYuMTMsMjcwLjQ2LTc4LjYsMzQ2LjM3LTI2OC45NywyNC45OC40MSw5MC45Miw0LjQ4LDEyMy4xOS01Ny44OC43OS0xLjA1LDguMjEtMTYuNTQsOC4yMS0xNi41NGwtMTIuMy04LjI3Wk0xODkuNjcsMjA2LjM5aC04MS43djgxLjdoODEuN3YtODEuN1pNMjk1LjIyLDIwNi4zOWgtODEuN3Y4MS43aDgxLjd2LTgxLjdaTTQwMC43NywyMDYuMzloLTgxLjd2ODEuN2g4MS43di04MS43Wk01MDYuMzIsMjA2LjM5aC04MS43djgxLjdoODEuN3YtODEuN1pNODQuMTIsMjA2LjM5SDIuNDJ2ODEuN2g4MS43di04MS43Wk0xODkuNjcsMTAzLjJoLTgxLjd2ODEuN2g4MS43di04MS43Wk0yOTUuMjIsMTAzLjJoLTgxLjd2ODEuN2g4MS43di04MS43Wk00MDAuNzcsMTAzLjJoLTgxLjd2ODEuN2g4MS43di04MS43Wk00MDAuNzcsMGgtODEuN3Y4MS43aDgxLjdWMFoiIGNsYXNzPSJjbHMtMSIvPiYjeGE7PC9zdmc+;" vertex="1" parent="1">
+          <mxGeometry x="90" y="314.72" width="64.02" height="50.56" as="geometry" />
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-15" value="" style="endArrow=classic;html=1;rounded=0;fontFamily=CMU Sans Serif;fontColor=#FFFFFF;startSize=8;endSize=10;strokeWidth=3;curved=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="224.01999999999998" y="339.5" as="sourcePoint" />
+            <mxPoint x="164.01999999999998" y="339.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-17" value="&lt;font style=&quot;font-size: 28px&quot;&gt;Monitored&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;glass=0;sketch=0;fontFamily=CMU Sans Serif;fontColor=#999999;opacity=70;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="29.999999999999996" y="280" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-11" style="edgeStyle=none;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=CMU Sans Serif;fontSize=36;endArrow=none;endFill=0;strokeWidth=6;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="194.5" as="sourcePoint" />
+            <mxPoint x="480" y="194.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-9" value="&lt;div align=&quot;center&quot;&gt;&lt;font data-font-src=&quot;https://online-fonts.com/fonts/cmu-sans-serif&quot; face=&quot;CMU Sans Serif&quot; style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 24px;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot; color=&quot;#ffffff&quot;&gt;Mongo&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#82b366;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="560" y="165" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-18" style="edgeStyle=none;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=CMU Sans Serif;fontSize=36;endArrow=none;endFill=0;strokeWidth=6;fillColor=#dae8fc;strokeColor=#82B366;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="669.5" y="220" as="sourcePoint" />
+            <mxPoint x="670" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="Yd9aoy3B6wG8rdM4Q9ev-1" target="Yd9aoy3B6wG8rdM4Q9ev-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="&lt;font style=&quot;font-size: 24px;&quot; data-font-src=&quot;https://online-fonts.com/fonts/cmu-sans-serif&quot; face=&quot;CMU Sans Serif&quot; color=&quot;#ffffff&quot;&gt;&lt;b&gt;Installed Addons&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" link="&lt;font data-font-src=&quot;https://online-fonts.com/fonts/cmu-sans-serif&quot; face=&quot;CMU Sans Serif&quot; style=&quot;font-size: 12px;&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 24px;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot; color=&quot;#ffffff&quot;&gt;Mongo&lt;/font&gt;&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;" id="Yd9aoy3B6wG8rdM4Q9ev-10">
+          <mxCell style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#82B366;" vertex="1" parent="1">
+            <mxGeometry x="605" y="292.5" width="130" height="95" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-22" style="edgeStyle=none;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=CMU Sans Serif;fontSize=36;endArrow=none;endFill=0;strokeWidth=6;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="369.5" y="210" as="sourcePoint" />
+            <mxPoint x="370" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-8" value="&lt;div align=&quot;center&quot;&gt;&lt;font face=&quot;CMU Sans Serif&quot; data-font-src=&quot;https://online-fonts.com/fonts/cmu-sans-serif&quot; style=&quot;font-size: 12px;&quot;&gt;&lt;b style=&quot;color: rgb(0, 0, 0); font-size: 24px;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot; color=&quot;#ffffff&quot;&gt;Addons Manager&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6C8EBF;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="260" y="165" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Yd9aoy3B6wG8rdM4Q9ev-20" value="&lt;div align=&quot;center&quot;&gt;&lt;font face=&quot;CMU Sans Serif&quot; data-font-src=&quot;https://online-fonts.com/fonts/cmu-sans-serif&quot; style=&quot;font-size: 12px;&quot;&gt;&lt;b style=&quot;color: rgb(0, 0, 0); font-size: 24px;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot; color=&quot;#ffffff&quot;&gt;Addons Monitor&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6C8EBF;strokeColor=#432D57;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="260" y="310" width="220" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

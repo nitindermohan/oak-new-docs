@@ -8,7 +8,7 @@ draft: false
 weight: 330
 toc: false
 sidebar:
-  collapsed: false
+  collapsed: true
 seo:
   title: "" # custom title (optional)
   description: "" # custom description (recommended)

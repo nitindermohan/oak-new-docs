@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes Integration"
 summary: ""
-draft: false
+draft: true
 weight: 302
 toc: true
 seo:
