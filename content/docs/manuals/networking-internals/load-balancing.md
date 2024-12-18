@@ -24,7 +24,7 @@ addresses as the number of balancing policies supported (and active) within the 
 
 #### Example
 
-{{<svg "_net_example_dual_stack">}}
+{{<svg "network-example-dual-stack" >}}
 
 A developer can communicate with any instance of Service B either with **Round Robin** balancing policy or
 the **Closest** balancing policy. The former balances the traffic evenly between all the instances, and the

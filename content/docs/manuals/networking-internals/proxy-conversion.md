@@ -23,7 +23,7 @@ The containers are instantiated and managed by the Node Engine, while
 the Network Manager, creates a network namespace for each container (the cloud surrounding the container),
 enabling the Virtual Layer abstraction.
 
-{{<svg "_overlay_example" >}}
+{{<svg "overlay-example" >}}
 
 The Service Layer abstraction is realized hierarchically with a mechanism of *route interest registration* and
 *proxy translation*. This section details the proxy translation that allows transparent
@@ -248,7 +248,7 @@ A response from X3 to X1 then follows the same steps in-order as shown in this e
 Here we show a sequence diagram of how a table query and an interest registration work in the worker-cluster-root
 hierarchy.
 
-{{<svg "_overlay_example_sequential" >}}
+{{<svg "overlay-example-sequential" >}}
 
 * The environment manager keeps the 'interests subscriptions' for 10 seconds
 * If the route is not used for more than 10 seconds, the interest is removed, and the table entry is cleared

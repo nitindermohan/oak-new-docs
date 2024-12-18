@@ -16,7 +16,7 @@ reservations, before we discuss with [semantic addressing](../load-balancing/).
 
 ## Layers
 
-{{<svg "_overlay_layers">}}
+{{<svg "overlay-layers">}}
 
 The network abstraction enabling service-to-service communication within Oakestra spans *three* different layers.
 
