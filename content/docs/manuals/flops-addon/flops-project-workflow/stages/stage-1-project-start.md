@@ -11,6 +11,7 @@ seo:
   noindex: false # false (default) or true
 asciinema: true
 ---
+
 To start a project we need to request the FLOps Manager (*which is part of FLOps Management*) to create one.
 FLOps projects are based on project SLAs.
 We will use one of the predefined ones that the [oak-cli](/docs/getting-started/deploy-app/with-the-cli/) provides.
@@ -24,12 +25,12 @@ We will use one of the predefined ones that the [oak-cli](/docs/getting-started/
   oak addon flops p --project-sla-file-name mnist_sklearn_small.json
 ```
 
-This Demo shows the start of our base-case project:
+This demo shows the start of our base-case project:
 
 {{< asciinema key="flops_base_case_project_start" poster="0:08" idleTimeLimit="2" >}}
 
-After sending out the project request via the CLI the following happens:
-- The FLOps manager swiftly responds telling us that our request was successful and a new project started running.
+After sending out the project request via the CLI, the following happens:
+- The FLOps manager swiftly responded, telling us that our request had been successful and that a new project had started running.
   ```bash
     Success: 'Init new FLOps project for SLA '~/oak_cli/addons/flops/projects/mnist_sklearn_small.json'
   ```
@@ -43,8 +44,8 @@ After sending out the project request via the CLI the following happens:
   │ projc3fd78f56b75 │ (1)      │ 6761bf5d59461659a24b1197 │ 
   ╰──────────────────┴──────────┴──────────────────────────╯ 
   ```
-  - A proj.. app that acts as a wrapper encompasing all current and future services that only belong to our project.
-    - We could create several project at the same time - each would get its own app.
+  - A proj.. app that acts as a wrapper encompassing all current and future services that only belong to our project.
+    - We could create several projects at the same time - each would get its own app.
   - A singleton observatory app is created that will be shared only among projects of the same user. 
 - The manager creates and deployes a project observer service.
   ```bash
@@ -58,12 +59,13 @@ After sending out the project request via the CLI the following happens:
   ```
 
 {{< callout context="note" title="Stay up to date" icon="outline/eye" >}}
-  Each project gets its own observer service.
-  Besides the FLOps manager logs this is the primary way for you *(and especially common users)* to keep up with the current (*internal*) state of their projects.
 
-  The manager as well as deployed FLOps services can and will send updates or potential errors to this observer service.
-  
-  Think about the observer service as a live log or inbox for all events concerning its matching project that are relevant to you as a user.
+  Each project gets its own observer service.
+  Besides the FLOps manager logs, this is the primary way for you *(and especially common users)* to keep up with your projects' current *(internal)* state.
+
+  The manager and deployed FLOps services can and will send updates or potential error messages to this observer service.
+
+  Think of the observer service as a live log or inbox for all user-relevant events concerning its matching project.
 
   ```bash
 ╭───────────────────────────────────────────────────────────────────────╮
@@ -82,8 +84,8 @@ After sending out the project request via the CLI the following happens:
 {{< /callout >}}
 
 {{< callout context="tip" title="*JOB'S DONE!*" icon="outline/coffee" >}}
-  Sending out the project request was the last manual step a FLOps user has to take.
-  From now one everything gets automatically done for you by FLOps.
+  Sending out the project request was the last manual step a FLOps user had to take.
+  From now on, everything is automatically done for you by FLOps.
 
-  Now relax, sit back, and continue reading the following stages to understand what FLOps is doing - and how you can use the trained model / inference server in the end.
+  Now relax, sit back, and continue reading the following stages to understand what FLOps is doing - and how you can use the trained model/inference server.
 {{< /callout >}}

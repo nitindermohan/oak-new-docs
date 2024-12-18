@@ -13,14 +13,15 @@ asciinema: true
 ---
 
 {{< callout context="note" title="This Guide's Goals" icon="outline/target-arrow" >}}
-  - Get you doing FL as quick as possible
+  - Get you doing FL as quickly as possible
   - Help you understand the basic FLOps project workflow 
     
-  To streamline the necessary steps this guide uses predefined SLAs and ML Git repositories provided by the [oak-cli](/docs/getting-started/deploy-app/with-the-cli/).
-  This base-case is intended to run on a single machine to make it as easy as possible to follow along.
+  This guide uses predefined SLAs and ML Git repositories provided by the [oak-cli](/docs/getting-started/deploy-app/with-the-cli/) to streamline the necessary steps.
+  This base case is intended to run on a single machine to make it as easy as possible to follow along.
 
-  If you want to create and use your own custom SLAs and ML Git repositories please ensure that you are familiar with this base case
-  and have a look at the dedicated [FLOps customization documentation](/docs/manuals/flops-addon/customizations/flops-customizations-overview/).
+  To create and use custom SLAs and ML Git repositories, please familiarize yourself with this base case and read the dedicated [FLOps customization documentation](/docs/manuals/flops-addon/customizations/flops-customizations-overview/).
+
+
 {{< /callout >}}
 
 ## What is a FLOps Project?

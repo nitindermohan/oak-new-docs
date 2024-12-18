@@ -40,8 +40,8 @@ seo:
 
 {{<svg-smaller "image-builder-simple">}}
 
-The Image-Builder service running on a worker node can build container images for **FL Actors** (aggregators and learners) and for inference servers based on the trained model.
-For building the FL actors, the image-builder clones the ML repository and for the inference server it fetches the trained model from the artifact store hosted as part of the FLOps' management suite.
+The Image-Builder service running on a worker node can build container images for **FL Actors** (aggregators and learners) and inference servers based on the trained model.
+For building the FL actors, the image-builder clones the ML repository, and for the inference server, it fetches the trained model from the artifact store hosted as part of the FLOps management suite.
 This allows a single image and implementation to be reused for different target images.
 
 ### Detailed

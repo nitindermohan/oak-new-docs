@@ -24,14 +24,14 @@ To emphasize this, FLOps requires real data from edge devices or "mocked" data p
 
 ## Architecture
 
-Especially light-weight edge devices tend to lack computational capabilities to perform machine learning.
-Instead they can send their aggregated data to a more powerful learner node in their proximity.
+Lightweight edge devices tend to lack the computational capabilities to perform machine learning.
+Instead, they can send their aggregated data to a more powerful learner node nearby.
 This learner node will collect and store data from different sources.
 
 {{<svg "data-management-architecture">}}
 
-Once training starts the deployed leaner service will request data that matches its data-tags that were part of its SLA.
-The matching data partitions will be fetched, squashed into a single dataset, and delegated to the user specified data preprocessing.
+Once training starts, the deployed leaner service will request data that matches the data tags that were part of its SLA.
+The matching data partitions will be fetched, squashed into a single dataset, and delegated to the user-specified data preprocessing.
 Lastly, the data will be forwarded to the ML model for training.
 
 {{< link-card

@@ -12,15 +12,15 @@ seo:
 asciinema: true
 ---
 
-The FLOps manager tries to lookup matching container images for learners and aggregaters.
+The FLOps manager tries to look up matching container images for learners and aggregators.
 The manager checks for images in the FLOps image registry (*part of the management suite*) that match the ML repository that was part of the requested project SLA. 
 
-If a match was found there is no need to build redundant images and the project goes straight to [stage 4](/docs/manuals/flops-addon/flops-project-workflow/stages/stages-4-5-doing-fl/).
+If a match is found, there is no need to build redundant images, and the project goes straight to [stage 4](/docs/manuals/flops-addon/flops-project-workflow/stages/stages-4-5-doing-fl/).
 
 ## Stage 2: FL-Actor Image-Builder Deployment
 
-In case images for **FL Actors** *(learners & aggregators)* using the requested ML repository are missing the manager creates and deploys a single image-builder service.
-This buider service is exclusive to its originating project.
+If images for **FL Actors** *(learners & aggregators)* using the requested ML repository are missing, the manager will create and deploy a single image-builder service.
+This builder service is exclusive to its originating project.
 
 ```bash
   ╭─────────────────────┬──────────────────────────┬────────────────┬──────────────────┬──────────────────────────╮     
@@ -34,19 +34,19 @@ This buider service is exclusive to its originating project.
 
 {{< callout context="tip" title="*To build or not to build?*" icon="outline/hammer" >}}
   Stage 2 is a distinct because:
-  - Deciding if new images need to be build requires querying the remote ML Git repository as well as the FLOps image registry.
-  - The image builder service can only run on worker nodes with the `image-builder` addon enabled.
+  - Deciding if new images need to be built requires querying the remote ML Git repository and the FLOps image registry.
+  - The image-builder service can only run on worker nodes with the `image-builder` addon enabled.
   - Deploying the large image builder service *(pulled size ~3GB)* can take time.
 {{< /callout >}}
 
 ## Stage 3: FL-Actors Image Build
 
-In stage 3 the deployed image-builder service builds the requested images for the learner and aggregator services.
+In stage 3, the deployed image-builder service builds the requested images for the learner and aggregator services.
 
 {{< callout context="danger" title="Critical" icon="outline/alert-octagon" >}}
-  Building (multi-platform) images for ML/FL dynamically based on flexible user-provided repositories is a delicate and error prone business.
+  Building (multi-platform) images for ML/FL dynamically based on flexible user-provided repositories is a delicate and error-prone business.
 
-  Building images can take up a significant part of the entire project duration - especially if training itself is lightweight *(fast / few rounds)*.
+  Building images can take up a significant part of the entire project duration - especially if the training configuration is lightweight *(fast / few rounds)*.
 
   ---
 
