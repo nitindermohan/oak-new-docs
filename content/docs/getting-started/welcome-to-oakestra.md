@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Oakestra Documentation"
+title: "Welcome to Oakestra Docs"
 summary: ""
 draft: false
 weight: 001
@@ -16,49 +16,85 @@ Oakestra is a flexible and lightweight orchestration framework designed for all 
 
 ## What is Oakestra?
 
-Oakestra is a lightweight hierarchical orchestration framework for edge computing. Where other orchestration
-frameworks struggle to balance workloads across heterogeneous infrastructure and constrained devices, Oakestra
-is built from the ground up to support computational flexibility at the edge.
+Oakestra is an open-source orchestration framework designed to optimize the deployment and execution of containerized applications in edge and cloud environments. Under-the-hood, Oakestra uses several clever techniques for *efficient resource management* and *workload orchestration* to address the challenges of running modern, distributed applications in constrained and dynamic edge-cloud computing continuum.
 
-## What's here?
+{{< callout context="tip" title="Did you know?" icon="outline/rocket" >}}
+Oakestra is built from the ground-up to support computational flexibility of edge devices while remaining compatible with cloud-native ecosystem. You can be confident that your applications will run smoothly on a variety of hardware, from small edge devices to powerful cloud servers.
+{{< /callout >}}
 
-The docs are divided up into the following sections:
+## Why should you use Oakestra?
 
-🚀 Getting Started - Quickly set up an Oakestra system and deploy your first applications\
-⚙️ Concepts - Understand the ideas behind the Oakestra framework\
-📖 Manuals - See a detailed explanation of how an Oakestra component works\
-🛠️ Contributing Guide - Want to help out? Here's how
+{{< card-grid >}}
+{{< card title="Edge-Cloud Native" icon="filled/feather" color="yellow" >}}
+Oakestra prioritizes minimal overhead to address the computational, storage, and network limitations of edge nodes to unlock the full potential of edge-cloud continuum.
 
-## Getting Started
+- [Set up your first Oakestra environment](/docs/getting-started/oak-environment/high-level-setup-overview/)
+{{< /card >}}
 
-You can have your first Oakestra environment up and running within minutes. This guide will walk you through
-configuring the most basic setup.
+{{< card title="Efficient App Management" icon="outline/layout-dashboard" color="blue" >}}
+Take full control of your microservices with Oakestra's powerful API and intuitive management tools.
 
-{{< link-card
-  title="Itching to try it out?"
-  description="Jump right in and create your first Oakestra environment"
-  href="../oak-environment/high-level-setup-overview/"
->}}
-<br>
+- [Oakestra API](/docs/getting-started/deploy-app/with-the-api/)
+- [Oakestra CLI](/docs/getting-started/deploy-app/with-the-dashboard/)
+- [Oakestra Dashboard](/docs/getting-started/deploy-app/with-the-cli/)
 
-If you're looking for some concrete examples to get a an understanding of what's possible with Oakestra then
-the app catalog is the place for you.
+{{< /card >}}
 
-{{< link-card
-  title="Want some examples?"
-  description="Check out our App catalog"
-  href="../../manuals/app-catalog/example-applications"
->}}
+{{< /card-grid >}}
+
+{{< card-grid >}}
+{{< card title="Extensible Design" icon="outline/stack-2" color="purple" >}}
+Designed with a plug-and-play approach, Oakestra supports customizable orchestration policies, scheduling algorithms, and integration with third-party tools.
+
+- [Addons](/docs/concepts/oakestra-extensions/addons/)
+- [Hooks](/docs/concepts/oakestra-extensions/hooks/)
+- [Custom Resources](/docs/concepts/oakestra-extensions/custom-resources/)
+{{< /card >}}
+
+{{< card title="Developer Oriented" icon="outline/box-multiple" color="red" >}}
+Leverage several developer-forward Oakestra features to make your applications edge-cloud efficient. 
+
+- [Multi-Virtualization Support](/docs/manuals/execution-runtimes/supported-virtualization-runtimes/)
+- Semantic Networking
+- [Federated Machine Learning Support](/docs/concepts/flops/overview/)
+- [Application Catalog](/docs/manuals/app-catalog/example-applications/)
+{{< /card >}}
+
+{{< /card-grid >}}
+
+{{< callout context="note" icon="outline/flask" >}}
+Oakestra has appeared in world-class scientific conferences and journals. Check out our [publications](/publications/) to learn more.
+{{< /callout >}}
 
 ## Contribute
 
-Oakestra is open source! If you want to open an issue, contribute some code or simply take a look under the hood then head over to our [GitHub](https://github.com/oakestra/).
-We recommend linking up with the Oakestra community over [Discord](https://discord.gg/7F8EhYCJDf).
+Oakestra is open source with `Apache 2.0` licence. Contributions are welcome! If you want to open an issue, contribute some code or simply take a look under the hood then head over to our [GitHub](https://github.com/oakestra/). We recommend linking up with the Oakestra community over [Discord](https://discord.gg/7F8EhYCJDf).
 
+Whether you're a beginner or advanced user, joining our community is the best way to connect with like-minded people who build great products.
+
+<!-- {{< link-card
+  title="Contribute to Oakestra"
+  description="Read our contribution guide"
+  href="../../manuals/contribution-guide/code-of-conduct"
+>}} -->
+
+{{< card-grid >}}
 {{< link-card
   title="Contribute to Oakestra"
   description="Read our contribution guide"
   href="../../manuals/contribution-guide/code-of-conduct"
 >}}
 
-## Research
+{{< link-card
+  title="Join us"
+  description="Meet our lively Discord community"
+  href="https://discord.gg/7F8EhYCJDf"
+>}}
+
+{{< link-card
+  title="Follow us"
+  description="See our updates on X"
+  href="https://x.com/oakestra"
+>}}
+
+{{< /card-grid >}}
