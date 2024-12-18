@@ -11,7 +11,13 @@ seo:
   noindex: false # false (default) or true
 ---
 
-Hooks are a mechanism in Oakestra designed to enhance system flexibility by allowing components to react to specific lifecycle events within the system. Unlike addons, which extend functionality by adding components, hooks enable services to listen and respond to the dynamic state changes of entities like applications or services within Oakestra.
+<span>
+Hooks are a mechanism in Oakestra designed to enhance system flexibility by allowing components to react to specific lifecycle events within the system. 
+</span>
+
+{{< callout context="note" icon="outline/info-square-rounded" >}}
+Unlike addons, which extend functionality by adding components, hooks enable services to listen and respond to the dynamic state changes of entities like applications or services within Oakestra.
+{{< /callout >}}
 
 ## Lifecycle Events
 Lifecycle events refer to different stages in the existence of entities managed by Oakestra. Hooks focus on three primary event types for entities:
@@ -28,7 +34,7 @@ Hooks can be triggered in two modes:
 - **Asynchronous Mode**: The triggering component does not wait for the subscriber(s) to respond, allowing the system to continue without delay. This mode is appropriate for non-blocking actions, like logging or notifying external systems.
 
 
-{{< callout context="note" title="Benefits" icon="outline/rocket">}}
+{{< callout context="tip" title="Why should you use hooks?" icon="outline/rocket">}}
 - **Reduced Coupling**: Hooks allow components to interact without direct dependencies, enabling a cleaner architecture. For instance, the Root Network can receive deployment notifications without hard-coded calls from the System Manager.
 - **Dynamic Reactivity**: Hooks enable services to adapt dynamically based on lifecycle changes, maintaining an up-to-date environment.
 - **Improved System Flow**: By offering asynchronous and synchronous modes, hooks provide a flexible mechanism that suits both immediate and non-blocking response needs, enhancing system performance and modularity.

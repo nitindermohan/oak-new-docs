@@ -1,15 +1,18 @@
 ---
-title: "Welcome to Oakestra"
+title: "Welcome to Oakestra Documentation"
 summary: ""
 draft: false
 weight: 001
 toc: true
 seo:
-  title: "" # custom title (optional)
+  title: "welcome to oakestra docs" # custom title (optional)
   description: "" # custom description (recommended)
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
+<span>
+Oakestra is a flexible and lightweight orchestration framework designed for all your edge computing needs. Accelerate your next-generation applications with Oakestra!
+</span>
 
 ## What is Oakestra?
 

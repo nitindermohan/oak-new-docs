@@ -10,8 +10,13 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
+<span>
+Addons in Oakestra are modular components designed to extend the core functionality of the system without modifying its foundational architecture. Addons can either enhance existing capabilities, introduce entirely new features, or customize Oakestra components according to their unique requirements.  
+</span>
 
-Addons in Oakestra are modular components designed to extend the core functionality of the system without modifying its foundational architecture. These components can either enhance existing capabilities or introduce entirely new features, allowing users to customize Oakestra according to their unique requirements. By utilizing addons, Oakestra achieves a flexible system architecture that empowers users to dynamically tailor the system to fit specific use cases while preserving a streamlined core.
+{{< callout context="tip" icon="outline/layers-subtract" >}}
+Oakestra achieves a flexible system architecture that empowers users to dynamically tailor the system to fit specific use cases while preserving a streamlined core.
+{{< /callout >}}
 
 ## Plugins vs Extensions
 

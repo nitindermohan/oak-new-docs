@@ -11,7 +11,13 @@ seo:
   noindex: false # false (default) or true
 ---
 
-Custom resources in Oakestra extend the system’s API by enabling the dynamic addition of new data types as a colllection of API endpoints. By allowing users to define custom data structures and manage them through the Oakestra API, custom resources provide a way to create specialized workflows and data handling routines tailored to specific needs.
+<span>
+Custom resources in Oakestra extend the system’s API by enabling the dynamic addition of new data types as a colllection of API endpoints. 
+</span>
+
+{{< callout context="tip" icon="outline/skateboarding" >}}
+Custom resources allow you to define and manage data structures via the Oakestra API, enabling specialized workflows and routines.
+{{< /callout >}}
 
 When a new custom resource is defined, it creates endpoints within the Oakestra API dedicated to managing that resource. These endpoints operate similarly to native API resources, enabling users to:
 - **Store and retrieve structured data** specific to the custom resource type.
