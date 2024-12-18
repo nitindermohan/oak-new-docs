@@ -13,5 +13,6 @@ hugo.linux
 
 # IDE Files
 .vscode
+.idea
 
 node_modules/
