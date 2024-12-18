@@ -72,12 +72,6 @@ Oakestra is open source with `Apache 2.0` licence. Contributions are welcome! If
 
 Whether you're a beginner or advanced user, joining our community is the best way to connect with like-minded people who build great products.
 
-<!-- {{< link-card
-  title="Contribute to Oakestra"
-  description="Read our contribution guide"
-  href="../../manuals/contribution-guide/code-of-conduct"
->}} -->
-
 {{< card-grid >}}
 {{< link-card
   title="Contribute to Oakestra"
