@@ -11,8 +11,14 @@ hugo.linux
 # Temporary lock file while building
 .hugo_build.lock
 
+public/
+node_modules/
+resources/_gen/
+.DS_Store
+
 # IDE Files
 .vscode
 .idea
 
 node_modules/
+auxiliary/oak_cli/documentation_automation/docs/build/

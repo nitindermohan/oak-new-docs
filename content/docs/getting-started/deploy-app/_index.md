@@ -10,7 +10,7 @@ toc: false
 sidebar:
   collapsed: true
 seo:
-  title: "" # custom title (optional)
+  title: "Deploy your first Oakestra Application" # custom title (optional)
   description: "" # custom description (recommended)
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true

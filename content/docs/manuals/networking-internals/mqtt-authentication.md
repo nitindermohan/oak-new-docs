@@ -2,7 +2,7 @@
 title: "MQTT Authentication"
 summary: ""
 draft: false
-weight: 316
+weight: 315
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -13,7 +13,7 @@ seo:
 
 ## Intra-Cluster Communication
 
-{{<svg "mqtt/MQTT-Arch">}}
+{{<svg "mqtt-arch">}}
 
 The above image shows how intra-cluster communication takes place. Nodes send application status and node health reports to the cluster-service-manager.
 The cluster-service-manager then appropriately propagates this information to other nodes and the root-service-manager. Since the nodes report sensitive information, such

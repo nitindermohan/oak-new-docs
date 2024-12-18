@@ -42,11 +42,11 @@ This command downloads and runs the Oakestra's docker compose files in `~/oakest
 
 {{< callout context="note" title="Did you know?" icon="outline/info-circle" >}}
 You can set a multi-cluster infrastructure by installing each **Cluster Orchestrator** on a different machine. 
-Check out [Advanced Oakestra Clusters Setup](/docs/manuals/advanced-clusters-setup) section for more details.
+Check out [Advanced Oakestra Clusters Setup](/docs/manuals/advanced-cluster-setup) section for more details.
 {{< /callout >}}
 
 {{< callout context="caution" title="Network Configuration" icon="outline/alert-triangle">}}
-If you run into a restricted network (e.g., on a cloud VM) you need to configure the firewall rules and the NetManager component accordingly. Please refer to: [Firewall Setup](../firewall-configuration)  
+If you run into a restricted network (e.g., on a cloud VM) you need to configure the firewall rules and the NetManager component accordingly. Please refer to: [Firewall Setup](../../../manuals/firewall-configuration)  
 {{< /callout >}}
 
 If the startup succeeds, **congratulations! 🎉🎉**
