@@ -76,7 +76,7 @@ Whether you're a beginner or advanced user, joining our community is the best wa
 {{< link-card
   title="Contribute to Oakestra"
   description="Read our contribution guide"
-  href="../../manuals/contribution-guide/code-of-conduct"
+  href="/docs/contribution-guide/contributing-overview/"
 >}}
 
 {{< link-card
