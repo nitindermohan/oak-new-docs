@@ -10,8 +10,10 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
-## Federated Learning
+
+<span class="lead">
 Federated Learning (FL) distributes the computational load of machine learning while preserving privacy by keeping sensitive data on the client devices instead of a centralized server.
+</span>
 
 {{< link-card
   title="FL Basics"

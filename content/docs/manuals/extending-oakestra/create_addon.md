@@ -11,8 +11,10 @@ seo:
   noindex: false # false (default) or true
 ---
 
+<span class="lead">
 To install an addon, it first has to be published to the marketplace. Addons are published as a Dockerfile
 containing the addon functionality and a configuration file outlining the addons specifications.
+</span>
 
 {{< callout context="tip" title="Global Marketplace" icon="outline/rocket" >}}
 

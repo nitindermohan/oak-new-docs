@@ -10,10 +10,10 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
+<span class="lead">
+Custom resources in Oakestra provide a mechanism to extend the system’s API dynamically by introducing new resource types. Similar to Kubernetes’ Custom Resources, this feature allows developers to define and manage tailored data structures to meet specific needs, enabling Oakestra to adapt to a wide range of scenarios.
+</span>
 
-Custom resources in Oakestra provide a mechanism to extend the system’s API dynamically by introducing new resource types. Inspired by [Kubernetes’ Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/), this feature allows developers to define and manage tailored data structures to meet specific needs, enabling Oakestra to adapt to a wide range of scenarios.
-
-This section demonstrates how to create, manage, and utilize custom resources within Oakestra.
 
 {{< callout context="tip" title="Why should developers use custom resources?" icon="outline/rocket" >}}
 
