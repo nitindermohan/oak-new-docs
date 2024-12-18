@@ -63,7 +63,7 @@ Leverage several developer-forward Oakestra features to make your applications e
 {{< /card-grid >}}
 
 {{< callout context="note" icon="outline/flask" >}}
-Oakestra has appeared in world-class scientific conferences and journals. Check out our [publications](/publications/) to learn more.
+Oakestra has appeared in world-class scientific conferences and journals. Check out our [publications](/research/) to learn more.
 {{< /callout >}}
 
 ## Contribute
