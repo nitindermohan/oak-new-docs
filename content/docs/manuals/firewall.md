@@ -10,12 +10,13 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
+<span>
+Oakestra components interact with each other over specific ports. These ports need to be open for the components to communicate. Firewall configurations are necessary to ensure that the network traffic is allowed to flow between the components.
+</span>
 
-{{< callout context="tip" title="Did you know?" icon="outline/rocket" >}}
+{{< callout context="note" icon="outline/info-square-rounded" >}}
 *If* you're running Oakestra on a restricted network, *e.g., on cloud VMs*, you need to configure the firewall rules. 
 {{< /callout >}}
-
-Oakestra components interact with each other over specific ports. These ports need to be open for the components to communicate. Firewall configurations are necessary to ensure that the network traffic is allowed to flow between the components.
 
 ### Firewall Configuration
 

@@ -31,7 +31,7 @@ Custom resources operate alongside **controllers**, which are separate component
 In Oakestra, a custom controller could be implemented as an [addon](../addons), allowing users to introduce automation and state management functionalities for custom data types without altering the core system.
 
 
-{{< callout context="note" title="Benefits" icon="outline/rocket">}}
+{{< callout context="tip" title="Why should you use custom resources?" icon="outline/rocket">}}
 - **API Flexibility**: Users can introduce new data types and workflows as needed without modifying the core system.
 - **Separation of Concerns**: By decoupling data storage from active state management, custom resources and controllers provide a modular, maintainable architecture.
 - **Enhanced Automation**: With controllers managing custom resources, Oakestra can automate workflows and maintain system alignment with external configurations, streamlining operations.
