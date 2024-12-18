@@ -18,7 +18,7 @@ based on the IPv4 implementation of the Network Manager component. Note that
 
 ## Example
 
-Lets assume that we have two worker nodes, namely Node 1 and Node 2, each executing two containers.
+Let's assume that we have two worker nodes, namely Node 1 and Node 2, each executing two containers.
 The containers are instantiated and managed by the Node Engine, while
 the Network Manager, creates a network namespace for each container (the cloud surrounding the container),
 enabling the Virtual Layer abstraction.
