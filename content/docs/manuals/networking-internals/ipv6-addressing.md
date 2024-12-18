@@ -17,22 +17,22 @@ Oakestra makes use of the reserved private IPv6 subnet `fc00::/7` for its servic
 
 It uses the following network split for IPv6 networking:
 
-| Subnet                                                  | Subnet description                 | Tag        |
-|---------------------------------------------------------|------------------------------------|------------|
-| `fc00::/7`                                              | full Oakestra network              | `all`      |
-| `fc00::/120 - fdfd:ffff:ffff:ffff:ffff:ffff:ffff:0/120` | Worker subnets                     | `worker`   |
-| `fdfe::/16`                                             | reserved for future use            | `reserved` |
-| `fdff::/16`                                             | Service IP subnet                  | `service`  |
-| `fdff:0000::/21`                                        | Instance IP subnet 1               | `instance` |
+| Subnet                                                  | Subnet description                    | Tag        |
+|---------------------------------------------------------|---------------------------------------|------------|
+| `fc00::/7`                                              | full Oakestra network                 | `all`      |
+| `fc00::/120 - fdfd:ffff:ffff:ffff:ffff:ffff:ffff:0/120` | Worker subnets                        | `worker`   |
+| `fdfe::/16`                                             | reserved for future use               | `reserved` |
+| `fdff::/16`                                             | Service IP subnet                     | `service`  |
+| `fdff:0000::/21`                                        | Instance IP subnet 1                  | `instance` |
 | `fdff:1000::/21`                                        | reserved for Closest balancing policy | `balance`  |
-| `fdff:2000::/21`                                        | Round Robin balancing              | `balance`  |
-| ...                                                     | ...                                | `balance`  |
-| `fdff:f000::/21`                                        | Balancing 15                       | `balance`  |
-| `fdff:0800::/21`                                        | Instance IP subnet 2               | `instance` |
-| `fdff:1800::/21`                                        | Balancing 16                       | `balance`  |
-| `fdff:2800::/21`                                        | Balancing 17                       | `balance`  |
-| ...                                                     | ...                                | `balance`  |
-| `fdff:f800::/21`                                        | Balancing 30                       | `balance`  |
+| `fdff:2000::/21`                                        | Round Robin balancing                 | `balance`  |
+| ...                                                     | ...                                   | `balance`  |
+| `fdff:f000::/21`                                        | Balancing 15                          | `balance`  |
+| `fdff:0800::/21`                                        | Instance IP subnet 2                  | `instance` |
+| `fdff:1800::/21`                                        | Balancing 16                          | `balance`  |
+| `fdff:2800::/21`                                        | Balancing 17                          | `balance`  |
+| ...                                                     | ...                                   | `balance`  |
+| `fdff:f800::/21`                                        | Balancing 30                          | `balance`  |
 
 In the following we give a short meaning for each tag.
 
@@ -68,3 +68,21 @@ The Oakestra platform currently only supports a very basic form of IPv6 addressi
 strict 1-to-1 mapping between IPv4 and IPv6 addresses.
 The limiting factor remains the IPv4 address space and there currently is **no** support for standalone IPv6 networking.
 {{< /callout >}}
+
+
+## Extending the Network Capabilities
+
+Extending the network capabilities by a new IPv6 service IP follows the same steps as in our
+[IPv4 documentation](../ipv4-addressing) in general, with the need of a special database handling for each network
+address space.
+
+Since the IPv6 service address space is hard-split into their distinct networks, a reservation for such a split needs
+to be done. In the best case you should create an issue for that on the official GitHub repository, in order to let
+the maintainers, and everyone else know, that a part of the network split is reserved for your upcoming new routing
+policy.
+
+From an implementation standpoint, in addition to the steps described in our [IPv4 documentation](../ipv4-addressing),
+special database handling is needed to be implemented in the `root-service-manager`, who does the bookkeeping of
+available service IP addresses in the network.
+
+You can base your implementation on the already existing functions in place for already implemented balancing policies.
