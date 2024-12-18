@@ -4,9 +4,9 @@
   {{ partial "head/body-class" . }}
   <style>
     .grey-box {
-        background-color: #f2f2f2;
-        color: black;
-        border: 1px solid #ddd;
+        background-color: #eba637;
+        color: rgb(0, 0, 0);
+        border: 1px solid #000000;
         padding: 20px;
         border-radius: 5px;
     }
@@ -19,9 +19,7 @@
     {{ partial "header/header" . }}
     <div class="wrap container-{{ site.Params.doks.containerBreakpoint | default "lg" }}" role="document">
       <div class="content">
-      {{ if and (eq site.Params.doks.containerBreakpoint "fluid") (or (not (in .Site.Params.mainSections .Type)) (.IsNode)) }}<div class="container p-0">{{ end }}
         {{ block "main" . }}{{ end }}
-      {{ if and (eq site.Params.doks.containerBreakpoint "fluid") (or (not (in .Site.Params.mainSections .Type)) (.IsNode)) }}</div>{{ end }}
       </div>
     </div>
     {{ block "sidebar-prefooter" . }}{{ end }}
