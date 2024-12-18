@@ -17,7 +17,7 @@ The manager checks for images in the FLOps image registry (*part of the manageme
 
 If a match was found there is no need to build redundant images and the project goes straight to stage 4.
 
-## Stage 2: FL-Actor Image-Builder Deployment
+## Stage 4: FL-Actors Deployment
 
 In case images for **FL Actors** *(learners & aggregators)* using the requested ML repository are missing the manager creates and deploys a single image-builder service.
 This buider service is exclusive to its originating project.
@@ -39,7 +39,7 @@ This buider service is exclusive to its originating project.
   - Deploying the large image builder service *(pulled size ~3GB)* can take time.
 {{< /callout >}}
 
-## Stage 3: FL-Actors Image Build
+## Stage 5: FL Training
 
 In stage 3 the deployed image-builder service builds the requested images for the learner and aggregator services.
 

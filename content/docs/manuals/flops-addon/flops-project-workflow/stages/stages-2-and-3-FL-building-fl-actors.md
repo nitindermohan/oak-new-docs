@@ -65,9 +65,26 @@ The image-builder service does the following:
 
 The FLOps manager undeploys and removes the image builder service.
 
+### Showcase
+
+This demo shows this build process from the perspective of a priviledged CLI user.
+
+{{< callout context="note" title="*Time Lapse*" icon="outline/coffee" >}}
+  Building images can easily take 5-30+ minutes.
+
+  This depends on:
+  - Underlying worker node resources
+  - Complexity of the provided ML repo dependencies
+  - Number and kind of target platforms that should be supported
+
+  This demo cuts out long waiting periods for your viewing pleasure. 
+{{< /callout >}}
+
+
+{{< asciinema key="flops_base_case_fl_actors_build" poster="0:08" idleTimeLimit="1.5" >}}
+<br>
 {{< link-card
   title="Want to know more about the image building process?"
   description="Learn why and how container images are build in FLOps." 
   href="/docs/manuals/flops-addon/internals/image-building-process"
 >}}
-
