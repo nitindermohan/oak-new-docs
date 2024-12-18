@@ -96,5 +96,3 @@ accordingly to their need. Edge computing brings resources closer to the users, 
 traffic with very low latency using Closest balancing policy, or one might just want to evenly balance another
 endpoint with Round Robin policy.
 {{< /callout >}}
-
-Continue reading about what actually happens in the Oakestra network component.

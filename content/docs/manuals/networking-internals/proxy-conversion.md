@@ -120,10 +120,20 @@ This is an example of the Conversion Table maintained by the Environment Manager
 
 
 ##### Node Service 1 Table before X3 table query
-| Appname | Appns   | Sname | Sns     | Instance # | Cluster | Node IP & Port  | Ns IP     | Instance IP | Round Robin IP | ... Service IPs |
-|---------|---------|-------|---------|------------|---------|-----------------|-----------|-------------|----------------|-----------------|
-| X       | default | X1    | default | 0          | 1       | 131.1.0.1 50103 | 10.19.1.3 | 10.30.0.2   | 10.30.0.1      | ...             |
-| X       | default | X1    | default | 1          | 1       | 131.1.0.2 50103 | 10.19.1.6 | 10.30.0.3   | 10.30.0.1      |                 |
+
+| Appname         | X               | X               |
+|-----------------|-----------------|-----------------|
+| Appns           | default         | default         |
+| Sname           | X1              | X1              |
+| Sns             | default         | default         |
+| Instance #      | 0               | 1               |
+| Cluster         | 1               | 1               |
+| Node IP & Port  | 131.1.0.1 50103 | 131.1.0.2 50103 |
+| Ns IP           | 10.19.1.3       | 10.19.1.6       |
+| Instance IP     | 10.30.0.2       | 10.30.0.3       |
+| Round Robin IP  | 10.30.0.1       | 10.30.0.1       |
+| ... Service IPs | ...             | ...             |
+
 
 The entries of the table keep the cross-layer information of each service, including the physical layer address and
 port, the virtual layer address, and all the service layer addresses. As the number of records is limited, the table
@@ -154,11 +164,19 @@ This is one of the building blocks of the proposed abstraction, and it is detail
 Upon completion of the table query, the internal Conversion table is updated as follows.
 
 ##### Node Service 1 Table after X3 table query
-| Appname | Appns   | Sname | Sns     | Instance # | Cluster | Node IP & Port   | Ns IP     | Instance IP | Round Robin IP | ... Service IPs |
-|---------|---------|-------|---------|------------|---------|------------------|-----------|-------------|----------------|-----------------|
-| X       | default | X1    | default | 0          | 1       | 131.1.0.1 50103  | 10.19.1.3 | 10.30.0.2   | 10.30.0.1      | ...             |
-| X       | default | X1    | default | 1          | 1       | 131.1.0.2 50103  | 10.19.1.6 | 10.30.0.3   | 10.30.0.1      | ...             |
-| X       | default | X3    | default | 0          | 1       | 131.1.21.5 55301 | 10.21.0.1 | 10.30.0.6   | 10.30.1.30     | ...             |
+
+| Appname         | X               | X               | X                |
+|-----------------|-----------------|-----------------|------------------|
+| Appns           | default         | default         | default          |
+| Sname           | X1              | X1              | X3               |
+| Sns             | default         | default         | default          |
+| Instance #      | 0               | 1               | 0                | 
+| Cluster         | 1               | 1               | 1                |
+| Node IP & Port  | 131.1.0.1 50103 | 131.1.0.2 50103 | 131.1.21.5 55301 |
+| Ns IP           | 10.19.1.3       | 10.19.1.6       | 10.21.0.1        | 
+| Instance IP     | 10.30.0.2       | 10.30.0.3       | 10.30.0.6        |
+| Round Robin IP  | 10.30.0.1       | 10.30.0.1       | 10.30.1.30       |
+| ... Service IPs | ...             | ...             | ...              |
 
 The cluster resolved the Service IP `10.30.1.30` into a table entry describing only `X.default.X3.default.0`
 (apparently, no other instances are in the system yet).

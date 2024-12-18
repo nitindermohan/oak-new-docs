@@ -11,11 +11,8 @@ seo:
   noindex: false # false (default) or true
 ---
 
-## Network Split
-
-Oakestra makes use of the reserved private IPv6 subnet `fc00::/7` for its service addressing.
-
-It uses the following network split for IPv6 networking:
+Oakestra makes use of the reserved private IPv6 subnet `fc00::/7` for its service addressing and uses the
+following network split for IPv6 networking
 
 | Subnet                                                  | Subnet description                    | Tag        |
 |---------------------------------------------------------|---------------------------------------|------------|
@@ -36,7 +33,7 @@ It uses the following network split for IPv6 networking:
 
 In the following we give a short meaning for each tag.
 
-* `all` : whole Oakestra platform
+* `all` : entire Oakestra platform
 * `worker` : subnet assigned to a single worker node associated with a cluster inside Oakestra
 * `service` : semantic service address subnet
 * `instance` : single semantic service address mapped to a service instance throughout the lifetime of the instance
@@ -44,7 +41,7 @@ In the following we give a short meaning for each tag.
 semantic addressing for balance policies
 
 {{< callout context="danger" title="Exhausted Address Space" icon="outline/alert-triangle" >}}
-The Oakestra platform makes use of the whole IPv6 address space available.
+Oakestra makes use of the whole IPv6 address space available.
 This may cause issues with other applications requiring an IPv6 address from the `fc00::/7`
 address space in order to function, as we make changes to the `iptables` local firewall,
 as well as the host routing tables, that may influence any third-party application's functionality.
@@ -85,4 +82,5 @@ From an implementation standpoint, in addition to the steps described in our [IP
 special database handling is needed to be implemented in the `root-service-manager`, who does the bookkeeping of
 available service IP addresses in the network.
 
-You can base your implementation on the already existing functions in place for already implemented balancing policies.
+You can base your implementation on the already existing functions in place, which you can find in the
+`root-service-manager`, more specifically in `network/subnetwork_management.py`.

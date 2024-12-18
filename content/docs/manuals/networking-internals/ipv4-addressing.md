@@ -11,8 +11,6 @@ seo:
   noindex: false # false (default) or true
 ---
 
-## Network Split
-
 Oakestra uses the reserved private IPv4 subnet `10.0.0.0/8` for its service addressing.
 
 The detailed network partition can be taken from the table below.
@@ -38,8 +36,6 @@ If we deploy an example application `A` with two instances of microservice `S` (
 | S        | Round Robin: `10.30.0.1`                                 |
 | S1       | Instance IP: `10.30.0.2`<br> Namespace IP: `10.18.30.65` |
 | S2       | Instance IP: `10.30.0.3`<br> Namespace IP: `10.18.30.66` |
-
-Continue reading about our IPv6 support.
 
 ## Extending the Network Capabilities
 
@@ -79,7 +75,3 @@ you will also find some inspiration on what the handler is supposed to do.
 We encourage you to dig into the code and retrace the callstack for deployments yourself. This will make it
 easier for you to grasp the communication patterns between Oakestra components, as well as their distinct tasks!
 {{< /callout >}}
-
----
-
-Oakestra also has IPv6 support, which you can read in the next page [IPv6 address partitioning](../ipv6-addressing/).
