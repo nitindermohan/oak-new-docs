@@ -30,7 +30,7 @@ In this guide, we'll perform a Single Machine Setup. This setup is the easiest w
 
 After the orchestrators are up and running, you can add Edge Devices as workers to your cluster (see: [Add Edge Devices (Workers) to Your Setup](/docs/getting-started/oak-environment/add-edge-devices-workers-to-your-setup/)). 
 
-![Deploy everything on a single machine](deploy-orch.png)
+{{< svg "deploy-orchestrators" >}}
 
 You can install the **Root** and **Cluster Orchestrator** in a single machine using the following command:
 
