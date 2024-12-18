@@ -21,3 +21,6 @@ resources/_gen/
 
 node_modules/
 auxiliary/oak_cli/documentation_automation/docs/build/
+
+#drawio backup files
+.bkp
