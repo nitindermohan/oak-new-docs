@@ -37,6 +37,7 @@ Take full control of your microservices with Oakestra's powerful API and intuiti
 - [Oakestra API](/docs/getting-started/deploy-app/with-the-api/)
 - [Oakestra CLI](/docs/getting-started/deploy-app/with-the-dashboard/)
 - [Oakestra Dashboard](/docs/getting-started/deploy-app/with-the-cli/)
+- [Application Catalog](/docs/manuals/app-catalog/example-applications/)
 
 {{< /card >}}
 
@@ -51,13 +52,13 @@ Designed with a plug-and-play approach, Oakestra supports customizable orchestra
 - [Custom Resources](/docs/concepts/oakestra-extensions/custom-resources/)
 {{< /card >}}
 
-{{< card title="Developer Oriented" icon="outline/box-multiple" color="red" >}}
-Leverage several developer-forward Oakestra features to make your applications edge-cloud efficient. 
+{{< card title="Bleeding-Edge Features" icon="outline/adjustments-star" color="red" >}}
+Leverage several innovative techniques Oakestra uses to make your applications edge-cloud efficient. 
 
 - [Multi-Virtualization Support](/docs/manuals/execution-runtimes/supported-virtualization-runtimes/)
-- Semantic Networking
+- [Semantic Networking](/docs/concepts/networking/)
 - [Federated Machine Learning Support](/docs/concepts/flops/overview/)
-- [Application Catalog](/docs/manuals/app-catalog/example-applications/)
+
 {{< /card >}}
 
 {{< /card-grid >}}
