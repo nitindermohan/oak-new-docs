@@ -44,7 +44,7 @@ curl -sfL oakestra.io/getstarted.sh | sh -
 **2)** download, untar and install the node engine and network manager binaries
 
 ```Shell
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh | sh -  
+curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/main/scripts/InstallOakestraWorker.sh | sh -  
 ```
 
 **3)** Configure the Network Manager by editing `/etc/netmanager/netcfg.json` as follows:
@@ -68,7 +68,7 @@ sudo NetManager -p 6000
 On a different shell, start the NodeEngine with the -n 6000 paramenter to connect to the NetManager. 
 
 ```Shell
-sudo NodeEngine -n 6000 -a <Cluster Orchestrator IP Address>
+sudo NodeEngine -n 6000 -p 10100  -a <Cluster Orchestrator IP Address>
 ```
 ( you can use `NodeEngine -h` for further details )
 
