@@ -23,5 +23,9 @@ resources/_gen/
 node_modules/
 auxiliary/oak_cli/documentation_automation/docs/build/
 
-#drawio backup files
-.bkp
+# draio bkp files
+*.bkp
+
+# macOS
+.DS_Store
+
