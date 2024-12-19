@@ -17,10 +17,17 @@ seo:
 {{< callout context="caution" title="Unikernels within Oakestra" icon="outline/alert-triangle">}}
 This guide is (almost) a clone of the containers Nginx client-server applications described in [previous walkthrough](/docs/manuals/app-catalog/nginx-sever), however, we instead use Unikraft Nginx server. 
 
-To enable unikernel support, please refer to the Unikernel Support manual section.
 {{< /callout >}}
 
 We can deploy Nginx using [Unikraft](https://unikraft.org). This will allow us to have a more lightweight and isolated version of Nginx for the machines supporting unikernel virtualization.
+
+{{< link-card
+  title="Unikraft Runtime"
+  description="To enable unikernel support, please refer to the Unikernel Support manual section."
+  href="/docs/manuals/execution-runtimes/unikernel-deployment/"
+  target="_blank"
+>}}
+
 
 <!-- {{< callout context="note" title="Unikernel Support" icon="outline/rocket">}} To enable unikernel support, please refer to the Unikernel Support manual section{{< /callout >}} -->
 
@@ -109,14 +116,21 @@ In this guide we'll use the Oakestra CLI tool to interact with the Oakestra plat
 
  {{< callout context="tip" title="Oakestra CLI Tool" icon="outline/rocket">}}
 
-In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with the Oakestra-managed infrastructure. To find out more about the CLI tool, please refer to the CLI section of the manuals.
+In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with the Oakestra-managed infrastructure. 
 
+{{< link-card
+  title="Get Started with the Oakestra CLI"
+  description="Check out how to deploy your first application with the CLI."
+  href="/docs/getting-started/deploy-app/with-the-cli/"
+  target="_blank"
+>}}
+
+<br>
 You can check if `oak-cli` is installed by running the following command:
 
 ```bash
 oak v
 ```
-
  {{< /callout >}}
 
 

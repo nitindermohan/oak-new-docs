@@ -10,8 +10,9 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
-
-Oakestra supports unikernel executions for applications built using [Unikraft](http://unikraft.org). 
+<span class="lead">
+Oakestra supports unikernel executions for applications built using Unikraft. 
+</span>
 
 {{< callout context="tip" title="What do you need?" icon="outline/rocket" >}}
 It's simple. All you need to start deploying unikernels is:
@@ -39,7 +40,7 @@ Your unikernel tarball MUST contain a file named `kernel`, which is the unikerne
 {{< link-card
   title="Looking for an example?"
   description="Check out the Unikraft Nginx walkthrough in the Application Catalogue"
-  href="/docs/manuals/app-catalog"
+  href="/docs/manuals/app-catalog/nginx-unikernel-deployment/"
   target="_blank"
 >}}
 

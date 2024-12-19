@@ -18,6 +18,7 @@ resources/_gen/
 
 # IDE Files
 .vscode
+.idea
 
 node_modules/
 auxiliary/oak_cli/documentation_automation/docs/build/

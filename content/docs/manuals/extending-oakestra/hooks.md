@@ -11,7 +11,9 @@ seo:
   noindex: false # false (default) or true
 ---
 
-Hooks in Oakestra provide a mechanism for listening to and reacting to system lifecycle events. By leveraging hooks, developers can decouple components and enable services to dynamically respond to events like creation, updates, or deletion of system entities. This section explains how to use hooks effectively, with step-by-step instructions for registering and implementing them.
+<span class="lead">
+Hooks in Oakestra provide a mechanism for listening to and reacting to system lifecycle events. By leveraging hooks, developers can decouple components and enable services to dynamically respond to events like creation, updates, or deletion of system entities.
+</span>
 
 {{< callout context="tip" title="Why should developers use hooks?" icon="outline/rocket" >}}
 1. **Subscribe to Events**: Register services to listen for system lifecycle events such as entity creation, updates, or deletion.

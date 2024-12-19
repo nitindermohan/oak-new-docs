@@ -18,7 +18,15 @@ To test out the balancing capabilities of Oakestra, we can deploy a simple Nginx
 
 {{< callout context="tip" title="Oakestra CLI Tool" icon="outline/rocket">}}
 
-In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with the Oakestra-managed infrastructure. To find out more about the CLI tool, please refer to the CLI section of the manuals.
+In this guide we'll use the comprehensive Oakestra CLI toolkit to interact with the Oakestra-managed infrastructure.
+
+{{< link-card
+  title="Get Started with the Oakestra CLI"
+  description="Check out how to deploy your first application with the CLI."
+  href="/docs/getting-started/deploy-app/with-the-cli/"
+  target="_blank"
+>}}
+<br>
 
 You can check if `oak-cli` is installed by running the following command:
 
