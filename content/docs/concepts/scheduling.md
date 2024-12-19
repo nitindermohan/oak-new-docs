@@ -85,10 +85,6 @@ The **Job Resource Requirements** are used to immediately exclude unsuitable can
 |TPU|🔴|Not yet under development
 
 
-### Network & Geo constraints
-
-The networking requirements selection and geographic constraints support are coming out in our next release, **v0.5**, and are part of the LDP algorithm update. Stay tuned. 
-
 ### Direct mapping positioning
 
 The **direct mapping** constraint allows developers to explicitly define a list of target clusters and nodes in the deployment description. The scheduling algorithm will then operate only on the active clusters or nodes specified in the list.
