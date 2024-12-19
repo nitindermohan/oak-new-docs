@@ -2,7 +2,7 @@
 title: "Firewall Configuration"
 summary: ""
 draft: false
-weight: 301
+weight: 302
 toc: true
 seo:
   title: "" # custom title (optional)

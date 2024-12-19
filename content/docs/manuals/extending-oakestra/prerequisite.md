@@ -2,7 +2,7 @@
 title: "Setting Up"
 summary: ""
 draft: false
-weight: 340
+weight: 351
 toc: true
 seo:
   title: "" # custom title (optional)
