@@ -1,8 +1,8 @@
 ---
-title: "Federated Learning Support"
+title: "FLOps Overview"
 summary: ""
 draft: false
-weight: 360
+weight: 320
 toc: true
 seo:
   title: "" # custom title (optional)
@@ -10,6 +10,12 @@ seo:
   canonical: "" # custom canonical URL (optional)
   noindex: false # false (default) or true
 ---
+
+{{< callout context="caution" title="Requirements" icon="outline/alert-triangle">}}
+  - You have carefully read the basic [concepts of FL & FLOps](/docs/concepts/flops/overview/).
+{{< /callout >}}
+
+## How to use FLOps
 
 {{< callout context="caution" title="Coming Very Soon" icon="outline/hammer">}}
   We are actively working on the manuals and a contribution guide for the FLOps addon.
