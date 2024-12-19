@@ -24,8 +24,7 @@ The root orchestrator is the centralized control plane that coordinates the part
 
 {{< svg "orchestration/arch-root" >}}
 
-The above image describes the components of the root orchestrator. Each component is deployed as a separate service
-and docker compose plugin is used to integrate and run them.
+The image above illustrates the components of the root orchestrator. Each component operates as an independent service, integrated and managed using the Docker Compose plugin.
 
 * The **System Manager** serves as the primary interface for users to access the system as an application deployment platform. It provides two sets of APIs:
   1. To receive deployment commands from users via [CLI](../../getting-started/deploy-app/with-the-cli/), [Dashboard](../../getting-started/deploy-app/with-the-dashboard/), or directly via [REST API](../../getting-started/deploy-app/with-the-api/).
