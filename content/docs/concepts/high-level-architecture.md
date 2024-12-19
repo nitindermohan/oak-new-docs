@@ -15,7 +15,7 @@ seo:
 Oakestra is composed of *three* key building blocks:
 * The [Root Orchestrator](#root-orchestrator): the master orchestrator of the infrastructure. 
 * The [Cluster Orchestrator](#cluster-orchestrator): a local orchestrator directly managing the workers. 
-* The [Worker Node](#worker-node) composed of **NodeEngine**, and **Net Manager**, manages the workloads.
+* The [Worker Node](#worker-node) machine that executes application microservices.
 {{< /callout >}}
 
 ## Root Orchestrator
