@@ -2,7 +2,7 @@
 title: "Creating Addons"
 summary: ""
 draft: false
-weight: 342
+weight: 353
 toc: true
 seo:
   title: "" # custom title (optional)
