@@ -158,7 +158,7 @@ This page only highlights a small subset of available `oak-cli` capabilities.
 {{< link-card
   title="CLI Manuals"
   description="Explore every available CLI command in detail and more"
-  href="/docs/manuals/cli/overview"
+  href="/docs/manuals/cli/cli-overview/"
   target="_blank"
 >}}
 
