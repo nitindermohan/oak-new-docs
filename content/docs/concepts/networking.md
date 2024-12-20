@@ -75,4 +75,4 @@ This information is cached locally for a very short period of time in order to a
 to the service instances is refreshed frequently, as rescheduling of (crashed) services can happen at any point in time.
 
 For further reading into how exactly this is done, take a look at the 
-[networking internals](/docs/manuals/networking-internals/load-balancing/).
+[networking internals](../../manuals/networking-internals/load-balancing/).

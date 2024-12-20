@@ -18,7 +18,7 @@ Federated Learning (FL) distributes the computational load of machine learning w
 {{< link-card
   title="FL Basics"
   description="Explore fundamental concepts of Federated Learning"
-  href="/docs/concepts/flops/fl-basics"
+  href="../../../concepts/flops/fl-basics"
   target="_blank"
 >}}
 
@@ -111,9 +111,9 @@ FLOps is an [Oakestra Addon](TODO) that enables streamlined and accelerated prac
 
 {{< details "**Convenient Installation & native CLI**" >}}
   FLOps can be easily set up by cloning its [repository](https://github.com/oakestra/addon-FLOps) and running the docker-compose file on the same machine as the Oakestra Root Orchestrator.
-  See the [FLOps Manuals](/docs/manuals/flops) for concrete instructions.
+  See the [FLOps Manuals](../../manuals/flops) for concrete instructions.
 
-  The [Oakestra CLI](/docs/getting-started/deploy-app/with-the-cli/#the-oak-cli) supports a [set of commands](/docs/manuals/cli/features/flops-addon/#oak-addon-flops) to work with FLOps.
+  The [Oakestra CLI](../../getting-started/deploy-app/with-the-cli/#the-oak-cli) supports a [set of commands](/docs/manuals/cli/features/flops-addon/#oak-addon-flops) to work with FLOps.
 {{< /details >}}
 
 As a result, individuals with different levels of expertise in FL, automation, DevOps, containerization, and orchestration can benefit from these techniques and perform FL.
