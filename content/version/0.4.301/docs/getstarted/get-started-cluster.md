@@ -139,7 +139,7 @@ export SYSTEM_MANAGER_URL=<IP ADDRESS OF THE NODE HOSTING THE ROOT ORCHESTRATOR>
 ```
 Then, download setup and startup the root orchestrator simply running:
 ```
-export OAKEYSTRA_BRANCH=v0.4.301
+export OAKESTRA_BRANCH=v0.4.301
 curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/alpha-v0.4.302/scripts/StartOakestraRoot.sh | sh - 
 ```
 
@@ -176,7 +176,7 @@ export SYSTEM_MANAGER_URL=<IP address>
 You can then run the cluster orchestrator using the pre-compiled images:
 - Download and start the cluster orchestrator components:
 ```
-export OAKEYSTRA_BRANCH=v0.4.301
+export OAKESTRA_BRANCH=v0.4.301
 curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/alpha-v0.4.302/scripts/StartOakestraCluster.sh | sh - 
 ```
 
