@@ -16,7 +16,7 @@ seo:
 If you want to create new Clusters to attatch to you Oakestra Root, on each Cluster Orchestrator machine you can run:
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/StartOakestraCluster.sh | sh -
+curl -sfL oakestra.io/install-cluster.sh | sh -
 ```
 
 This will start a new **Cluster Orchestrator** component. 

@@ -41,7 +41,7 @@ First, let's deploy a stand-alone root orchestrator. This component will manage 
 by providing an [API](../../getting-started/deploy-app/with-the-api/) and a [dashboard](../../getting-started/deploy-app/with-the-dashboard/).
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/StartOakestraRoot.sh | sh - 
+curl -sfL oakestra.io/install-root.sh | sh - 
 ```
 
 This script will download the required files to the directory `~/oakestra/root_orchestrator`. From there it will build the root orchestrator.
@@ -58,7 +58,7 @@ Next, we can deploy a stand-alone cluster orchestrator. This component will mana
 facilitating communication. Additionally the cluster orchestrator sends aggregated reports to the root orchestrator.
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/StartOakestraCluster.sh | sh - 
+curl -sfL oakestra.io/install-cluster.sh | sh - 
 ```
 
 This script will download the required files to the directory `~/oakestra/cluster_orchestrator`. From there it will walk you through

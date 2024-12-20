@@ -36,6 +36,7 @@ In this example, we will use a single device to deploy all the components. This 
 Let's start the Root, the dashboard, and a cluster orchestrator on your machine. 
 
 ```
+export OAKESTRA_VERSION=v0.4.301
 curl -sfL oakestra.io/getstarted.sh | sh -
 ```
 
@@ -44,7 +45,8 @@ curl -sfL oakestra.io/getstarted.sh | sh -
 **2)** download, untar and install the node engine and network manager binaries
 
 ```Shell
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/main/scripts/InstallOakestraWorker.sh | sh -  
+export OAKESTRA_VERSION=v0.4.301
+curl -sfL oakestra.io/install-worker.sh | sh - 
 ```
 
 **3)** Configure the Network Manager by editing `/etc/netmanager/netcfg.json` as follows:
@@ -94,7 +96,7 @@ The deployment of this kind of cluster is similar to 1-DOC. We first need to sta
 2.1) Downlaod and unpack both the NodeEngine and NetManager
 
 ```Shell
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/InstallOakestraWorker.sh | sh -  
+curl -sfL oakestra.io/install-worker.sh | sh - 
 ```
 
 2.2) Edit `/etc/netmanager/netcfg.json` accordingly:
@@ -137,7 +139,8 @@ export SYSTEM_MANAGER_URL=<IP ADDRESS OF THE NODE HOSTING THE ROOT ORCHESTRATOR>
 ```
 Then, download setup and startup the root orchestrator simply running:
 ```
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/StartOakestraRoot.sh | sh - 
+export OAKESTRA_BRANCH=v0.4.301
+curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/alpha-v0.4.302/scripts/StartOakestraRoot.sh | sh - 
 ```
 
 > If you wish to build the Root Orchestrator by yourself from source code, clone the repo and run the following instead of the startup script mentioned above:
@@ -173,7 +176,8 @@ export SYSTEM_MANAGER_URL=<IP address>
 You can then run the cluster orchestrator using the pre-compiled images:
 - Download and start the cluster orchestrator components:
 ```
-curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/develop/scripts/StartOakestraCluster.sh | sh - 
+export OAKESTRA_BRANCH=v0.4.301
+curl -sfL https://raw.githubusercontent.com/oakestra/oakestra/alpha-v0.4.302/scripts/StartOakestraCluster.sh | sh - 
 ```
 
 >If you wish yo build the cluster orchestrator yourself simply clone the repo and run:
