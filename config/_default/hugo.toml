@@ -19,6 +19,9 @@ defaultContentLanguageInSubdir = false
 
 copyRight = "Copyright (c) 2020-2024 Thulite"
 
+[build]
+  useResourceCacheWhen = "fallback"
+
 [build.buildStats]
   enable = true
 
